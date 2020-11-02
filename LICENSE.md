@@ -9,10 +9,11 @@ Drawer content and license located at ./src/resources/ThirdParty/drawer
 Fabric JS content and license located at ./src/resources/ThirdParty/FabricJS
 Open Iconic content and license located at ./src/resources/ThirdParty/img
 
-All other components/content in this project is the work of Corey Morris for Truck Load Creator.
+All other components/content in this project is the work of Corey Morris for Truck Load Creator under the MIT License.
 
 The MIT License (MIT)
 
+TruckLoadCreator: Copyright (c) 2020 Corey Morris, https://github.com/morrisapps/TruckLoadCreator
 jQueryUI: Copyright jQuery Foundation and other contributors, https://jquery.org/
 jQuery: Copyright OpenJS Foundation and other contributors, https://openjsf.org/
 Bootstrap: Copyright (c) 2011-2020 Twitter, Inc.
