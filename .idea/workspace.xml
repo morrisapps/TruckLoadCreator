@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Updated License">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed grammar errors in readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Credits" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +58,7 @@
       <workItem from="1604277746933" duration="66000" />
       <workItem from="1604277824940" duration="92000" />
       <workItem from="1604290187003" duration="4904000" />
-      <workItem from="1604328786850" duration="5511000" />
+      <workItem from="1604328786850" duration="6540000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -67,7 +67,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604352419027</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed grammar errors in readme">
+      <created>1604352862871</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604352862871</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -75,7 +82,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated License" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated License" />
+    <MESSAGE value="Fixed grammar errors in readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed grammar errors in readme" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">
@@ -98,10 +106,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604351037072" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604352430200">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604352865263">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352430200" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604352162689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
