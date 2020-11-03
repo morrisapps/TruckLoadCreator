@@ -10,10 +10,11 @@ let custList = document.getElementById('custList');
 let unitsList = document.getElementById('unitList');
 let cListChoose = false;
 let previousUnitListElement = null;
+let unitsNotInCanvas;
 
 //Notes
 //Due to limitations with html code, ID cannot contain whitespace.
-//This is an issue as customer name is passed through the ID of customer div.
+//This is an issue as customer name/unit ID is passed through the ID of element div.
 //To get around this, all whitespaces are replaced with % and then replaced again to whitespaces when needed.
 
 
@@ -59,7 +60,6 @@ Sortable.create(custList, {
                 //Update Customers drop in listed sequence
                 customer.drop = newDrop;
             }
-
         } else {
             //Cancel changes
             listCustomer();
@@ -182,13 +182,28 @@ function listUnits(unitFromList) {
     //Displays total longs or shorts information
     let shortUnits = 0;
     let longUnits = 0;
+    unitsNotInCanvas = 0;
     units.forEach(function (unit) {
         if (unit.unitWidth <= 96) {
             shortUnits++;
         } else {
             longUnits++;
         }
+        if (!unit.inCanvas){
+            unitsNotInCanvas++;
+        }
     });
+
+    //Changes color of Units not in Truck to red if there is any
+    if (unitsNotInCanvas > 0){
+        document.getElementById('uNot').style.color = 'red';
+        document.getElementById('uNotText').style.color = 'red';
+    }else {
+        document.getElementById('uNot').style.color = 'black';
+        document.getElementById('uNotText').style.color = 'black';
+    }
+
+    document.getElementById('uNot').innerText = unitsNotInCanvas.toString();
     document.getElementById("tShorts").innerText = shortUnits.toString();
     document.getElementById("tLongs").innerText = longUnits.toString();
 
@@ -202,25 +217,37 @@ function listUnits(unitFromList) {
 
 function listCustomer() {
     var html = '';
+    let custsNotInCanvas = 0;
     for (var i = 0, len = customers.length; i < len; i++) {
         let tempName = customers[i].name.replace(/ /g, '%');
         if (document.getElementById('name').value == customers[i].name) {
             if (isCustInTruck(tempName) == false) {
+                custsNotInCanvas++;
                 html += '<div style="background-color: rgba(251,131,2,0.4); border: 1px solid #fb8302; white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true"  id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
             } else {
                 html += '<div style="background-color: rgba(81,179,68,0.4); border: 1px solid rgb(81, 179, 68); white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true"  id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
             }
         } else {
             if (isCustInTruck(tempName) == false) {
-                html += '<div style="background-color: rgb(179,42,52,0.4); border: 1px solid rgb(179,42,52); white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true" id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
+                custsNotInCanvas++;
+                html += '<div style="background-color: rgba(179,42,52,0.4); border: 1px solid rgb(179,42,52); white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true" id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
             } else {
                 html += '<div style="background-color: white; white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true" id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
             }
         }
     }
     html += '';
-
     custList.innerHTML = html;
+
+    //Changes color of Units not in Truck to red if there is any
+    if (custsNotInCanvas > 0){
+        document.getElementById('cNot').style.color = 'red';
+        document.getElementById('cNotText').style.color = 'red';
+    }else {
+        document.getElementById('cNot').style.color = 'black';
+        document.getElementById('cNotText').style.color = 'black';
+    }
+    document.getElementById('cNot').innerText = custsNotInCanvas.toString();
 }
 
 function onCustSearch() {

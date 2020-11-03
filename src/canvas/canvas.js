@@ -370,7 +370,6 @@ function selectObject(obj) {
             unitSelected = true;
         }
         setUnitFields(unit);
-
         setBundleCheck(currentCustomerName);
         listCustomer();
         updateListUnits(unit);
