@@ -268,7 +268,10 @@ function handleDrop(e) {
                 alert("Drop cannot be empty");
             } else if (document.getElementById("ae").value == '') {
                 alert("Tag cannot be empty");
-            } else {
+            } else if (!isNaN(document.getElementById('name').value)){
+                alert("Customer must contain a letter");
+            }
+            else {
                 editing = false;
                 let addError = Add(
                     +document.getElementById("width").value,

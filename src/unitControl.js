@@ -17,6 +17,8 @@ function AddUpdateButton() {
             alert("Drop cannot be empty");
         } else if (document.getElementById("ae").value == '') {
             alert("Tag cannot be empty");
+        } else if (!isNaN(document.getElementById('name').value)){
+            alert("Customer must contain a letter");
         } else {
             let AddError = Add(+document.getElementById('width').value, +document.getElementById('height').value, document.getElementById('name').value, document.getElementById('ae').value, 'black', 'white', 200, 200, document.getElementById('drop').value, document.getElementById('location').value, false);
             if (AddError == '') {
