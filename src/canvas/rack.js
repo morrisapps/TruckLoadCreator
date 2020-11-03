@@ -6,6 +6,7 @@
 
 var rackBox;
 var rackText;
+var rackCustomers = [];
 var rackCustomers1;
 var rackCustomers2;
 var rackCustomers3;
@@ -13,8 +14,8 @@ var rackCustomers4;
 
 function rackLoad() {
     rackBox = new fabric.Rect({
-        width: 740,
-        height: 170,
+        width: 747,
+        height: 175,
         fill: 'white',
         stroke: 'black',
         strokeWidth: 1,
@@ -23,15 +24,15 @@ function rackLoad() {
         lockMovementX: true,
         lockMovementY: true,
         hasBorders: false,
-        top: 700,
+        top: 680,
         left: 20,
         rx: 10,
         ry: 10
     });
-    rackText = new fabric.IText(' Rack ', {
+    rackText = new fabric.IText(' Customers ', {
         width: 1000,
         height: 500,
-        top: 691,
+        top: 671,
         left: 40,
         stroke: "black",
         strokeWidth: 0,
@@ -48,80 +49,9 @@ function rackLoad() {
         fixedHeight: 300,
         fixedFontSize: 12
     });
-    rackCustomers1 = new fabric.IText('', {
-        width: 3,
-        height: 170,
-        stroke: 'black',
-        strokeWidth: 0,
-        hasControls: false,
-        selectable: true,
-        lockMovementX: true,
-        lockMovementY: true,
-        hasBorders: false,
-        textBackgroundColor: 'white',
-        //backgroundColor: "white",
-        //charSpacing: -20,
-        //splitByGrapheme: true,
-        fontSize: 14,
-        top: 695,
-        left: 30,
-        rx: 10,
-        ry: 10
-    });
-    rackCustomers2 = new fabric.IText('', {
-        width: 510,
-        height: 170,
-        stroke: 'black',
-        strokeWidth: 0,
-        hasControls: false,
-        selectable: true,
-        lockMovementX: true,
-        lockMovementY: true,
-        hasBorders: false,
-        //backgroundColor: "white",
-        textBackgroundColor: 'white',
-        fontSize: 14,
-        top: 695,
-        left: 215,
-        rx: 10,
-        ry: 10
-    });
-    rackCustomers3 = new fabric.Textbox('', {
-        width: 510,
-        height: 170,
-        stroke: 'black',
-        strokeWidth: 0,
-        hasControls: false,
-        selectable: true,
-        lockMovementX: true,
-        lockMovementY: true,
-        hasBorders: false,
-        textBackgroundColor: 'white',
-        fontSize: 14,
-        top: 695,
-        left: 400,
-        rx: 10,
-        ry: 10
-    });
-    rackCustomers4 = new fabric.Textbox('', {
-        width: 510,
-        height: 170,
-        stroke: 'black',
-        strokeWidth: 0,
-        hasControls: false,
-        selectable: true,
-        lockMovementX: true,
-        lockMovementY: true,
-        hasBorders: false,
-        textBackgroundColor: 'white',
-        fontSize: 14,
-        top: 695,
-        left: 585,
-        rx: 10,
-        ry: 10
-    });
-    window.rack = new fabric.Group([rackBox, rackText, rackCustomers1, rackCustomers2, rackCustomers3, rackCustomers4], {
-        top: 734,
+
+    window.rack = new fabric.Group([rackBox, rackText], {
+        top: 730,
         left: 20,
         hasControls: false,
         selectable: false,
@@ -130,6 +60,65 @@ function rackLoad() {
         hasBorders: false,
         id: 'rack'
     });
+
+    var top = 747;
+    var left = 30
+    var columnCounter = 0;
+    //Max width for rackCustomers should be 178
+    //Max width with eclipse 157
+
+    for (var i = 0; i <= 43; i++){
+        if (columnCounter > 10){
+            left = left + 185;
+            top = 747;
+            columnCounter = 0;
+        }
+        columnCounter++;
+        rackCustomers[i] = new fabric.IText('', {
+            height: 170,
+            stroke: 'black',
+            strokeWidth: 0,
+            hasControls: false,
+            selectable: true,
+            lockMovementX: true,
+            lockMovementY: true,
+            hasBorders: false,
+            textBackgroundColor: 'white',
+            //backgroundColor: "white",
+            //charSpacing: -20,
+            //splitByGrapheme: true,
+            fontSize: 14,
+            top: top,
+            left: left,
+            rx: 10,
+            ry: 10
+        });
+        top = top + 15;
+        window.rack.addWithUpdate(rackCustomers[i]);
+    }
     canvas.add(rack);
+    updateRack();
 }
 
+function updateRack() {
+    let i = 0;
+    while (i < customers.length) {
+        if (customers[i] != null) {
+            let custText = "(" + customers[i].drop + ") " + customers[i].name;
+            let inRack = '';
+            if (customers[i].rack == true){
+                inRack = ' -RK';
+            }
+            rack.item(i+2).set({text: custText + inRack});
+            while (rack.item(i+2).width > 178) {
+                custText = cutText(custText, 0, custText.length - 1);
+                rack.item(i+2).set({text: custText + '...' + inRack});
+                if (custText.length <= 0) {
+                    break;
+                }
+            }
+        }
+        canvas.requestRenderAll();
+        i++;
+    }
+}

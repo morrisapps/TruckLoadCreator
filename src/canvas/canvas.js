@@ -285,7 +285,6 @@ function createCanvas() {
             options.target.setCoords();
             var pointer = canvas.getPointer(event.e);
             objectIntersects(midLine, options.target);
-            console.log(options.target);
             if (intersects(midLine, options.target) && options.target.line != true) {
                 if (pointer.y < midLine.top + midLine.strokeWidth / 2) {
                     options.target.set('top', (midLine.top - 1) - options.target.height);
