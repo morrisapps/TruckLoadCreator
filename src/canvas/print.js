@@ -1,3 +1,9 @@
+/*!
+ * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
+ * Copyright 2020 (c) Corey Morris
+ * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
+ */
+
 function printPageArea(areaID) {
     //Remove Height Lines from print
     var i = 0;
@@ -31,7 +37,7 @@ function printPageArea(areaID) {
     var WinPrint = window.open('', '');
 
     //Calls print
-    WinPrint.document.write("<style>@page {   size: Letter landscape; margin: 3mm;  }</style>  " +  canvas.toSVG() +  " ");
+    WinPrint.document.write("<style>@page {   size: Letter landscape; margin: 3mm;  }</style>  " + canvas.toSVG() + " ");
 
     //Restore Height Lines
     var b = 0;
@@ -55,6 +61,7 @@ function printPageArea(areaID) {
     doorText5.opacity = 1;
     doorText6.opacity = 1;
 
+    //Closes open print window
     WinPrint.document.close();
     WinPrint.focus();
     WinPrint.print();

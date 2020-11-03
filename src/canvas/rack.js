@@ -1,16 +1,17 @@
+/*!
+ * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
+ * Copyright 2020 (c) Corey Morris
+ * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
+ */
+
 var rackBox;
-
-
 var rackText;
 var rackCustomers1;
-
 var rackCustomers2;
-
 var rackCustomers3;
-
 var rackCustomers4;
 
-function rackLoad(){
+function rackLoad() {
     rackBox = new fabric.Rect({
         width: 740,
         height: 170,
@@ -119,8 +120,6 @@ function rackLoad(){
         rx: 10,
         ry: 10
     });
-
-
     window.rack = new fabric.Group([rackBox, rackText, rackCustomers1, rackCustomers2, rackCustomers3, rackCustomers4], {
         top: 734,
         left: 20,
@@ -131,7 +130,6 @@ function rackLoad(){
         hasBorders: false,
         id: 'rack'
     });
-//canvas.add(rackBox);
     canvas.add(rack);
 }
 

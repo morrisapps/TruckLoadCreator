@@ -1,3 +1,9 @@
+/*!
+ * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
+ * Copyright 2020 (c) Corey Morris
+ * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
+ */
+
 function save(){
     //Saves important unit information
     let savedUnits = [];
@@ -68,7 +74,6 @@ function save(){
     });
 
     let Contents = [
-        //canvas.toJSON(["unitHeight", "unitWidth", "line", "left","top","selectable","id","unit","remove","hasControls","customer","drop","intersects", "isCounter", "selection", "height","tool","rack","ae" ]),
         savedUnits,
         customers,
         savedText,
@@ -77,10 +82,8 @@ function save(){
         savedComments,
         truckid
     ];
-    //saveContents[0] = JSON.stringify(canvas.toJSON(["unitHeight", "unitWidth", "line", "left","top","selectable","id","unit","remove","hasControls","customer","drop","intersects", "isCounter", "selection", "height","tool","rack" ]),null, 2);
     let saveContents = [];
-    saveContents[0] =    JSON.stringify(Contents, function replacer(key, value) { return value;});
-    //console.log(saveContents[0]);
+    saveContents[0] = JSON.stringify(Contents, function replacer(key, value) { return value;});
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob(saveContents, {
         type: "text/plain"
@@ -128,25 +131,12 @@ function load(){
         // setting up the reader
         var reader = new FileReader();
         reader.readAsText(i.target.files[0]);
-        //reader.readAsText(i.target.files[0],'UTF-8');
 
         // here we tell the reader what to do when it's done reading...
         reader.onload = readerEvent => {
-            console.log(readerEvent);
             let content = JSON.parse(readerEvent.target.result);
-            console.log( content );
-
-            //canvas = new fabric.Canvas('c', {selection: false});
-            //canvas.loadFromJSON(content[0],canvas.renderAll.bind(canvas));
-
-            //Reinitialize
-
-            //createCanvas();
-
 
             //Reload all items
-
-            //canvas.loadFromJSON(content[0]);
             canvas.forEachObject(function (obj) {
                 if (obj.unit == true){
                     canvas.remove(obj);
@@ -188,8 +178,6 @@ function load(){
             sortCustomer();
             sortUnit();
             textLoad();
-            //setZoom();
-
 
             //Restore text edit fields
             driverTextEdit.text = content[2].driverTextEdit;
@@ -228,8 +216,6 @@ function load(){
             truckLoad(content[6]);
 
         }
-
-        //canvas = new fabric.Canvas('c', {selection: false});
     });
 
 }

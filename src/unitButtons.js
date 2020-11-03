@@ -1,3 +1,9 @@
+/*!
+ * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
+ * Copyright 2020 (c) Corey Morris
+ * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
+ */
+
 //Delete Button
 let unitButtons = new fabric.Control({
     position: {x: .5, y: -0.5},
@@ -52,7 +58,9 @@ function renderEditIcon(ctx, left, top, styleOverride, fabricObject) {
     ctx.restore();
 }
 
-
+//Deletes object from canvas
+//@eventData is not used
+//@target is the object to be delete
 function deleteObject(eventData, target) {
     let removeResponse = confirm("Are you sure you want to remove " + target.id + "?");
     if (removeResponse == true) {
@@ -64,6 +72,7 @@ function deleteObject(eventData, target) {
     }
 }
 
+//Enables object to be edited
 function editObject(eventData, target){
     if (editing == false){
         editing = true;
@@ -79,10 +88,10 @@ function editObject(eventData, target){
     } else {
         editOff(target);
     }
-
     canvas.requestRenderAll();
 }
 
+//Disables object from being edited
 function editOff(unit){
     document.getElementById("ae").value = '';
     document.getElementById("location").value = '';
@@ -90,9 +99,7 @@ function editOff(unit){
     if (unit != null){
         unit.set({'borderColor':'rgb(178,204,255)'});
     }
-
     document.getElementById("unitContainer").style.borderColor = "#CCC";
     editing = false;
-
     document.getElementById('remove').style.visibility = 'hidden';
 }

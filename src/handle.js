@@ -1,73 +1,14 @@
+/*!
+ * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
+ * Copyright 2020 (c) Corey Morris
+ * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
+ */
+
 var images = document.querySelectorAll('.images img');
 [].forEach.call(images, function (img) {
     img.addEventListener('dragstart', handleDragStart, false);
     img.addEventListener('dragend', handleDragEnd, false);
 });
-
-//When mouse is down anywhere in the program
-window.addEventListener('mousedown', e => {
-    //Calls listUnits to refresh what is selected in list
-    //listUnits();
-    //listCustomer();
-});
-
-function handleDragEnter(e) {
-    /*
-      if (e.preventDefault) {
-          e.preventDefault();
-      }
-
-      e.dataTransfer.dropEffect = 'move';
-      if (e.target.tagName == 'CANVAS'){
-          pointerDrag = e;
-          //console.log(e.clientX);
-      }
-      if (e.target.tagName == 'CANVAS'){
-          console.log('Dragging over Canvas');
-          var img = document.querySelector('.images img.img_dragging');
-          if (img.id == "sideUnit") {
-
-                  //Adding Units
-                  if (document.getElementById("drop").value == '') {
-                      alert("Drop cannot be empty");
-                  } else {
-                      editing = false;
-                      var offset = $($("canvas", this)[0]).offset();
-                      let addError = Add(
-                          +document.getElementById("width").value,
-                          +document.getElementById("height").value,
-                          document.getElementById("name").value,
-                          document.getElementById("ae").value,
-                          currentColor,
-                          currentFill,
-                          //Takes the mouse coordinates multiplies by invertedWidthRatio and subtracts width or height divided by 2.
-                          //Does not add divided by two because the canvas is 2x the pixel size
-                          e.layerX*invertedWidthRatio-document.getElementById("width").value,
-                          e.layerY*invertedWidthRatio-document.getElementById("height").value,
-                          document.getElementById("drop").value);
-                      //document.getElementById("ae").value = "";
-                      if (addError == "") {
-                          addCustomer(document.getElementById("name").value, document.getElementById("drop").value);
-                      }
-              }
-          }
-          console.log(e);
-          e.dropEffect="none";
-          while (1 == 0){
-              console.log("mousedown")
-              let currentUnit = canvas.getActiveObject();
-              //mouseDownEvent = false;
-              if (currentUnit != null){
-                  currentUnit.top = e.layerY*invertedWidthRatio-currentUnit.height;
-                  currentUnit.left = e.layerX*invertedWidthRatio-currentUnit.width;
-
-              }
-          }
-      }
-      return false;
-
-     */
-}
 
 function createDash(top, left, width) {
     var dash = new fabric.Line([0, 20, width - 4, 20], {
@@ -96,7 +37,6 @@ function createDash(top, left, width) {
     dashGroup.cornerColor = 'rgba(0,144,255,0.53)';
     dashGroup.cornerStyle = 'circle';
     dashGroup.transparentCorners = true;
-
     dashGroup.hoverCursor = 'move';
     dashGroup.moveCursor = 'grabbing';
 
@@ -135,13 +75,10 @@ function createDash(top, left, width) {
 
     dashGroup.on('scaling', function (options) {
         dashGroup.item(0).set({
-            //strokeWidthUnscaled: dashGroup.item(0).strokeWidth,
-            //strokeWidth: dashGroup.item(0).strokeWidthUnscaled / dashGroup.item(0).scaleX,
             strokeDashArray: [14, 10],
             strokeWidth: 5,
         });
     });
-
     return dashGroup;
 }
 
@@ -238,7 +175,6 @@ function createRack(top, left, id, drag) {
     }
 
     var rText = new fabric.IText(rackText, {
-
         height: height * 2 - 2,
         textBackgroundColor: 'rgba(255,255,255,0.8)',
         textAlign: 'center',
@@ -310,9 +246,9 @@ function handleDrop(e) {
         //Creates unit from list item
         if (img.parentElement.id == 'unitList') {
             let draggedUnit = getIDUnit(img.id.replace(/%/g, ' '));
-            if (draggedUnit.inCanvas == true){
+            if (draggedUnit.inCanvas == true) {
                 alert(draggedUnit.id + ' is already in the truck');
-            }else{
+            } else {
                 editOff(draggedUnit);
                 draggedUnit.set('left', e.layerX * invertedWidthRatio - draggedUnit.unitWidth);
                 draggedUnit.set('top', e.layerY * invertedWidthRatio - draggedUnit.unitHeight);
@@ -323,10 +259,8 @@ function handleDrop(e) {
                 listCustomer();
             }
         }
-
         //Add sideUnit
         if (img.id == "sideUnit") {
-
             //Adding Units
             if (document.getElementById("name").value == '') {
                 alert("Customer cannot be empty");
@@ -336,7 +270,6 @@ function handleDrop(e) {
                 alert("Tag cannot be empty");
             } else {
                 editing = false;
-                var offset = $($("canvas", this)[0]).offset();
                 let addError = Add(
                     +document.getElementById("width").value,
                     +document.getElementById("height").value,
@@ -409,7 +342,7 @@ function handleDragStart(e) {
 
 function handleDragEnd(e) {
     let type = null;
-    if (e.target.parentElement != null){
+    if (e.target.parentElement != null) {
         if (e.target.tagName != null && e.target.tagName == "IMG") {
             type = images;
         } else if (e.target.parentElement.id != null && e.target.parentElement.id == "unitList") {

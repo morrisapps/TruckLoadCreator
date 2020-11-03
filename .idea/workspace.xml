@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed grammar errors in readme">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Removed extra files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Credits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/print.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/print.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/rack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/rack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/text.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/text.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/zoom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/zoom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/handle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/handle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/listControl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trucks/truck35.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/trucks/truck35.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trucks/truck45.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/trucks/truck45.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trucks/truck48.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/trucks/truck48.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trucks/truck53.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/trucks/truck53.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trucks/truckCurtain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/trucks/truckCurtain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trucks/truckCustom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/trucks/truckCustom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unitButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/unitButtons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unitControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/unitControl.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +77,7 @@
       <workItem from="1604277746933" duration="66000" />
       <workItem from="1604277824940" duration="92000" />
       <workItem from="1604290187003" duration="4904000" />
-      <workItem from="1604328786850" duration="6540000" />
+      <workItem from="1604328786850" duration="13531000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -74,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604352862871</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Removed extra files">
+      <created>1604356700042</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604356700042</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,7 +109,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated License" />
     <MESSAGE value="Fixed grammar errors in readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed grammar errors in readme" />
+    <MESSAGE value="Removed extra files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed extra files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">
@@ -106,9 +133,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604351037072" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604352865263">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604356706396">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604356706396" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604352162689">
       <screen x="0" y="0" width="1920" height="1040" />

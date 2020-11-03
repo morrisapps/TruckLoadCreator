@@ -1,36 +1,27 @@
+/*!
+ * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
+ * Copyright 2020 (c) Corey Morris
+ * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
+ */
+
 var verificationText;
-
 var verificationLines;
-
 var loadText;
-
 var loadTextEdit;
 var dropsText;
-
 var dropsTextEdit;
-
 var shipperText;
-
 var shipperTextEdit;
-
 var trailerText;
-
 var trailerTextEdit;
-
 var modeText;
-
 var modeTextEdit;
-
 var driverText;
-
 var driverTextEdit;
-
 var driverSide;
-
 var dropInfo;
 
 function textLoad(){
-
     //remove old texts if they exist
     if (dropInfo != null){canvas.remove(dropInfo)}
     if (driverSide != null){canvas.remove(driverSide)}
@@ -50,7 +41,6 @@ function textLoad(){
     if (verificationLines != null){canvas.remove(verificationLines)}
 
     verificationText = new fabric.IText(' Lift Truck Driver(s) verifies no visible damage: ' +
-
         '\n' +
         '\n' +
         '\n Shunter verifies no visible damage and load is secure:' +
@@ -80,7 +70,6 @@ function textLoad(){
     });
 
     verificationLines = new fabric.IText('      _______________________         _______________________ ' +
-
         '\n' +
         '\n' +
         '\n      __________________________________' +
@@ -452,7 +441,6 @@ function textLoad(){
             trailerTextEdit.set({fontSize: 15, fontStyle: "italic", top: 25});
         }
         trailerTextEdit.text = trailerTextEdit.text.slice(0, 15);
-
     });
 
     modeTextEdit.on('selected', function (options) {
@@ -485,7 +473,6 @@ function textLoad(){
             dropsTextEdit.set({fontSize: 15, fontStyle: "italic", top: 55});
         }
         dropsTextEdit.text = dropsTextEdit.text.slice(0, 12);
-
     });
 
     shipperTextEdit.on('selected', function (options) {
@@ -502,7 +489,6 @@ function textLoad(){
             shipperTextEdit.set({fontSize: 15, fontStyle: "italic", top: 55});
         }
         shipperTextEdit.text = shipperTextEdit.text.slice(0, 20);
-
     });
 
     driverTextEdit.on('selected', function (options) {
@@ -519,7 +505,6 @@ function textLoad(){
             driverTextEdit.set({fontSize: 15, fontStyle: "italic", top: 55});
         }
         driverTextEdit.text = driverTextEdit.text.slice(0, 12);
-
     });
 
     //Hover cursor
