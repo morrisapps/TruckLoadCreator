@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Implemented new information for customers and units not in the truck, but only in list.&#10;&#10;Print now checks if there are units not in canvas and displays a warning to continue if there is.">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed Unit wouldn't stay highlighted as editing in list if also not in canvas.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bug List.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Bug List.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/listControl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +60,7 @@
       <workItem from="1604277746933" duration="66000" />
       <workItem from="1604277824940" duration="92000" />
       <workItem from="1604290187003" duration="4904000" />
-      <workItem from="1604328786850" duration="25138000" />
+      <workItem from="1604328786850" duration="29745000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -110,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604378692712</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fixed Unit wouldn't stay highlighted as editing in list if also not in canvas.">
+      <created>1604380080425</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604380080425</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,7 +132,8 @@
     <MESSAGE value="Fixed issue with Add button not updating current customer.&#10;&#10;Fixed issue selecting from unit list not updating current customer.&#10;&#10;Fixed selecting between unadded units in unit list not immediately putting them into edit mode" />
     <MESSAGE value="Updated Unit List and Customer List colors to have a colored background associated to the border color." />
     <MESSAGE value="Implemented new information for customers and units not in the truck, but only in list.&#10;&#10;Print now checks if there are units not in canvas and displays a warning to continue if there is." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented new information for customers and units not in the truck, but only in list.&#10;&#10;Print now checks if there are units not in canvas and displays a warning to continue if there is." />
+    <MESSAGE value="Fixed Unit wouldn't stay highlighted as editing in list if also not in canvas." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Unit wouldn't stay highlighted as editing in list if also not in canvas." />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">
@@ -147,9 +156,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604351037072" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604366660720">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604382155003">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604382155003" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604366660720" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604356706396" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />

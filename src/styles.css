@@ -553,3 +553,21 @@ input[type=number] {
     transform: scale(1.2);
     overflow: visible;
 }
+
+.preview {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.preview::before, .preview::after {
+    flex: 1;
+    border-bottom: 2px solid #dddddd;
+    content: '';
+}
+.preview::after {
+    margin-left: 5px;
+}
+
+.preview::before {
+    margin-right: 5px;
+}

@@ -121,9 +121,9 @@ function updateListCust(CustName) {
     for (var i = 0, len = customers.length; i < len; i++) {
         let tempCustName = customers[i].name.replace(/ /g, '%');
         let tempName = document.getElementById(tempCustName);
-
-        if (CustName == tempName.id) {
-            if (isCustInTruck(tempName.id) == true) {
+        console.log(tempName.id);
+        if (CustName.replace(/ /g, '%') == tempName.id) {
+            if (isCustInTruck(tempName.id.replace(/%/g, ' ')) == true) {
                 tempName.style.border = '1px solid rgb(81, 179, 68)';
                 tempName.style.backgroundColor = 'rgba(81,179,68,0.4)';
             } else {
@@ -131,7 +131,7 @@ function updateListCust(CustName) {
                 tempName.style.backgroundColor = 'rgba(251,131,2,0.4)';
             }
         } else {
-            if (isCustInTruck(tempName.id) == true) {
+            if (isCustInTruck(tempName.id.replace(/%/g, ' ')) == true) {
                 tempName.style.border = '1px solid #ccc';
                 tempName.style.backgroundColor = 'white';
             } else {
@@ -221,14 +221,14 @@ function listCustomer() {
     for (var i = 0, len = customers.length; i < len; i++) {
         let tempName = customers[i].name.replace(/ /g, '%');
         if (document.getElementById('name').value == customers[i].name) {
-            if (isCustInTruck(tempName) == false) {
+            if (isCustInTruck(tempName.replace(/%/g, ' ')) == false) {
                 custsNotInCanvas++;
                 html += '<div style="background-color: rgba(251,131,2,0.4); border: 1px solid #fb8302; white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true"  id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
             } else {
                 html += '<div style="background-color: rgba(81,179,68,0.4); border: 1px solid rgb(81, 179, 68); white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true"  id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
             }
         } else {
-            if (isCustInTruck(tempName) == false) {
+            if (isCustInTruck(tempName.replace(/%/g, ' ')) == false) {
                 custsNotInCanvas++;
                 html += '<div style="background-color: rgba(179,42,52,0.4); border: 1px solid rgb(179,42,52); white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true" id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
             } else {
