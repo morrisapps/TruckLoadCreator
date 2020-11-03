@@ -27,21 +27,7 @@ Sortable.create(custList, {
         //False parameter tells onNameChange() to not call listCustomer()
         onNameChange(false);
         //Sets the border style of each element in Customer List, if element is currently selected, apply selected border color
-        for (let i = 0; i < e.target.childNodes.length; i++) {
-            if (i == e.oldIndex) {
-                if (isCustInTruck(e.target.childNodes[i].id) == true) {
-                    e.target.childNodes[i].style.border = '1px solid rgb(81, 179, 68)';
-                } else {
-                    e.target.childNodes[i].style.border = '1px solid #fb8302';
-                }
-            } else {
-                if (isCustInTruck(e.target.childNodes[i].id) == true) {
-                    e.target.childNodes[i].style.border = '1px solid white';
-                } else {
-                    e.target.childNodes[i].style.border = '1px solid rgb(179,42,52)';
-                }
-            }
-        }
+        updateListCust(custName);
     },
     onUnchoose: function (e) {
         //cListChoose is a global variable that when set to true won't change information from the canvas object deselect handle is called.
@@ -88,9 +74,9 @@ Sortable.create(custList, {
 
 function unitsOnSelect(e) {
     let id;
-    if (e.item.attributes.id.value != null){
+    if (e.item.attributes.id.value != null) {
         id = e.item.attributes.id.value;
-        if (id == previousUnitListElement){
+        if (id == previousUnitListElement) {
             previousUnitListElement = id;
         } else {
             previousUnitListElement = null;
@@ -139,14 +125,18 @@ function updateListCust(CustName) {
         if (CustName == tempName.id) {
             if (isCustInTruck(tempName.id) == true) {
                 tempName.style.border = '1px solid rgb(81, 179, 68)';
+                tempName.style.backgroundColor = 'rgba(81,179,68,0.4)';
             } else {
                 tempName.style.border = '1px solid #fb8302';
+                tempName.style.backgroundColor = 'rgba(251,131,2,0.4)';
             }
         } else {
             if (isCustInTruck(tempName.id) == true) {
                 tempName.style.border = '1px solid #ccc';
+                tempName.style.backgroundColor = 'white';
             } else {
                 tempName.style.border = '1px solid rgb(179,42,52)';
+                tempName.style.backgroundColor = 'rgba(179,42,52,0.4)';
             }
         }
     }
@@ -156,12 +146,12 @@ function updateListUnits(unit) {
     for (var i = 0, len = units.length; i < len; i++) {
         let tempName = document.getElementById(units[i].id.replace(/ /g, '%'));
         if (canvas.getActiveObject() == units[i]) {
-            tempName.style = "background-color: white; border: 1px solid rgb(81, 179, 68); white-space: nowrap; width: 99%;";
+            tempName.style = "background-color: rgba(81, 179, 68,0.4); border: 1px solid rgb(81, 179, 68); white-space: nowrap; width: 99%;";
         } else if (units[i].inCanvas != true) {
             if (units[i] === unit) {
-                tempName.style = "background-color: white; border: 1px solid #fb8302; white-space: nowrap; width: 99%;";
+                tempName.style = "background-color: rgba(251,131,2,0.4); border: 1px solid #fb8302; white-space: nowrap; width: 99%;";
             } else {
-                tempName.style = "background-color: white; border: 1px solid rgb(179,42,52); white-space: nowrap; width: 99%;";
+                tempName.style = "background-color: rgba(179,42,52,0.4); border: 1px solid rgb(179,42,52); white-space: nowrap; width: 99%;";
             }
         } else {
             tempName.style = "background-color: white; white-space: nowrap; width: 99%;";
@@ -174,12 +164,12 @@ function listUnits(unitFromList) {
     for (var i = 0, len = units.length; i < len; i++) {
         let tempName = units[i].id.replace(/ /g, '%');
         if (canvas.getActiveObject() == units[i]) {
-            html += '<div style="background-color: white; border: 1px solid rgb(81, 179, 68); white-space: nowrap; width: 99%;" class="list-group-item-unit" draggable="true" id=' + tempName + '>' + units[i].item(1).text + '</div>';
+            html += '<div style="background-color: rgba(81, 179, 68,0.4); border: 1px solid rgb(81, 179, 68); white-space: nowrap; width: 99%;" class="list-group-item-unit" draggable="true" id=' + tempName + '>' + units[i].item(1).text + '</div>';
         } else if (units[i].inCanvas != true) {
             if (units[i] === unitFromList) {
-                html += '<div style="background-color: white; border: 1px solid #fb8302; white-space: nowrap; width: 99%;" class="list-group-item-unit" draggable="true" id=' + tempName + '>' + units[i].item(1).text + '</div>';
+                html += '<div style="background-color: rgba(251,131,2,0.4); border: 1px solid #fb8302; white-space: nowrap; width: 99%;" class="list-group-item-unit" draggable="true" id=' + tempName + '>' + units[i].item(1).text + '</div>';
             } else {
-                html += '<div style="background-color: white; border: 1px solid rgb(179,42,52); white-space: nowrap; width: 99%;" class="list-group-item-unit" draggable="true" id=' + tempName + '>' + units[i].item(1).text + '</div>';
+                html += '<div style="background-color: rgba(179,42,52,0.4); border: 1px solid rgb(179,42,52); white-space: nowrap; width: 99%;" class="list-group-item-unit" draggable="true" id=' + tempName + '>' + units[i].item(1).text + '</div>';
             }
         } else {
             html += '<div style="background-color: white; white-space: nowrap; width: 99%;" class="list-group-item-unit" draggable="true" id=' + tempName + '>' + units[i].item(1).text + '</div>';
@@ -216,13 +206,13 @@ function listCustomer() {
         let tempName = customers[i].name.replace(/ /g, '%');
         if (document.getElementById('name').value == customers[i].name) {
             if (isCustInTruck(tempName) == false) {
-                html += '<div style="background-color: white; border: 1px solid #fb8302; white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true"  id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
+                html += '<div style="background-color: rgba(251,131,2,0.4); border: 1px solid #fb8302; white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true"  id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
             } else {
-                html += '<div style="background-color: white; border: 1px solid rgb(81, 179, 68); white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true"  id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
+                html += '<div style="background-color: rgba(81,179,68,0.4); border: 1px solid rgb(81, 179, 68); white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true"  id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
             }
         } else {
             if (isCustInTruck(tempName) == false) {
-                html += '<div style="background-color: white; border: 1px solid rgb(179,42,52); white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true" id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
+                html += '<div style="background-color: rgb(179,42,52,0.4); border: 1px solid rgb(179,42,52); white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true" id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
             } else {
                 html += '<div style="background-color: white; white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true" id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';
             }
