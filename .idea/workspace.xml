@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Updated Unit List and Customer List colors to have a colored background associated to the border color.">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Implemented new information for customers and units not in the truck, but only in list.&#10;&#10;Print now checks if there are units not in canvas and displays a warning to continue if there is.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bug List.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Bug List.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/print.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/print.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/listControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/listControl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +59,7 @@
       <workItem from="1604277746933" duration="66000" />
       <workItem from="1604277824940" duration="92000" />
       <workItem from="1604290187003" duration="4904000" />
-      <workItem from="1604328786850" duration="23753000" />
+      <workItem from="1604328786850" duration="25138000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -106,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604376455812</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implemented new information for customers and units not in the truck, but only in list.&#10;&#10;Print now checks if there are units not in canvas and displays a warning to continue if there is.">
+      <created>1604378692712</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604378692712</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +123,8 @@
     <MESSAGE value="Cleaned up code. Added Licensing to each file" />
     <MESSAGE value="Fixed issue with Add button not updating current customer.&#10;&#10;Fixed issue selecting from unit list not updating current customer.&#10;&#10;Fixed selecting between unadded units in unit list not immediately putting them into edit mode" />
     <MESSAGE value="Updated Unit List and Customer List colors to have a colored background associated to the border color." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Unit List and Customer List colors to have a colored background associated to the border color." />
+    <MESSAGE value="Implemented new information for customers and units not in the truck, but only in list.&#10;&#10;Print now checks if there are units not in canvas and displays a warning to continue if there is." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented new information for customers and units not in the truck, but only in list.&#10;&#10;Print now checks if there are units not in canvas and displays a warning to continue if there is." />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">
