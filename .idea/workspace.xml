@@ -24,11 +24,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed rare bug not allowing customers to not be added by forcing customer name to be not a number">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/rack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/rack.js" afterDir="false" />
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Rack is now Customer list, appends -RK if customer is in rack">
       <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +81,7 @@
       <workItem from="1604277824940" duration="92000" />
       <workItem from="1604290187003" duration="4904000" />
       <workItem from="1604328786850" duration="30249000" />
-      <workItem from="1604437621500" duration="3036000" />
+      <workItem from="1604437621500" duration="3363000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -157,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604434761542</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Rack is now Customer list, appends -RK if customer is in rack">
+      <created>1604440876023</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1604440876023</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +189,8 @@
     <MESSAGE value="Fixed Unit wouldn't stay highlighted as editing in list if also not in canvas." />
     <MESSAGE value="Fixed issue with Customer list selection being null.&#10;&#10;Moved around items in sidebar to be more convenient." />
     <MESSAGE value="Fixed rare bug not allowing customers to not be added by forcing customer name to be not a number" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed rare bug not allowing customers to not be added by forcing customer name to be not a number" />
+    <MESSAGE value="Rack is now Customer list, appends -RK if customer is in rack" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rack is now Customer list, appends -RK if customer is in rack" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">
