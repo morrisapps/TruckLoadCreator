@@ -348,6 +348,8 @@ function setUnitFields(unit) {
     document.getElementById("drop").value = unit.drop;
     document.getElementById("height").value = unit.unitHeight;
     document.getElementById("width").value = unit.unitWidth;
+    currentCustomerName = unit.customer.toString();
+    currentDrop = unit.drop;
 }
 
 //Runs when objects are selected
@@ -368,9 +370,8 @@ function selectObject(obj) {
             unitSelected = true;
         }
         setUnitFields(unit);
-        currentCustomerName = unit.customer.toString();
+
         setBundleCheck(currentCustomerName);
-        currentDrop = unit.drop;
         listCustomer();
         updateListUnits(unit);
     }

@@ -9,6 +9,7 @@ let cList;
 let custList = document.getElementById('custList');
 let unitsList = document.getElementById('unitList');
 let cListChoose = false;
+let previousUnitListElement = null;
 
 //Notes
 //Due to limitations with html code, ID cannot contain whitespace.
@@ -86,26 +87,39 @@ Sortable.create(custList, {
 });
 
 function unitsOnSelect(e) {
-    let activeUnit = getIDUnit(e.item.attributes.id.value.replace(/%/g, " "));
-    if (activeUnit != null) {
-        canvas.discardActiveObject().requestRenderAll();
-        if (activeUnit.inCanvas == true) {
-            canvas.setActiveObject(activeUnit).requestRenderAll();
-            document.getElementById('ae').value = '';
-            document.getElementById('location').value = '';
-            editOff();
+    let id;
+    if (e.item.attributes.id.value != null){
+        id = e.item.attributes.id.value;
+        if (id == previousUnitListElement){
+            previousUnitListElement = id;
         } else {
-            editObject(null, activeUnit);
+            previousUnitListElement = null;
+            editing = false;
         }
-        if (editing == false) {
-            updateListUnits();
-        } else {
-            updateListUnits(activeUnit);
+        let activeUnit = getIDUnit(id.replace(/%/g, " "));
+        if (activeUnit != null) {
+            canvas.discardActiveObject().requestRenderAll();
+            if (activeUnit.inCanvas == true) {
+                canvas.setActiveObject(activeUnit).requestRenderAll();
+                document.getElementById('ae').value = '';
+                document.getElementById('location').value = '';
+                editOff();
+            } else {
+                editObject(null, activeUnit);
+            }
+            if (editing == false) {
+                updateListUnits();
+            } else {
+                updateListUnits(activeUnit);
+            }
+            updateListCust(activeUnit.customer);
+            createSide();
+            setUnitFields(activeUnit);
         }
-        updateListCust(activeUnit.customer);
-        createSide();
     }
+    previousUnitListElement = id;
 }
+
 
 //Create sortable Unit list
 Sortable.create(unitsList, {
