@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed Unit wouldn't stay highlighted as editing in list if also not in canvas.">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed issue with Customer list selection being null.&#10;&#10;Moved around items in sidebar to be more convenient.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/listControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/listControl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +58,7 @@
       <workItem from="1604277746933" duration="66000" />
       <workItem from="1604277824940" duration="92000" />
       <workItem from="1604290187003" duration="4904000" />
-      <workItem from="1604328786850" duration="29745000" />
+      <workItem from="1604328786850" duration="30249000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -118,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604380080425</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed issue with Customer list selection being null.&#10;&#10;Moved around items in sidebar to be more convenient.">
+      <created>1604384648033</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604384648033</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,7 +138,8 @@
     <MESSAGE value="Updated Unit List and Customer List colors to have a colored background associated to the border color." />
     <MESSAGE value="Implemented new information for customers and units not in the truck, but only in list.&#10;&#10;Print now checks if there are units not in canvas and displays a warning to continue if there is." />
     <MESSAGE value="Fixed Unit wouldn't stay highlighted as editing in list if also not in canvas." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Unit wouldn't stay highlighted as editing in list if also not in canvas." />
+    <MESSAGE value="Fixed issue with Customer list selection being null.&#10;&#10;Moved around items in sidebar to be more convenient." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue with Customer list selection being null.&#10;&#10;Moved around items in sidebar to be more convenient." />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">
