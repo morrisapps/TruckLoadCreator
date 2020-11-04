@@ -7,10 +7,7 @@
 var rackBox;
 var rackText;
 var rackCustomers = [];
-var rackCustomers1;
-var rackCustomers2;
-var rackCustomers3;
-var rackCustomers4;
+
 
 function rackLoad() {
     rackBox = new fabric.Rect({
@@ -102,7 +99,7 @@ function rackLoad() {
 
 function updateRack() {
     let i = 0;
-    while (i < customers.length) {
+    while (i <= customers.length) {
         if (customers[i] != null) {
             let custText = "(" + customers[i].drop + ") " + customers[i].name;
             let inRack = '';
@@ -117,6 +114,8 @@ function updateRack() {
                     break;
                 }
             }
+        }else {
+            rack.item(i+2).set({text: ''});
         }
         canvas.requestRenderAll();
         i++;
