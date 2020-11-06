@@ -128,21 +128,15 @@ function load(){
     input.attr("type", "file");
     input.trigger('click');
     input.change(function(i){
-        // setting up the reader
         var reader = new FileReader();
         reader.readAsText(i.target.files[0]);
-
-        // here we tell the reader what to do when it's done reading...
         reader.onload = readerEvent => {
             let content = JSON.parse(readerEvent.target.result);
 
-            //Reload all items
+            //Reinitialize all units
             canvas.forEachObject(function (obj) {
                 if (obj.unit == true){
                     canvas.remove(obj);
-                }else if (obj.isCounter == true){
-                    obj.text = '43';
-                    console.log(obj);
                 }
             });
             units = [];
@@ -158,6 +152,7 @@ function load(){
             for (let tCounter of topCounters){ tCounter.text = ''; };
             for (let tCounter of botCounters){ tCounter.text = ''; };
 
+            //Restore units
             content[0].forEach(function (unit){
                 if (unit != null){
                     createUnit(unit.unitWidth, unit.unitHeight, unit.customer, unit.ae, unit.color, unit.fill, unit.left, unit.top, unit.drop, unit.location, unit.inCanvas);

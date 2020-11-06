@@ -24,12 +24,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Added version to scripts on load to trigger re-caching files">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Hot fix: Customers in rack would not be removed if only in rack.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/rack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/rack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +73,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -94,6 +95,7 @@
       <workItem from="1604463100363" duration="1176000" />
       <workItem from="1604528243671" duration="958000" />
       <workItem from="1604531772003" duration="1176000" />
+      <workItem from="1604601537776" duration="3875000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -225,6 +227,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604294755939" />
+    <state width="235" height="242" key="Git.Branch.Popup" timestamp="1604533407861">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="235" height="242" key="Git.Branch.Popup/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604533407861" />
     <state x="832" y="418" key="Github.ShareDialog" timestamp="1604351138275">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -297,13 +303,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="119" key="GridCell.Tab.3.right/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604437605292" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604464462038">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604534971523">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604382155003" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604434809744" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604464462038" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604533437209" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604352162689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
