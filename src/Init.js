@@ -7,7 +7,7 @@
 //Place all global variables here
 
 //Version number
-let version = "0.12.1";
+let version = "0.12.2";
 
 //TruckID used for loading the appropriate size truck
 let truckid = '';
@@ -89,6 +89,9 @@ window.onbeforeunload = function() {
 
 //Used for the unit being edited
 let editingUnit;
+
+//Option variables
+let tagBrackets = document.getElementById('unitBrackets');
 
 
 //Creates Change Log dialog
