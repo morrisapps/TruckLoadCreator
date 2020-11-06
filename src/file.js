@@ -112,6 +112,10 @@ function save(){
 
 }
 
+function updateUnits(updateUnits){
+
+}
+
 function load(){
     //Reset all input to blank
     _customer.value = '';
@@ -162,6 +166,7 @@ function load(){
                     }
                 }
             });
+
             customers = content[1];
 
             //Recount total units and customers
