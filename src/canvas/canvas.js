@@ -169,16 +169,16 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
     }
     if (getDCust.name != custName && getDCust != 'none') {
         addError = addError + "Drop " + unitDrop + " is already assigned to " + getDCust.name + "\n";
-        document.getElementById("drop").value = '';
+        _drop.value = '';
     }
     if (dropError != '') {
         addError = addError + dropError;
     }
     //Check if tag is possible duplicate
-    let duplicateUnit = getTagUnit(document.getElementById("ae").value);
+    let duplicateUnit = getTagUnit(_tag.value);
     let response = true;
     if (duplicateUnit != null && duplicateUnit.id != unitid) {
-        response = confirm("The tag " + document.getElementById("ae").value + " matches " + duplicateUnit.id + "\n Are you sure you want to add?");
+        response = confirm("The tag " + _tag.value + " matches " + duplicateUnit.id + "\n Are you sure you want to add?");
     }
     if (addError == "" && response == true) {
         if (inCanvas) {
@@ -343,10 +343,10 @@ function createCanvas() {
 }
 
 function setUnitFields(unit) {
-    document.getElementById("name").value = unit.customer.toString();
-    document.getElementById("drop").value = unit.drop;
-    document.getElementById("height").value = unit.unitHeight;
-    document.getElementById("width").value = unit.unitWidth;
+    _customer.value = unit.customer.toString();
+    _drop.value = unit.drop;
+    _height.value = unit.unitHeight;
+    _width.value = unit.unitWidth;
     currentCustomerName = unit.customer.toString();
     currentDrop = unit.drop;
 }
@@ -364,8 +364,8 @@ function selectObject(obj) {
     if (unit.unit == true) {
         if (unitSelected == false) {
             unit.isSelected = true;
-            selectCurrentCustomer = document.getElementById("name").value;
-            selectCurrentDrop = document.getElementById("drop").value;
+            selectCurrentCustomer = _customer.value;
+            selectCurrentDrop = _drop.value;
             unitSelected = true;
         }
         setUnitFields(unit);
@@ -380,10 +380,10 @@ function deselectObject(obj) {
     if (!(obj == null || obj.deselected === undefined)) {
         if (cListChoose == false) {
             obj.deselected[0].isSelected = false;
-            document.getElementById("ae").value = "";
-            document.getElementById("location").value = "";
-            document.getElementById("name").value = selectCurrentCustomer;
-            document.getElementById("drop").value = selectCurrentDrop;
+            _tag.value = "";
+            _location.value = "";
+            _customer.value = selectCurrentCustomer;
+            _drop.value = selectCurrentDrop;
             currentCustomerName = selectCurrentCustomer;
             setBundleCheck(currentCustomerName);
             editing = false;
@@ -415,9 +415,9 @@ function objectIntersects(obj, target) {
 createCanvas();
 
 $(document).ready(function () {
-    document.getElementById("ae").value = "";
-    document.getElementById("width").value = 96;
-    document.getElementById("height").value = 10;
+    _tag.value = "";
+    _width.value = 96;
+    _height.value = 10;
 
     window.topCounters = new Array();
     window.botCounters = new Array();

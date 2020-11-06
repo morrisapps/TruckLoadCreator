@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
-function printPageArea(areaID) {
+function printPageArea() {
     //Checks if any units are not yet in the the truck from unit list
     let response = true;
     if (unitsNotInCanvas > 0){

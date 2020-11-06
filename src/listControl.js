@@ -22,7 +22,7 @@ let unitsNotInCanvas;
 Sortable.create(custList, {
     onChoose: function (e) {
         let custName = e.item.attributes.id.value.replace(/%/g, " ");
-        document.getElementById("name").value = custName;
+        _customer.value = custName;
 
         //Calls onNameChange() to set customer information in the sideway as it's selected.
         //False parameter tells onNameChange() to not call listCustomer()
@@ -87,8 +87,8 @@ function unitsOnSelect(e) {
             canvas.discardActiveObject().requestRenderAll();
             if (activeUnit.inCanvas == true) {
                 canvas.setActiveObject(activeUnit).requestRenderAll();
-                document.getElementById('ae').value = '';
-                document.getElementById('location').value = '';
+                _tag.value = '';
+                _location.value = '';
                 editOff();
             } else {
                 editObject(null, activeUnit);
@@ -220,7 +220,7 @@ function listCustomer() {
     let custsNotInCanvas = 0;
     for (var i = 0, len = customers.length; i < len; i++) {
         let tempName = customers[i].name.replace(/ /g, '%');
-        if (document.getElementById('name').value == customers[i].name) {
+        if (_customer.value == customers[i].name) {
             if (isCustInTruck(tempName.replace(/%/g, ' ')) == false) {
                 custsNotInCanvas++;
                 html += '<div style="background-color: rgba(251,131,2,0.4); border: 1px solid #fb8302; white-space: nowrap; width: 99%; max-width: 99%; overflow: hidden;" class="list-group-item-cust" draggable="true"  id=' + tempName + '>' + '(' + customers[i].drop + ') ' + customers[i].name + '  </div>';

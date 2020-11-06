@@ -77,10 +77,10 @@ function editObject(eventData, target){
     if (editing == false){
         editing = true;
         editingUnit = target;
-        document.getElementById("ae").value = target.ae;
-        document.getElementById("height").value = target.unitHeight;
-        document.getElementById("width").value = target.unitWidth;
-        document.getElementById("location").value = target.location;
+        _tag.value = target.ae;
+        _height.value = target.unitHeight;
+        _width.value = target.unitWidth;
+        _location.value = target.location;
         document.getElementById('add').outerHTML = '<button style="margin-top: 20px;" class="tip expand" id="add" name="update" data-title="Update Unit" onclick="AddUpdateButton()">Update</button>';
         document.getElementById("unitContainer").style.borderColor = "#fb8302";
         target.set({'borderColor':'#fb8302'});
@@ -93,8 +93,8 @@ function editObject(eventData, target){
 
 //Disables object from being edited
 function editOff(unit){
-    document.getElementById("ae").value = '';
-    document.getElementById("location").value = '';
+    _tag.value = '';
+    _location.value = '';
     document.getElementById('add').outerHTML = '<button style="margin-top: 20px;" class="tip expand" id="add" name="add" data-title="Add to List" onclick="AddUpdateButton()">Add</button>';
     if (unit != null){
         unit.set({'borderColor':'rgb(178,204,255)'});

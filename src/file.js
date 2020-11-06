@@ -7,7 +7,6 @@
 function save(){
     //Saves important unit information
     let savedUnits = [];
-    console.log(units);
     units.forEach(function (unit){
         let saved = ({
             unitHeight: unit.unitHeight,
@@ -115,12 +114,12 @@ function save(){
 
 function load(){
     //Reset all input to blank
-    document.getElementById("name").value = '';
-    document.getElementById("drop").value = '';
-    document.getElementById("hasBundle").value = false;
-    document.getElementById("ae").value = '';
-    document.getElementById("height").value = '';
-    document.getElementById("width").value = '';
+    _customer.value = '';
+    _drop.value = '';
+    _rack.value = false;
+    _tag.value = '';
+    _height.value = '';
+    _width.value = '';
     createSide();
 
     //Retrieving data
@@ -167,7 +166,7 @@ function load(){
 
             //Recount total units and customers
             document.getElementById("tUnits").innerText = units.length.toString();
-            document.getElementById("drops").innerText = customers.length.toString();
+            _drop.innerText = customers.length.toString();
 
             updateRack();
             sortCustomer();

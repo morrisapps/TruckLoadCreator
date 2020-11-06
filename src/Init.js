@@ -64,6 +64,15 @@ var bot1080Units;
 var bot1128Units;
 var bot1176Units;
 
+//Variables representing unit/customer input fields
+let _width = document.getElementById('width');
+let _height = document.getElementById('height');
+let _customer = document.getElementById('name');
+let _drop = document.getElementById('drop');
+let _tag = document.getElementById('ae');
+let _rack = document.getElementById('hasBundle');
+let _location = document.getElementById('location');
+
 
 //These variables are used for selecting objects and deselecting
 let selectCurrentCustomer = '';

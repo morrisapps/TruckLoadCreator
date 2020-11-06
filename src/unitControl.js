@@ -11,21 +11,21 @@ function AddUpdateButton() {
         updateUnit()
     } else {
         //Adding Units to list
-        if (document.getElementById("name").value == '') {
+        if (_customer.value == '') {
             alert("Customer cannot be empty");
-        } else if (document.getElementById("drop").value == '') {
+        } else if (_drop.value == '') {
             alert("Drop cannot be empty");
-        } else if (document.getElementById("ae").value == '') {
+        } else if (_tag.value == '') {
             alert("Tag cannot be empty");
-        } else if (!isNaN(document.getElementById('name').value)){
+        } else if (!isNaN(_customer.value)){
             alert("Customer must contain a letter");
         } else {
-            let AddError = Add(+document.getElementById('width').value, +document.getElementById('height').value, document.getElementById('name').value, document.getElementById('ae').value, 'black', 'white', 200, 200, document.getElementById('drop').value, document.getElementById('location').value, false);
+            let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, 'black', 'white', 200, 200, _drop.value, _location.value, false);
             if (AddError == '') {
                 updateHeightCount(canvas.getActiveObject());
-                addCustomer(document.getElementById("name").value, document.getElementById("drop").value);
-                document.getElementById('ae').value = '';
-                document.getElementById('location').value = '';
+                addCustomer(_customer.value, _drop.value);
+                _tag.value = '';
+                _location.value = '';
                 document.getElementById('add').outerHTML = '<button style="margin-top: 20px;" class="tip expand" id="add" name="add" data-title="Added to List!" onclick="AddUpdateButton()">Added</button>';
             }
         }
@@ -39,6 +39,6 @@ function RemoveButton() {
         deleteObject(null, editingUnit);
         editOff(null);
         document.getElementById('add').outerHTML = '<button style="margin-top: 20px;" class="tip expand" id="add" name="add" data-title="Deleted from List!" onclick="AddUpdateButton()">Deleted</button>';
-        document.getElementById('location').value = '';
+        _location.value = '';
     }
 }

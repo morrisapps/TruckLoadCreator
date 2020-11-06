@@ -262,37 +262,37 @@ function handleDrop(e) {
         //Add sideUnit
         if (img.id == "sideUnit") {
             //Adding Units
-            if (document.getElementById("name").value == '') {
+            if (_customer.value == '') {
                 alert("Customer cannot be empty");
-            } else if (document.getElementById("drop").value == '') {
+            } else if (_drop.value == '') {
                 alert("Drop cannot be empty");
-            } else if (document.getElementById("ae").value == '') {
+            } else if (_tag.value == '') {
                 alert("Tag cannot be empty");
-            } else if (!isNaN(document.getElementById('name').value)){
+            } else if (!isNaN(_customer.value)){
                 alert("Customer must contain a letter");
             }
             else {
                 editing = false;
                 let addError = Add(
-                    +document.getElementById("width").value,
-                    +document.getElementById("height").value,
-                    document.getElementById("name").value,
-                    document.getElementById("ae").value,
+                    +_width.value,
+                    +_height.value,
+                    _customer.value,
+                    _tag.value,
                     currentColor,
                     currentFill,
                     //Takes the mouse coordinates multiplies by invertedWidthRatio and subtracts width or height divided by 2.
                     //Does not add divided by two because the canvas is 2x the pixel size
-                    e.layerX * invertedWidthRatio - document.getElementById("width").value,
-                    e.layerY * invertedWidthRatio - document.getElementById("height").value,
-                    document.getElementById("drop").value,
-                    document.getElementById('location').value,
+                    e.layerX * invertedWidthRatio - _width.value,
+                    e.layerY * invertedWidthRatio - _height.value,
+                    _drop.value,
+                    _location.value,
                     true
                 );
                 if (addError == "") {
-                    addCustomer(document.getElementById("name").value, document.getElementById("drop").value);
+                    addCustomer(_customer.value, _drop.value);
                 }
-                document.getElementById("ae").value = '';
-                document.getElementById("location").value = '';
+                _tag.value = '';
+                _location.value = '';
             }
         }
         //Add comment textbox
