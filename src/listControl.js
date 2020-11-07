@@ -99,6 +99,7 @@ function unitsOnSelect(e) {
                 updateListUnits(activeUnit);
             }
             updateListCust(activeUnit.customer);
+            setBundleCheck(activeUnit.customer);
             createSide();
             setUnitFields(activeUnit);
         }

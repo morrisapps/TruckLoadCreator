@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Unit tag now goes on bottom if text is too wide">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="&#10;Fix bug relating to checking the rack toggle if customer is in rack when typing in customer name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$Bug List.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/listControl.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604703306130</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="&#10;Fix bug relating to checking the rack toggle if customer is in rack when typing in customer name">
+      <created>1604750840985</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1604750840985</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +241,8 @@
     <MESSAGE value="Creation of global unit/customer input field variables for further simplification." />
     <MESSAGE value="Units now have brackets around units" />
     <MESSAGE value="Units now have brackets around tag numbers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Units now have brackets around tag numbers" />
+    <MESSAGE value="&#10;Fix bug relating to checking the rack toggle if customer is in rack when typing in customer name" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;Fix bug relating to checking the rack toggle if customer is in rack when typing in customer name" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">
