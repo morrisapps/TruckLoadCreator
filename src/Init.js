@@ -69,7 +69,7 @@ let _width = document.getElementById('width');
 let _height = document.getElementById('height');
 let _customer = document.getElementById('name');
 let _drop = document.getElementById('drop');
-let _tag = document.getElementById('ae');
+let _tag = document.getElementById('tag');
 let _rack = document.getElementById('hasBundle');
 let _location = document.getElementById('location');
 
