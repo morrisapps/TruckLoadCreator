@@ -113,6 +113,9 @@ Sortable.create(unitsList, {
     onChoose: function (e) {
         unitsOnSelect(e);
     },
+    onStart: function (e) {
+        unitsOnSelect(e);
+    },
     chosenClass: 'listChosen',
     sort: false,
     animation: 150
