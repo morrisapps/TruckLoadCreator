@@ -13,29 +13,16 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:github/Dev" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed issue with 48&quot; width units height not being bolded">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Unit tag now goes on bottom if text is too wide">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/~$Bug List.xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +74,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -214,14 +201,7 @@
       <option name="project" value="LOCAL" />
       <updated>1604703306130</updated>
     </task>
-    <task id="LOCAL-00016" summary="Fixed issue with 48&quot; width units height not being bolded">
-      <created>1604705865940</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1604705865940</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,19 +212,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="github/Dev" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -267,8 +235,7 @@
     <MESSAGE value="Creation of global unit/customer input field variables for further simplification." />
     <MESSAGE value="Units now have brackets around units" />
     <MESSAGE value="Units now have brackets around tag numbers" />
-    <MESSAGE value="Fixed issue with 48&quot; width units height not being bolded" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue with 48&quot; width units height not being bolded" />
+    <option name="LAST_COMMIT_MESSAGE" value="Units now have brackets around tag numbers" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">
@@ -283,11 +250,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604294755939" />
-    <state width="247" height="254" key="Git.Branch.Popup" timestamp="1604705579445">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="178" height="180" key="Git.Branch.Popup" timestamp="1604749843154">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="247" height="254" key="Git.Branch.Popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604705579445" />
-    <state width="174" height="176" key="Git.Branch.Popup/0.0.1366.728@0.0.1366.728" timestamp="1604690270232" />
+    <state width="178" height="180" key="Git.Branch.Popup/0.0.1366.728@0.0.1366.728" timestamp="1604749843154" />
     <state width="235" height="242" key="Git.Branch.Popup/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604533407861" />
     <state x="832" y="418" key="Github.ShareDialog" timestamp="1604351138275">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -361,10 +327,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="119" key="GridCell.Tab.3.right/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604437605292" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604705870648">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1604703314443">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604705870648" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604382155003" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604434809744" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604703314443" />
