@@ -321,56 +321,6 @@ sideElement {
     transition: all .2s .1s ease-in-out;
 }
 
-.previewTip {
-    position: relative;
-}
-.previewTip:before,
-.previewTip:after {
-    display: block;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-}
-.previewTip:after {
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid rgba(0,0,0,.75);
-    border-left: 6px solid transparent;
-    content: '';
-    height: 0;
-    top: 50px;
-    left: 50px;
-    width: 0;
-}
-.previewTip:before {
-    background: rgba(0,0,0,.75);
-    border-radius: 2px;
-    color: #fff;
-    content: attr(data-title);
-    font-size: 14px;
-    padding: 6px 10px;
-    top: 56px;
-    left: 0px;
-    white-space: nowrap;
-}
-
-/* expand */
-.previewTip.expand:before {
-    transform: scale3d(.2,.2,1);
-    transition: all .2s ease-in-out;
-}
-.previewTip.expand:after {
-    transform: translate3d(0,6px,0);
-    transition: all .1s ease-in-out;
-}
-.previewTip.expand:hover:before,
-.previewTip.expand:hover:after {
-    opacity: 1;
-    transform: scale3d(1,1,1);
-}
-.previewTip.expand:hover:after {
-    transition: all .2s .1s ease-in-out;
-}
-
 #add {
     position: relative;
     background-color: #4CAF50;
@@ -522,7 +472,6 @@ sideElement {
         box-shadow: 0 0 5px rgb(81, 203, 238);
         padding: 3px 0px 3px 3px;
         margin: 5px 1px 3px 0px;
-
         border: 1px solid rgba(81, 203, 238, 1);
     }
 
