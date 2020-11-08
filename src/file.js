@@ -112,10 +112,6 @@ function save(){
 
 }
 
-function updateUnits(updateUnits){
-
-}
-
 function load(){
     //Reset all input to blank
     _customer.value = '';
