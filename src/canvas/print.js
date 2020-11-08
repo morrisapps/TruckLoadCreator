@@ -14,8 +14,6 @@ function printPageArea() {
         //Remove Height Lines from print
         var i = 0;
         while (i <= 11) {
-            topCounters[i].opacity = 0;
-            botCounters[i].opacity = 0;
             topLines[i].opacity = 0;
             botLines[i].opacity = 0;
             i++;
@@ -44,14 +42,6 @@ function printPageArea() {
 
         //Calls print
         WinPrint.document.write("<style>@page {   size: Letter landscape; margin: 3mm;  }</style>  " + canvas.toSVG() + " ");
-
-        //Restore Height Lines
-        var b = 0;
-        while (b <= 11) {
-            topCounters[b].opacity = 1;
-            botCounters[b].opacity = 1;
-            b++;
-        }
 
         //Restore zoom
         canvas.setZoom(tempZoom);
