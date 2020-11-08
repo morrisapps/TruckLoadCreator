@@ -178,23 +178,6 @@ function load(){
             sortUnit();
             textLoad();
 
-            //Restore text edit fields
-            driverTextEdit.text = content[2].driverTextEdit;
-            dropsTextEdit.text = content[2].dropsTextEdit;
-            shipperTextEdit.text = content[2].shipperTextEdit;
-            trailerTextEdit.text = content[2].trailerTextEdit;
-            modeTextEdit.text = content[2].modeTextEdit;
-            loadTextEdit.text = content[2].loadTextEdit;
-            //Triggers selection and deselection of each field to call handlers to set properties
-            canvas.setActiveObject(driverTextEdit);
-            canvas.setActiveObject(dropsTextEdit);
-            canvas.setActiveObject(shipperTextEdit);
-            canvas.setActiveObject(trailerTextEdit);
-            canvas.setActiveObject(modeTextEdit);
-            canvas.setActiveObject(loadTextEdit);
-            canvas.discardActiveObject();
-            canvas.requestRenderAll();
-
             //Restore racks
             content[3].forEach(function (rack){
                 let savedRack = createRack(rack.top,rack.left,rack.id,rack.drag);
@@ -213,6 +196,25 @@ function load(){
             });
             //Restore truckid and truck size
             truckLoad(content[6]);
+
+            //Restore text edit fields
+            driverTextEdit.text = content[2].driverTextEdit;
+            dropsTextEdit.text = content[2].dropsTextEdit;
+            shipperTextEdit.text = content[2].shipperTextEdit;
+            trailerTextEdit.text = content[2].trailerTextEdit;
+            modeTextEdit.text = content[2].modeTextEdit;
+            loadTextEdit.text = content[2].loadTextEdit;
+
+            //Triggers selection and deselection of each field to call handlers to set properties
+            canvas.setActiveObject(driverTextEdit);
+            canvas.setActiveObject(dropsTextEdit);
+            canvas.setActiveObject(shipperTextEdit);
+            canvas.setActiveObject(trailerTextEdit);
+            canvas.setActiveObject(modeTextEdit);
+            canvas.setActiveObject(loadTextEdit);
+            canvas.discardActiveObject();
+            canvas.requestRenderAll();
+
 
         }
     });
