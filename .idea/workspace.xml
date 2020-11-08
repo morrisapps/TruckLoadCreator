@@ -26,11 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="&#10;Fix bug relating to checking the rack toggle if customer is in rack when typing in customer name">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="&#10;Fixed preview css so that unit height does not change element height. Was causing issues with drag and drop unit lists.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/handle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/handle.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +103,7 @@
       <workItem from="1604531772003" duration="1176000" />
       <workItem from="1604601537776" duration="3875000" />
       <workItem from="1604696856144" duration="6084000" />
-      <workItem from="1604791599480" duration="4001000" />
+      <workItem from="1604791599480" duration="4646000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -217,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604750840985</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="&#10;Fixed preview css so that unit height does not change element height. Was causing issues with drag and drop unit lists.">
+      <created>1604796189451</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1604796189451</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +271,8 @@
     <MESSAGE value="Units now have brackets around units" />
     <MESSAGE value="Units now have brackets around tag numbers" />
     <MESSAGE value="&#10;Fix bug relating to checking the rack toggle if customer is in rack when typing in customer name" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;Fix bug relating to checking the rack toggle if customer is in rack when typing in customer name" />
+    <MESSAGE value="&#10;Fixed preview css so that unit height does not change element height. Was causing issues with drag and drop unit lists." />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;Fixed preview css so that unit height does not change element height. Was causing issues with drag and drop unit lists." />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">

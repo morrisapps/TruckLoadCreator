@@ -66,7 +66,7 @@ function createDash(top, left, width) {
             bl: false, // bottom-left
             mb: false, //middle-bottom
             br: false, //bottom-right
-            mtr: false //rotating-point
+            mtr: true //rotating-point
         });
         fabric.Object.prototype.controls.mtr.cornerSize = 24;
         unitButtons.offsetX = 6;
