@@ -14,6 +14,9 @@ function updateUnits(updateUnits){
     units = [];
 
     //Reinitialize counters
+    initializeCounters();
+    heightLines();
+
     topUnits.forEach(function (tUnit){ tUnit = new Array(); });
     botUnits.forEach(function (bUnit){ bUnit = new Array(); });
 
@@ -163,9 +166,8 @@ function load(){
         reader.onload = readerEvent => {
             let content = JSON.parse(readerEvent.target.result);
 
+            //Recreate units
             updateUnits(content[0]);
-            initializeCounters();
-            heightLines();
 
             customers = content[1];
 

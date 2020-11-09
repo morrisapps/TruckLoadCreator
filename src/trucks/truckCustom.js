@@ -24,9 +24,7 @@ function truckLoad(id) {
 
 function heightLines() {
     canvas.forEachObject(function (obj) {
-        if (obj instanceof fabric.Line && obj.tool != true) {
-            canvas.remove(obj);
-        } else if (obj.isCounter == true) {
+        if (obj.isCounter == true) {
             canvas.remove(obj);
         }
     });

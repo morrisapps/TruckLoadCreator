@@ -31,12 +31,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Updated changelog">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Unit selection box is now closer to unit's text if the text went outside of the unit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trucks/truckCustom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/trucks/truckCustom.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +111,7 @@
       <workItem from="1604601537776" duration="3875000" />
       <workItem from="1604696856144" duration="6084000" />
       <workItem from="1604791599480" duration="5590000" />
-      <workItem from="1604927315366" duration="6738000" />
+      <workItem from="1604927315366" duration="8647000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -246,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604927461897</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Unit selection box is now closer to unit's text if the text went outside of the unit">
+      <created>1604956232464</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1604956232464</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +303,8 @@
     <MESSAGE value="&#10;Fixed preview css so that unit height does not change element height. Was causing issues with drag and drop unit lists." />
     <MESSAGE value="Fixed bug relating to unit edit button being disabled if using straps in truck" />
     <MESSAGE value="Updated changelog" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated changelog" />
+    <MESSAGE value="Unit selection box is now closer to unit's text if the text went outside of the unit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unit selection box is now closer to unit's text if the text went outside of the unit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">
@@ -408,6 +416,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="774" y="364" key="git4idea.ui.GitTagDialog/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604366798897" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604958177395">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604958177395" />
     <state x="682" y="432" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604463075377">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
