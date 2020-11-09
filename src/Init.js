@@ -91,7 +91,7 @@ window.onbeforeunload = function() {
 let editingUnit;
 
 //Option variables
-let tagBrackets = document.getElementById('unitBrackets');
+let _tagBrackets = document.getElementById('unitBrackets');
 
 
 //Creates Change Log dialog

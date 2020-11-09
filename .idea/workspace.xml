@@ -31,12 +31,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Unit selection box is now closer to unit's text if the text went outside of the unit">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed bug toggling unit brackets does not reset height counters">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/trucks/truckCustom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/trucks/truckCustom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +110,7 @@
       <workItem from="1604601537776" duration="3875000" />
       <workItem from="1604696856144" duration="6084000" />
       <workItem from="1604791599480" duration="5590000" />
-      <workItem from="1604927315366" duration="8647000" />
+      <workItem from="1604927315366" duration="9657000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -253,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604956232464</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fixed bug toggling unit brackets does not reset height counters">
+      <created>1604958365547</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1604958365547</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +310,8 @@
     <MESSAGE value="Fixed bug relating to unit edit button being disabled if using straps in truck" />
     <MESSAGE value="Updated changelog" />
     <MESSAGE value="Unit selection box is now closer to unit's text if the text went outside of the unit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unit selection box is now closer to unit's text if the text went outside of the unit" />
+    <MESSAGE value="Fixed bug toggling unit brackets does not reset height counters" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug toggling unit brackets does not reset height counters" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">
@@ -397,14 +404,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="119" key="GridCell.Tab.3.right/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604437605292" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604927483261">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604958370356">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604382155003" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604434809744" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604703314443" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604464462038" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604958370356" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604791606800">

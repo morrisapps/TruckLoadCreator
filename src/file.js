@@ -106,6 +106,9 @@ function save(){
         }
     });
 
+    //Save options
+    let options = [_tagBrackets.checked];
+
     let Contents = [
         savedUnits,
         customers,
@@ -113,7 +116,8 @@ function save(){
         savedRacks,
         savedDashes,
         savedComments,
-        truckid
+        truckid,
+        options
     ];
     let saveContents = [];
     saveContents[0] = JSON.stringify(Contents, function replacer(key, value) { return value;});
@@ -166,9 +170,13 @@ function load(){
         reader.onload = readerEvent => {
             let content = JSON.parse(readerEvent.target.result);
 
+            //Set options
+            _tagBrackets.checked = content[7][0];
+
             //Recreate units
             updateUnits(content[0]);
 
+            //Restore customers
             customers = content[1];
 
             //Recount total units and customers
