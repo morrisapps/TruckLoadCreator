@@ -210,8 +210,6 @@ function load(){
             canvas.setActiveObject(loadTextEdit);
             canvas.discardActiveObject();
             canvas.requestRenderAll();
-
-
         }
     });
 
