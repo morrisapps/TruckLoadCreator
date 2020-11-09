@@ -4,6 +4,37 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
+function updateUnits(updateUnits){
+    //Reinitialize all units
+    canvas.forEachObject(function (obj) {
+        if (obj.unit == true){
+            canvas.remove(obj);
+        }
+    });
+    units = [];
+
+    //Reinitialize counters
+    topUnits.forEach(function (tUnit){ tUnit = new Array(); });
+    botUnits.forEach(function (bUnit){ bUnit = new Array(); });
+
+    for (let tUnit of topUnits){ tUnit = new Array(); };
+    for (let bUnit of botUnits){ bUnit = new Array(); };
+    for (let tCounter of topCounters){ tCounter.text = ''; };
+    for (let tCounter of botCounters){ tCounter.text = ''; };
+
+    //Restore units
+    updateUnits.forEach(function (unit){
+        if (unit != null){
+            createUnit(unit.unitWidth, unit.unitHeight, unit.customer, unit.ae, unit.color, unit.fill, unit.left, unit.top, unit.drop, unit.location, unit.inCanvas);
+            units.push(currentGroup);
+            if (currentGroup.inCanvas == true){
+                canvas.add(currentGroup);
+                updateHeightCount(currentGroup);
+            }
+        }
+    });
+}
+
 function save(){
     //Saves important unit information
     let savedUnits = [];
@@ -132,36 +163,9 @@ function load(){
         reader.onload = readerEvent => {
             let content = JSON.parse(readerEvent.target.result);
 
-            //Reinitialize all units
-            canvas.forEachObject(function (obj) {
-                if (obj.unit == true){
-                    canvas.remove(obj);
-                }
-            });
-            units = [];
-
-            //Reinitialize counters
+            updateUnits(content[0]);
             initializeCounters();
             heightLines();
-            topUnits.forEach(function (tUnit){ tUnit = new Array(); });
-            botUnits.forEach(function (bUnit){ bUnit = new Array(); });
-
-            for (let tUnit of topUnits){ tUnit = new Array(); };
-            for (let bUnit of botUnits){ bUnit = new Array(); };
-            for (let tCounter of topCounters){ tCounter.text = ''; };
-            for (let tCounter of botCounters){ tCounter.text = ''; };
-
-            //Restore units
-            content[0].forEach(function (unit){
-                if (unit != null){
-                    createUnit(unit.unitWidth, unit.unitHeight, unit.customer, unit.ae, unit.color, unit.fill, unit.left, unit.top, unit.drop, unit.location, unit.inCanvas);
-                    units.push(currentGroup);
-                    if (currentGroup.inCanvas == true){
-                        canvas.add(currentGroup);
-                        updateHeightCount(currentGroup);
-                    }
-                }
-            });
 
             customers = content[1];
 
