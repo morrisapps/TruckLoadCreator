@@ -5,6 +5,12 @@
  */
 
 function truckLoad(id) {
+    //Remove all drawn truck lines
+    canvas.forEachObject(function (obj) {
+        if (obj instanceof fabric.Line && obj.tool != true) {
+            canvas.remove(obj);
+        }
+    });
     truckid = id;
     if (truckid == "1001" || truckid == "1101" || truckid == "1401" || truckid == "1103" || truckid == "1605" || truckid == "1901" || truckid == "1202" || truckid == "1301" || truckid == "1302" || truckid == "1904" || truckid == "1905") {
         truck53(truckid);
@@ -22,14 +28,12 @@ function truckLoad(id) {
     saveToBrowser();
 }
 
-
 function heightLines() {
     canvas.forEachObject(function (obj) {
         if (obj.isCounter == true) {
             canvas.remove(obj);
         }
     });
-
 
     //Height Counters
     var i = 0;
