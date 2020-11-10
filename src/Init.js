@@ -7,7 +7,7 @@
 //Place all global variables here
 
 //Version number
-let version = "0.13.1";
+let version = "0.14";
 
 //TruckID used for loading the appropriate size truck
 let truckid = '';
@@ -92,6 +92,10 @@ let editingUnit;
 
 //Option variables
 let _tagBrackets = document.getElementById('unitBrackets');
+let _snapToggle = document.getElementById('snapToggle');
+
+//Reset snap to default
+_snapToggle.checked = true;
 
 
 //Creates Change Log dialog

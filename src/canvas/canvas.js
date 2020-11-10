@@ -278,31 +278,33 @@ function createCanvas() {
     canvas.on('object:moving', function (options) {
         keepInBounds(options.target);
         if (options.target.isComment != true) {
-            options.target.set({
-                left: (Math.round(options.target.left / grid) * grid) + 2,
-            });
-            //Do when Objects collide during drag
-            options.target.setCoords();
-            var pointer = canvas.getPointer(event.e);
-            objectIntersects(midLine, options.target);
-            if (intersects(midLine, options.target) && options.target.line != true) {
-                if (pointer.y < midLine.top + midLine.strokeWidth / 2) {
-                    options.target.set('top', (midLine.top - 1) - options.target.height);
-                } else {
-                    options.target.set('top', (midLine.top + 1) + midLine.strokeWidth);
-                }
+            if ( _snapToggle.checked == true){
+                options.target.set({
+                    left: (Math.round(options.target.left / grid) * grid) + 2,
+                });
+                //Do when Objects collide during drag
                 options.target.setCoords();
-            }
-            canvas.forEachObject(function (obj) {
-                if (obj.intersects == true) {
-                    objectIntersects(obj, options.target);
-                    options.target.set('opacity', 1);
+                var pointer = canvas.getPointer(event.e);
+                objectIntersects(midLine, options.target);
+                if (intersects(midLine, options.target) && options.target.line != true) {
+                    if (pointer.y < midLine.top + midLine.strokeWidth / 2) {
+                        options.target.set('top', (midLine.top - 1) - options.target.height);
+                    } else {
+                        options.target.set('top', (midLine.top + 1) + midLine.strokeWidth);
+                    }
+                    options.target.setCoords();
                 }
-            });
-            if (rackCanvas != null) {
-                objectIntersects(rackCanvas, options.target)
+                canvas.forEachObject(function (obj) {
+                    if (obj.intersects == true) {
+                        objectIntersects(obj, options.target);
+                        options.target.set('opacity', 1);
+                    }
+                });
+                if (rackCanvas != null) {
+                    objectIntersects(rackCanvas, options.target)
+                }
+                updateHeightCount(options.target);
             }
-            updateHeightCount(options.target);
         }
     });
 
