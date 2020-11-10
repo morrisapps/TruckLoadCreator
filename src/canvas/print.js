@@ -62,5 +62,7 @@ function printPageArea() {
         WinPrint.focus();
         WinPrint.print();
         WinPrint.close();
+
+        saveToBrowser();
     }
 }

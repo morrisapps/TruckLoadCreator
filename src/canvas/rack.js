@@ -94,7 +94,6 @@ function rackLoad() {
         window.rack.addWithUpdate(rackCustomers[i]);
     }
     canvas.add(rack);
-    updateRack();
 }
 
 function updateRack() {
@@ -120,4 +119,5 @@ function updateRack() {
         canvas.requestRenderAll();
         i++;
     }
+    saveToBrowser();
 }

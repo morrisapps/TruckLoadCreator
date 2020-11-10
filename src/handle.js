@@ -318,6 +318,7 @@ function handleDrop(e) {
         }
         //Update the line count when dropped
         updateHeightCount(canvas.getActiveObject());
+        saveToBrowser();
     }
     return false;
 }

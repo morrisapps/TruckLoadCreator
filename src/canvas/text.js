@@ -424,7 +424,7 @@ function textLoad(){
             loadTextEdit.set({fontSize: 15, fontStyle: "italic", top: 25});
         }
         loadTextEdit.text = loadTextEdit.text.slice(0, 12);
-
+        saveToBrowser();
     });
 
     trailerTextEdit.on('selected', function (options) {
@@ -441,6 +441,7 @@ function textLoad(){
             trailerTextEdit.set({fontSize: 15, fontStyle: "italic", top: 25});
         }
         trailerTextEdit.text = trailerTextEdit.text.slice(0, 15);
+        saveToBrowser();
     });
 
     modeTextEdit.on('selected', function (options) {
@@ -457,6 +458,7 @@ function textLoad(){
             modeTextEdit.set({fontSize: 15, fontStyle: "italic", top: 25});
         }
         modeTextEdit.text = modeTextEdit.text.slice(0, 12);
+        saveToBrowser();
 
     });
     dropsTextEdit.on('selected', function (options) {
@@ -473,6 +475,7 @@ function textLoad(){
             dropsTextEdit.set({fontSize: 15, fontStyle: "italic", top: 55});
         }
         dropsTextEdit.text = dropsTextEdit.text.slice(0, 12);
+        saveToBrowser();
     });
 
     shipperTextEdit.on('selected', function (options) {
@@ -489,6 +492,7 @@ function textLoad(){
             shipperTextEdit.set({fontSize: 15, fontStyle: "italic", top: 55});
         }
         shipperTextEdit.text = shipperTextEdit.text.slice(0, 20);
+        saveToBrowser();
     });
 
     driverTextEdit.on('selected', function (options) {
@@ -505,6 +509,7 @@ function textLoad(){
             driverTextEdit.set({fontSize: 15, fontStyle: "italic", top: 55});
         }
         driverTextEdit.text = driverTextEdit.text.slice(0, 12);
+        saveToBrowser();
     });
 
     //Hover cursor

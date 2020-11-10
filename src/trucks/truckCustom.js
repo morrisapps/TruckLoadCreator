@@ -19,6 +19,7 @@ function truckLoad(id) {
     } else {
         truckCustom();
     }
+    saveToBrowser();
 }
 
 

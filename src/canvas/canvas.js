@@ -441,4 +441,8 @@ $(document).ready(function () {
 
     truckCustom();
     canvas.requestRenderAll();
+
+    //Checks if previous session was saved, and if not asks to restore.
+    loadFromBrowser();
+    saveToBrowser();
 });
