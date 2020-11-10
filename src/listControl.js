@@ -125,7 +125,6 @@ function updateListCust(CustName) {
     for (var i = 0, len = customers.length; i < len; i++) {
         let tempCustName = customers[i].name.replace(/ /g, '%');
         let tempName = document.getElementById(tempCustName);
-        console.log(tempName.id);
         if (CustName.replace(/ /g, '%') == tempName.id) {
             if (isCustInTruck(tempName.id.replace(/%/g, ' ')) == true) {
                 tempName.style.border = '1px solid rgb(81, 179, 68)';
