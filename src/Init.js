@@ -93,9 +93,12 @@ let editingUnit;
 //Option variables
 let _tagBrackets = document.getElementById('unitBrackets');
 let _snapToggle = document.getElementById('snapToggle');
+let _custInUnits = document.getElementById('custInUnits');
 
-//Reset snap to default
+//Reset options to default
+_tagBrackets.checked = false;
 _snapToggle.checked = true;
+_custInUnits.checked = true;
 
 
 //Creates Change Log dialog

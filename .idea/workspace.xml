@@ -31,8 +31,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Further tweaked unit text to stay inside the unit's width more">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Unit Text that is rotated now behaves like the same as the non rotated units">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +114,7 @@
       <workItem from="1604927315366" duration="12888000" />
       <workItem from="1604983756364" duration="9457000" />
       <workItem from="1605031648930" duration="19741000" />
-      <workItem from="1605124289034" duration="4079000" />
+      <workItem from="1605124289034" duration="6406000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -309,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605128231386</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Unit Text that is rotated now behaves like the same as the non rotated units">
+      <created>1605131024713</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1605131024713</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,7 +350,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed extra files" />
     <MESSAGE value="Cleaned up code. Added Licensing to each file" />
     <MESSAGE value="Fixed issue with Add button not updating current customer.&#10;&#10;Fixed issue selecting from unit list not updating current customer.&#10;&#10;Fixed selecting between unadded units in unit list not immediately putting them into edit mode" />
     <MESSAGE value="Updated Unit List and Customer List colors to have a colored background associated to the border color." />
@@ -365,7 +374,8 @@
     <MESSAGE value="Added Snap Toggle option" />
     <MESSAGE value="Bug fixed: Unit text colliding with other text if two units with long text were beside each other." />
     <MESSAGE value="Further tweaked unit text to stay inside the unit's width more" />
-    <option name="LAST_COMMIT_MESSAGE" value="Further tweaked unit text to stay inside the unit's width more" />
+    <MESSAGE value="Unit Text that is rotated now behaves like the same as the non rotated units" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unit Text that is rotated now behaves like the same as the non rotated units" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">
@@ -483,10 +493,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605128234398">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605131028300">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605128234398" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605131028300" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604434809744" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604703314443" />

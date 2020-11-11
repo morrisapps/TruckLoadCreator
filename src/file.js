@@ -79,7 +79,7 @@ function getSaveContent() {
     });
 
     //Save options
-    let options = [_tagBrackets.checked];
+    let options = [_tagBrackets.checked, _custInUnits.checked];
 
     //Create file name
     var date = new Date();
@@ -217,6 +217,7 @@ function load(content) {
 
     //Set options
     _tagBrackets.checked = content[7][0];
+    _custInUnits.checked = content[7][1];
 
     //Recreate units
     updateUnits(content[0]);
