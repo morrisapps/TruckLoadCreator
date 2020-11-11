@@ -219,6 +219,11 @@ function load(content) {
     _tagBrackets.checked = content[7][0];
     _custInUnits.checked = content[7][1];
 
+    //Remove all objects
+    canvas.forEachObject(function (obj){
+            canvas.remove(obj);
+    });
+
     //Recreate units
     updateUnits(content[0]);
 
@@ -229,6 +234,7 @@ function load(content) {
     document.getElementById("tUnits").innerText = units.length.toString();
     document.getElementById("drops").innerText = customers.length.toString();
 
+    rackLoad();
     updateRack();
     sortCustomer();
     sortUnit();

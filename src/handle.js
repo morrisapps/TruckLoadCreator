@@ -99,6 +99,7 @@ function createComment(top, left, text, width) {
         fixedFontSize: 17,
         fontWeight: 'bold',
         isComment: true,
+        tool: true,
         id: 'Comment Textbox'
     });
     comment.hoverCursor = 'move';
@@ -191,11 +192,11 @@ function createRack(top, left, id, drag) {
         selectable: true,
         id: 'rack',
         size: id,
-        //unit: true,
         remove: false,
         isRack: true,
         hasControls: true,
-        intersects: true
+        intersects: true,
+        tool: true
     });
 
     rackNew.hoverCursor = 'move';
