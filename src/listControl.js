@@ -53,10 +53,11 @@ Sortable.create(custList, {
                 units.forEach(function (unit) {
                     if (unit.customer == customer.name) {
                         unit.drop = newDrop;
-                        unitText(customer.name, unit.unitWidth, unit.unitHeight, newDrop, unit.ae, unit.item(1), unit.item(0), unit.location);
-                        canvas.requestRenderAll();
                     }
                 });
+                //Update all units
+                updateUnits(units);
+
                 //Update Customers drop in listed sequence
                 customer.drop = newDrop;
             }
