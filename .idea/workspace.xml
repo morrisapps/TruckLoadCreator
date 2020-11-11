@@ -31,10 +31,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Added Snap Toggle option">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Bug fixed: Unit text colliding with other text if two units with long text were beside each other.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/listControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/listControl.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +111,8 @@
       <workItem from="1604791599480" duration="5590000" />
       <workItem from="1604927315366" duration="12888000" />
       <workItem from="1604983756364" duration="9457000" />
-      <workItem from="1605031648930" duration="19134000" />
+      <workItem from="1605031648930" duration="19741000" />
+      <workItem from="1605124289034" duration="1434000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -296,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605040498454</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Bug fixed: Unit text colliding with other text if two units with long text were beside each other.">
+      <created>1605078005813</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1605078005813</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +334,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated License" />
     <MESSAGE value="Fixed grammar errors in readme" />
     <MESSAGE value="Removed extra files" />
     <MESSAGE value="Cleaned up code. Added Licensing to each file" />
@@ -352,7 +358,8 @@
     <MESSAGE value="Implemented session restore feature&#10;&#10;Fixed bug drop count not updating after loading from file/session" />
     <MESSAGE value="Fixed bug not removing truck lines when changing truck size" />
     <MESSAGE value="Added Snap Toggle option" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Snap Toggle option" />
+    <MESSAGE value="Bug fixed: Unit text colliding with other text if two units with long text were beside each other." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixed: Unit text colliding with other text if two units with long text were beside each other." />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">
@@ -470,10 +477,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605068808730">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605078015725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605068808730" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605078015725" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604434809744" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604703314443" />
