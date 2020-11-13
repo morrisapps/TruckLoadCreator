@@ -104,6 +104,9 @@ function updateRack() {
             let inRack = '';
             if (customers[i].rack == true){
                 inRack = ' -RK';
+                rack.item(i+2).set({fontWeight: 'bold'});
+            }else {
+                rack.item(i+2).set({fontWeight: 'normal'});
             }
             rack.item(i+2).set({text: custText + inRack});
             while (rack.item(i+2).width > 178) {

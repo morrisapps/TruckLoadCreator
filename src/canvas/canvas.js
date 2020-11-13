@@ -303,8 +303,8 @@ function createCanvas() {
                 if (rackCanvas != null) {
                     objectIntersects(rackCanvas, options.target)
                 }
-                updateHeightCount(options.target);
             }
+            updateHeightCount(options.target);
         }
     });
 
