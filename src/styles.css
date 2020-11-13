@@ -570,3 +570,11 @@ input[type=number] {
 .preview::before {
     margin-right: 5px;
 }
+
+.options {
+    padding: 8px;
+}
+
+.info {
+    padding: 2px;
+}
