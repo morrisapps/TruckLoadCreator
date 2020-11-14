@@ -26,18 +26,24 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Added jquery map">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Made customers appear in bold and with - RK if they are in the rack.&#10;&#10;Fixed height counts not working with snap off.&#10;&#10;Fixed sometimes not being able to add to rack">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/rack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/rack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -48,6 +54,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1jiCuFQUZBoxu6ySoWg35DFx1Jm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -57,7 +64,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/resources/bootstrap" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Program Files/iis express/PHP/v7.4/php.exe" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -72,20 +81,55 @@
       <recent name="D:\SYNC\js-truckwrite\src\resources\bootstrap" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/js-truckwrite/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <configuration name="connect.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" singleton="false" temporary="true" path="$PROJECT_DIR$/DB/connect.php">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
+    <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/index.php">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="PHP Script.connect.php" />
+      <item itemvalue="PHP Script.index.php" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="PHP Script.connect.php" />
+        <item itemvalue="PHP Script.index.php" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -113,7 +157,9 @@
       <workItem from="1605124289034" duration="13204000" />
       <workItem from="1605195229302" duration="1043000" />
       <workItem from="1605215879505" duration="1390000" />
-      <workItem from="1605298296746" duration="4070000" />
+      <workItem from="1605298296746" duration="5382000" />
+      <workItem from="1605305604567" duration="9001000" />
+      <workItem from="1605378496659" duration="6735000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -353,11 +399,18 @@
       <option name="project" value="LOCAL" />
       <updated>1605169780592</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Made customers appear in bold and with - RK if they are in the rack.&#10;&#10;Fixed height counts not working with snap off.&#10;&#10;Fixed sometimes not being able to add to rack">
+      <created>1605303518148</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1605303518148</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -384,7 +437,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed Unit wouldn't stay highlighted as editing in list if also not in canvas." />
     <MESSAGE value="Fixed issue with Customer list selection being null.&#10;&#10;Moved around items in sidebar to be more convenient." />
     <MESSAGE value="Fixed rare bug not allowing customers to not be added by forcing customer name to be not a number" />
     <MESSAGE value="Rack is now Customer list, appends -RK if customer is in rack" />
@@ -409,17 +461,30 @@
     <MESSAGE value="Fixed bug: Loading from a file would not remove tools causing duplicated tools." />
     <MESSAGE value="Fixed bug:Drop could be empty on checking rack" />
     <MESSAGE value="Added jquery map" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added jquery map" />
+    <MESSAGE value="Made customers appear in bold and with - RK if they are in the rack.&#10;&#10;Fixed height counts not working with snap off.&#10;&#10;Fixed sometimes not being able to add to rack" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made customers appear in bold and with - RK if they are in the rack.&#10;&#10;Fixed height counts not working with snap off.&#10;&#10;Fixed sometimes not being able to add to rack" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="263" y="19" key="#CLI_Interpreters" timestamp="1605378338363">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="263" y="19" key="#CLI_Interpreters/0.0.1366.728@0.0.1366.728" timestamp="1605378338363" />
     <state x="714" y="344" key="#Notifications" timestamp="1604352443842">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="714" y="344" key="#Notifications/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352443842" />
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605299259421">
+    <state x="390" y="7" key="#PHP" timestamp="1605306298146">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1605299259421" />
+    <state x="390" y="7" key="#PHP/0.0.1366.728@0.0.1366.728" timestamp="1605306298146" />
+    <state x="480" y="153" key="#Web_Browsers" timestamp="1605378095970">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="480" y="153" key="#Web_Browsers/0.0.1366.728@0.0.1366.728" timestamp="1605378095970" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605378338959">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1605378338959" />
     <state x="723" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604295678594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -432,6 +497,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1605306293228">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605306293228" />
     <state width="255" height="262" key="Git.Branch.Popup" timestamp="1604998851145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -447,29 +516,33 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604351037072" />
-    <state width="1899" height="113" key="GridCell.Tab.0.bottom" timestamp="1605166083379">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="163" key="GridCell.Tab.0.bottom" timestamp="1605378507813">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1899" height="113" key="GridCell.Tab.0.bottom/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605166083379" />
     <state width="1899" height="119" key="GridCell.Tab.0.bottom/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604437605291" />
+    <state width="1323" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605378507813" />
     <state width="1899" height="119" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605001731355" />
-    <state width="1899" height="113" key="GridCell.Tab.0.center" timestamp="1605166083379">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="163" key="GridCell.Tab.0.center" timestamp="1605378507812">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1899" height="113" key="GridCell.Tab.0.center/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605166083379" />
     <state width="1899" height="119" key="GridCell.Tab.0.center/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604437605291" />
+    <state width="1323" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1605378507812" />
     <state width="1899" height="119" key="GridCell.Tab.0.center/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605001731355" />
-    <state width="1899" height="113" key="GridCell.Tab.0.left" timestamp="1605166083379">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="163" key="GridCell.Tab.0.left" timestamp="1605378507811">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1899" height="113" key="GridCell.Tab.0.left/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605166083379" />
     <state width="1899" height="119" key="GridCell.Tab.0.left/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604437605291" />
+    <state width="1323" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1605378507811" />
     <state width="1899" height="119" key="GridCell.Tab.0.left/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605001731355" />
-    <state width="1899" height="113" key="GridCell.Tab.0.right" timestamp="1605166083379">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="163" key="GridCell.Tab.0.right" timestamp="1605378507812">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1899" height="113" key="GridCell.Tab.0.right/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605166083379" />
     <state width="1899" height="119" key="GridCell.Tab.0.right/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604437605291" />
+    <state width="1323" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1605378507812" />
     <state width="1899" height="119" key="GridCell.Tab.0.right/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605001731355" />
     <state width="1899" height="113" key="GridCell.Tab.1.bottom" timestamp="1605166089603">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -535,17 +608,21 @@
     </state>
     <state width="1899" height="119" key="GridCell.Tab.3.right/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604437605292" />
     <state width="1899" height="119" key="GridCell.Tab.3.right/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605001731356" />
+    <state x="184" y="9" key="SettingsEditor" timestamp="1605377858516">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1605377858516" />
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog" timestamp="1604999034347">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605169785704">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605303677904">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605169785704" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604434809744" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604703314443" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605303677904" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999178291" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
@@ -558,6 +635,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="774" y="364" key="git4idea.ui.GitTagDialog/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604366798897" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1605389153553">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1605389153553" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604958177395">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
