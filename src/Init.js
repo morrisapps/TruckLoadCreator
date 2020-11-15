@@ -100,6 +100,9 @@ _tagBrackets.checked = false;
 _snapToggle.checked = true;
 _custInUnits.checked = true;
 
+//Data that is returned from DB
+let _returnedData = null;
+
 
 //Creates Change Log dialog
 $(function() {
