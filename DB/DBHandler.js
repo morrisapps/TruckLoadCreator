@@ -32,6 +32,9 @@ function DBConnect() {
         //Returned message
         _returnedData = JSON.parse(response);
         if (_returnedData != null){
+            //Removes all options
+            $('#retrieveTruck').find('option').remove().end();
+            //Adds new options as truckID's
             for (let i = 0; i < _returnedData.length; i++){
                     $('#retrieveTruck').append($('<option>', {
                         value: _returnedData[i][1],
