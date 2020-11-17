@@ -20,13 +20,15 @@ $connectionQuery= "SELECT Id, Name, Location FROM TestSchema.Employees;";
 
 //Establishes the connection
 $conn = sqlsrv_connect($connectionServer, $connectionLogin);
-//array_push($return, $conn);
 if ($conn) {
     //Read Query
     $returnedData = sqlsrv_query($conn, $connectionQuery);
     if ($returnedData == FALSE){
-        die(FormatErrors(sqlsrv_errors()));
-        array_push($return,($row[null] . " " . $row[null] . " " . $row[null] . PHP_EOL));
+        array_push($return,false);
+        foreach ( sqlsrv_errors() as $error )
+        {
+            array_push($return, $error);
+        }
     } else {
         while ($row = sqlsrv_fetch_array($returnedData, SQLSRV_FETCH_ASSOC)) {
             $truck = array (
@@ -39,21 +41,9 @@ if ($conn) {
     }
     //Closes query
     sqlsrv_free_stmt($returnedData);
+}else {
+    array_push($return,false);
+    array_push($return, 'Could not connect to Database');
 }
 echo json_encode($return);
-
-
-
-function FormatErrors( $errors )
-{
-    /* Display errors. */
-    echo json_encode("Error information: ");
-
-    foreach ( $errors as $error )
-    {
-        echo json_encode("SQLSTATE: ".$error['SQLSTATE']."");
-        echo json_encode("Code: ".$error['code']."");
-        echo json_encode("Message: ".$error['message']."");
-    }
-}
 ?>
