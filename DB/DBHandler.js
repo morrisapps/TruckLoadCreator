@@ -46,15 +46,19 @@ $(function () {
     }).prev().find(".ui-dialog-titlebar-close").hide();
 });
 
-//Launches connect.php which attempts to establish a connection and import data.
+//Launches connect.php which attempts to establish a connection to import data.
 function DBConnect() {
     let error = '';
-    $.post('./DB/connect.php', null, function (response) {
+    let SQLIDQuery = "SELECT Id, Name, Location FROM TestSchema.Employees;";
+    let rows = ["Id", "Name", "Location"];
+
+    //Runs connect.php which connects to DB and returns associated rows as a double array
+    $.post('./DB/connect.php', {query: SQLIDQuery, rows: rows}, function (response) {
         //Returned message
-        if (response){
+        if (response) {
             try {
                 _returnedData = JSON.parse(response);
-            } catch(e) {
+            } catch (e) {
                 error = 'Invalid data retrieved from server';
             }
         }
@@ -71,18 +75,17 @@ function DBConnect() {
             }
         } else {
             //Error handling
-            if (_returnedData[0] == null){
+            if (_returnedData[0] == null) {
                 error = 'No trucks imported.';
-            }else {
-                for (let i = 0; i+1 < _returnedData.length; i++){
-                    if (_returnedData[i+1].message != null){
-                        error = error + _returnedData[i+1].message;
-                    }else {
-                        error = error + _returnedData[i+1];
+            } else {
+                for (let i = 0; i + 1 < _returnedData.length; i++) {
+                    if (_returnedData[i + 1].message != null) {
+                        error = error + _returnedData[i + 1].message;
+                    } else {
+                        error = error + _returnedData[i + 1];
                     }
                 }
             }
-
         }
     })
         //Called on failing to connect to DB. Opens error dialog.
@@ -94,16 +97,15 @@ function DBConnect() {
         })
         //Called on successfully connecting to DB. Opens import dialog if no parse errors.
         .done(function () {
-            if (error == ''){
+            if (error == '') {
                 $(function () {
                     $("#importDialog").dialog("open");
                 });
-            }else {
+            } else {
                 document.getElementById('errorDialog').innerHTML = "<P>" + error + "</p>"
                 $(function () {
                     $("#errorDialog").dialog("open");
                 });
             }
-
         });
 }

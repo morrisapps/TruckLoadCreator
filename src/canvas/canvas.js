@@ -446,5 +446,4 @@ $(document).ready(function () {
 
     //Checks if previous session was saved, and if not asks to restore.
     loadFromBrowser();
-    saveToBrowser();
 });

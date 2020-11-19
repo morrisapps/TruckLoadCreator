@@ -64,5 +64,8 @@ function printPageArea() {
         WinPrint.close();
 
         saveToBrowser();
+        if (confirm('Would you like to save?')){
+            //save();
+        }
     }
 }

@@ -5,17 +5,16 @@
 * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
 */
 
-$return = array();
-$truckID = $_POST['truckID'];
-
+//Declared variables
 $connectionServer = 'localHost';
 $connectionLogin = array(
     "Database" => "SampleDB",
     "Uid" => "sa",
     "PWD" => "test"
 );
-$connectionQuery= "SELECT Id, Name, Location FROM TestSchema.Employees;";
-
+$connectionQuery= $_POST['query'];
+$rows = $_POST['rows'];
+$return = array();
 
 
 //Establishes the connection
@@ -30,13 +29,14 @@ if ($conn) {
             array_push($return, $error);
         }
     } else {
+        //Fetches rows
         while ($row = sqlsrv_fetch_array($returnedData, SQLSRV_FETCH_ASSOC)) {
-            $truck = array (
-                $row['Id'],
-                $row['Name'],
-                $row['Location']
-            );
-            array_push($return,$truck);
+            //Creates an array for each row which is then added to the $return array
+            $data = array ();
+            foreach ($rows as &$value) {
+                array_push($data,$row[$value]);
+            }
+            array_push($return,$data);
         }
     }
     //Closes query
@@ -45,5 +45,6 @@ if ($conn) {
     array_push($return,false);
     array_push($return, 'Could not connect to Database');
 }
+//Returns data
 echo json_encode($return);
 ?>

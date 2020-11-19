@@ -128,6 +128,7 @@ function save() {
     a.setAttribute("download", saveContent[8] + ".truck");
     document.body.appendChild(a);
     a.click();
+    a.
     document.body.removeChild(a);
 
     //Sets localStorage saved variable to true to signal that the work has been saved up to this point.
