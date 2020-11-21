@@ -300,9 +300,6 @@ function createCanvas() {
                         options.target.set('opacity', 1);
                     }
                 });
-                if (rackCanvas != null) {
-                    objectIntersects(rackCanvas, options.target)
-                }
             }
             updateHeightCount(options.target);
         }
