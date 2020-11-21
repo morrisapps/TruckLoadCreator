@@ -26,10 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Added initial import functionality. &#10;&#10;Customer box is now reversed">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed Error dialog creating extra text on bottom of page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/DBHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -435,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605929463316</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Fixed Error dialog creating extra text on bottom of page">
+      <created>1605977412565</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1605977412565</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +474,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Creation of global unit/customer input field variables for further simplification." />
     <MESSAGE value="Units now have brackets around units" />
     <MESSAGE value="Units now have brackets around tag numbers" />
     <MESSAGE value="&#10;Fix bug relating to checking the rack toggle if customer is in rack when typing in customer name" />
@@ -491,7 +498,8 @@
     <MESSAGE value="Further DB testing" />
     <MESSAGE value="Basic DB connectivity added. Ready for initial importing of information from DB" />
     <MESSAGE value="Added initial import functionality. &#10;&#10;Customer box is now reversed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added initial import functionality. &#10;&#10;Customer box is now reversed" />
+    <MESSAGE value="Fixed Error dialog creating extra text on bottom of page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Error dialog creating extra text on bottom of page" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">

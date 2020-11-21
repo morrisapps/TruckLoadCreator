@@ -12,9 +12,11 @@ $(function () {
         show: 'clip',
         hide: "blind",
         width: 300,
-        height: 220,
+        height: "auto",
         draggable: false,
         resizable: false,
+        minHeight: 220,
+        maxHeight: 400,
         buttons: {
             "Import": function () {
                 getDBData($("#importTruck").val());
@@ -29,17 +31,19 @@ $(function () {
 
 //Creates error dialog
 $(function () {
-    $("#errorDialog").dialog({
+    $("#infoDialog").dialog({
         autoOpen: false,
         show: 'fold',
         hide: "blind",
         width: 300,
-        height: 220,
+        height: "auto",
         draggable: false,
         resizable: false,
+        minHeight: 220,
+        maxHeight: 400,
         buttons: {
-            "Cancel": function () {
-                $("#errorDialog").dialog("close");
+            "Ok": function () {
+                $("#infoDialog").dialog("close");
             }
         }
     }).prev().find(".ui-dialog-titlebar-close").hide();
@@ -111,9 +115,10 @@ function getDBTruckIDs() {
                 $("#importDialog").dialog("open");
             });
         } else {
-            document.getElementById('errorDialog').innerHTML = "<P>" + _errorDB + "</p>"
+            document.getElementById('infoDialog').innerHTML = "<P>" + _errorDB + "</p>"
             $(function () {
-                $("#errorDialog").dialog("open");
+                $('#infoDialog').dialog('option', 'title', 'Error');
+                $("#infoDialog").dialog("open");
             });
         }
     });
@@ -136,15 +141,18 @@ function getDBData(truckID) {
             $(function () {
                 $("#importDialog").dialog("close");
             });
-            document.getElementById('errorDialog').innerHTML = "<P>" + _errorDB + "</p>"
+            document.getElementById('infoDialog').innerHTML = "<P>" + _errorDB + "</p>"
             $(function () {
-                $("#errorDialog").dialog("open");
+                $('#infoDialog').dialog('option', 'title', 'Error');
+                $("#infoDialog").dialog("open");
             });
         }
     });
 }
 
 function loadFromDB(data) {
+    let importUnits = 0;
+    let importCusts = 0;
     data.forEach(function (item) {
         let unitWidth = item[13].split(/x/)[1];
         if (unitWidth != undefined) {
@@ -165,10 +173,17 @@ function loadFromDB(data) {
         if (item[13].includes('40\"x') || item[13].includes('48\"x') || item[13].includes('EC 25\"')) {
             //Adding unit
             createUnit(unitWidth, item[11], customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], '', false, item[8],item[10]);
-            addUnit(currentGroup);
-            addCustomer(customerText, item[9]);
+            if (addUnit(currentGroup)){
+                importUnits++;
+            }
+            if (addCustomer(customerText, item[9])){
+                importCusts++;
+            }
+
         } else if (item[13].includes('bundle') || item[13].includes('box') || item[11] <= 1){
-            addCustomer(customerText, item[9]);
+            if (addCustomer(customerText, item[9])){
+                importCusts++
+            }
             customers[getCustomerIndex(customerText)].rack = true;
         }
     });
@@ -193,4 +208,9 @@ function loadFromDB(data) {
     updateUnits(units);
     updateRack();
     listUnits();
+    document.getElementById('infoDialog').innerHTML = "<P>" + importUnits + " Units" + "</P>" + "<P>" + importCusts + " Drops" + "</P>"
+    $(function () {
+        $('#infoDialog').dialog('option', 'title', 'Imported');
+        $("#infoDialog").dialog("open");
+    });
 }
