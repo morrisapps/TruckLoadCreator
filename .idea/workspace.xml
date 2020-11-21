@@ -21,7 +21,7 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/DBDev" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/Dev" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
@@ -29,7 +29,7 @@
     <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Added initial import functionality. &#10;&#10;Customer box is now reversed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/DBHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +83,17 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/js-truckwrite/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -441,7 +452,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/DBDev" />
+                        <option value="origin/Dev" />
                       </list>
                     </value>
                   </entry>
@@ -522,11 +533,11 @@
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605306293228" />
     <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605490412218" />
-    <state width="265" height="272" key="Git.Branch.Popup" timestamp="1605919012278">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="192" height="194" key="Git.Branch.Popup" timestamp="1605957396866">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="265" height="272" key="Git.Branch.Popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605919012278" />
-    <state width="188" height="190" key="Git.Branch.Popup/0.0.1366.728@0.0.1366.728" timestamp="1605912568219" />
+    <state width="192" height="194" key="Git.Branch.Popup/0.0.1366.728@0.0.1366.728" timestamp="1605957396866" />
     <state width="255" height="262" key="Git.Branch.Popup/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604998851145" />
     <state width="235" height="242" key="Git.Branch.Popup/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604533407861" />
     <state x="832" y="418" key="Github.ShareDialog" timestamp="1604351138275">
@@ -661,6 +672,10 @@
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604791606800" />
     <state x="553" y="304" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1605900868105" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352162689" />
+    <state x="462" y="77" key="git4idea.branch.GitSmartOperationDialog" timestamp="1605957400531">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="77" key="git4idea.branch.GitSmartOperationDialog/0.0.1366.728@0.0.1366.728" timestamp="1605957400531" />
     <state x="774" y="364" key="git4idea.ui.GitTagDialog" timestamp="1604366798897">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

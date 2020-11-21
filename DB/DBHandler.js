@@ -35,6 +35,8 @@ $(function () {
         hide: "blind",
         width: 300,
         height: 220,
+        draggable: false,
+        resizable: false,
         buttons: {
             "Cancel": function () {
                 $("#errorDialog").dialog("close");
@@ -92,8 +94,8 @@ function DBConnect(input) {
 }
 
 function getDBTruckIDs() {
-    let rows = ['TRUCKID'];
-    let input = ['SELECT DISTINCT TRUCKID FROM dbo.alex_test_sample;', rows];
+    let rows = ['TRUCKID', 'DLVMODEID'];
+    let input = ['SELECT DISTINCT TRUCKID, DLVMODEID FROM dbo.alex_test_sample;', rows];
     DBConnect(input).then(response => {
         if (_errorDB == '') {
             //Removes all options
@@ -102,7 +104,7 @@ function getDBTruckIDs() {
             for (let i = 0; i < _returnedData.length; i++) {
                 $('#importTruck').append($('<option>', {
                     value: _returnedData[i][0],
-                    text: _returnedData[i][0]
+                    text: _returnedData[i][1] +' ' + _returnedData[i][0]
                 })).selectmenu("refresh");
             }
             $(function () {
@@ -191,5 +193,4 @@ function loadFromDB(data) {
     updateUnits(units);
     updateRack();
     listUnits();
-
 }
