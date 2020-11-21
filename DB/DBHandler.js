@@ -133,8 +133,6 @@ function getDBData(truckID) {
             $(function () {
                 $("#importDialog").dialog("close");
             });
-            console.log(_returnedData);
-            console.log('loadFromDB')
             loadFromDB(_returnedData);
 
         } else {
@@ -169,6 +167,7 @@ function loadFromDB(data) {
         if (customer != null){
             customerText = customer.name;
         }
+
         //Checks if bundles or Units then creates and adds them
         if (item[13].includes('40\"x') || item[13].includes('48\"x') || item[13].includes('EC 25\"')) {
             //Adding unit
