@@ -57,7 +57,7 @@ function DBConnect(input) {
                 _returnedData = JSON.parse(response);
                 console.log(_returnedData)
             } catch (e) {
-                _errorDB = 'Invalid data retrieved from server';
+                _errorDB = 'Invalid data retrieved from server ' + e;
             }
         } else {
             _errorDB = 'No Response from Server'
@@ -149,11 +149,17 @@ function loadFromDB(data) {
             unitWidth = unitWidth.split(/"/)[0];
         }
         //Checks if Customer drop exists and if name is different. Forces use of the same name.
-        let customer = getDropCustomer(item[9]);
+        let customer = null;
+        for (let i = 0; i < customers.length; i++) {
+            if (customers[i].oDrop == item[9]) {
+                customer = customers[i];
+            }
+        }
         let customerText = item[8];
-        if (customer != 'none'){
+        if (customer != null){
             customerText = customer.name;
         }
+        //Checks if bundles or Units then creates and adds them
         if (item[13].includes('40\"x') || item[13].includes('48\"x') || item[13].includes('EC 25\"')) {
             //Adding unit
             createUnit(unitWidth, item[11], customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], '', false, item[8],item[10]);
