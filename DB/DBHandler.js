@@ -17,10 +17,7 @@ $(function () {
         resizable: false,
         buttons: {
             "Import": function () {
-                console.log(_returnedData);
-                console.log($("#importTruck").val());
-                console.log($("#importTruck")[0].selectedIndex);
-                console.log(_returnedData[$("#importTruck")[0].selectedIndex]);
+                getDBData($("#importTruck").val());
             },
             "Cancel": function () {
                 $("#importDialog").dialog("close");
@@ -47,65 +44,146 @@ $(function () {
 });
 
 //Launches connect.php which attempts to establish a connection to import data.
-function DBConnect() {
-    let error = '';
-    let SQLIDQuery = "SELECT Id, Name, Location FROM TestSchema.Employees;";
-    let rows = ["Id", "Name", "Location"];
+function DBConnect(input) {
+    _errorDB = '';
+    let query = input[0];
+    let rows = input[1];
 
     //Runs connect.php which connects to DB and returns associated rows as a double array
-    $.post('./DB/connect.php', {query: SQLIDQuery, rows: rows}, function (response) {
+    return $.post('./DB/connect.php', {query: query, rows: rows}, function (response) {
         //Returned message
         if (response) {
             try {
                 _returnedData = JSON.parse(response);
+                console.log(_returnedData)
             } catch (e) {
-                error = 'Invalid data retrieved from server';
-            }
-        }
-        //Checks if results have any data
-        if (_returnedData[0] != false && _returnedData[0] != null) {
-            //Removes all options
-            $('#importTruck').find('option').remove().end();
-            //Adds new options as truckID's
-            for (let i = 0; i < _returnedData.length; i++) {
-                $('#importTruck').append($('<option>', {
-                    value: _returnedData[i][1],
-                    text: _returnedData[i][1]
-                })).selectmenu("refresh");
+                _errorDB = 'Invalid data retrieved from server';
             }
         } else {
-            //Error handling
-            if (_returnedData[0] == null) {
-                error = 'No trucks imported.';
-            } else {
-                for (let i = 0; i + 1 < _returnedData.length; i++) {
-                    if (_returnedData[i + 1].message != null) {
-                        error = error + _returnedData[i + 1].message;
-                    } else {
-                        error = error + _returnedData[i + 1];
+            _errorDB = 'No Response from Server'
+        }
+
+        if (_errorDB == '') {
+            //Checks if results are not null
+            if (_returnedData == null && _returnedData[0] == null && _returnedData[0] == false) {
+                //Error handling
+                if (_returnedData[0] == null) {
+                    _errorDB = _errorDB + 'No trucks imported.';
+                } else {
+                    for (let i = 0; i + 1 < _returnedData.length; i++) {
+                        if (_returnedData[i + 0].message != null) {
+                            _errorDB = _errorDB + _returnedData[i + 0].message;
+                        } else {
+                            _errorDB = +_errorDB + _returnedData[i + 0];
+                        }
                     }
                 }
             }
         }
     })
         //Called on failing to connect to DB. Opens error dialog.
-        .fail(function (xhr, status, error) {
-            document.getElementById('errorDialog').innerHTML = "<P>" + error + "<br> <br>Contact I.T for solution" + "</p>"
+        .fail(function (xhr, status, failError) {
+            _errorDB = _errorDB + " " + failError;
+        })
+        //Called on successfully connecting to DB.
+        .done(function () {
+
+        });
+}
+
+function getDBTruckIDs() {
+    let rows = ['TRUCKID'];
+    let input = ['SELECT DISTINCT TRUCKID FROM dbo.alex_test_sample;', rows];
+    DBConnect(input).then(response => {
+        if (_errorDB == '') {
+            //Removes all options
+            $('#importTruck').find('option').remove().end();
+            //Adds new options as truckID's
+            for (let i = 0; i < _returnedData.length; i++) {
+                $('#importTruck').append($('<option>', {
+                    value: _returnedData[i][0],
+                    text: _returnedData[i][0]
+                })).selectmenu("refresh");
+            }
+            $(function () {
+                $("#importDialog").dialog("open");
+            });
+        } else {
+            document.getElementById('errorDialog').innerHTML = "<P>" + _errorDB + "</p>"
             $(function () {
                 $("#errorDialog").dialog("open");
             });
-        })
-        //Called on successfully connecting to DB. Opens import dialog if no parse errors.
-        .done(function () {
-            if (error == '') {
-                $(function () {
-                    $("#importDialog").dialog("open");
-                });
-            } else {
-                document.getElementById('errorDialog').innerHTML = "<P>" + error + "</p>"
-                $(function () {
-                    $("#errorDialog").dialog("open");
-                });
+        }
+    });
+
+}
+
+function getDBData(truckID) {
+    let rows = ['TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES'];
+    let input = ["SELECT * FROM dbo.alex_test_sample WHERE TRUCKID = \'" + truckID + "\';", rows];
+    DBConnect(input).then(response => {
+        if (_errorDB == '') {
+            $(function () {
+                $("#importDialog").dialog("close");
+            });
+            console.log(_returnedData);
+            console.log('loadFromDB')
+            loadFromDB(_returnedData);
+
+        } else {
+            $(function () {
+                $("#importDialog").dialog("close");
+            });
+            document.getElementById('errorDialog').innerHTML = "<P>" + _errorDB + "</p>"
+            $(function () {
+                $("#errorDialog").dialog("open");
+            });
+        }
+    });
+}
+
+function loadFromDB(data) {
+    data.forEach(function (item) {
+        let unitWidth = item[13].split(/x/)[1];
+        if (unitWidth != undefined) {
+            unitWidth = unitWidth.split(/"/)[0];
+        }
+        //Checks if Customer drop exists and if name is different. Forces use of the same name.
+        let customer = getDropCustomer(item[9]);
+        let customerText = item[8];
+        if (customer != 'none'){
+            customerText = customer.name;
+        }
+        if (item[13].includes('40\"x') || item[13].includes('48\"x') || item[13].includes('EC 25\"')) {
+            //Adding unit
+            createUnit(unitWidth, item[11], customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], '', false, item[8],item[10]);
+            addUnit(currentGroup);
+            addCustomer(customerText, item[9]);
+        } else if (item[13].includes('bundle') || item[13].includes('box') || item[11] <= 1){
+            addCustomer(customerText, item[9]);
+            customers[getCustomerIndex(customerText)].rack = true;
+        }
+    });
+
+    //Sort customers and number drop sequence
+    customers.sort(function (a, b) {
+        return b.drop - a.drop
+    });
+    customers.reverse();
+
+    for (let i = 0; i < customers.length; i++) {
+        //Change Unit Drops matching customer
+        units.forEach(function (unit) {
+            if (unit.customer == customers[i].name) {
+                unit.drop = i+1;
             }
         });
+        customers[i].drop = i+1;
+    }
+    sortCustomer();
+    sortUnit();
+    updateUnits(units);
+    updateRack();
+    listUnits();
+
 }

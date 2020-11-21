@@ -102,6 +102,7 @@ _custInUnits.checked = true;
 
 //Data that is returned from DB
 let _returnedData = null;
+let _errorDB = '';
 
 
 //Creates Change Log dialog

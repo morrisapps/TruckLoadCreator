@@ -33,6 +33,8 @@ function getSaveContent() {
             color: unit._objects[0].stroke,
             location: unit.location,
             inCanvas: unit.inCanvas,
+            customerText: unit.customerText,
+            fullAE: unit.fullAE
         });
         savedUnits.push(saved);
     });
@@ -171,7 +173,7 @@ function updateUnits(updateUnits) {
     //Restore units
     updateUnits.forEach(function (unit) {
         if (unit != null) {
-            createUnit(unit.unitWidth, unit.unitHeight, unit.customer, unit.ae, unit.color, unit.fill, unit.left, unit.top, unit.drop, unit.location, unit.inCanvas);
+            createUnit(unit.unitWidth, unit.unitHeight, unit.customer, unit.ae, unit.color, unit.fill, unit.left, unit.top, unit.drop, unit.location, unit.inCanvas, unit.customerText, unit.fullAE);
             units.push(currentGroup);
             if (currentGroup.inCanvas == true) {
                 canvas.add(currentGroup);

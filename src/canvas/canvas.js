@@ -182,13 +182,13 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
     }
     if (addError == "" && response == true) {
         if (inCanvas) {
-            createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas);
+            createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, cName, AE);
             canvas.add(currentGroup);
             canvas.setActiveObject(currentGroup);
             addUnit(currentGroup);
             keepInBounds(currentGroup);
         } else {
-            createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas);
+            createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, cName, AE);
             addUnit(currentGroup);
         }
         midLine.bringToFront();
