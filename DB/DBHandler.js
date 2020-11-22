@@ -207,6 +207,9 @@ function loadFromDB(data) {
     updateUnits(units);
     updateRack();
     listUnits();
+    loadTextEdit.set({text: data[0][0], fontSize: 16, fontStyle: "normal", top: 23});
+    modeTextEdit.set({text: data[0][2], fontSize: 16, fontStyle: "normal", top: 23});
+    dropsTextEdit.set({text: customers.length.toString(), fontSize: 16, fontStyle: "normal", top: 53});
     document.getElementById('infoDialog').innerHTML = "<P>" + importUnits + " Units" + "</P>" + "<P>" + importCusts + " Drops" + "</P>"
     $(function () {
         $('#infoDialog').dialog('option', 'title', 'Imported');
