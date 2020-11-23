@@ -1,8 +1,10 @@
-4/*!
+/*!
  * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
  * Copyright 2020 (c) Corey Morris
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
+
+let _DBTable = 'dbo.alex_test_sample';
 
 //Creates import dialog
 $(function () {
@@ -99,7 +101,7 @@ function DBConnect(input) {
 
 function getDBTruckIDs() {
     let rows = ['TRUCKID', 'DLVMODEID'];
-    let input = ['SELECT DISTINCT TRUCKID, DLVMODEID FROM dbo.alex_test_sample;', rows];
+    let input = ['SELECT DISTINCT TRUCKID, DLVMODEID FROM ' + _DBTable + ';', rows];
     DBConnect(input).then(response => {
         if (_errorDB == '') {
             //Removes all options
@@ -127,7 +129,7 @@ function getDBTruckIDs() {
 
 function getDBData(truckID) {
     let rows = ['TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES'];
-    let input = ["SELECT * FROM dbo.alex_test_sample WHERE TRUCKID = \'" + truckID + "\';", rows];
+    let input = ["SELECT * FROM "+ _DBTable + " WHERE TRUCKID = \'" + truckID + "\';", rows];
     DBConnect(input).then(response => {
         if (_errorDB == '') {
             $(function () {
