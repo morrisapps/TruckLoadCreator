@@ -4,6 +4,7 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
+
 function truckLoad(id) {
     //Remove all drawn truck lines
     canvas.forEachObject(function (obj) {
@@ -105,7 +106,102 @@ function heightLines() {
     }
 }
 
+function weightInit() {
+    //Variables used for counting weight
+    //Weight Region
+    topLeftWeightRegion.set({
+        left: 218,
+        top: 239,
+        width: 216 * 2,
+        height: 162 * 2,
+        fill: "grey",
+        stroke: 'green',
+        strokeWidth: 2,
+        originX: 'center',
+        originY: 'center',
+        selectable: false
+    });
+    topMiddleWeightRegion.set({
+        left: 625,
+        top: 239,
+        width: 192 * 2,
+        height: 162 * 2,
+        fill: "grey",
+        stroke: 'green',
+        strokeWidth: 2,
+        originX: 'center',
+        originY: 'center',
+        selectable: false
+    });
+    topRightWeightRegion.set({
+        left: 1009,
+        top: 239,
+        width: 192 * 2,
+        height: 162 * 2,
+        fill: "grey",
+        stroke: 'green',
+        strokeWidth: 2,
+        originX: 'center',
+        originY: 'center',
+        selectable: false
+    });
+    botLeftWeightRegion.set({
+        left: 218,
+        top: 566,
+        width: 216 * 2,
+        height: 162 * 2,
+        fill: "grey",
+        stroke: 'green',
+        strokeWidth: 2,
+        originX: 'center',
+        originY: 'center',
+        selectable: false,
+        selectable: false
+    });
+    botMiddleWeightRegion.set({
+        left: 625,
+        top: 566,
+        width: 192 * 2,
+        height: 162 * 2,
+        fill: "grey",
+        stroke: 'green',
+        strokeWidth: 2,
+        originX: 'center',
+        originY: 'center',
+        selectable: false
+    });
+    botRightWeightRegion.set({
+        left: 1009,
+        top: 566,
+        width: 192 * 2,
+        height: 162 * 2,
+        fill: "grey",
+        stroke: 'green',
+        strokeWidth: 2,
+        originX: 'center',
+        originY: 'center',
+        selectable: false
+    });
+    weightRegions = [topLeftWeightRegion, topMiddleWeightRegion, topRightWeightRegion, botLeftWeightRegion, botMiddleWeightRegion, botRightWeightRegion];
+
+    //Weight unit containers
+    topLeftWeightUnits = [];
+    topMiddleWeightUnits = [];
+    topRightWeightUnits = [];
+    botLeftWeightUnits = [];
+    botMiddleWeightUnits = [];
+    botRightWeightUnits = [];
+}
+
 function truckCustom() {
+    //Set region's size and location
+    weightInit();
+    topLeftWeightRegion.set({left: 218, top: 239, width: 216 * 2, height: 162 * 2,});
+    topMiddleWeightRegion.set({left: 625, top: 239, width: 192 * 2, height: 162 * 2,});
+    topRightWeightRegion.set({left: 1009, top: 239, width: 192 * 2, height: 162 * 2,});
+    botLeftWeightRegion.set({left: 218, top: 566, width: 216 * 2, height: 162 * 2,});
+    botMiddleWeightRegion.set({left: 625, top: 566, width: 192 * 2, height: 162 * 2,});
+    botRightWeightRegion.set({left: 1009, top: 566, width: 192 * 2, height: 162 * 2,});
     trailerTextEdit.set({text: "Enter trailer", fontSize: 15, fontStyle: "italic", top: 25});
     canvas.remove(doorText1);
     canvas.remove(doorText2);

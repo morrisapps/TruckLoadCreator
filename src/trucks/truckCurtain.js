@@ -5,6 +5,7 @@
  */
 
 function truckCurtain(truckid) {
+    weightInit();
 
     trailerTextEdit.set({text: truckid, fontSize: 16, fontStyle: "normal", top: 23});
 
@@ -24,6 +25,13 @@ function truckCurtain(truckid) {
         door5 = '';
         door6 = '';
     } else if (truckid == 'Custom Flatbed') {
+        //Set region's size and location
+        topLeftWeightRegion.set({left: 206, top: 239, width: 204 * 2, height: 162 * 2,});
+        topMiddleWeightRegion.set({left: 601, top: 239, width: 192 * 2, height: 162 * 2,});
+        topRightWeightRegion.set({left: 997, top: 239, width: 204 * 2, height: 162 * 2,});
+        botLeftWeightRegion.set({left: 206, top: 566, width: 204 * 2, height: 162 * 2,});
+        botMiddleWeightRegion.set({left: 601, top: 566, width: 192 * 2, height: 162 * 2,});
+        botRightWeightRegion.set({left: 997, top: 566, width: 204 * 2, height: 162 * 2,});
         door1 = '';
         door2 = '';
         door3 = '';
@@ -38,6 +46,13 @@ function truckCurtain(truckid) {
         door5 = '';
         door6 = '';
     } else if (truckid == '48 Flatbed') {
+        //Set region's size and location
+        topLeftWeightRegion.set({left: 206, top: 239, width: 192 * 2, height: 162 * 2,});
+        topMiddleWeightRegion.set({left: 601, top: 239, width: 192 * 2, height: 162 * 2,});
+        topRightWeightRegion.set({left: 997, top: 239, width: 204 * 2, height: 162 * 2,});
+        botLeftWeightRegion.set({left: 206, top: 566, width: 168 * 2, height: 162 * 2,});
+        botMiddleWeightRegion.set({left: 601, top: 566, width: 192 * 2, height: 162 * 2,});
+        botRightWeightRegion.set({left: 997, top: 566, width: 204 * 2, height: 162 * 2,});
         door1 = '90"H - 90"D (Full flatbed) - 48\'W';
         door2 = '';
         door3 = '';
@@ -45,6 +60,13 @@ function truckCurtain(truckid) {
         door5 = '';
         door6 = '';
     } else if (truckid == "110" || truckid == "801" || truckid == "802") {
+        //Set region's size and location
+        topLeftWeightRegion.set({left: 206, top: 239, width: 204 * 2, height: 162 * 2,});
+        topMiddleWeightRegion.set({left: 601, top: 239, width: 192 * 2, height: 162 * 2,});
+        topRightWeightRegion.set({left: 997, top: 239, width: 204 * 2, height: 162 * 2,});
+        botLeftWeightRegion.set({left: 206, top: 566, width: 204 * 2, height: 162 * 2,});
+        botMiddleWeightRegion.set({left: 601, top: 566, width: 192 * 2, height: 162 * 2,});
+        botRightWeightRegion.set({left: 997, top: 566, width: 204 * 2, height: 162 * 2,});
         door1 = '95"H - 90"D (Full flatbed) - 3x16\'W';
         door2 = '';
         door3 = '';

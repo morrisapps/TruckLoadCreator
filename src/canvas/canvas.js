@@ -276,6 +276,7 @@ function createCanvas() {
 
     // snap to grid
     canvas.on('object:moving', function (options) {
+        console.log(options.target);
         keepInBounds(options.target);
         if (options.target.isComment != true) {
             if ( _snapToggle.checked == true){
@@ -439,6 +440,13 @@ $(document).ready(function () {
     });
 
     truckCustom();
+    //Add Weight Regions
+    canvas.add(topLeftWeightRegion);
+    canvas.add(topMiddleWeightRegion);
+    canvas.add(topRightWeightRegion);
+    canvas.add(botLeftWeightRegion);
+    canvas.add(botMiddleWeightRegion);
+    canvas.add(botRightWeightRegion);
     canvas.requestRenderAll();
 
     //Checks if previous session was saved, and if not asks to restore.

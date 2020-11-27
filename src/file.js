@@ -130,7 +130,6 @@ function save() {
     a.setAttribute("download", saveContent[8] + ".truck");
     document.body.appendChild(a);
     a.click();
-    a.
     document.body.removeChild(a);
 
     //Sets localStorage saved variable to true to signal that the work has been saved up to this point.
@@ -261,6 +260,14 @@ function load(content) {
     });
     //Restore truckid and truck size
     truckLoad(content[6]);
+
+    //Add Weight Regions
+    canvas.add(topLeftWeightRegion);
+    canvas.add(topMiddleWeightRegion);
+    canvas.add(topRightWeightRegion);
+    canvas.add(botLeftWeightRegion);
+    canvas.add(botMiddleWeightRegion);
+    canvas.add(botRightWeightRegion);
 
     //Restore text edit fields
     driverTextEdit.text = content[2].driverTextEdit;
