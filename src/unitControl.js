@@ -20,12 +20,13 @@ function AddUpdateButton() {
         } else if (!isNaN(_customer.value)){
             alert("Customer must contain a letter");
         } else {
-            let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, 'black', 'white', 200, 200, _drop.value, _location.value, false);
+            let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, 'black', 'white', 200, 200, _drop.value, _location.value, false, Math.round(+_weight.value));
             if (AddError == '') {
                 updateHeightCount(canvas.getActiveObject());
                 addCustomer(_customer.value, _drop.value);
                 _tag.value = '';
                 _location.value = '';
+                _weight.value = '';
                 document.getElementById('add').outerHTML = '<button style="margin-top: 20px;" class="tip expand" id="add" name="add" data-title="Added to List!" onclick="AddUpdateButton()">Added</button>';
             }
         }

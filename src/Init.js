@@ -71,7 +71,7 @@ let topLeftWeightRegion = new fabric.Rect({
     top: 239,
     width: 216 * 2,
     height: 162 * 2,
-    fill: "grey",
+    fill: "white",
     stroke: 'green',
     strokeWidth: 2,
     selectable: false
@@ -81,7 +81,7 @@ let topMiddleWeightRegion = new fabric.Rect({
     top: 239,
     width: 192 * 2,
     height: 162 * 2,
-    fill: "grey",
+    fill: "white",
     stroke: 'green',
     strokeWidth: 2,
     selectable: false
@@ -135,6 +135,7 @@ let topRightWeightUnits = [];
 let botLeftWeightUnits = [];
 let botMiddleWeightUnits = [];
 let botRightWeightUnits = [];
+let weightUnits = [topLeftWeightUnits,topMiddleWeightUnits,topRightWeightUnits,botLeftWeightUnits,botMiddleWeightUnits,botRightWeightUnits];
 
 
 
@@ -146,6 +147,7 @@ let _drop = document.getElementById('drop');
 let _tag = document.getElementById('tag');
 let _rack = document.getElementById('hasBundle');
 let _location = document.getElementById('location');
+let _weight = document.getElementById('weight');
 
 
 //These variables are used for selecting objects and deselecting

@@ -18,6 +18,13 @@ function truckCurtain(truckid) {
 
 
     if (truckid == "1903") {
+        //Set region's size and location
+        topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,});
+        topMiddleWeightRegion.set({left: 625, top: 239, width: 192 * 2, height: 162 * 2,});
+        topRightWeightRegion.set({left: 1009, top: 239, width: 192 * 2, height: 162 * 2,});
+        botLeftWeightRegion.set({left: 242, top: 566, width: 192 * 2, height: 162 * 2,});
+        botMiddleWeightRegion.set({left: 625, top: 566, width: 192 * 2, height: 162 * 2,});
+        botRightWeightRegion.set({left: 1009, top: 566, width: 192 * 2, height: 162 * 2,});
         door1 = '90"H - 90"D (Full flatbed) - 47\'6"W';
         door2 = '';
         door3 = '';
@@ -39,6 +46,13 @@ function truckCurtain(truckid) {
         door5 = '';
         door6 = '';
     } else if (truckid == '46 Flatbed') {
+        //Set region's size and location
+        topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,});
+        topMiddleWeightRegion.set({left: 601, top: 239, width: 168 * 2, height: 162 * 2,});
+        topRightWeightRegion.set({left: 961, top: 239, width: 192 * 2, height: 162 * 2,});
+        botLeftWeightRegion.set({left: 242, top: 566, width: 192 * 2, height: 162 * 2,});
+        botMiddleWeightRegion.set({left: 601, top: 566, width: 168 * 2, height: 162 * 2,});
+        botRightWeightRegion.set({left: 961, top: 566, width: 192 * 2, height: 162 * 2,});
         door1 = '90"H - 90"D (Full flatbed) - 46\'"W';
         door2 = '';
         door3 = '';
@@ -47,12 +61,12 @@ function truckCurtain(truckid) {
         door6 = '';
     } else if (truckid == '48 Flatbed') {
         //Set region's size and location
-        topLeftWeightRegion.set({left: 206, top: 239, width: 192 * 2, height: 162 * 2,});
-        topMiddleWeightRegion.set({left: 601, top: 239, width: 192 * 2, height: 162 * 2,});
-        topRightWeightRegion.set({left: 997, top: 239, width: 204 * 2, height: 162 * 2,});
-        botLeftWeightRegion.set({left: 206, top: 566, width: 168 * 2, height: 162 * 2,});
-        botMiddleWeightRegion.set({left: 601, top: 566, width: 192 * 2, height: 162 * 2,});
-        botRightWeightRegion.set({left: 997, top: 566, width: 204 * 2, height: 162 * 2,});
+        topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,});
+        topMiddleWeightRegion.set({left: 625, top: 239, width: 192 * 2, height: 162 * 2,});
+        topRightWeightRegion.set({left: 1009, top: 239, width: 192 * 2, height: 162 * 2,});
+        botLeftWeightRegion.set({left: 242, top: 566, width: 192 * 2, height: 162 * 2,});
+        botMiddleWeightRegion.set({left: 625, top: 566, width: 192 * 2, height: 162 * 2,});
+        botRightWeightRegion.set({left: 1009, top: 566, width: 192 * 2, height: 162 * 2,});
         door1 = '90"H - 90"D (Full flatbed) - 48\'W';
         door2 = '';
         door3 = '';
@@ -74,6 +88,13 @@ function truckCurtain(truckid) {
         door5 = '';
         door6 = '';
     } else if (truckid == "RWW114") {
+        //Set region's size and location
+        topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,});
+        topMiddleWeightRegion.set({left: 577, top: 239, width: 144 * 2, height: 162 * 2,});
+        topRightWeightRegion.set({left: 913, top: 239, width: 192 * 2, height: 162 * 2,});
+        botLeftWeightRegion.set({left: 242, top: 566, width: 192 * 2, height: 162 * 2,});
+        botMiddleWeightRegion.set({left: 577, top: 566, width: 144 * 2, height: 162 * 2,});
+        botRightWeightRegion.set({left: 913, top: 566, width: 192 * 2, height: 162 * 2,});
         door1 = '90"H - 90"D (Full flatbed) - 44\'W';
         door2 = '';
         door3 = '';

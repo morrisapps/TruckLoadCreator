@@ -34,7 +34,8 @@ function getSaveContent() {
             location: unit.location,
             inCanvas: unit.inCanvas,
             customerText: unit.customerText,
-            fullAE: unit.fullAE
+            fullAE: unit.fullAE,
+            weight: unit.weight,
         });
         savedUnits.push(saved);
     });
@@ -172,7 +173,7 @@ function updateUnits(updateUnits) {
     //Restore units
     updateUnits.forEach(function (unit) {
         if (unit != null) {
-            createUnit(unit.unitWidth, unit.unitHeight, unit.customer, unit.ae, unit.color, unit.fill, unit.left, unit.top, unit.drop, unit.location, unit.inCanvas, unit.customerText, unit.fullAE);
+            createUnit(unit.unitWidth, unit.unitHeight, unit.customer, unit.ae, unit.color, unit.fill, unit.left, unit.top, unit.drop, unit.location, unit.inCanvas, unit.customerText, unit.fullAE, unit.weight);
             units.push(currentGroup);
             if (currentGroup.inCanvas == true) {
                 canvas.add(currentGroup);
@@ -226,6 +227,14 @@ function load(content) {
             canvas.remove(obj);
     });
 
+    //Add Weight Regions
+    canvas.add(topLeftWeightRegion);
+    canvas.add(topMiddleWeightRegion);
+    canvas.add(topRightWeightRegion);
+    canvas.add(botLeftWeightRegion);
+    canvas.add(botMiddleWeightRegion);
+    canvas.add(botRightWeightRegion);
+
     //Recreate units
     updateUnits(content[0]);
 
@@ -260,14 +269,6 @@ function load(content) {
     });
     //Restore truckid and truck size
     truckLoad(content[6]);
-
-    //Add Weight Regions
-    canvas.add(topLeftWeightRegion);
-    canvas.add(topMiddleWeightRegion);
-    canvas.add(topRightWeightRegion);
-    canvas.add(botLeftWeightRegion);
-    canvas.add(botMiddleWeightRegion);
-    canvas.add(botRightWeightRegion);
 
     //Restore text edit fields
     driverTextEdit.text = content[2].driverTextEdit;

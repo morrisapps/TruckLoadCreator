@@ -157,7 +157,7 @@ function checkIfCustomerDropExists(cName, drop) {
     return text;
 }
 
-function Add(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas) {
+function Add(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, weight) {
     var custName = cName;
     var unitid = custName + AE;
     var addError = "";
@@ -182,13 +182,13 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
     }
     if (addError == "" && response == true) {
         if (inCanvas) {
-            createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, cName, AE);
+            createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, cName, AE, weight);
             canvas.add(currentGroup);
             canvas.setActiveObject(currentGroup);
             addUnit(currentGroup);
             keepInBounds(currentGroup);
         } else {
-            createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, cName, AE);
+            createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, cName, AE, weight);
             addUnit(currentGroup);
         }
         midLine.bringToFront();
@@ -276,33 +276,56 @@ function createCanvas() {
 
     // snap to grid
     canvas.on('object:moving', function (options) {
-        console.log(options.target);
-        keepInBounds(options.target);
-        if (options.target.isComment != true) {
+
+        let target = options.target;
+        //console.log(target);
+        keepInBounds(target);
+
+        //let targetY = target.top + target.height/2;
+        //let targetX = target.left + target.width/2;
+
+        //Count weight
+        if (target.weight > 0){
+            let objMiddle = target.getCenterPoint();
+            //console.log("target")
+            //console.log(target.item(2));
+            for (let i = 0; i < weightRegions.length; i++){
+                if (intersects(target.item(2),weightRegions[i])){
+                    weightUnits.forEach(function(units){
+                        if (units.includes(target)) {units.splice(units.indexOf(target), 1);}
+                        console.log(weightUnits);
+                    });
+                    weightUnits[i].push(target);
+                }
+            }
+
+        }
+
+        if (target.isComment != true) {
             if ( _snapToggle.checked == true){
-                options.target.set({
-                    left: (Math.round(options.target.left / grid) * grid) + 2,
+                target.set({
+                    left: (Math.round(target.left / grid) * grid) + 2,
                 });
                 //Do when Objects collide during drag
-                options.target.setCoords();
+                target.setCoords();
                 var pointer = canvas.getPointer(event.e);
-                objectIntersects(midLine, options.target);
-                if (intersects(midLine, options.target) && options.target.line != true) {
+                objectIntersects(midLine, target);
+                if (intersects(midLine, target) && target.line != true) {
                     if (pointer.y < midLine.top + midLine.strokeWidth / 2) {
-                        options.target.set('top', (midLine.top - 1) - options.target.height);
+                        target.set('top', (midLine.top - 1) - target.height);
                     } else {
-                        options.target.set('top', (midLine.top + 1) + midLine.strokeWidth);
+                        target.set('top', (midLine.top + 1) + midLine.strokeWidth);
                     }
-                    options.target.setCoords();
+                    target.setCoords();
                 }
                 canvas.forEachObject(function (obj) {
                     if (obj.intersects == true) {
-                        objectIntersects(obj, options.target);
-                        options.target.set('opacity', 1);
+                        objectIntersects(obj, target);
+                        target.set('opacity', 1);
                     }
                 });
             }
-            updateHeightCount(options.target);
+            updateHeightCount(target);
         }
     });
 
@@ -347,6 +370,7 @@ function setUnitFields(unit) {
     _drop.value = unit.drop;
     _height.value = unit.unitHeight;
     _width.value = unit.unitWidth;
+    _weight.value = unit.weight;
     currentCustomerName = unit.customer.toString();
     currentDrop = unit.drop;
 }
@@ -382,6 +406,7 @@ function deselectObject(obj) {
             obj.deselected[0].isSelected = false;
             _tag.value = "";
             _location.value = "";
+            _weight.value = "";
             _customer.value = selectCurrentCustomer;
             _drop.value = selectCurrentDrop;
             currentCustomerName = selectCurrentCustomer;

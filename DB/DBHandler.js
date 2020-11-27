@@ -173,7 +173,7 @@ function loadFromDB(data) {
         //Checks if bundles or Units then creates and adds them
         if (item[13].includes('40\"x') || item[13].includes('48\"x') || item[13].includes('EC 25\"')) {
             //Adding unit
-            createUnit(unitWidth, item[11], customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], '', false, item[8],item[10]);
+            createUnit(unitWidth, item[11], customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], '', false, item[8],item[10],Math.round(item[12]));
             if (addUnit(currentGroup)){
                 importUnits++;
             }

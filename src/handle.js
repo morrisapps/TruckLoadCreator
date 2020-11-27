@@ -258,6 +258,7 @@ function handleDrop(e) {
                 updateHeightCount(draggedUnit);
                 listUnits();
                 listCustomer();
+                _weight.value = '';
             }
         }
         //Add sideUnit
@@ -287,7 +288,8 @@ function handleDrop(e) {
                     e.layerY * invertedWidthRatio - _height.value,
                     _drop.value,
                     _location.value,
-                    true
+                    true,
+                    +_weight.value,
                 );
                 if (addError == "") {
                     addCustomer(_customer.value, _drop.value);

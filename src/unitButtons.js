@@ -68,6 +68,7 @@ function deleteObject(eventData, target) {
         canvas.remove(target);
         removeUnit(target);
         updateHeightCount(target);
+        _weight.value = '';
         canvas.requestRenderAll();
     }
 }
