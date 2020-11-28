@@ -276,30 +276,9 @@ function createCanvas() {
 
     // snap to grid
     canvas.on('object:moving', function (options) {
-
         let target = options.target;
-        //console.log(target);
         keepInBounds(target);
 
-        //let targetY = target.top + target.height/2;
-        //let targetX = target.left + target.width/2;
-
-        //Count weight
-        if (target.weight > 0){
-            let objMiddle = target.getCenterPoint();
-            //console.log("target")
-            //console.log(target.item(2));
-            for (let i = 0; i < weightRegions.length; i++){
-                if (intersects(target.item(2),weightRegions[i])){
-                    weightUnits.forEach(function(units){
-                        if (units.includes(target)) {units.splice(units.indexOf(target), 1);}
-                        console.log(weightUnits);
-                    });
-                    weightUnits[i].push(target);
-                }
-            }
-
-        }
 
         if (target.isComment != true) {
             if ( _snapToggle.checked == true){
@@ -326,6 +305,24 @@ function createCanvas() {
                 });
             }
             updateHeightCount(target);
+        }
+        //Count weight
+        if (target.weight > 0){
+            //Get middle coordinates of object
+            let targetY = (target.top + target.height/2)*screenWidthRatio;
+            let targetX = (target.left + target.width/2)*screenWidthRatio;
+            let objMiddle = new fabric.Point(targetX,targetY);
+            //Checks if weight Regions contain center of object
+            for (let i = 0; i < weightRegions.length; i++){
+                if (weightRegions[i].containsPoint(objMiddle)){
+                    //Removes object if already added to ensure duplication doesn't occur
+                    weightUnits.forEach(function(units){
+                        if (units.includes(target)) {units.splice(units.indexOf(target), 1);}
+                    });
+                    weightUnits[i].push(target);
+                }
+            }
+            console.log(weightUnits);
         }
     });
 

@@ -26,18 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Added partial weight region testing">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Put Custom Truck under Trucks. DBHandler now has a global variable for table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/DBHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/handle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/handle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/print.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/print.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/trucks/truckCurtain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/trucks/truckCurtain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unitButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/unitButtons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unitControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/unitControl.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +55,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1jiCuFQUZBoxu6ySoWg35DFx1Jm" />
@@ -91,19 +85,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/js-truckwrite/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -171,6 +152,8 @@
       <workItem from="1605900852094" duration="11520000" />
       <workItem from="1605918217416" duration="11231000" />
       <workItem from="1605949885126" duration="2893000" />
+      <workItem from="1606387439714" duration="17544000" />
+      <workItem from="1606563731383" duration="6620000" />
     </task>
     <task id="LOCAL-00001" summary="Updated License">
       <created>1604352419027</created>
@@ -445,56 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605929463316</updated>
     </task>
-    <task id="LOCAL-00040" summary="Fixed Error dialog creating extra text on bottom of page">
-      <created>1605977412565</created>
+    <task id="LOCAL-00040" summary="Put Custom Truck under Trucks. DBHandler now has a global variable for table">
+      <created>1606141241163</created>
       <option name="number" value="00040" />
       <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1605977412565</updated>
+      <updated>1606141241163</updated>
     </task>
-    <task id="LOCAL-00041" summary="Dialog now appears after import to show import information">
-      <created>1605995091115</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1605995091115</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Fixed units snapping to Rack after rack was removed">
-      <created>1605995653103</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1605995653103</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Updated version">
-      <created>1605995786497</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1605995786497</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Fixed issue importing long customer names">
-      <created>1605998069209</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1605998069209</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Updated version info">
-      <created>1605998736747</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1605998736747</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Made Unit and Customer List displays longer">
-      <created>1606053636808</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1606053636808</updated>
-    </task>
-    <option name="localTasksCounter" value="47" />
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,6 +466,12 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Units now have brackets around units" />
+    <MESSAGE value="Units now have brackets around tag numbers" />
+    <MESSAGE value="&#10;Fix bug relating to checking the rack toggle if customer is in rack when typing in customer name" />
+    <MESSAGE value="&#10;Fixed preview css so that unit height does not change element height. Was causing issues with drag and drop unit lists." />
+    <MESSAGE value="Fixed bug relating to unit edit button being disabled if using straps in truck" />
+    <MESSAGE value="Updated changelog" />
     <MESSAGE value="Unit selection box is now closer to unit's text if the text went outside of the unit" />
     <MESSAGE value="Fixed bug toggling unit brackets does not reset height counters" />
     <MESSAGE value="Tag bracket option now saves on save/load" />
@@ -543,14 +490,8 @@
     <MESSAGE value="Further DB testing" />
     <MESSAGE value="Basic DB connectivity added. Ready for initial importing of information from DB" />
     <MESSAGE value="Added initial import functionality. &#10;&#10;Customer box is now reversed" />
-    <MESSAGE value="Fixed Error dialog creating extra text on bottom of page" />
-    <MESSAGE value="Dialog now appears after import to show import information" />
-    <MESSAGE value="Fixed units snapping to Rack after rack was removed" />
-    <MESSAGE value="Updated version" />
-    <MESSAGE value="Fixed issue importing long customer names" />
-    <MESSAGE value="Updated version info" />
-    <MESSAGE value="Made Unit and Customer List displays longer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made Unit and Customer List displays longer" />
+    <MESSAGE value="Put Custom Truck under Trucks. DBHandler now has a global variable for table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Put Custom Truck under Trucks. DBHandler now has a global variable for table" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -592,11 +533,11 @@
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605306293228" />
     <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605490412218" />
-    <state width="192" height="194" key="Git.Branch.Popup" timestamp="1605957396866">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="265" height="272" key="Git.Branch.Popup" timestamp="1605919012278">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="265" height="272" key="Git.Branch.Popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605919012278" />
-    <state width="192" height="194" key="Git.Branch.Popup/0.0.1366.728@0.0.1366.728" timestamp="1605957396866" />
+    <state width="188" height="190" key="Git.Branch.Popup/0.0.1366.728@0.0.1366.728" timestamp="1605912568219" />
     <state width="255" height="262" key="Git.Branch.Popup/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604998851145" />
     <state width="235" height="242" key="Git.Branch.Popup/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604533407861" />
     <state x="832" y="418" key="Github.ShareDialog" timestamp="1604351138275">
@@ -715,13 +656,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605998741282">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606141291344">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605929471864" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604434809744" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605998741282" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605912579609" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605586559998" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
@@ -731,10 +672,6 @@
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604791606800" />
     <state x="553" y="304" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1605900868105" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352162689" />
-    <state x="462" y="77" key="git4idea.branch.GitSmartOperationDialog" timestamp="1605957400531">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="462" y="77" key="git4idea.branch.GitSmartOperationDialog/0.0.1366.728@0.0.1366.728" timestamp="1605957400531" />
     <state x="774" y="364" key="git4idea.ui.GitTagDialog" timestamp="1604366798897">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

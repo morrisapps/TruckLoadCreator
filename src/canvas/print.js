@@ -65,7 +65,7 @@ function printPageArea() {
 
         saveToBrowser();
         if (confirm('Would you like to save?')){
-            //save();
+            save();
         }
     }
 }
