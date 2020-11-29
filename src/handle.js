@@ -255,7 +255,7 @@ function handleDrop(e) {
                 draggedUnit.set('top', e.layerY * invertedWidthRatio - draggedUnit.unitHeight);
                 draggedUnit.inCanvas = true;
                 canvas.add(draggedUnit);
-                updateHeightCount(draggedUnit);
+                updateCount(draggedUnit);
                 listUnits();
                 listCustomer();
                 _weight.value = '';
@@ -320,7 +320,7 @@ function handleDrop(e) {
             keepInBounds(rackCanvas);
         }
         //Update the line count when dropped
-        updateHeightCount(canvas.getActiveObject());
+        updateCount(canvas.getActiveObject());
         saveToBrowser();
     }
     return false;

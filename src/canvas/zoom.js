@@ -8,28 +8,23 @@
 //canvas height 933
 //Sidebar 16.25rem - If root font is 16 then 260 px
 
-let screenWidthRatio = (window.screen.availWidth  - 280) /canvas.width;
+let screenWidthRatio = (window.screen.availWidth - 280) / canvas.width;
 let screenHeightRatio = window.screen.availHeight / canvas.height;
 let invertedWidthRatio = 1;
 let invertedHeightRatio = 1;
 
-if (true){
-    invertedWidthRatio =  1/screenWidthRatio;
-    if (screenHeightRatio > 1){
-        invertedHeightRatio = 1/screenHeightRatio;
-    }
+
+invertedWidthRatio = 1 / screenWidthRatio;
+if (screenHeightRatio > 1) {
+    invertedHeightRatio = 1 / screenHeightRatio;
 }
 
 setZoom();
 
 function setZoom() {
-    if (true) {
-        canvas.setWidth(canvas.width * screenWidthRatio);
-        canvas.setHeight(canvas.height * screenWidthRatio);
-        canvas.setZoom(screenWidthRatio);
-        canvas.requestRenderAll();
-    } else {
-        canvas.setZoom(screenWidthRatio);
-    }
+    canvas.setWidth(canvas.width * screenWidthRatio);
+    canvas.setHeight(canvas.height * screenWidthRatio);
+    canvas.setZoom(screenWidthRatio);
+    canvas.requestRenderAll();
 }
 

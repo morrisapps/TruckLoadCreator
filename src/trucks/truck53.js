@@ -5,7 +5,6 @@
  */
 
 function truck53(truckid) {
-    weightInit();
     //Set region's size and location
     topLeftWeightRegion.set({left: 218, top: 239, width: 216 * 2, height: 162 * 2,}).setCoords();
     topMiddleWeightRegion.set({left: 626, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
@@ -53,6 +52,14 @@ function truck53(truckid) {
         door5 = '105"H - 48"D - 16\'W';
         door6 = '105"H - 48"D - 16\'W';
     } else if (truckid == "1904" || truckid == "1905") {
+        //Set region's size and location
+        topLeftWeightRegion.set({left: 242, top: 239, width: 240 * 2, height: 162 * 2,}).setCoords();
+        topMiddleWeightRegion.set({left: 650, top: 239, width: 168 * 2-4, height: 162 * 2,}).setCoords();
+        topRightWeightRegion.set({left: 1010, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
+        botLeftWeightRegion.set({left: 242, top: 565, width: 240 * 2, height: 162 * 2,}).setCoords();
+        botMiddleWeightRegion.set({left: 650, top: 565, width: 168 * 2-4, height: 162 * 2,}).setCoords();
+        botRightWeightRegion.set({left: 1010, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
+
         door1 = '105"H - 52"D - 20\'6"W Offset';
         door2 = '105"H - 44"D - 14\'6"W Offset';
         door3 = '105"H - 52"D - 16\'6"W Offset';
@@ -220,7 +227,7 @@ function truck53(truckid) {
 
     canvas.forEachObject(function (obj) {
         if (obj.unit == true) {
-            updateHeightCount(obj);
+            updateCount(obj);
             obj.bringToFront();
         }
     });

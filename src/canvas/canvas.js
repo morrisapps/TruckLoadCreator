@@ -93,7 +93,7 @@ function initializeCounters() {
 
 initializeCounters();
 
-function updateHeightCount(target) {
+function updateCount(target) {
     if (target != null) {
         if (target.unit == true || target.id == "rack") {
             var i = 0;
@@ -104,9 +104,7 @@ function updateHeightCount(target) {
             }
         }
     }
-}
-
-function updateWeightCount(target){
+    //Update weight
     if (target.weight > 0){
         //Get middle coordinates of object
         let targetY = (target.top + target.height/2)*screenWidthRatio;
@@ -118,7 +116,7 @@ function updateWeightCount(target){
             if (weightUnits[i].includes(target)) {weightUnits[i].splice(weightUnits[i].indexOf(target), 1);}
             //Add unit to unit list if center is within region
             if (weightRegions[i].containsPoint(objMiddle)){
-                if (!weightUnits[i].includes(target)){
+                if (!weightUnits[i].includes(target) && target.remove != true){
                     weightUnits[i].push(target);
                 }
             }
@@ -126,6 +124,7 @@ function updateWeightCount(target){
         console.log(weightUnits);
     }
 }
+
 
 function heightCount(target, line, lineCounter, lineUnits) {
     var counter = 0;
@@ -323,10 +322,8 @@ function createCanvas() {
                     }
                 });
             }
-            updateHeightCount(target);
+            updateCount(target);
         }
-        //Count weight
-        updateWeightCount(target);
     });
 
     canvas.on('mouse:up', function (options) {
@@ -337,13 +334,14 @@ function createCanvas() {
                     intersectedObjects.push(obj);
                 }
             }
-            obj.set('opacity', 1);
+            if (obj.isRegion != true){obj.set('opacity', 1);};
+
         });
         //check if intersected bundle is above or below
         intersectedObjects.forEach(function (obj) {
             keepInBounds(obj);
             if (!intersects(obj, options.target)) {
-                obj.set('opacity', 1);
+                if (obj.isRegion != true){obj.set('opacity', 1);};
             }
         });
     });

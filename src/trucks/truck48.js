@@ -5,7 +5,6 @@
  */
 
 function truck48(truckid) {
-    weightInit();
     //Set region's size and location
     topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
     topMiddleWeightRegion.set({left: 578, top: 239, width: 144 * 2-4, height: 162 * 2,}).setCoords();
@@ -243,7 +242,7 @@ function truck48(truckid) {
 
     canvas.forEachObject(function (obj) {
         if (obj.unit == true) {
-            updateHeightCount(obj);
+            updateCount(obj);
             obj.bringToFront();
         }
     });

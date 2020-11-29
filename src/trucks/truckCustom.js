@@ -104,86 +104,6 @@ function heightLines() {
         canvas.add(botLines[i]);
         i++;
     }
-}
-
-function weightInit() {
-    //Variables used for counting weight
-    //Weight Region
-    topLeftWeightRegion.set({
-        left: 218,
-        top: 239,
-        width: 216 * 2,
-        height: 162 * 2,
-        fill: "white",
-        stroke: 'green',
-        strokeWidth: 2,
-        originX: 'center',
-        originY: 'center',
-        selectable: false
-    });
-    topMiddleWeightRegion.set({
-        left: 625,
-        top: 239,
-        width: 192 * 2,
-        height: 162 * 2,
-        fill: "white",
-        stroke: 'green',
-        strokeWidth: 2,
-        originX: 'center',
-        originY: 'center',
-        selectable: false
-    });
-    topRightWeightRegion.set({
-        left: 1009,
-        top: 239,
-        width: 192 * 2,
-        height: 162 * 2,
-        fill: "white",
-        stroke: 'green',
-        strokeWidth: 2,
-        originX: 'center',
-        originY: 'center',
-        selectable: false
-    });
-    botLeftWeightRegion.set({
-        left: 218,
-        top: 566,
-        width: 216 * 2,
-        height: 162 * 2,
-        fill: "white",
-        stroke: 'green',
-        strokeWidth: 2,
-        originX: 'center',
-        originY: 'center',
-        selectable: false,
-        selectable: false
-    });
-    botMiddleWeightRegion.set({
-        left: 625,
-        top: 566,
-        width: 192 * 2,
-        height: 162 * 2,
-        fill: "white",
-        stroke: 'green',
-        strokeWidth: 2,
-        originX: 'center',
-        originY: 'center',
-        selectable: false
-    });
-    botRightWeightRegion.set({
-        left: 1009,
-        top: 566,
-        width: 192 * 2,
-        height: 162 * 2,
-        fill: "white",
-        stroke: 'green',
-        strokeWidth: 2,
-        originX: 'center',
-        originY: 'center',
-        selectable: false
-    });
-    weightRegions = [topLeftWeightRegion, topMiddleWeightRegion, topRightWeightRegion, botLeftWeightRegion, botMiddleWeightRegion, botRightWeightRegion];
-
     //Weight unit containers
     topLeftWeightUnits = [];
     topMiddleWeightUnits = [];
@@ -191,11 +111,12 @@ function weightInit() {
     botLeftWeightUnits = [];
     botMiddleWeightUnits = [];
     botRightWeightUnits = [];
+    weightUnits = [topLeftWeightUnits,topMiddleWeightUnits,topRightWeightUnits,botLeftWeightUnits,botMiddleWeightUnits,botRightWeightUnits];
 }
+
 
 function truckCustom() {
     //Set region's size and location
-    weightInit();
     topLeftWeightRegion.set({left: 218, top: 239, width: 216 * 2, height: 162 * 2,}).setCoords();
     topMiddleWeightRegion.set({left: 626, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
     topRightWeightRegion.set({left: 1010, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
@@ -288,7 +209,7 @@ function truckCustom() {
 
     canvas.forEachObject(function (obj) {
         if (obj.unit == true) {
-            updateHeightCount(obj);
+            updateCount(obj);
             obj.bringToFront();
         }
     });

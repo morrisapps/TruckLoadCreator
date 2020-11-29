@@ -22,7 +22,7 @@ function AddUpdateButton() {
         } else {
             let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, 'black', 'white', 200, 200, _drop.value, _location.value, false, Math.round(+_weight.value));
             if (AddError == '') {
-                updateHeightCount(canvas.getActiveObject());
+                updateCount(canvas.getActiveObject());
                 addCustomer(_customer.value, _drop.value);
                 _tag.value = '';
                 _location.value = '';

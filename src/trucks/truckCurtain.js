@@ -5,7 +5,6 @@
  */
 
 function truckCurtain(truckid) {
-    weightInit();
 
     trailerTextEdit.set({text: truckid, fontSize: 16, fontStyle: "normal", top: 23});
 
@@ -315,7 +314,7 @@ function truckCurtain(truckid) {
 
     canvas.forEachObject(function (obj) {
         if (obj.unit == true) {
-            updateHeightCount(obj);
+            updateCount(obj);
             obj.bringToFront();
         }
     });

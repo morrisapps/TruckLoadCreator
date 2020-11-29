@@ -66,6 +66,8 @@ var bot1176Units;
 
 //Variables used for counting weight
 //Weight Region
+//Variables used for counting weight
+//Weight Region
 let topLeftWeightRegion = new fabric.Rect({
     left: 218,
     top: 239,
@@ -74,7 +76,11 @@ let topLeftWeightRegion = new fabric.Rect({
     fill: "white",
     stroke: 'green',
     strokeWidth: 2,
-    selectable: false
+    originX: 'center',
+    originY: 'center',
+    selectable: false,
+    isRegion: true,
+    opacity: 0
 });
 let topMiddleWeightRegion = new fabric.Rect({
     left: 625,
@@ -84,50 +90,70 @@ let topMiddleWeightRegion = new fabric.Rect({
     fill: "white",
     stroke: 'green',
     strokeWidth: 2,
-    selectable: false
+    originX: 'center',
+    originY: 'center',
+    selectable: false,
+    isRegion: true,
+    opacity: 0
 });
 let topRightWeightRegion = new fabric.Rect({
     left: 1009,
     top: 239,
     width: 192 * 2,
     height: 162 * 2,
-    fill: "grey",
+    fill: "white",
     stroke: 'green',
     strokeWidth: 2,
-    selectable: false
+    originX: 'center',
+    originY: 'center',
+    selectable: false,
+    isRegion: true,
+    opacity: 0
 });
 let botLeftWeightRegion = new fabric.Rect({
     left: 218,
     top: 566,
     width: 216 * 2,
     height: 162 * 2,
-    fill: "grey",
+    fill: "white",
     stroke: 'green',
     strokeWidth: 2,
+    originX: 'center',
+    originY: 'center',
     selectable: false,
-    selectable: false
+    isRegion: true,
+    opacity: 0
 });
 let botMiddleWeightRegion = new fabric.Rect({
     left: 625,
     top: 566,
     width: 192 * 2,
     height: 162 * 2,
-    fill: "grey",
-    stroke: 'green',
+    fill: "white",
+    stroke: 'white',
     strokeWidth: 2,
-    selectable: false
+    originX: 'center',
+    originY: 'center',
+    selectable: false,
+    isRegion: true,
+    opacity: 0
 });
 let botRightWeightRegion = new fabric.Rect({
     left: 1009,
     top: 566,
     width: 192 * 2,
     height: 162 * 2,
-    fill: "grey",
+    fill: "white",
     stroke: 'green',
     strokeWidth: 2,
-    selectable: false
+    originX: 'center',
+    originY: 'center',
+    selectable: false,
+    isRegion: true,
+    opacity: 0
 });
 let weightRegions = [topLeftWeightRegion, topMiddleWeightRegion, topRightWeightRegion, botLeftWeightRegion, botMiddleWeightRegion, botRightWeightRegion];
+
 //Weight unit containers
 let topLeftWeightUnits = [];
 let topMiddleWeightUnits = [];
@@ -136,8 +162,6 @@ let botLeftWeightUnits = [];
 let botMiddleWeightUnits = [];
 let botRightWeightUnits = [];
 let weightUnits = [topLeftWeightUnits,topMiddleWeightUnits,topRightWeightUnits,botLeftWeightUnits,botMiddleWeightUnits,botRightWeightUnits];
-
-
 
 //Variables representing unit/customer input fields
 let _width = document.getElementById('width');

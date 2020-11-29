@@ -177,7 +177,7 @@ function updateUnits(updateUnits) {
             units.push(currentGroup);
             if (currentGroup.inCanvas == true) {
                 canvas.add(currentGroup);
-                updateHeightCount(currentGroup);
+                updateCount(currentGroup);
             }
         }
     });
@@ -255,7 +255,7 @@ function load(content) {
     content[3].forEach(function (rack) {
         let savedRack = createRack(rack.top, rack.left, rack.id, rack.drag);
         canvas.add(savedRack);
-        updateHeightCount(savedRack);
+        updateCount(savedRack);
     });
 
     //Restore dash lines
