@@ -7,12 +7,12 @@
 function truck35(truckid) {
     weightInit();
     //Set region's size and location
-    topLeftWeightRegion.set({left: 434, top: 239, width: 192 * 2, height: 162 * 2,});
-    topMiddleWeightRegion.set({left: 0, top: 0, width: 0, height: 0,});
-    topRightWeightRegion.set({left: 817, top: 239, width: 192 * 2, height: 162 * 2,});
-    botLeftWeightRegion.set({left: 434, top: 566, width: 192 * 2, height: 162 * 2,});
-    botMiddleWeightRegion.set({left: 0, top: 0, width: 0, height: 0,});
-    botRightWeightRegion.set({left: 817, top: 566, width: 192 * 2, height: 162 * 2,});
+    topLeftWeightRegion.set({left: 434, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
+    topMiddleWeightRegion.set({left: 0, top: 0, width: 0, height: 0,}).setCoords();
+    topRightWeightRegion.set({left: 818, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
+    botLeftWeightRegion.set({left: 434, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
+    botMiddleWeightRegion.set({left: 0, top: 0, width: 0, height: 0,}).setCoords();
+    botRightWeightRegion.set({left: 818, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
 
     trailerTextEdit.set({text: truckid, fontSize: 16, fontStyle: "normal", top: 23});
 

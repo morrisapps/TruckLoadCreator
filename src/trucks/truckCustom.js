@@ -114,7 +114,7 @@ function weightInit() {
         top: 239,
         width: 216 * 2,
         height: 162 * 2,
-        fill: "grey",
+        fill: "white",
         stroke: 'green',
         strokeWidth: 2,
         originX: 'center',
@@ -126,7 +126,7 @@ function weightInit() {
         top: 239,
         width: 192 * 2,
         height: 162 * 2,
-        fill: "grey",
+        fill: "white",
         stroke: 'green',
         strokeWidth: 2,
         originX: 'center',
@@ -138,7 +138,7 @@ function weightInit() {
         top: 239,
         width: 192 * 2,
         height: 162 * 2,
-        fill: "grey",
+        fill: "white",
         stroke: 'green',
         strokeWidth: 2,
         originX: 'center',
@@ -150,7 +150,7 @@ function weightInit() {
         top: 566,
         width: 216 * 2,
         height: 162 * 2,
-        fill: "grey",
+        fill: "white",
         stroke: 'green',
         strokeWidth: 2,
         originX: 'center',
@@ -163,7 +163,7 @@ function weightInit() {
         top: 566,
         width: 192 * 2,
         height: 162 * 2,
-        fill: "grey",
+        fill: "white",
         stroke: 'green',
         strokeWidth: 2,
         originX: 'center',
@@ -175,7 +175,7 @@ function weightInit() {
         top: 566,
         width: 192 * 2,
         height: 162 * 2,
-        fill: "grey",
+        fill: "white",
         stroke: 'green',
         strokeWidth: 2,
         originX: 'center',
@@ -196,12 +196,12 @@ function weightInit() {
 function truckCustom() {
     //Set region's size and location
     weightInit();
-    topLeftWeightRegion.set({left: 218, top: 239, width: 216 * 2, height: 162 * 2,});
-    topMiddleWeightRegion.set({left: 625, top: 239, width: 192 * 2, height: 162 * 2,});
-    topRightWeightRegion.set({left: 1009, top: 239, width: 192 * 2, height: 162 * 2,});
-    botLeftWeightRegion.set({left: 218, top: 566, width: 216 * 2, height: 162 * 2,});
-    botMiddleWeightRegion.set({left: 625, top: 566, width: 192 * 2, height: 162 * 2,});
-    botRightWeightRegion.set({left: 1009, top: 566, width: 192 * 2, height: 162 * 2,});
+    topLeftWeightRegion.set({left: 218, top: 239, width: 216 * 2, height: 162 * 2,}).setCoords();
+    topMiddleWeightRegion.set({left: 626, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
+    topRightWeightRegion.set({left: 1010, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
+    botLeftWeightRegion.set({left: 218, top: 565, width: 216 * 2, height: 162 * 2,}).setCoords();
+    botMiddleWeightRegion.set({left: 626, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
+    botRightWeightRegion.set({left: 1010, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
     trailerTextEdit.set({text: "Enter trailer", fontSize: 15, fontStyle: "italic", top: 25});
     canvas.remove(doorText1);
     canvas.remove(doorText2);

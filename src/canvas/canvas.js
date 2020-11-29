@@ -106,6 +106,27 @@ function updateHeightCount(target) {
     }
 }
 
+function updateWeightCount(target){
+    if (target.weight > 0){
+        //Get middle coordinates of object
+        let targetY = (target.top + target.height/2)*screenWidthRatio;
+        let targetX = (target.left + target.width/2)*screenWidthRatio;
+        let objMiddle = new fabric.Point(targetX,targetY);
+        //Checks if weight Regions contain center of object
+        for (let i = 0; i < weightRegions.length; i++){
+            //Removes object if already added to ensure duplication doesn't occur
+            if (weightUnits[i].includes(target)) {weightUnits[i].splice(weightUnits[i].indexOf(target), 1);}
+            //Add unit to unit list if center is within region
+            if (weightRegions[i].containsPoint(objMiddle)){
+                if (!weightUnits[i].includes(target)){
+                    weightUnits[i].push(target);
+                }
+            }
+        }
+        console.log(weightUnits);
+    }
+}
+
 function heightCount(target, line, lineCounter, lineUnits) {
     var counter = 0;
     if (intersects(target, line) && target.remove != true) {
@@ -115,7 +136,6 @@ function heightCount(target, line, lineCounter, lineUnits) {
     } else {
         if (lineUnits.includes(target)) {
             lineUnits.splice(lineUnits.indexOf(target), 1);
-
         }
     }
     var lunits;
@@ -282,13 +302,12 @@ function createCanvas() {
 
         if (target.isComment != true) {
             if ( _snapToggle.checked == true){
-                target.set({
-                    left: (Math.round(target.left / grid) * grid) + 2,
-                });
+                //Snap to horizontal grid
+                target.set({left: (Math.round(target.left / grid) * grid) + 2});
                 //Do when Objects collide during drag
                 target.setCoords();
                 var pointer = canvas.getPointer(event.e);
-                objectIntersects(midLine, target);
+                //objectIntersects(midLine, target);
                 if (intersects(midLine, target) && target.line != true) {
                     if (pointer.y < midLine.top + midLine.strokeWidth / 2) {
                         target.set('top', (midLine.top - 1) - target.height);
@@ -307,23 +326,7 @@ function createCanvas() {
             updateHeightCount(target);
         }
         //Count weight
-        if (target.weight > 0){
-            //Get middle coordinates of object
-            let targetY = (target.top + target.height/2)*screenWidthRatio;
-            let targetX = (target.left + target.width/2)*screenWidthRatio;
-            let objMiddle = new fabric.Point(targetX,targetY);
-            //Checks if weight Regions contain center of object
-            for (let i = 0; i < weightRegions.length; i++){
-                if (weightRegions[i].containsPoint(objMiddle)){
-                    //Removes object if already added to ensure duplication doesn't occur
-                    weightUnits.forEach(function(units){
-                        if (units.includes(target)) {units.splice(units.indexOf(target), 1);}
-                    });
-                    weightUnits[i].push(target);
-                }
-            }
-            console.log(weightUnits);
-        }
+        updateWeightCount(target);
     });
 
     canvas.on('mouse:up', function (options) {
