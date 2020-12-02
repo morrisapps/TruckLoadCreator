@@ -98,30 +98,39 @@ function updateCount(target) {
         if (target.unit == true || target.id == "rack") {
             var i = 0;
             while (i <= 11) {
+                //Update Height
                 heightCount(target, topLines[i], topCounters[i], topUnits[i]);
                 heightCount(target, botLines[i], botCounters[i], botUnits[i]);
                 i++;
             }
         }
-    }
-    //Update weight
-    if (target.weight > 0){
-        //Get middle coordinates of object
-        let targetY = (target.top + target.height/2)*screenWidthRatio;
-        let targetX = (target.left + target.width/2)*screenWidthRatio;
-        let objMiddle = new fabric.Point(targetX,targetY);
-        //Checks if weight Regions contain center of object
-        for (let i = 0; i < weightRegions.length; i++){
-            //Removes object if already added to ensure duplication doesn't occur
-            if (weightUnits[i].includes(target)) {weightUnits[i].splice(weightUnits[i].indexOf(target), 1);}
-            //Add unit to unit list if center is within region
-            if (weightRegions[i].containsPoint(objMiddle)){
-                if (!weightUnits[i].includes(target) && target.remove != true){
-                    weightUnits[i].push(target);
+        //Update weight
+        if (target.weight > 0){
+            //Get middle coordinates of object
+            let targetY = (target.top + target.height/2)*screenWidthRatio;
+            let targetX = (target.left + target.width/2)*screenWidthRatio;
+            let objMiddle = new fabric.Point(targetX,targetY);
+            //Checks if weight Regions contain center of object
+            for (let i = 0; i < weightRegions.length; i++){
+                let weight = 0;
+                //Removes object if already added to ensure duplication doesn't occur
+                if (weightUnits[i].has(target)) {weightUnits[i].delete(target);}
+                //Add unit to unit list if center is within region
+                if (weightRegions[i].containsPoint(objMiddle)){
+                    if (target.remove != true){
+                        weightUnits[i].add(target);
+                    }
+                }
+                weightUnits[i].forEach(function (unit){
+                    weight = weight + unit.weight;
+                });
+                if (weight > 0){
+                    weightTexts[i].text = weight.toString() + ' lb';
+                }else {
+                    weightTexts[i].text = '';
                 }
             }
         }
-        console.log(weightUnits);
     }
 }
 
@@ -139,9 +148,9 @@ function heightCount(target, line, lineCounter, lineUnits) {
     }
     var lunits;
     for (lunits of lineUnits) {
-        counter = counter + lunits.unitHeight;
+        counter = counter + Math.floor(lunits.unitHeight);
     }
-    lineCounter.text = counter.toString();
+    lineCounter.text = counter.toString() + '\"';
     if (counter == 0) {
         lineCounter.text = '';
     }
@@ -189,6 +198,10 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
     if (getDCust.name != custName && getDCust != 'none') {
         addError = addError + "Drop " + unitDrop + " is already assigned to " + getDCust.name + "\n";
         _drop.value = '';
+    }
+    if (Math.sign(_weight.value) == -1 || Math.sign(_weight.value) == -0){
+        addError = addError + 'Weight cannot be a negative number';
+        _weight.value = '';
     }
     if (dropError != '') {
         addError = addError + dropError;
@@ -462,14 +475,8 @@ $(document).ready(function () {
         mtr: true //rotating-point
     });
 
+    createCounters();
     truckCustom();
-    //Add Weight Regions
-    canvas.add(topLeftWeightRegion);
-    canvas.add(topMiddleWeightRegion);
-    canvas.add(topRightWeightRegion);
-    canvas.add(botLeftWeightRegion);
-    canvas.add(botMiddleWeightRegion);
-    canvas.add(botRightWeightRegion);
     canvas.requestRenderAll();
 
     //Checks if previous session was saved, and if not asks to restore.

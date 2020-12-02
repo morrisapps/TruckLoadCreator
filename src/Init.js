@@ -7,7 +7,7 @@
 //Place all global variables here
 
 //Version number
-let version = "0.16.1";
+let version = "0.17";
 
 //TruckID used for loading the appropriate size truck
 let truckid = '';
@@ -64,8 +64,6 @@ var bot1080Units;
 var bot1128Units;
 var bot1176Units;
 
-//Variables used for counting weight
-//Weight Region
 //Variables used for counting weight
 //Weight Region
 let topLeftWeightRegion = new fabric.Rect({
@@ -155,13 +153,26 @@ let botRightWeightRegion = new fabric.Rect({
 let weightRegions = [topLeftWeightRegion, topMiddleWeightRegion, topRightWeightRegion, botLeftWeightRegion, botMiddleWeightRegion, botRightWeightRegion];
 
 //Weight unit containers
-let topLeftWeightUnits = [];
-let topMiddleWeightUnits = [];
-let topRightWeightUnits = [];
-let botLeftWeightUnits = [];
-let botMiddleWeightUnits = [];
-let botRightWeightUnits = [];
+let topLeftWeightUnits = new Set();
+let topMiddleWeightUnits = new Set();
+let topRightWeightUnits = new Set();
+let botLeftWeightUnits = new Set();
+let botMiddleWeightUnits = new Set();
+let botRightWeightUnits = new Set();
 let weightUnits = [topLeftWeightUnits,topMiddleWeightUnits,topRightWeightUnits,botLeftWeightUnits,botMiddleWeightUnits,botRightWeightUnits];
+
+//Weight text
+let topLeftWeightText;
+let topMiddleWeightText;
+let topRightWeightText;
+let botLeftWeightText;
+let botMiddleWeightText;
+let botRightWeightText;
+let weightTexts;
+
+//Total Weight of truck
+let weightCount = 0;
+let _tWeight = document.getElementById('tWeight');
 
 //Variables representing unit/customer input fields
 let _width = document.getElementById('width');

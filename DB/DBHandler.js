@@ -181,7 +181,7 @@ function loadFromDB(data) {
                 importCusts++;
             }
 
-        } else if (item[13].includes('bundle') || item[13].includes('box') || item[11] <= 1){
+        } else if (item[13].includes('Bundle') || item[13].includes('Box')){
             if (addCustomer(customerText, item[9])){
                 importCusts++
             }

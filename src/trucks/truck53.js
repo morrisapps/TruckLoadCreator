@@ -5,6 +5,14 @@
  */
 
 function truck53(truckid) {
+
+    //set weight text location
+    topLeftWeightText.set('left', 248).setCoords();
+    topMiddleWeightText.set('left', 626).setCoords();
+    topRightWeightText.set('left', 1010).setCoords();
+    botLeftWeightText.set('left', 248).setCoords();
+    botMiddleWeightText.set('left', 626).setCoords();
+    botRightWeightText.set('left', 1010).setCoords();
     //Set region's size and location
     topLeftWeightRegion.set({left: 218, top: 239, width: 216 * 2, height: 162 * 2,}).setCoords();
     topMiddleWeightRegion.set({left: 626, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
@@ -78,69 +86,65 @@ function truck53(truckid) {
     //Truck size info
     //Placement + 15 or - 35 below horizontal line, + 20 from Veritcal line
     doorText1 = new fabric.IText(door1, {
-        top: 90,
+        top: 105,
         left: 68,
         textAlign: 'left',
         fill: 'grey',
         hasControls: false,
         selectable: false,
-        fontSize: 20
+        fontSize: 16
     });
     canvas.add(doorText1);
     doorText2 = new fabric.IText(door2, {
-        top: 90,
+        top: 105,
         left: 452,
         textAlign: 'left',
         fill: 'grey',
         hasControls: false,
         selectable: false,
-        fontSize: 20
+        fontSize: 16
     });
     canvas.add(doorText2);
     doorText3 = new fabric.IText(door3, {
-        top: 90,
+        top: 105,
         left: 836,
         textAlign: 'left',
         fill: 'grey',
         hasControls: false,
         selectable: false,
-        fontSize: 20
+        fontSize: 16
     });
     canvas.add(doorText3);
     doorText4 = new fabric.IText(door4, {
-        top: 690,
+        top: 675,
         left: 68,
         textAlign: 'left',
         fill: 'grey',
         hasControls: false,
         selectable: false,
-        fontSize: 20
+        fontSize: 16
     })
     canvas.add(doorText4);
     doorText5 = new fabric.IText(door5, {
-        top: 690,
+        top: 675,
         left: 452,
         textAlign: 'left',
         fill: 'grey',
         hasControls: false,
         selectable: false,
-        fontSize: 20
+        fontSize: 16
     })
     canvas.add(doorText5);
     doorText6 = new fabric.IText(door6, {
-        top: 690,
+        top: 675,
         left: 836,
         textAlign: 'left',
         fill: 'grey',
         hasControls: false,
         selectable: false,
-        fontSize: 20
+        fontSize: 16
     });
     canvas.add(doorText6);
-
-
-    heightLines();
-
     //border
     canvas.add(new fabric.Line([0, 15, 0, 925], {
         id: 'borderLeft',

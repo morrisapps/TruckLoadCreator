@@ -167,7 +167,7 @@ function createRack(top, left, id, drag) {
         originX: 'center',
         originY: 'center',
         rx: 5,
-        ry: 5
+        ry: 5,
     });
 
     if (drag == true) {
@@ -196,23 +196,29 @@ function createRack(top, left, id, drag) {
         isRack: true,
         hasControls: true,
         intersects: true,
-        tool: true
+        tool: true,
+        weight: 2000
     });
+
+    weightCount = weightCount + 2000;
+    _tWeight.innerText = weightCount;
 
     rackNew.hoverCursor = 'move';
     rackNew.moveCursor = 'grabbing';
-
+    let current = rackNew;
     rackNew.on('selected', function (options) {
         fabric.Object.prototype.controls.mtr = mtrButton;
         fabric.Object.prototype.setControlsVisibility({
             mtr: false
         });
+        _weight.value = current.weight;
     });
     rackNew.on('deselected', function (options) {
         fabric.Object.prototype.controls.mtr = editButton;
         fabric.Object.prototype.setControlsVisibility({
             mtr: true
         });
+        _weight.value = '';
     });
     return rackNew;
 }

@@ -148,7 +148,9 @@ function updateUnits(updateUnits) {
 
     //Reinitialize counters
     initializeCounters();
-    heightLines();
+    createCounters();
+    weightCount = 0;
+    _tWeight.innerText = '';
 
     topUnits.forEach(function (tUnit) {
         tUnit = new Array();
@@ -216,6 +218,7 @@ function load(content) {
     _tag.value = '';
     _height.value = '';
     _width.value = '';
+    _weight.value = '';
     createSide();
 
     //Set options
@@ -226,14 +229,6 @@ function load(content) {
     canvas.forEachObject(function (obj){
             canvas.remove(obj);
     });
-
-    //Add Weight Regions
-    canvas.add(topLeftWeightRegion);
-    canvas.add(topMiddleWeightRegion);
-    canvas.add(topRightWeightRegion);
-    canvas.add(botLeftWeightRegion);
-    canvas.add(botMiddleWeightRegion);
-    canvas.add(botRightWeightRegion);
 
     //Recreate units
     updateUnits(content[0]);
@@ -251,6 +246,9 @@ function load(content) {
     sortUnit();
     textLoad();
 
+    //Restore truckid and truck size
+    truckLoad(content[6]);
+
     //Restore racks
     content[3].forEach(function (rack) {
         let savedRack = createRack(rack.top, rack.left, rack.id, rack.drag);
@@ -267,8 +265,6 @@ function load(content) {
     content[5].forEach(function (comment) {
         canvas.add(createComment(comment.top, comment.left, comment.text, comment.width));
     });
-    //Restore truckid and truck size
-    truckLoad(content[6]);
 
     //Restore text edit fields
     driverTextEdit.text = content[2].driverTextEdit;

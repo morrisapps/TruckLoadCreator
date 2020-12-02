@@ -99,7 +99,7 @@ function rackLoad() {
 function updateRack() {
     let i = 0;
     customers.reverse();
-    while (i <= customers.length) {
+    while (i < rackCustomers.length) {
         if (customers[i] != null) {
             let custText = "(" + customers[i].drop + ") " + customers[i].name;
             let inRack = '';
@@ -120,9 +120,9 @@ function updateRack() {
         }else {
             rack.item(i+2).set({text: ''});
         }
-        canvas.requestRenderAll();
         i++;
     }
     customers.reverse();
+    canvas.requestRenderAll();
     saveToBrowser();
 }

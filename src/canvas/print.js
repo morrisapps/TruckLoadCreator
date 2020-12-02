@@ -6,11 +6,23 @@
 
 function printPageArea() {
     //Checks if any units are not yet in the the truck from unit list
-    let response = true;
+    let unitsNotInResponse = true;
+    let weightZeroResponse = true;
+    let weightZeroUnits = [];
+    let weightZeroText = '';
     if (unitsNotInCanvas > 0){
-        response = confirm("There are " + unitsNotInCanvas.toString() + " unit(s) from unit list not in the truck. \n\nContinue with print?");
+        unitsNotInResponse = confirm("There are " + unitsNotInCanvas.toString() + " unit(s) from unit list not in the truck. \n\nContinue with print?");
     }
-    if (response){
+    units.forEach(function (unit){
+        if (unit.inCanvas && unit.weight <= 0){
+            weightZeroUnits.push(unit);
+            weightZeroText = weightZeroText + unit.item(1).text + '\n';
+        }
+    })
+    if (weightZeroUnits.length > 0){
+        weightZeroResponse = confirm(weightZeroUnits.length.toString() + ' units with zero weight. \n Truck weight might be inaccurate. \n\nContinue with print?\n\n' + weightZeroText);
+    }
+    if (unitsNotInResponse && weightZeroResponse){
         //Remove Height Lines from print
         var i = 0;
         while (i <= 11) {

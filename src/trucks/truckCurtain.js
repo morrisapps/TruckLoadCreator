@@ -17,6 +17,13 @@ function truckCurtain(truckid) {
 
 
     if (truckid == "1903") {
+        //set weight text location
+        topLeftWeightText.set('left', 242).setCoords();
+        topMiddleWeightText.set('left', 626).setCoords();
+        topRightWeightText.set('left', 1010).setCoords();
+        botLeftWeightText.set('left', 242).setCoords();
+        botMiddleWeightText.set('left', 626).setCoords();
+        botRightWeightText.set('left', 1010).setCoords();
         //Set region's size and location
         topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
         topMiddleWeightRegion.set({left: 626, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
@@ -31,6 +38,13 @@ function truckCurtain(truckid) {
         door5 = '';
         door6 = '';
     } else if (truckid == 'Custom Flatbed') {
+        //set weight text location
+        topLeftWeightText.set('left', 206).setCoords();
+        topMiddleWeightText.set('left', 601).setCoords();
+        topRightWeightText.set('left', 997).setCoords();
+        botLeftWeightText.set('left', 206).setCoords();
+        botMiddleWeightText.set('left', 602).setCoords();
+        botRightWeightText.set('left', 997).setCoords();
         //Set region's size and location
         topLeftWeightRegion.set({left: 206, top: 239, width: 204 * 2, height: 162 * 2,}).setCoords();
         topMiddleWeightRegion.set({left: 601, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
@@ -45,6 +59,13 @@ function truckCurtain(truckid) {
         door5 = '';
         door6 = '';
     } else if (truckid == '46 Flatbed') {
+        //set weight text location
+        topLeftWeightText.set('left', 242).setCoords();
+        topMiddleWeightText.set('left', 602).setCoords();
+        topRightWeightText.set('left', 962).setCoords();
+        botLeftWeightText.set('left', 242).setCoords();
+        botMiddleWeightText.set('left', 602).setCoords();
+        botRightWeightText.set('left', 962).setCoords();
         //Set region's size and location
         topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
         topMiddleWeightRegion.set({left: 602, top: 239, width: 168 * 2-4, height: 162 * 2,}).setCoords();
@@ -59,6 +80,13 @@ function truckCurtain(truckid) {
         door5 = '';
         door6 = '';
     } else if (truckid == '48 Flatbed') {
+        //set weight text location
+        topLeftWeightText.set('left', 242).setCoords();
+        topMiddleWeightText.set('left', 626).setCoords();
+        topRightWeightText.set('left', 1010).setCoords();
+        botLeftWeightText.set('left', 242).setCoords();
+        botMiddleWeightText.set('left', 626).setCoords();
+        botRightWeightText.set('left', 1010).setCoords();
         //Set region's size and location
         topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
         topMiddleWeightRegion.set({left: 626, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
@@ -73,6 +101,13 @@ function truckCurtain(truckid) {
         door5 = '';
         door6 = '';
     } else if (truckid == "110" || truckid == "801" || truckid == "802") {
+        //set weight text location
+        topLeftWeightText.set('left', 206).setCoords();
+        topMiddleWeightText.set('left', 602).setCoords();
+        topRightWeightText.set('left', 998).setCoords();
+        botLeftWeightText.set('left', 206).setCoords();
+        botMiddleWeightText.set('left', 602).setCoords();
+        botRightWeightText.set('left', 998).setCoords();
         //Set region's size and location
         topLeftWeightRegion.set({left: 206, top: 239, width: 204 * 2, height: 162 * 2,}).setCoords();
         topMiddleWeightRegion.set({left: 602, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
@@ -87,6 +122,13 @@ function truckCurtain(truckid) {
         door5 = '';
         door6 = '';
     } else if (truckid == "RWW114") {
+        //set weight text location
+        topLeftWeightText.set('left', 242).setCoords();
+        topMiddleWeightText.set('left', 578).setCoords();
+        topRightWeightText.set('left', 914).setCoords();
+        botLeftWeightText.set('left', 242).setCoords();
+        botMiddleWeightText.set('left', 578).setCoords();
+        botRightWeightText.set('left', 914).setCoords();
         //Set region's size and location
         topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
         topMiddleWeightRegion.set({left: 578, top: 239, width: 144 * 2-4, height: 162 * 2,}).setCoords();
@@ -101,9 +143,6 @@ function truckCurtain(truckid) {
         door5 = '';
         door6 = '';
     }
-
-
-    heightLines();
 
     //border
     canvas.add(new fabric.Line([0, 15, 0, 925], {
@@ -252,63 +291,63 @@ function truckCurtain(truckid) {
     //Truck size info
     //Placement + 15 or - 35 below horizontal line, + 20 from Veritcal line
     doorText1 = new fabric.IText(door1, {
-        top: 90,
+        top: 105,
         left: 68 + 12,
         textAlign: 'left',
         fill: 'grey',
         hasControls: false,
         selectable: false,
-        fontSize: 20
+        fontSize: 16
     });
     canvas.add(doorText1);
     doorText2 = new fabric.IText(door2, {
-        top: 90,
+        top: 105,
         left: 452,
         textAlign: 'left',
         fill: 'grey',
         hasControls: false,
         selectable: false,
-        fontSize: 20
+        fontSize: 16
     });
     canvas.add(doorText2);
     doorText3 = new fabric.IText(door3, {
-        top: 90,
+        top: 105,
         left: (408 * 2 - 96) + 20,
         textAlign: 'left',
         fill: 'grey',
         hasControls: false,
         selectable: false,
-        fontSize: 20
+        fontSize: 16
     });
     canvas.add(doorText3);
     doorText4 = new fabric.IText(door4, {
-        top: 690,
+        top: 675,
         left: 68,
         textAlign: 'left',
         fill: 'grey',
         hasControls: false,
         selectable: false,
-        fontSize: 20
+        fontSize: 16
     })
     canvas.add(doorText4);
     doorText5 = new fabric.IText(door5, {
-        top: 690,
+        top: 675,
         left: 452,
         textAlign: 'left',
         fill: 'grey',
         hasControls: false,
         selectable: false,
-        fontSize: 20
+        fontSize: 16
     })
     canvas.add(doorText5);
     doorText6 = new fabric.IText(door6, {
-        top: 690,
+        top: 675,
         left: (408 * 2 - 96) + 20,
         textAlign: 'left',
         fill: 'grey',
         hasControls: false,
         selectable: false,
-        fontSize: 20
+        fontSize: 16
     });
     canvas.add(doorText6);
 

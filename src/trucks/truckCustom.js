@@ -12,6 +12,7 @@ function truckLoad(id) {
             canvas.remove(obj);
         }
     });
+    createCounters();
     truckid = id;
     if (truckid == "1001" || truckid == "1101" || truckid == "1401" || truckid == "1103" || truckid == "1605" || truckid == "1901" || truckid == "1202" || truckid == "1301" || truckid == "1302" || truckid == "1904" || truckid == "1905") {
         truck53(truckid);
@@ -29,7 +30,7 @@ function truckLoad(id) {
     saveToBrowser();
 }
 
-function heightLines() {
+function createCounters() {
     canvas.forEachObject(function (obj) {
         if (obj.isCounter == true) {
             canvas.remove(obj);
@@ -46,8 +47,8 @@ function heightLines() {
             height: 500,
             top: 75,
             left: (i * 96) + (75 - 2),
-            stroke: "grey",
-            fill: 'grey',
+            stroke: '#4c4c4c',
+            fill: '#4c4c4c',
             strokeWidth: 0,
             hasControls: false,
             selectable: false,
@@ -70,8 +71,8 @@ function heightLines() {
             height: 500,
             top: 710,
             left: (i * 96) + (75 - 2),
-            stroke: "grey",
-            fill: 'grey',
+            stroke: '#4c4c4c',
+            fill: '#4c4c4c',
             strokeWidth: 0,
             hasControls: false,
             selectable: false,
@@ -104,18 +105,164 @@ function heightLines() {
         canvas.add(botLines[i]);
         i++;
     }
+
     //Weight unit containers
-    topLeftWeightUnits = [];
-    topMiddleWeightUnits = [];
-    topRightWeightUnits = [];
-    botLeftWeightUnits = [];
-    botMiddleWeightUnits = [];
-    botRightWeightUnits = [];
+    topLeftWeightUnits = new Set();
+    topMiddleWeightUnits = new Set();
+    topRightWeightUnits = new Set();
+    botLeftWeightUnits = new Set();
+    botMiddleWeightUnits = new Set();
+    botRightWeightUnits = new Set();
     weightUnits = [topLeftWeightUnits,topMiddleWeightUnits,topRightWeightUnits,botLeftWeightUnits,botMiddleWeightUnits,botRightWeightUnits];
+
+    //Weight text
+    topLeftWeightText = new fabric.IText('', {
+        id: 'topLeftWeightText',
+        top: 90,
+        left: 248,
+        stroke: '#4c4c4c',
+        fill: '#4c4c4c',
+        strokeWidth: 0,
+        hasControls: false,
+        selectable: false,
+        lockMovementX: true,
+        lockMovementY: true,
+        hasBorders: false,
+        editable: false,
+        fontSize: 14,
+        fixedWidth: 150,
+        fixedHeight: 300,
+        fixedFontSize: 12,
+        originX: 'center',
+        isCounter: true
+    });
+    topMiddleWeightText = new fabric.IText('', {
+        id: 'topMiddleWeightText',
+        width: 1000,
+        height: 500,
+        top: 90,
+        left: 626,
+        stroke: '#4c4c4c',
+        fill: '#4c4c4c',
+        strokeWidth: 0,
+        hasControls: false,
+        selectable: false,
+        lockMovementX: true,
+        lockMovementY: true,
+        hasBorders: false,
+        editable: false,
+        fontSize: 14,
+        fixedWidth: 150,
+        fixedHeight: 300,
+        fixedFontSize: 12,
+        originX: 'center',
+        isCounter: true
+    });
+    topRightWeightText = new fabric.IText('', {
+        id: 'topRightWeightText',
+        width: 1000,
+        height: 500,
+        top: 90,
+        left: 1010,
+        stroke: '#4c4c4c',
+        fill: '#4c4c4c',
+        strokeWidth: 0,
+        hasControls: false,
+        selectable: false,
+        lockMovementX: true,
+        lockMovementY: true,
+        hasBorders: false,
+        editable: false,
+        fontSize: 14,
+        fixedWidth: 150,
+        fixedHeight: 300,
+        fixedFontSize: 12,
+        originX: 'center',
+        isCounter: true
+    });
+    botLeftWeightText = new fabric.IText('', {
+        id: 'botLeftWeightText',
+        width: 1000,
+        height: 500,
+        top: 690,
+        left: 248,
+        stroke: '#4c4c4c',
+        fill: '#4c4c4c',
+        strokeWidth: 0,
+        hasControls: false,
+        selectable: false,
+        lockMovementX: true,
+        lockMovementY: true,
+        hasBorders: false,
+        editable: false,
+        fontSize: 14,
+        fixedWidth: 150,
+        fixedHeight: 300,
+        fixedFontSize: 12,
+        originX: 'center',
+        isCounter: true
+    });
+    botMiddleWeightText = new fabric.IText('', {
+        id: 'botMiddleWeightText',
+        width: 1000,
+        height: 500,
+        top: 690,
+        left: 626,
+        stroke: '#4c4c4c',
+        fill: '#4c4c4c',
+        strokeWidth: 0,
+        hasControls: false,
+        selectable: false,
+        lockMovementX: true,
+        lockMovementY: true,
+        hasBorders: false,
+        editable: false,
+        fontSize: 14,
+        fixedWidth: 150,
+        fixedHeight: 300,
+        fixedFontSize: 12,
+        originX: 'center',
+        isCounter: true
+    });
+    botRightWeightText = new fabric.IText('', {
+        id: 'botRightWeightText',
+        width: 1000,
+        height: 500,
+        top: 690,
+        left: 1010,
+        stroke: '#4c4c4c',
+        fill: '#4c4c4c',
+        strokeWidth: 0,
+        hasControls: false,
+        selectable: false,
+        lockMovementX: true,
+        lockMovementY: true,
+        hasBorders: false,
+        editable: false,
+        fontSize: 14,
+        fixedWidth: 150,
+        fixedHeight: 300,
+        fixedFontSize: 12,
+        originX: 'center',
+        isCounter: true
+    });
+    weightTexts = [topLeftWeightText, topMiddleWeightText, topRightWeightText, botLeftWeightText, botMiddleWeightText, botRightWeightText];
+    //Add Weight Regions and counters
+    canvas.add(topLeftWeightRegion,topMiddleWeightRegion,topRightWeightRegion,botLeftWeightRegion,botMiddleWeightRegion,botRightWeightRegion);
+    canvas.add(topLeftWeightText,topMiddleWeightText,topRightWeightText,botLeftWeightText,botMiddleWeightText,botRightWeightText);
 }
 
 
 function truckCustom() {
+
+    //set weight text location
+    topLeftWeightText.set('left', 248).setCoords();
+    topMiddleWeightText.set('left', 626).setCoords();
+    topRightWeightText.set('left', 1010).setCoords();
+    botLeftWeightText.set('left', 248).setCoords();
+    botMiddleWeightText.set('left', 626).setCoords();
+    botRightWeightText.set('left', 1010).setCoords();
+
     //Set region's size and location
     topLeftWeightRegion.set({left: 218, top: 239, width: 216 * 2, height: 162 * 2,}).setCoords();
     topMiddleWeightRegion.set({left: 626, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
@@ -130,8 +277,6 @@ function truckCustom() {
     canvas.remove(doorText4);
     canvas.remove(doorText5);
     canvas.remove(doorText6);
-
-    heightLines();
 
     //border
     canvas.add(new fabric.Line([0, 15, 0, 925], {
