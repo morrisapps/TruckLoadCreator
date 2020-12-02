@@ -561,7 +561,6 @@ function updateUnit() {
 
 function onChange() {
     createSide();
-    _weight.value = '';
     if (editing != true) {
         document.getElementById("unitContainer").style.borderColor = "#ccc";
         document.getElementById('add').outerHTML = '<button style="margin-top: 20px;" class="tip expand" id="add" name="add" data-title="Add to List" onclick="AddUpdateButton()">Add</button>';

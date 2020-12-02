@@ -199,7 +199,8 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
         addError = addError + "Drop " + unitDrop + " is already assigned to " + getDCust.name + "\n";
         _drop.value = '';
     }
-    if (Math.sign(_weight.value) == -1 || Math.sign(_weight.value) == -0){
+    if (Math.sign(_weight.value) == -1){
+        console.log(Math.sign(_weight.value));
         addError = addError + 'Weight cannot be a negative number';
         _weight.value = '';
     }
