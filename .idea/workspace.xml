@@ -26,10 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Moved file and print to ./src/file">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Print now hides weight information if not all units have a weight">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file/print.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/print.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/trucks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -470,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607118588158</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Print now hides weight information if not all units have a weight">
+      <created>1607119294684</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1607119294684</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +508,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="&#10;Fixed preview css so that unit height does not change element height. Was causing issues with drag and drop unit lists." />
     <MESSAGE value="Fixed bug relating to unit edit button being disabled if using straps in truck" />
     <MESSAGE value="Updated changelog" />
     <MESSAGE value="Unit selection box is now closer to unit's text if the text went outside of the unit" />
@@ -526,7 +532,8 @@
     <MESSAGE value="Completed weight counting functionality. Various bug fixes" />
     <MESSAGE value="Condensed all truck functions into one file labelled trucks in ./canvas&#10;&#10;trucks folder removed" />
     <MESSAGE value="Moved file and print to ./src/file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved file and print to ./src/file" />
+    <MESSAGE value="Print now hides weight information if not all units have a weight" />
+    <option name="LAST_COMMIT_MESSAGE" value="Print now hides weight information if not all units have a weight" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">

@@ -34,10 +34,10 @@ function truckLoad(id) {
         truck45(truckid);
     } else if (truckid == "9002" || truckid == "1303" || truckid == "1603") {
         truck35(truckid);
-    } else if (truckid == "1903" || truckid == 'Custom Flatbed' || truckid == '46 Flatbed' || truckid == '48 Flatbed' || truckid == "110" || truckid == "801" || truckid == "802" || truckid == "RWW114") {
+    } else if (truckid == "1903" || truckid == 'Custom Flatbed' || truckid == '46 Flatbed' || truckid == '48 Flatbed' || truckid == "110" || truckid == "801" || truckid == "802" || truckid == "RWW114" || truckid == '2003' || truckid == '2004' || truckid == '2005' || truckid == '2006' || truckid == '2007') {
         truckCurtain(truckid);
     } else {
-        trucks();
+        truckCustom();
     }
     canvas.forEachObject(function (obj) {
         if (obj.unit == true) {
@@ -345,7 +345,7 @@ function truckTemplate(){
     canvas.add(new fabric.Line([600 * 2, 725, 600 * 2, 925], {stroke: 'black', strokeWidth: 2, selectable: false}));
 }
 
-function trucks() {
+function truckCustom() {
     //Creates lines, sets weight and region locations for truck custom
 
     //set weight text location
@@ -450,7 +450,7 @@ function truckCurtain(truckid) {
         botMiddleWeightRegion.set({left: 626, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
         botRightWeightRegion.set({left: 1010, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
         door1 = '90"H - 90"D (Full flatbed) - 48\'W';
-    } else if (truckid == "110" || truckid == "801" || truckid == "802") {
+    } else if (truckid == "110" || truckid == "801" || truckid == "802" || truckid == '2003' || truckid == '2004' || truckid == '2005' || truckid == '2006' || truckid == '2007') {
         //set weight text location
         topLeftWeightText.set('left', 206).setCoords();
         topMiddleWeightText.set('left', 602).setCoords();
@@ -465,7 +465,14 @@ function truckCurtain(truckid) {
         botLeftWeightRegion.set({left: 206, top: 565, width: 204 * 2, height: 162 * 2,}).setCoords();
         botMiddleWeightRegion.set({left: 602, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
         botRightWeightRegion.set({left: 998, top: 565, width: 204 * 2, height: 162 * 2,}).setCoords();
-        door1 = '95"H - 90"D (Full flatbed) - 3x16\'W';
+        if (truckid == '110' || truckid == '801' || truckid == '802'){
+            door1 = '95"H - 90"D (Full flatbed) - 3x16\'W';
+        } else if (truckid == '2003'){
+            door1 = '95"H - 90"D (Roll-Tite) - 3x16\'W';
+        } else if (truckid == '2004' || truckid == '2005' || truckid == '2006' || truckid == '2007'){
+            door1 = '95"H - 100"D (Roll-Tite) - 3x16\'W';
+        }
+
     } else if (truckid == "RWW114") {
         //set weight text location
         topLeftWeightText.set('left', 242).setCoords();
