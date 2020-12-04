@@ -477,9 +477,9 @@ $(document).ready(function () {
     });
 
     createCounters();
-    truckCustom();
+
     canvas.requestRenderAll();
 
     //Checks if previous session was saved, and if not asks to restore.
-    loadFromBrowser();
+    if (!loadFromBrowser()){truckLoad();}
 });

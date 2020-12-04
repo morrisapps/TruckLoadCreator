@@ -27,11 +27,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Completed weight counting functionality. Various bug fixes">
+      <change afterPath="$PROJECT_DIR$/src/canvas/trucks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trucks/truck35.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trucks/truck45.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trucks/truck48.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trucks/truck53.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trucks/truckCurtain.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trucks/truckCustom.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +53,9 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="Dev" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">

@@ -206,6 +206,7 @@ function loadFromBrowser(){
         let savedContent = JSON.parse(localStorage.saveContent);
         if(confirm('The previous session '+savedContent[8].toString() +' had unsaved work. Would you like to restore?')){
             load(savedContent);
+            return true;
         }
     }
 }
