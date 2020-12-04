@@ -21,6 +21,8 @@ function printPageArea() {
     })
     if (weightZeroUnits.length > 0){
         weightZeroResponse = confirm(weightZeroUnits.length.toString() + ' units with zero weight. \n Truck weight might be inaccurate. \n\nContinue with print?\n\n' + weightZeroText);
+        //Remove weight from print since not all weight units are counted for
+        weightTexts.forEach(function (text){text.opacity = 0;});
     }
     if (unitsNotInResponse && weightZeroResponse){
         //Remove Height Lines from print
@@ -68,6 +70,7 @@ function printPageArea() {
         doorText4.opacity = 1;
         doorText5.opacity = 1;
         doorText6.opacity = 1;
+        weightTexts.forEach(function (text){text.opacity = 1;});
 
         //Closes open print window
         WinPrint.document.close();
