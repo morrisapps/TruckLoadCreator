@@ -26,10 +26,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Print now hides weight information if not all units have a weight">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Added trailers 2003,2004,2005,2006,2007 as flatbeds">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bug List.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Bug List.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/canvas/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/trucks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unitButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/unitButtons.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -477,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607119294684</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Added trailers 2003,2004,2005,2006,2007 as flatbeds">
+      <created>1607122270276</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1607122270276</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +518,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed bug relating to unit edit button being disabled if using straps in truck" />
     <MESSAGE value="Updated changelog" />
     <MESSAGE value="Unit selection box is now closer to unit's text if the text went outside of the unit" />
     <MESSAGE value="Fixed bug toggling unit brackets does not reset height counters" />
@@ -533,7 +542,8 @@
     <MESSAGE value="Condensed all truck functions into one file labelled trucks in ./canvas&#10;&#10;trucks folder removed" />
     <MESSAGE value="Moved file and print to ./src/file" />
     <MESSAGE value="Print now hides weight information if not all units have a weight" />
-    <option name="LAST_COMMIT_MESSAGE" value="Print now hides weight information if not all units have a weight" />
+    <MESSAGE value="Added trailers 2003,2004,2005,2006,2007 as flatbeds" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added trailers 2003,2004,2005,2006,2007 as flatbeds" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -698,13 +708,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606915340762">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1607122276958">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606915340762" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605912579609" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1607122276958" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605586559998" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
@@ -718,11 +728,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="774" y="364" key="git4idea.ui.GitTagDialog/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604366798897" />
-    <state x="476" y="231" key="run.anything.popup" timestamp="1605510865656">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1607202036483">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="476" y="231" key="run.anything.popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605510865656" />
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1605389153553" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1607202036483" />
     <state x="623" y="226" width="945" height="679" key="search.everywhere.popup" timestamp="1606910881500">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

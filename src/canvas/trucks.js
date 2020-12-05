@@ -743,8 +743,7 @@ function truck53(truckid) {
     canvas.add(doorText6);
 
 //middle canvas line
-    midLine = new fabric.Line({x1: 0, y1: 400, x2: 1200, y2: 400});
-    canvas.add(midLine);
+    midLine.set({x1: 0, y1: 400, x2: 1200, y2: 400});
 
 //vertical lines
     vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
@@ -830,7 +829,6 @@ function truck48(truckid) {
     }
 //middle canvas line
     midLine.set({x1: 0, y1: 400, x2: 1200, y2: 400});
-    canvas.add(midLine);
 
 //vertical lines
     vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});

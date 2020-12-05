@@ -64,8 +64,6 @@ function renderEditIcon(ctx, left, top, styleOverride, fabricObject) {
 function deleteObject(eventData, target) {
     let removeResponse = confirm("Are you sure you want to remove " + target.id + "?");
     if (removeResponse == true) {
-        weightCount = weightCount - target.weight;
-        _tWeight.innerText = weightCount;
         target.set('remove', true);
         canvas.remove(target);
         removeUnit(target);

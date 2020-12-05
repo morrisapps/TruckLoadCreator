@@ -740,6 +740,8 @@ function removeUnit(unit) {
             document.getElementById("tUnits").innerText = units.length.toString();
             document.getElementById("drops").innerText = customers.length.toString();
             sortUnit();
+            weightCount = weightCount - unit.weight;
+            _tWeight.innerText = weightCount;
             saveToBrowser();
         }
         if (getCustUnit(unit.customer) == null) {
