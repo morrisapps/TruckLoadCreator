@@ -8,6 +8,7 @@ Sortable content and license located at ./src/resources/ThirdParty/SortableJS
 Drawer content and license located at ./src/resources/ThirdParty/drawer
 Fabric JS content and license located at ./src/resources/ThirdParty/FabricJS
 Open Iconic content and license located at ./src/resources/ThirdParty/img
+JSBarcode content and license located at ./src/resources/JsBarcode
 
 All other components/content in this project is the work of Corey Morris for Truck Load Creator under the MIT License.
 
@@ -22,6 +23,7 @@ Sortable: Copyright (c) 2019 All contributors to Sortable
 Drawer: Copyright (c) 2014-2015 https://github.com/blivesta/drawer
 Fabric JS: Copyright (c) 2008-2015 Printio (Juriy Zaytsev, Maxim Chernyak)
 Open Iconic: Copyright (c) 2014 Waybury
+JsBarcode: Copyright (c) 2016 Johan Lindell (johan@lindell.me)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -15,6 +15,7 @@ function truckLoad(id) {
     createCounters();
     truckTemplate();
 
+
     truckid = id;
     if (id == '' || id == null || id == 'start'){trailerTextEdit.set({text: "Enter trailer", fontSize: 15, fontStyle: "italic", top: 25});}
     else {trailerTextEdit.set({text: truckid, fontSize: 16, fontStyle: "normal", top: 23});}
@@ -54,6 +55,27 @@ function truckLoad(id) {
     vLine5.bringToFront();
 
     if (id != 'start') {saveToBrowser();}
+}
+
+function createLoadBarcode(){
+    if (!(loadBarcode === undefined)){canvas.remove(loadBarcode);}
+    let barcode = document.getElementById('barcode');
+    if (loadTextEdit == 'Enter load'){
+        JsBarcode("#barcode", '', {height: 28, displayValue: false});
+    }else {
+        JsBarcode("#barcode", loadTextEdit.text, {height: 28, displayValue: false});
+    }
+    loadBarcode = new fabric.Image(barcode, {
+        scaleX: .9,
+        left: 144,
+        top: 55,
+        selectable: false,
+        originX: 'center',
+        originY: 'center',
+    });
+    canvas.add(loadBarcode);
+    loadBarcode.sendToBack();
+    canvas.requestRenderAll();
 }
 
 function createCounters() {
@@ -309,7 +331,14 @@ function truckTemplate(){
     //Canvas bottom
     canvas.add(new fabric.Line([0, 15, 1200, 15], {stroke: 'black', strokeWidth: 2, selectable: false}));
     //top control line
-    canvas.add(new fabric.Line([0, 45, 1200, 45], {
+    canvas.add(new fabric.Line([285, 45, 1200, 45], {
+        id: 'canvasTop',
+        stroke: 'black',
+        strokeWidth: 2,
+        selectable: false
+    }));
+    //Load number divider
+    canvas.add(new fabric.Line([285, 15, 285, 75], {
         id: 'canvasTop',
         stroke: 'black',
         strokeWidth: 2,

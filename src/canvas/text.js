@@ -19,11 +19,9 @@ var modeTextEdit;
 var driverText;
 var driverTextEdit;
 var driverSide;
-var dropInfo;
 
 function textLoad(){
     //remove old texts if they exist
-    if (dropInfo != null){canvas.remove(dropInfo)}
     if (driverSide != null){canvas.remove(driverSide)}
     if (driverText != null){canvas.remove(driverText)}
     if (driverTextEdit != null){canvas.remove(driverTextEdit)}
@@ -123,51 +121,7 @@ function textLoad(){
         width: 1000,
         height: 500,
         top: 25,
-        left: 148+5,
-        stroke: "black",
-        fontWeight: 'bold',
-        strokeWidth: 0,
-        hasControls: false,
-        selectable: true,
-        lockMovementX: true,
-        lockMovementY: true,
-        hasBorders: false,
-        backgroundColor: 'white',
-        editingBorderColor: 'blue',
-        editable: true,
-        fontSize: 15,
-        fontStyle: 'italic',
-        fixedWidth: 150,
-        fixedHeight: 300,
-        fixedFontSize: 12
-    });
-    dropsText = new fabric.IText('Number of Drops:', {
-        width: 1000,
-        height: 500,
-        top: 53,
-        left: 25,
-        stroke: "black",
-        fontWeight: 'bold',
-        strokeWidth: 0,
-        hasControls: false,
-        selectable: false,
-        lockMovementX: true,
-        lockMovementY: true,
-        hasBorders: false,
-        backgroundColor: 'white',
-        editingBorderColor: 'blue',
-        editable: true,
-        fontSize: 16,
-        fixedWidth: 150,
-        fixedHeight: 300,
-        fixedFontSize: 12
-    });
-
-    dropsTextEdit = new fabric.IText('Enter drops', {
-        width: 1000,
-        height: 500,
-        top: 55,
-        left: 148+5,
+        left: 145,
         stroke: "black",
         fontWeight: 'bold',
         strokeWidth: 0,
@@ -321,6 +275,51 @@ function textLoad(){
         fixedFontSize: 12
     });
 
+    dropsText = new fabric.IText('Number of Drops:', {
+        width: 1000,
+        height: 500,
+        top: 23,
+        left: 845,
+        stroke: "black",
+        fontWeight: 'bold',
+        strokeWidth: 0,
+        hasControls: false,
+        selectable: false,
+        lockMovementX: true,
+        lockMovementY: true,
+        hasBorders: false,
+        backgroundColor: 'white',
+        editingBorderColor: 'blue',
+        editable: true,
+        fontSize: 16,
+        fixedWidth: 150,
+        fixedHeight: 300,
+        fixedFontSize: 12
+    });
+
+    dropsTextEdit = new fabric.IText('Enter drops', {
+        width: 1000,
+        height: 500,
+        top: 25,
+        left: 978,
+        stroke: "black",
+        fontWeight: 'bold',
+        strokeWidth: 0,
+        hasControls: false,
+        selectable: true,
+        lockMovementX: true,
+        lockMovementY: true,
+        hasBorders: false,
+        backgroundColor: 'white',
+        editingBorderColor: 'blue',
+        editable: true,
+        fontSize: 15,
+        fontStyle: 'italic',
+        fixedWidth: 150,
+        fixedHeight: 300,
+        fixedFontSize: 12
+    });
+
     driverText = new fabric.IText('Driver:', {
         width: 1000,
         height: 500,
@@ -388,28 +387,6 @@ function textLoad(){
         fixedFontSize: 12
     });
 
-    dropInfo = new fabric.IText('Brackets ( ) is drop number', {
-        width: 1000,
-        height: 500,
-        top: 23,
-        left: 950,
-        stroke: "black",
-        fontWeight: 'bold',
-        strokeWidth: 0,
-        hasControls: false,
-        selectable: false,
-        lockMovementX: true,
-        lockMovementY: true,
-        hasBorders: false,
-        backgroundColor: 'white',
-        editingBorderColor: 'blue',
-        editable: true,
-        fontSize: 16,
-        fixedWidth: 150,
-        fixedHeight: 300,
-        fixedFontSize: 12
-    });
-
     loadTextEdit.on('selected', function (options) {
         loadTextEdit.set({fontSize: 16, fontStyle: "normal", top: 23});
         if (loadTextEdit.text == "Enter load"){
@@ -423,7 +400,8 @@ function textLoad(){
             loadTextEdit.text = "Enter load";
             loadTextEdit.set({fontSize: 15, fontStyle: "italic", top: 25});
         }
-        loadTextEdit.text = loadTextEdit.text.slice(0, 12);
+        loadTextEdit.text = loadTextEdit.text.slice(0, 10);
+        createLoadBarcode();
         saveToBrowser();
     });
 
@@ -462,7 +440,7 @@ function textLoad(){
 
     });
     dropsTextEdit.on('selected', function (options) {
-        dropsTextEdit.set({fontSize: 16, fontStyle: "normal", top: 53});
+        dropsTextEdit.set({fontSize: 16, fontStyle: "normal", top: 23});
         if (dropsTextEdit.text == "Enter drops"){
             dropsTextEdit.text = '';
         }
@@ -472,7 +450,7 @@ function textLoad(){
     dropsTextEdit.on('deselected', function (options) {
         if (dropsTextEdit.text == "Enter drops" || dropsTextEdit.text == ''){
             dropsTextEdit.text = "Enter drops";
-            dropsTextEdit.set({fontSize: 15, fontStyle: "italic", top: 55});
+            dropsTextEdit.set({fontSize: 15, fontStyle: "italic", top: 25});
         }
         dropsTextEdit.text = dropsTextEdit.text.slice(0, 12);
         saveToBrowser();
@@ -520,7 +498,6 @@ function textLoad(){
     dropsTextEdit.hoverCursor = 'text';
     loadTextEdit.hoverCursor = 'text';
 
-    canvas.add(dropInfo);
     canvas.add(driverSide);
     canvas.add(driverText);
     canvas.add(driverTextEdit);

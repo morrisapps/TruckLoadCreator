@@ -274,6 +274,7 @@ function load(content) {
     trailerTextEdit.text = content[2].trailerTextEdit;
     modeTextEdit.text = content[2].modeTextEdit;
     loadTextEdit.text = content[2].loadTextEdit;
+    createLoadBarcode();
 
     //Triggers selection and deselection of each field to call handlers to set properties
     canvas.setActiveObject(driverTextEdit);
