@@ -24,8 +24,8 @@ let loadBarcode = new fabric.Image();
 
 function createLoadBarcode(){
     canvas.remove(loadBarcode);
-    if (loadTextEdit == 'Enter load'){
-        JsBarcode("#barcode", '', {height: 28, displayValue: false});
+    if (loadTextEdit.text == 'Enter load' || loadTextEdit.text == ''){
+        JsBarcode("#barcode", null, {height: 0, displayValue: false});
     }else {
         JsBarcode("#barcode", loadTextEdit.text, {height: 28, displayValue: false});
     }
@@ -39,7 +39,6 @@ function createLoadBarcode(){
         originY: 'center',
     });
     canvas.add(loadBarcode);
-    console.log(loadBarcode.width);
     loadBarcode.sendToBack();
     canvas.requestRenderAll();
 }
