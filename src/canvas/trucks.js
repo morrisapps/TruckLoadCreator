@@ -41,7 +41,7 @@ function truckLoad(id) {
         truckCustom();
     }
     canvas.forEachObject(function (obj) {
-        if (obj.unit == true) {
+        if (obj.unit == true || obj.tool == true) {
             updateCount(obj);
             obj.bringToFront();
         }
@@ -296,7 +296,8 @@ function createCounters() {
     });
     weightTexts = [topLeftWeightText, topMiddleWeightText, topRightWeightText, botLeftWeightText, botMiddleWeightText, botRightWeightText];
     //Add Weight Regions and counters
-    canvas.add(topLeftWeightRegion,topMiddleWeightRegion,topRightWeightRegion,botLeftWeightRegion,botMiddleWeightRegion,botRightWeightRegion);
+    weightRegions = [topLeftWeightRegion,topMiddleWeightRegion,topRightWeightRegion,botLeftWeightRegion,botMiddleWeightRegion,botRightWeightRegion]
+    weightRegions.forEach(function (region){canvas.add(region);});
     canvas.add(topLeftWeightText,topMiddleWeightText,topRightWeightText,botLeftWeightText,botMiddleWeightText,botRightWeightText);
 }
 
