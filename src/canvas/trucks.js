@@ -57,27 +57,6 @@ function truckLoad(id) {
     if (id != 'start') {saveToBrowser();}
 }
 
-function createLoadBarcode(){
-    if (!(loadBarcode === undefined)){canvas.remove(loadBarcode);}
-    let barcode = document.getElementById('barcode');
-    if (loadTextEdit == 'Enter load'){
-        JsBarcode("#barcode", '', {height: 28, displayValue: false});
-    }else {
-        JsBarcode("#barcode", loadTextEdit.text, {height: 28, displayValue: false});
-    }
-    loadBarcode = new fabric.Image(barcode, {
-        scaleX: .9,
-        left: 144,
-        top: 55,
-        selectable: false,
-        originX: 'center',
-        originY: 'center',
-    });
-    canvas.add(loadBarcode);
-    loadBarcode.sendToBack();
-    canvas.requestRenderAll();
-}
-
 function createCounters() {
     canvas.forEachObject(function (obj) {
         if (obj.isCounter == true) {

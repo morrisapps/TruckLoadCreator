@@ -19,6 +19,30 @@ var modeTextEdit;
 var driverText;
 var driverTextEdit;
 var driverSide;
+//Barcode variable for truckID
+let loadBarcode = new fabric.Image();
+
+function createLoadBarcode(){
+    canvas.remove(loadBarcode);
+    if (loadTextEdit == 'Enter load'){
+        JsBarcode("#barcode", '', {height: 28, displayValue: false});
+    }else {
+        JsBarcode("#barcode", loadTextEdit.text, {height: 28, displayValue: false});
+    }
+    loadBarcode = new fabric.Image(document.getElementById('barcode'), {
+        //scaleToWidth: 140,
+        //scaleToHeight: 28,
+        left: 144,
+        top: 55,
+        selectable: false,
+        originX: 'center',
+        originY: 'center',
+    });
+    canvas.add(loadBarcode);
+    console.log(loadBarcode.width);
+    loadBarcode.sendToBack();
+    canvas.requestRenderAll();
+}
 
 function textLoad(){
     //remove old texts if they exist
@@ -279,7 +303,7 @@ function textLoad(){
         width: 1000,
         height: 500,
         top: 23,
-        left: 845,
+        left: 815,
         stroke: "black",
         fontWeight: 'bold',
         strokeWidth: 0,
@@ -301,7 +325,7 @@ function textLoad(){
         width: 1000,
         height: 500,
         top: 25,
-        left: 978,
+        left: 948,
         stroke: "black",
         fontWeight: 'bold',
         strokeWidth: 0,
@@ -400,9 +424,12 @@ function textLoad(){
             loadTextEdit.text = "Enter load";
             loadTextEdit.set({fontSize: 15, fontStyle: "italic", top: 25});
         }
-        loadTextEdit.text = loadTextEdit.text.slice(0, 10);
-        createLoadBarcode();
         saveToBrowser();
+    });
+
+    loadTextEdit.on('changed', function (options) {
+        loadTextEdit.set('text', loadTextEdit.text.slice(0, 12));
+        createLoadBarcode();
     });
 
     trailerTextEdit.on('selected', function (options) {
