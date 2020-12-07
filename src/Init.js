@@ -7,13 +7,10 @@
 //Place all global variables here
 
 //Version number
-let version = "0.17.1";
+let version = "0.18";
 
 //TruckID used for loading the appropriate size truck
 let truckid = '';
-
-//Barcode variable for truckID
-let loadBarcode = null;
 
 //These variables are used for line counting
 var topLines;
