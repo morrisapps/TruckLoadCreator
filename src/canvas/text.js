@@ -30,14 +30,17 @@ function createLoadBarcode(){
         JsBarcode("#barcode", loadTextEdit.text, {height: 28, displayValue: false});
     }
     loadBarcode = new fabric.Image(document.getElementById('barcode'), {
-        //scaleToWidth: 140,
-        //scaleToHeight: 28,
         left: 144,
         top: 55,
         selectable: false,
         originX: 'center',
         originY: 'center',
     });
+    //Dynamically scale X coords of loadBarcode to make it fit
+    while (loadBarcode.width*loadBarcode.scaleX > 250){
+        loadBarcode.set('scaleX',loadBarcode.scaleX - 0.01);
+        if (loadBarcode.scaleX <= 0){break;}
+     }
     canvas.add(loadBarcode);
     loadBarcode.sendToBack();
     canvas.requestRenderAll();
