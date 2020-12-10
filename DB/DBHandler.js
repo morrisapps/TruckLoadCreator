@@ -56,14 +56,12 @@ function DBConnect(input) {
     _errorDB = '';
     let query = input[0];
     let rows = input[1];
-
     //Runs connect.php which connects to DB and returns associated rows as a double array
     return $.post('./DB/connect.php', {query: query, rows: rows}, function (response) {
         //Returned message
         if (response) {
             try {
                 _returnedData = JSON.parse(response);
-                console.log(_returnedData)
             } catch (e) {
                 _errorDB = 'Invalid data retrieved from server ' + e;
             }
@@ -95,13 +93,13 @@ function DBConnect(input) {
         })
         //Called on successfully connecting to DB.
         .done(function () {
-
         });
 }
 
 function getDBTruckIDs() {
     let rows = ['TRUCKID', 'DLVMODEID'];
     let input = ['SELECT DISTINCT TRUCKID, DLVMODEID FROM ' + _DBTable + ';', rows];
+    $("#overlay").fadeIn(300);
     DBConnect(input).then(response => {
         if (_errorDB == '') {
             //Removes all options
@@ -123,6 +121,7 @@ function getDBTruckIDs() {
                 $("#infoDialog").dialog("open");
             });
         }
+        $("#overlay").fadeOut(300);
     });
 
 }
@@ -130,24 +129,24 @@ function getDBTruckIDs() {
 function getDBData(truckID) {
     let rows = ['TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES'];
     let input = ["SELECT * FROM "+ _DBTable + " WHERE TRUCKID = \'" + truckID + "\';", rows];
-    DBConnect(input).then(response => {
-        if (_errorDB == '') {
-            $(function () {
-                $("#importDialog").dialog("close");
-            });
-            loadFromDB(_returnedData);
+    $("#overlay").fadeIn(300);
+    $(function () {$("#importDialog").dialog("close");});
+    //Delay to wait for dialog to close
+    setTimeout(function() {
+        DBConnect(input).then(response => {
+            if (_errorDB == '') {
+                loadFromDB(_returnedData);
+            } else {
+                document.getElementById('infoDialog').innerHTML = "<P>" + _errorDB + "</p>"
+                $(function () {
+                    $('#infoDialog').dialog('option', 'title', 'Error');
+                    $("#infoDialog").dialog("open");
+                });
+            }
+        });
+        $("#overlay").fadeOut(300);
+    }, 1000);
 
-        } else {
-            $(function () {
-                $("#importDialog").dialog("close");
-            });
-            document.getElementById('infoDialog').innerHTML = "<P>" + _errorDB + "</p>"
-            $(function () {
-                $('#infoDialog').dialog('option', 'title', 'Error');
-                $("#infoDialog").dialog("open");
-            });
-        }
-    });
 }
 
 function loadFromDB(data) {
@@ -211,7 +210,7 @@ function loadFromDB(data) {
     listUnits();
     loadTextEdit.set({text: data[0][0], fontSize: 16, fontStyle: "normal", top: 23});
     modeTextEdit.set({text: data[0][2], fontSize: 16, fontStyle: "normal", top: 23});
-    dropsTextEdit.set({text: customers.length.toString(), fontSize: 16, fontStyle: "normal", top: 53});
+    dropsTextEdit.set({text: customers.length.toString(), fontSize: 16, fontStyle: "normal", top: 23});
     document.getElementById('infoDialog').innerHTML = "<P>" + importUnits + " Units" + "</P>" + "<P>" + importCusts + " Drops" + "</P>"
     $(function () {
         $('#infoDialog').dialog('option', 'title', 'Imported');
