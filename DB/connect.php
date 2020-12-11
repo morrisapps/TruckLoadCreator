@@ -5,14 +5,19 @@
 * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
 */
 
-//Declared variables
+//Server variables
+$connectionTable = 'dbo.alex_test_sample';
 $connectionServer = 'localHost';
 $connectionLogin = array(
     "Database" => "SampleDB",
     "Uid" => "sa",
     "PWD" => "test"
 );
-$connectionQuery= $_POST['query'];
+$getTrucksQuery = 'SELECT DISTINCT TRUCKID, DLVMODEID FROM ' . $connectionTable . ';';
+$getUnitsQuery = 'SELECT * FROM ' . $connectionTable . ' WHERE TRUCKID = \'' . $_POST['tID'] . '\';';
+$connectionQuery = '';
+if ($_POST['query'] == '1'){$connectionQuery = $getTrucksQuery;}
+else if ($_POST['query'] == '2'){$connectionQuery = $getUnitsQuery;}
 $rows = $_POST['rows'];
 $return = array();
 

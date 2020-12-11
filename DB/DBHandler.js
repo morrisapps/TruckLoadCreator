@@ -6,6 +6,10 @@
 
 let _DBTable = 'dbo.alex_test_sample';
 
+//GET url paramater areaid
+var c = new URL(window.location.href).searchParams.get("c");
+console.log(c);
+
 //Creates import dialog
 $(function () {
     $("#importDialog").dialog({
@@ -56,8 +60,9 @@ function DBConnect(input) {
     _errorDB = '';
     let query = input[0];
     let rows = input[1];
+    let tID = input[2];
     //Runs connect.php which connects to DB and returns associated rows as a double array
-    return $.post('./DB/connect.php', {query: query, rows: rows}, function (response) {
+    return $.post('./DB/connect.php', {query: query, rows: rows, tID: tID}, function (response) {
         //Returned message
         if (response) {
             try {
@@ -98,7 +103,7 @@ function DBConnect(input) {
 
 function getDBTruckIDs() {
     let rows = ['TRUCKID', 'DLVMODEID'];
-    let input = ['SELECT DISTINCT TRUCKID, DLVMODEID FROM ' + _DBTable + ';', rows];
+    let input = ['1', rows];
     $("#overlay").fadeIn(300);
     DBConnect(input).then(response => {
         if (_errorDB == '') {
@@ -128,7 +133,7 @@ function getDBTruckIDs() {
 
 function getDBData(truckID) {
     let rows = ['TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES'];
-    let input = ["SELECT * FROM "+ _DBTable + " WHERE TRUCKID = \'" + truckID + "\';", rows];
+    let input = ['2', rows, truckID];
     $("#overlay").fadeIn(300);
     $(function () {$("#importDialog").dialog("close");});
     //Delay to wait for dialog to close
@@ -146,12 +151,12 @@ function getDBData(truckID) {
         });
         $("#overlay").fadeOut(300);
     }, 1000);
-
 }
 
 function loadFromDB(data) {
     let importUnits = 0;
     let importCusts = 0;
+    console.log(data);
     data.forEach(function (item) {
         let unitWidth = item[13].split(/x/)[1];
         if (unitWidth != undefined) {
