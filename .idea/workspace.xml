@@ -26,11 +26,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Load Barcode now scales properly to fit">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Implemented loader circle to display to the user while waiting for importing from database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/DBHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,14 +168,7 @@
       <workItem from="1606766221479" duration="23729000" />
       <workItem from="1607440739416" duration="788000" />
       <workItem from="1607540689028" duration="2608000" />
-      <workItem from="1607614398685" duration="5308000" />
-    </task>
-    <task id="LOCAL-00003" summary="Removed extra files">
-      <created>1604356700042</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1604356700042</updated>
+      <workItem from="1607614398685" duration="6818000" />
     </task>
     <task id="LOCAL-00004" summary="Cleaned up code. Added Licensing to each file">
       <created>1604366656032</created>
@@ -515,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607395001554</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Implemented loader circle to display to the user while waiting for importing from database">
+      <created>1607626479931</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1607626479932</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,7 +544,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed bug not removing truck lines when changing truck size" />
     <MESSAGE value="Added Snap Toggle option" />
     <MESSAGE value="Bug fixed: Unit text colliding with other text if two units with long text were beside each other." />
     <MESSAGE value="Further tweaked unit text to stay inside the unit's width more" />
@@ -571,7 +568,8 @@
     <MESSAGE value="Implemented barcode support" />
     <MESSAGE value="Fixed JsBarcode giving error if no text for barcode" />
     <MESSAGE value="Load Barcode now scales properly to fit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Load Barcode now scales properly to fit" />
+    <MESSAGE value="Implemented loader circle to display to the user while waiting for importing from database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented loader circle to display to the user while waiting for importing from database" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">

@@ -209,6 +209,7 @@ function loadFromDB(data) {
     updateRack();
     listUnits();
     loadTextEdit.set({text: data[0][0], fontSize: 16, fontStyle: "normal", top: 23});
+    createLoadBarcode();
     modeTextEdit.set({text: data[0][2], fontSize: 16, fontStyle: "normal", top: 23});
     dropsTextEdit.set({text: customers.length.toString(), fontSize: 16, fontStyle: "normal", top: 23});
     document.getElementById('infoDialog').innerHTML = "<P>" + importUnits + " Units" + "</P>" + "<P>" + importCusts + " Drops" + "</P>"
