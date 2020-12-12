@@ -53,8 +53,8 @@ function createDash(top, left, width) {
             mtr: false //rotating-point
         });
         fabric.Object.prototype.controls.mtr.cornerSize = 0;
-        unitButtons.offsetX = 10;
-        editButton.offsetX = 10;
+        unitButtons.offsetX = unitButtons.offsetX + 6;
+        editButton.offsetX = editButton.offsetX + 6;
     });
     dashGroup.on('deselected', function (options) {
         fabric.Object.prototype.setControlsVisibility({
@@ -69,8 +69,8 @@ function createDash(top, left, width) {
             mtr: true //rotating-point
         });
         fabric.Object.prototype.controls.mtr.cornerSize = 24;
-        unitButtons.offsetX = 6;
-        editButton.offsetX = 6;
+        unitButtons.offsetX = unitButtons.offsetX - 6;
+        editButton.offsetX = editButton.offsetX - 6;
     });
 
     dashGroup.on('scaling', function (options) {
@@ -119,8 +119,8 @@ function createComment(top, left, text, width) {
             mtr: false //rotating-point
         });
         fabric.Object.prototype.controls.mtr.cornerSize = 0;
-        unitButtons.offsetX = 10;
-        editButton.offsetX = 10;
+        unitButtons.offsetX = unitButtons.offsetX + 6;
+        editButton.offsetX = editButton.offsetX + 6;
 
     });
     comment.on('deselected', function (options) {
@@ -136,8 +136,8 @@ function createComment(top, left, text, width) {
             mtr: true //rotating-point
         });
         fabric.Object.prototype.controls.mtr.cornerSize = 24;
-        unitButtons.offsetX = 6;
-        editButton.offsetX = 6;
+        unitButtons.offsetX = unitButtons.offsetX - 6;
+        editButton.offsetX = editButton.offsetX - 6;
     });
     return comment;
 }

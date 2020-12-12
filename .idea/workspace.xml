@@ -26,9 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Updated Db connection">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Updated FabricJS to 4.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/ThirdParty/FabricJS/fabric.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/ThirdParty/FabricJS/fabric.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/handle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/handle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unitButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/unitButtons.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,13 +170,6 @@
       <workItem from="1607440739416" duration="788000" />
       <workItem from="1607540689028" duration="2608000" />
       <workItem from="1607614398685" duration="6818000" />
-    </task>
-    <task id="LOCAL-00005" summary="Fixed issue with Add button not updating current customer.&#10;&#10;Fixed issue selecting from unit list not updating current customer.&#10;&#10;Fixed selecting between unadded units in unit list not immediately putting them into edit mode">
-      <created>1604374641910</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1604374641910</updated>
     </task>
     <task id="LOCAL-00006" summary="Updated Unit List and Customer List colors to have a colored background associated to the border color.">
       <created>1604376455812</created>
@@ -513,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607727524993</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Updated FabricJS to 4.2">
+      <created>1607784842626</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1607784842626</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +545,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Bug fixed: Unit text colliding with other text if two units with long text were beside each other." />
     <MESSAGE value="Further tweaked unit text to stay inside the unit's width more" />
     <MESSAGE value="Unit Text that is rotated now behaves like the same as the non rotated units" />
     <MESSAGE value="Added option to toggle customer name in units. Default to on." />
@@ -569,7 +569,8 @@
     <MESSAGE value="Load Barcode now scales properly to fit" />
     <MESSAGE value="Implemented loader circle to display to the user while waiting for importing from database" />
     <MESSAGE value="Updated Db connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Db connection" />
+    <MESSAGE value="Updated FabricJS to 4.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated FabricJS to 4.2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -738,14 +739,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1607727528627">
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1607784847529">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606915340762" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1607727528627" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1607784847529" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605586559998" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />

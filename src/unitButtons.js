@@ -6,9 +6,10 @@
 
 //Delete Button
 let unitButtons = new fabric.Control({
-    position: {x: .5, y: -0.5},
+    x: .5,
+    y: -.5,
     offsetY:-2,
-    offsetX: 6,
+    offsetX: 12,
     cursorStyle: 'pointer',
     mouseUpHandler: deleteObject,
     render: renderDeleteIcon,
@@ -21,9 +22,10 @@ let mtrButton = fabric.Object.prototype.controls.mtr;
 
 //Edit Button
 let editButton = new fabric.Control({
-    position: {x: .5, y: -0.5},
-    offsetY: 10,
-    offsetX: 6,
+    x: .5,
+    y: -.5,
+    offsetY: 20,
+    offsetX: 12,
     cursorStyle: 'pointer',
     mouseUpHandler: editObject,
     render: renderEditIcon,
