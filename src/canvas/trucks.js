@@ -395,23 +395,7 @@ function truckCurtain(truckid) {
     door5 = '';
     door6 = '';
 
-    if (truckid == "1903") {
-        //set weight text location
-        topLeftWeightText.set('left', 242).setCoords();
-        topMiddleWeightText.set('left', 626).setCoords();
-        topRightWeightText.set('left', 1010).setCoords();
-        botLeftWeightText.set('left', 242).setCoords();
-        botMiddleWeightText.set('left', 626).setCoords();
-        botRightWeightText.set('left', 1010).setCoords();
-        //Set region's size and location
-        topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-        topMiddleWeightRegion.set({left: 626, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-        topRightWeightRegion.set({left: 1010, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-        botLeftWeightRegion.set({left: 242, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
-        botMiddleWeightRegion.set({left: 626, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-        botRightWeightRegion.set({left: 1010, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
-        door1 = '90"H - 90"D (Full flatbed) - 47\'6"W';
-    } else if (truckid == 'Custom Flatbed') {
+    if (truckid == 'Custom Flatbed') {
         //set weight text location
         topLeftWeightText.set('left', 206).setCoords();
         topMiddleWeightText.set('left', 601).setCoords();
@@ -427,7 +411,7 @@ function truckCurtain(truckid) {
         botMiddleWeightRegion.set({left: 601, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
         botRightWeightRegion.set({left: 997, top: 565, width: 204 * 2, height: 162 * 2,}).setCoords();
         door1 = '';
-    } else if (truckid == '46 Flatbed') {
+    } else if (truckid == '46 Flatbed' || truckid == '1903') {
         //set weight text location
         topLeftWeightText.set('left', 242).setCoords();
         topMiddleWeightText.set('left', 602).setCoords();
@@ -442,7 +426,8 @@ function truckCurtain(truckid) {
         botLeftWeightRegion.set({left: 242, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
         botMiddleWeightRegion.set({left: 602, top: 565, width: 168 * 2-4, height: 162 * 2,}).setCoords();
         botRightWeightRegion.set({left: 962, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
-        door1 = '90"H - 90"D (Full flatbed) - 46\'"W';
+        if (truckid == '1903'){door1 = '90"H - 90"D (Full flatbed) - 47\'6"W';}
+        else {door1 = '90"H - 90"D (Full flatbed) - 46\'"W';}
     } else if (truckid == '48 Flatbed') {
         //set weight text location
         topLeftWeightText.set('left', 242).setCoords();
@@ -508,7 +493,7 @@ function truckCurtain(truckid) {
     //vertical lines
     vLine1 = new fabric.Line();
     canvas.add(vLine1);
-    if (truckid == "46 Flatbed") {
+    if (truckid == '1903' || truckid == "46 Flatbed") {
         vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         vLine5 = new fabric.Line([600 * 2 - 48, 75, 600 * 2 - 48, 725], {
             stroke: 'black',
@@ -532,7 +517,7 @@ function truckCurtain(truckid) {
             line: true
         });
         midLine.set({x1: 24*2, y1: 400, x2: 1200, y2: 400});
-    } else if (truckid == "1903" || truckid == "48 Flatbed") {
+    } else if (truckid == "48 Flatbed") {
         vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         vLine5 = new fabric.Line([600 * 2, 75, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         midLine.set({x1: 24 * 2, y1: 400, x2: 1200, y2: 400});
