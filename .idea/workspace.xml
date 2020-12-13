@@ -26,10 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fix printing on chrome based browsers">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Weight field now resets when typing a new unit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,13 +172,6 @@
       <workItem from="1607614398685" duration="6818000" />
       <workItem from="1607828356495" duration="539000" />
       <workItem from="1607829589780" duration="3108000" />
-    </task>
-    <task id="LOCAL-00008" summary="Fixed Unit wouldn't stay highlighted as editing in list if also not in canvas.">
-      <created>1604380080425</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1604380080425</updated>
     </task>
     <task id="LOCAL-00009" summary="Fixed issue with Customer list selection being null.&#10;&#10;Moved around items in sidebar to be more convenient.">
       <created>1604384648033</created>
@@ -516,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607870729401</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Weight field now resets when typing a new unit">
+      <created>1607897709156</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1607897709157</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,7 +547,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added option to toggle customer name in units. Default to on." />
     <MESSAGE value="Fixed bug: Loading from a file would not remove tools causing duplicated tools." />
     <MESSAGE value="Fixed bug:Drop could be empty on checking rack" />
     <MESSAGE value="Added jquery map" />
@@ -572,7 +571,8 @@
     <MESSAGE value="Updated FabricJS to 4.2" />
     <MESSAGE value="Update control items positions due to fabric 4.2" />
     <MESSAGE value="Fix printing on chrome based browsers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix printing on chrome based browsers" />
+    <MESSAGE value="Weight field now resets when typing a new unit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Weight field now resets when typing a new unit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -741,14 +741,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1607870730304">
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1607897712484">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606915340762" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1607870730303" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1607897712484" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605586559998" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
@@ -772,11 +772,11 @@
     </state>
     <state x="476" y="231" key="run.anything.popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605510865656" />
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1607202036483" />
-    <state x="443" y="158" width="672" height="475" key="search.everywhere.popup" timestamp="1607794655338">
+    <state x="443" y="158" width="672" height="475" key="search.everywhere.popup" timestamp="1607897514862">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="623" y="226" width="945" height="679" key="search.everywhere.popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606910881500" />
-    <state x="443" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1607794655338" />
+    <state x="443" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1607897514862" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604958177395" />
     <state x="682" y="432" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604463075377">
       <screen x="0" y="0" width="1920" height="1040" />
