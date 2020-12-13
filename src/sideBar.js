@@ -27,6 +27,21 @@ function cutText(text, start, end) {
     }
 }
 
+//Called when input fields are clicked
+function inputFieldsSelected(){
+    if (editing != true) {
+        //Gather current relevant field values
+        let tempCust = _customer.value;
+        let tempDrop = _drop.value;
+        let tempRack = _rack.value;
+        canvas.discardActiveObject().requestRenderAll();
+        //Restore field values
+        _customer.value = tempCust;
+        _drop.value = tempDrop;
+        _rack.value = tempRack;
+    }
+}
+
 function optionsUpdate() {
     updateUnits(units);
     canvas.requestRenderAll();
