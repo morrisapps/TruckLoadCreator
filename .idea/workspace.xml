@@ -28,7 +28,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Update control items positions due to fabric 4.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/trucks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/file/print.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/print.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +169,8 @@
       <workItem from="1607440739416" duration="788000" />
       <workItem from="1607540689028" duration="2608000" />
       <workItem from="1607614398685" duration="6818000" />
+      <workItem from="1607828356495" duration="539000" />
+      <workItem from="1607829589780" duration="3108000" />
     </task>
     <task id="LOCAL-00007" summary="Implemented new information for customers and units not in the truck, but only in list.&#10;&#10;Print now checks if there are units not in canvas and displays a warning to continue if there is.">
       <created>1604378692712</created>
@@ -756,6 +758,10 @@
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604791606800" />
     <state x="553" y="304" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1605900868105" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352162689" />
+    <state x="2099" y="233" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607828399117">
+      <screen x="1360" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2099" y="233" key="git4idea.branch.GitSmartOperationDialog/1360.0.1920.1040/0.0.1360.728@1360.0.1920.1040" timestamp="1607828399117" />
     <state x="774" y="364" key="git4idea.ui.GitTagDialog" timestamp="1604366798897">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -54,33 +54,39 @@ function printPageArea() {
         //Opens window of print content
         var WinPrint = window.open('', '');
 
-        //Calls print
-        WinPrint.document.write("<style>@page {   size: Letter landscape; margin: 3mm;  }</style>  " + canvas.toSVG() + " ");
+        //Uses promise for document write to fix chrome not displaying barcode on print
+        let printPromise = new Promise((finished) => {
+            //Calls print
+            finished(WinPrint.document.write("<style>@page {   size: Letter landscape; margin: 3mm;  }</style>  " + canvas.toSVG() + " " ) );
+        });
+        printPromise.then(v => {
+            //Restore zoom
+            canvas.setZoom(tempZoom);
+            canvas.setWidth(tempCanvasWidth);
+            canvas.setHeight(tempCanvasHeight);
+            canvas.requestRenderAll();
 
-        //Restore zoom
-        canvas.setZoom(tempZoom);
-        canvas.setWidth(tempCanvasWidth);
-        canvas.setHeight(tempCanvasHeight);
-        canvas.requestRenderAll();
+            //Restore Door Text
+            doorText1.opacity = 1;
+            doorText2.opacity = 1;
+            doorText3.opacity = 1;
+            doorText4.opacity = 1;
+            doorText5.opacity = 1;
+            doorText6.opacity = 1;
+            weightTexts.forEach(function (text){text.opacity = 1;});
 
-        //Restore Door Text
-        doorText1.opacity = 1;
-        doorText2.opacity = 1;
-        doorText3.opacity = 1;
-        doorText4.opacity = 1;
-        doorText5.opacity = 1;
-        doorText6.opacity = 1;
-        weightTexts.forEach(function (text){text.opacity = 1;});
+            //Closes open print window
+            WinPrint.document.close();
+            WinPrint.focus();
+            WinPrint.print();
+            WinPrint.close();
 
-        //Closes open print window
-        WinPrint.document.close();
-        WinPrint.focus();
-        WinPrint.print();
-        WinPrint.close();
-
-        saveToBrowser();
-        if (confirm('Would you like to save?')){
-            save();
-        }
+            saveToBrowser();
+            //Delay confirm dialog to fix chrome not closing winPrint before confirm pop up
+            setTimeout(function() {
+                if (confirm('Would you like to save?')){
+                    save();
+                }}, 200);
+        });
     }
 }
