@@ -4,8 +4,6 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
-let _DBTable = 'dbo.alex_test_sample';
-
 //GET url paramater areaid
 var c = new URL(window.location.href).searchParams.get("c");
 console.log(c);
@@ -63,6 +61,8 @@ function DBConnect(input) {
     let tID = input[2];
     //Runs connect.php which connects to DB and returns associated rows as a double array
     return $.post('./DB/connect.php', {query: query, rows: rows, tID: tID}, function (response) {
+        //Reporting response to console
+        console.log(response);
         //Returned message
         if (response) {
             try {
@@ -177,7 +177,7 @@ function loadFromDB(data) {
         //Checks if bundles or Units then creates and adds them
         if (item[13].includes('40\"x') || item[13].includes('48\"x') || item[13].includes('EC 25\"')) {
             //Adding unit
-            createUnit(unitWidth, item[11], customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], '', false, item[8],item[10],Math.round(item[12]));
+            createUnit(unitWidth, Math.trunc(item[11]), customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], '', false, item[8],item[10],Math.round(item[12]));
             if (addUnit(currentGroup)){
                 importUnits++;
             }
