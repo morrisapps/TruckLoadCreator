@@ -26,9 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Weight field now resets when typing a new unit">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Applied Math.trunc to imported unit height to remove the large amount of decimals">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/DBHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/trucks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +71,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Program Files/iis express/PHP/v7.4/php.exe" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -85,6 +88,17 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/js-truckwrite/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -160,14 +174,7 @@
       <workItem from="1607614398685" duration="6818000" />
       <workItem from="1607828356495" duration="539000" />
       <workItem from="1607829589780" duration="3108000" />
-      <workItem from="1607980200032" duration="1766000" />
-    </task>
-    <task id="LOCAL-00009" summary="Fixed issue with Customer list selection being null.&#10;&#10;Moved around items in sidebar to be more convenient.">
-      <created>1604384648033</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1604384648033</updated>
+      <workItem from="1607980200032" duration="5800000" />
     </task>
     <task id="LOCAL-00010" summary="Fixed rare bug not allowing customers to not be added by forcing customer name to be not a number">
       <created>1604434761542</created>
@@ -505,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607897709157</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Applied Math.trunc to imported unit height to remove the large amount of decimals">
+      <created>1607985824949</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1607985824949</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +550,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed bug: Loading from a file would not remove tools causing duplicated tools." />
     <MESSAGE value="Fixed bug:Drop could be empty on checking rack" />
     <MESSAGE value="Added jquery map" />
     <MESSAGE value="Made customers appear in bold and with - RK if they are in the rack.&#10;&#10;Fixed height counts not working with snap off.&#10;&#10;Fixed sometimes not being able to add to rack" />
@@ -561,7 +574,8 @@
     <MESSAGE value="Update control items positions due to fabric 4.2" />
     <MESSAGE value="Fix printing on chrome based browsers" />
     <MESSAGE value="Weight field now resets when typing a new unit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Weight field now resets when typing a new unit" />
+    <MESSAGE value="Applied Math.trunc to imported unit height to remove the large amount of decimals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Applied Math.trunc to imported unit height to remove the large amount of decimals" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -730,10 +744,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1607897712484">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607985828321">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606915340762" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1607985828321" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
@@ -756,10 +770,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="774" y="364" key="git4idea.ui.GitTagDialog/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604366798897" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1607202036483">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="476" y="231" width="672" height="677" key="run.anything.popup" timestamp="1608006049664">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="476" y="231" key="run.anything.popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1605510865656" />
+    <state x="476" y="231" width="672" height="677" key="run.anything.popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1608006049664" />
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1607202036483" />
     <state x="443" y="158" width="672" height="475" key="search.everywhere.popup" timestamp="1607897514862">
       <screen x="0" y="0" width="1366" height="728" />

@@ -7,7 +7,7 @@
 //Place all global variables here
 
 //Version number
-let version = "0.19";
+let version = "0.19.1";
 
 //TruckID used for loading the appropriate size truck
 let truckid = '';
@@ -162,13 +162,137 @@ let botRightWeightUnits = new Set();
 let weightUnits = [topLeftWeightUnits,topMiddleWeightUnits,topRightWeightUnits,botLeftWeightUnits,botMiddleWeightUnits,botRightWeightUnits];
 
 //Weight text
-let topLeftWeightText;
-let topMiddleWeightText;
-let topRightWeightText;
-let botLeftWeightText;
-let botMiddleWeightText;
-let botRightWeightText;
-let weightTexts;
+let topLeftWeightText = new fabric.IText('', {
+    id: 'topLeftWeightText',
+    top: 90,
+    left: 248,
+    stroke: '#4c4c4c',
+    fill: '#4c4c4c',
+    strokeWidth: 0,
+    hasControls: false,
+    selectable: false,
+    lockMovementX: true,
+    lockMovementY: true,
+    hasBorders: false,
+    editable: false,
+    fontSize: 14,
+    fixedWidth: 150,
+    fixedHeight: 300,
+    fixedFontSize: 12,
+    originX: 'center',
+    isCounter: true
+});
+let topMiddleWeightText = new fabric.IText('', {
+    id: 'topMiddleWeightText',
+    width: 1000,
+    height: 500,
+    top: 90,
+    left: 626,
+    stroke: '#4c4c4c',
+    fill: '#4c4c4c',
+    strokeWidth: 0,
+    hasControls: false,
+    selectable: false,
+    lockMovementX: true,
+    lockMovementY: true,
+    hasBorders: false,
+    editable: false,
+    fontSize: 14,
+    fixedWidth: 150,
+    fixedHeight: 300,
+    fixedFontSize: 12,
+    originX: 'center',
+    isCounter: true
+});
+let topRightWeightText = new fabric.IText('', {
+    id: 'topRightWeightText',
+    width: 1000,
+    height: 500,
+    top: 90,
+    left: 1010,
+    stroke: '#4c4c4c',
+    fill: '#4c4c4c',
+    strokeWidth: 0,
+    hasControls: false,
+    selectable: false,
+    lockMovementX: true,
+    lockMovementY: true,
+    hasBorders: false,
+    editable: false,
+    fontSize: 14,
+    fixedWidth: 150,
+    fixedHeight: 300,
+    fixedFontSize: 12,
+    originX: 'center',
+    isCounter: true
+});
+let botLeftWeightText = new fabric.IText('', {
+    id: 'botLeftWeightText',
+    width: 1000,
+    height: 500,
+    top: 690,
+    left: 248,
+    stroke: '#4c4c4c',
+    fill: '#4c4c4c',
+    strokeWidth: 0,
+    hasControls: false,
+    selectable: false,
+    lockMovementX: true,
+    lockMovementY: true,
+    hasBorders: false,
+    editable: false,
+    fontSize: 14,
+    fixedWidth: 150,
+    fixedHeight: 300,
+    fixedFontSize: 12,
+    originX: 'center',
+    isCounter: true
+});
+let botMiddleWeightText = new fabric.IText('', {
+    id: 'botMiddleWeightText',
+    width: 1000,
+    height: 500,
+    top: 690,
+    left: 626,
+    stroke: '#4c4c4c',
+    fill: '#4c4c4c',
+    strokeWidth: 0,
+    hasControls: false,
+    selectable: false,
+    lockMovementX: true,
+    lockMovementY: true,
+    hasBorders: false,
+    editable: false,
+    fontSize: 14,
+    fixedWidth: 150,
+    fixedHeight: 300,
+    fixedFontSize: 12,
+    originX: 'center',
+    isCounter: true
+});
+let botRightWeightText = new fabric.IText('', {
+    id: 'botRightWeightText',
+    width: 1000,
+    height: 500,
+    top: 690,
+    left: 1010,
+    stroke: '#4c4c4c',
+    fill: '#4c4c4c',
+    strokeWidth: 0,
+    hasControls: false,
+    selectable: false,
+    lockMovementX: true,
+    lockMovementY: true,
+    hasBorders: false,
+    editable: false,
+    fontSize: 14,
+    fixedWidth: 150,
+    fixedHeight: 300,
+    fixedFontSize: 12,
+    originX: 'center',
+    isCounter: true
+});
+let weightTexts = [topLeftWeightText, topMiddleWeightText, topRightWeightText, botLeftWeightText, botMiddleWeightText, botRightWeightText];
 
 //Total Weight of truck
 let weightCount = 0;
