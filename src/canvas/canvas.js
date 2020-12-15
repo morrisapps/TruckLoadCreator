@@ -478,6 +478,10 @@ $(document).ready(function () {
 
     createCounters();
 
+    //Add weight regions and text
+    weightRegions.forEach(function (region){canvas.add(region);});
+    canvas.add(topLeftWeightText,topMiddleWeightText,topRightWeightText,botLeftWeightText,botMiddleWeightText,botRightWeightText);
+
     canvas.requestRenderAll();
 
     //Checks if previous session was saved, and if not asks to restore.

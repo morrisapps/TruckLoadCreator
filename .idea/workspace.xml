@@ -26,10 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Applied Math.trunc to imported unit height to remove the large amount of decimals">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="0.19.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/canvas/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/trucks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,14 +174,7 @@
       <workItem from="1607614398685" duration="6818000" />
       <workItem from="1607828356495" duration="539000" />
       <workItem from="1607829589780" duration="3108000" />
-      <workItem from="1607980200032" duration="5800000" />
-    </task>
-    <task id="LOCAL-00010" summary="Fixed rare bug not allowing customers to not be added by forcing customer name to be not a number">
-      <created>1604434761542</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1604434761542</updated>
+      <workItem from="1607980200032" duration="7262000" />
     </task>
     <task id="LOCAL-00011" summary="Rack is now Customer list, appends -RK if customer is in rack">
       <created>1604440876023</created>
@@ -519,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607985824949</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="0.19.1">
+      <created>1608008492330</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1608008492330</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +550,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed bug:Drop could be empty on checking rack" />
     <MESSAGE value="Added jquery map" />
     <MESSAGE value="Made customers appear in bold and with - RK if they are in the rack.&#10;&#10;Fixed height counts not working with snap off.&#10;&#10;Fixed sometimes not being able to add to rack" />
     <MESSAGE value="Initial DB connectivity testing" />
@@ -575,7 +574,8 @@
     <MESSAGE value="Fix printing on chrome based browsers" />
     <MESSAGE value="Weight field now resets when typing a new unit" />
     <MESSAGE value="Applied Math.trunc to imported unit height to remove the large amount of decimals" />
-    <option name="LAST_COMMIT_MESSAGE" value="Applied Math.trunc to imported unit height to remove the large amount of decimals" />
+    <MESSAGE value="0.19.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.19.1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -744,10 +744,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607985828321">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1608008517538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1607985828321" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1608008517538" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />

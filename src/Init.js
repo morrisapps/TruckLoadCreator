@@ -180,7 +180,6 @@ let topLeftWeightText = new fabric.IText('', {
     fixedHeight: 300,
     fixedFontSize: 12,
     originX: 'center',
-    isCounter: true
 });
 let topMiddleWeightText = new fabric.IText('', {
     id: 'topMiddleWeightText',
@@ -202,7 +201,6 @@ let topMiddleWeightText = new fabric.IText('', {
     fixedHeight: 300,
     fixedFontSize: 12,
     originX: 'center',
-    isCounter: true
 });
 let topRightWeightText = new fabric.IText('', {
     id: 'topRightWeightText',
@@ -224,7 +222,6 @@ let topRightWeightText = new fabric.IText('', {
     fixedHeight: 300,
     fixedFontSize: 12,
     originX: 'center',
-    isCounter: true
 });
 let botLeftWeightText = new fabric.IText('', {
     id: 'botLeftWeightText',
@@ -246,7 +243,6 @@ let botLeftWeightText = new fabric.IText('', {
     fixedHeight: 300,
     fixedFontSize: 12,
     originX: 'center',
-    isCounter: true
 });
 let botMiddleWeightText = new fabric.IText('', {
     id: 'botMiddleWeightText',
@@ -268,7 +264,6 @@ let botMiddleWeightText = new fabric.IText('', {
     fixedHeight: 300,
     fixedFontSize: 12,
     originX: 'center',
-    isCounter: true
 });
 let botRightWeightText = new fabric.IText('', {
     id: 'botRightWeightText',
@@ -290,7 +285,6 @@ let botRightWeightText = new fabric.IText('', {
     fixedHeight: 300,
     fixedFontSize: 12,
     originX: 'center',
-    isCounter: true
 });
 let weightTexts = [topLeftWeightText, topMiddleWeightText, topRightWeightText, botLeftWeightText, botMiddleWeightText, botRightWeightText];
 

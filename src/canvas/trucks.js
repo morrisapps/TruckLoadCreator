@@ -141,11 +141,6 @@ function createCounters() {
     botMiddleWeightUnits = new Set();
     botRightWeightUnits = new Set();
     weightUnits = [topLeftWeightUnits,topMiddleWeightUnits,topRightWeightUnits,botLeftWeightUnits,botMiddleWeightUnits,botRightWeightUnits];
-    weightTexts = [topLeftWeightText, topMiddleWeightText, topRightWeightText, botLeftWeightText, botMiddleWeightText, botRightWeightText];
-    //Add Weight Regions and counters
-    weightRegions = [topLeftWeightRegion,topMiddleWeightRegion,topRightWeightRegion,botLeftWeightRegion,botMiddleWeightRegion,botRightWeightRegion]
-    weightRegions.forEach(function (region){canvas.add(region);});
-    canvas.add(topLeftWeightText,topMiddleWeightText,topRightWeightText,botLeftWeightText,botMiddleWeightText,botRightWeightText);
 }
 
 function truckTemplate(){
