@@ -482,6 +482,24 @@ $(document).ready(function () {
     weightRegions.forEach(function (region){canvas.add(region);});
     canvas.add(topLeftWeightText,topMiddleWeightText,topRightWeightText,botLeftWeightText,botMiddleWeightText,botRightWeightText);
 
+    var text = new fabric.IText('Import now works! \n Please double check everything as importing is in testing. \nIf the import doesnt work try it again, this is a known bug. \nLet me know of any issues. \nPlease remove this text', {
+        textBackgroundColor: 'rgba(255,255,255,0.8)',
+        textAlign: 'center',
+        fontSize: 15,
+        fontFamily: 'Arial',
+        originX: 'center',
+        originY: 'center',
+    });
+
+    let Group = new fabric.Group([ text], {
+        left: 435,
+        top: 300,
+        selectable: true,
+        remove: false,
+        hasControls: true,
+    });
+    canvas.add(Group);
+
     canvas.requestRenderAll();
 
     //Checks if previous session was saved, and if not asks to restore.

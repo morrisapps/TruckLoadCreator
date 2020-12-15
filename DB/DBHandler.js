@@ -156,12 +156,7 @@ function getDBData(truckID) {
 function loadFromDB(data) {
     let importUnits = 0;
     let importCusts = 0;
-    console.log(data);
     data.forEach(function (item) {
-        let unitWidth = item[13].split(/x/)[1];
-        if (unitWidth != undefined) {
-            unitWidth = unitWidth.split(/"/)[0];
-        }
         //Checks if Customer drop exists and if name is different. Forces use of the same name.
         let customer = null;
         for (let i = 0; i < customers.length; i++) {
@@ -174,8 +169,14 @@ function loadFromDB(data) {
             customerText = customer.name;
         }
 
+        //Format pallet type to dimensions only
+        let dimensions = item[13].replace(/[a-wy-z\s&\/\\#,+'"()$~%.:*?<>\-_{}]/gi, '');
+        let unitWidth = 0;
+
         //Checks if bundles or Units then creates and adds them
-        if (item[13].includes('40\"x') || item[13].includes('48\"x') || item[13].includes('EC 25\"')) {
+        //Tests if dimensions contain a number and adds as unit
+        if (/\d/.test(dimensions)){
+            unitWidth = dimensions.split(/x/)[1];
             //Adding unit
             createUnit(unitWidth, Math.trunc(item[11]), customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], '', false, item[8],item[10],Math.round(item[12]));
             if (addUnit(currentGroup)){
@@ -184,8 +185,8 @@ function loadFromDB(data) {
             if (addCustomer(customerText, item[9])){
                 importCusts++;
             }
-
-        } else if (item[13].includes('Bundle') || item[13].includes('Box')){
+        } //Checks if bundles
+        else if (item[13].includes('Bundle') || item[13].includes('Box')){
             if (addCustomer(customerText, item[9])){
                 importCusts++
             }

@@ -28,9 +28,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="0.19.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/DBHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/trucks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,13 +88,15 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,6 +177,7 @@
       <workItem from="1607828356495" duration="539000" />
       <workItem from="1607829589780" duration="3108000" />
       <workItem from="1607980200032" duration="7262000" />
+      <workItem from="1608050550411" duration="9234000" />
     </task>
     <task id="LOCAL-00011" summary="Rack is now Customer list, appends -RK if customer is in rack">
       <created>1604440876023</created>
@@ -575,7 +578,7 @@
     <MESSAGE value="Weight field now resets when typing a new unit" />
     <MESSAGE value="Applied Math.trunc to imported unit height to remove the large amount of decimals" />
     <MESSAGE value="0.19.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.19.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
