@@ -10,7 +10,10 @@
 let version = "0.19.1";
 
 //TruckID used for loading the appropriate size truck
-let truckid = '';
+let truckID = '';
+
+//LoadID is set after importing and forces only this load id to be used.
+let loadID = '';
 
 //These variables are used for line counting
 var topLines;

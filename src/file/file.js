@@ -108,7 +108,7 @@ function getSaveContent() {
         savedRacks,
         savedDashes,
         savedComments,
-        truckid,
+        truckID,
         options,
         fileName
     ];

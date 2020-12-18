@@ -16,9 +16,9 @@ function truckLoad(id) {
     truckTemplate();
 
 
-    truckid = id;
+    truckID = id;
     if (id == '' || id == null || id == 'start'){trailerTextEdit.set({text: "Enter trailer", fontSize: 15, fontStyle: "italic", top: 25});}
-    else {trailerTextEdit.set({text: truckid, fontSize: 16, fontStyle: "normal", top: 23});}
+    else {trailerTextEdit.set({text: truckID, fontSize: 16, fontStyle: "normal", top: 23});}
 
     canvas.remove(doorText1);
     canvas.remove(doorText2);
@@ -27,16 +27,16 @@ function truckLoad(id) {
     canvas.remove(doorText5);
     canvas.remove(doorText6);
 
-    if (truckid == "1001" || truckid == "1101" || truckid == "1401" || truckid == "1103" || truckid == "1605" || truckid == "1901" || truckid == "1202" || truckid == "1301" || truckid == "1302" || truckid == "1904" || truckid == "1905") {
-        truck53(truckid);
-    } else if (truckid == "1201" || truckid == "1501" || truckid == "9802" || truckid == "9903" || truckid == "9904" || truckid == "9905" || truckid == "1102" || truckid == "1601" || truckid == "1602" || truckid == "1604" || truckid == "1902") {
-        truck48(truckid);
-    } else if (truckid == "9001" || truckid == "8103" || truckid == "9803" || truckid == "9902" || truckid == "9801" || truckid == "9901") {
-        truck45(truckid);
-    } else if (truckid == "9002" || truckid == "1303" || truckid == "1603") {
-        truck35(truckid);
-    } else if (truckid == "1903" || truckid == 'Custom Flatbed' || truckid == '46 Flatbed' || truckid == '48 Flatbed' || truckid == "110" || truckid == "801" || truckid == "802" || truckid == "RWW114" || truckid == '2003' || truckid == '2004' || truckid == '2005' || truckid == '2006' || truckid == '2007') {
-        truckCurtain(truckid);
+    if (truckID == "1001" || truckID == "1101" || truckID == "1401" || truckID == "1103" || truckID == "1605" || truckID == "1901" || truckID == "1202" || truckID == "1301" || truckID == "1302" || truckID == "1904" || truckID == "1905") {
+        truck53(truckID);
+    } else if (truckID == "1201" || truckID == "1501" || truckID == "9802" || truckID == "9903" || truckID == "9904" || truckID == "9905" || truckID == "1102" || truckID == "1601" || truckID == "1602" || truckID == "1604" || truckID == "1902") {
+        truck48(truckID);
+    } else if (truckID == "9001" || truckID == "8103" || truckID == "9803" || truckID == "9902" || truckID == "9801" || truckID == "9901") {
+        truck45(truckID);
+    } else if (truckID == "9002" || truckID == "1303" || truckID == "1603") {
+        truck35(truckID);
+    } else if (truckID == "1903" || truckID == 'Custom Flatbed' || truckID == '46 Flatbed' || truckID == '48 Flatbed' || truckID == "110" || truckID == "801" || truckID == "802" || truckID == "RWW114" || truckID == '2003' || truckID == '2004' || truckID == '2005' || truckID == '2006' || truckID == '2007') {
+        truckCurtain(truckID);
     } else {
         truckCustom();
     }

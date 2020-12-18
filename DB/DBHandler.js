@@ -73,7 +73,6 @@ function DBConnect(input) {
         } else {
             _errorDB = 'No Response from Server'
         }
-
         if (_errorDB == '') {
             //Checks if results are not null
             if (_returnedData == null && _returnedData[0] == null && _returnedData[0] == false) {
@@ -115,10 +114,20 @@ function getDBTruckIDs() {
             $('#importTruck').find('option').remove().end();
             //Adds new options as truckID's
             for (let i = 0; i < _returnedData.length; i++) {
+                let disabled = false;
+                if (loadID != '' && loadID != _returnedData[i][0]){
+                    disabled = true;
+                }
                 $('#importTruck').append($('<option>', {
                     value: _returnedData[i][0],
-                    text: _returnedData[i][1] +' ' + _returnedData[i][0]
+                    text: _returnedData[i][1] +' ' + _returnedData[i][0],
+                    disabled: disabled
                 })).selectmenu("refresh");
+
+            }
+            if (loadID != ''){
+                $('#importTruck').val(loadID).selectmenu("refresh");
+                document.getElementById('importText').innerHTML = "<p>Import from "+loadID+" again?</p>"
             }
             $(function () {
                 $("#importDialog").dialog("open");
@@ -132,9 +141,6 @@ function getDBTruckIDs() {
         }
         $("#overlay").fadeOut(300);
     });
-
-
-
 }
 
 function getDBData(truckID) {
@@ -225,9 +231,11 @@ function loadFromDB(data) {
     updateRack();
     listUnits();
     loadTextEdit.set({text: data[0][0], fontSize: 16, fontStyle: "normal", top: 23});
+    if (loadID == ''){loadID = data[0][0];}
     createLoadBarcode();
     modeTextEdit.set({text: data[0][2], fontSize: 16, fontStyle: "normal", top: 23});
     dropsTextEdit.set({text: customers.length.toString(), fontSize: 16, fontStyle: "normal", top: 23});
+
     document.getElementById('infoDialog').innerHTML = "<P>" + importUnits + " Units" + "</P>" + "<P>" + importCusts + " Drops" + "</P>"
     $(function () {
         $('#infoDialog').dialog('option', 'title', 'Imported');
