@@ -4,10 +4,6 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
-//GET url paramater areaid
-var c = new URL(window.location.href).searchParams.get("c");
-console.log(c);
-
 //Creates import dialog
 $(function () {
     $("#importDialog").dialog({
@@ -61,8 +57,6 @@ function DBConnect(input) {
     let tID = input[2];
     //Runs connect.php which connects to DB and returns associated rows as a double array
     return $.post('./DB/connect.php', {query: query, rows: rows, tID: tID}, function (response) {
-        //Reporting response to console
-        console.log(response);
         //Returned message
         if (response) {
             try {
