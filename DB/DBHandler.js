@@ -105,7 +105,11 @@ function getDBTruckIDs() {
     let rows = ['TRUCKID', 'DLVMODEID'];
     let input = ['1', rows];
     $("#overlay").fadeIn(300);
-    DBConnect(input).then(response => {
+    let DBReturn = null;
+    let DBPromise = new Promise((finished) => {
+        finished(DBReturn = DBConnect(input));
+    });
+    DBPromise.then(v => {
         if (_errorDB == '') {
             //Removes all options
             $('#importTruck').find('option').remove().end();
@@ -129,6 +133,8 @@ function getDBTruckIDs() {
         $("#overlay").fadeOut(300);
     });
 
+
+
 }
 
 function getDBData(truckID) {
@@ -138,7 +144,11 @@ function getDBData(truckID) {
     $(function () {$("#importDialog").dialog("close");});
     //Delay to wait for dialog to close
     setTimeout(function() {
-        DBConnect(input).then(response => {
+        let DBReturn = null;
+        let DBPromise = new Promise((finished) => {
+            finished(DBReturn = DBConnect(input));
+        });
+        DBPromise.then(v => {
             if (_errorDB == '') {
                 loadFromDB(_returnedData);
             } else {
@@ -148,8 +158,8 @@ function getDBData(truckID) {
                     $("#infoDialog").dialog("open");
                 });
             }
+            $("#overlay").fadeOut(300);
         });
-        $("#overlay").fadeOut(300);
     }, 1000);
 }
 
