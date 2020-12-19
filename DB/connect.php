@@ -5,7 +5,6 @@
 * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
 */
 
-//Server variables
 $connectionTable = 'dbo.alex_test_sample';
 $connectionServer = 'localHost';
 $connectionLogin = array(
@@ -13,14 +12,34 @@ $connectionLogin = array(
     "Uid" => "sa",
     "PWD" => "test"
 );
-$getTrucksQuery = 'SELECT DISTINCT TRUCKID, DLVMODEID FROM ' . $connectionTable . ';';
-$getUnitsQuery = 'SELECT * FROM ' . $connectionTable . ' WHERE TRUCKID = \'' . $_POST['tID'] . '\';';
+
 $connectionQuery = '';
-if ($_POST['query'] == '1'){$connectionQuery = $getTrucksQuery;}
-else if ($_POST['query'] == '2'){$connectionQuery = $getUnitsQuery;}
 $rows = $_POST['rows'];
 $return = array();
+$site = '';
 
+//Encapsulate site variable with Location POST. Set which site to use
+switch ($_POST['location']) {
+    case '1': //AlexEast
+        $site = 'east';
+        break;
+    case '2': //AlexWest
+        $site = 'west';
+        break;
+    case '3':
+
+        break;
+    default: //Default AlexEast
+        $site = 'east';
+}
+
+//Set queries
+$getTrucksQuery = 'SELECT DISTINCT TRUCKID, DLVMODEID FROM ' . $connectionTable . ' WHERE site = \'' . $site . '\';';
+$getUnitsQuery = 'SELECT * FROM ' . $connectionTable . ' WHERE TRUCKID = \'' . $_POST['tID'] . '\';';
+
+//Set which query to use from POST
+if ($_POST['query'] == '1'){$connectionQuery = $getTrucksQuery;}
+else if ($_POST['query'] == '2'){$connectionQuery = $getUnitsQuery;}
 
 //Establishes the connection
 $conn = sqlsrv_connect($connectionServer, $connectionLogin);

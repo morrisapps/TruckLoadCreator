@@ -4,6 +4,9 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
+//GET location URL parameter to be passed to connect.php
+let URLlocation = new URL(window.location.href).searchParams.get("location");
+
 //Creates import dialog
 $(function () {
     $("#importDialog").dialog({
@@ -19,7 +22,12 @@ $(function () {
         maxHeight: 400,
         buttons: {
             "Import": function () {
-                getDBData($("#importTruck").val());
+                if ($('#importTruck').find(0).text() == 'Empty'){
+                    $('#importDialog').dialog("close");
+                }else {
+                    getDBData($("#importTruck").val());
+                }
+
             },
             "Cancel": function () {
                 $("#importDialog").dialog("close");
@@ -56,7 +64,7 @@ function DBConnect(input) {
     let rows = input[1];
     let tID = input[2];
     //Runs connect.php which connects to DB and returns associated rows as a double array
-    return $.post('./DB/connect.php', {query: query, rows: rows, tID: tID}, function (response) {
+    return $.post('./DB/connect.php', {query: query, rows: rows, tID: tID, location: URLlocation}, function (response) {
         //Returned message
         if (response) {
             try {
@@ -107,18 +115,30 @@ function getDBTruckIDs() {
             //Removes all options
             $('#importTruck').find('option').remove().end();
             //Adds new options as truckID's
-            for (let i = 0; i < _returnedData.length; i++) {
-                let disabled = false;
-                if (loadID != '' && loadID != _returnedData[i][0]){
-                    disabled = true;
-                }
-                $('#importTruck').append($('<option>', {
-                    value: _returnedData[i][0],
-                    text: _returnedData[i][1] +' ' + _returnedData[i][0],
-                    disabled: disabled
-                })).selectmenu("refresh");
+            if (_returnedData.length > 0){
+                for (let i = 0; i < _returnedData.length; i++) {
+                    let disabled = false;
+                    if (loadID != '' && loadID != _returnedData[i][0]){
+                        disabled = true;
+                    }
+                    $('#importTruck').append($('<option>', {
+                        value: _returnedData[i][0],
+                        text: _returnedData[i][1] +' ' + _returnedData[i][0],
+                        disabled: disabled
+                    })).selectmenu("refresh");
 
+                }
+            } else {
+                //No trucks in manifest
+                document.getElementById('importText').innerHTML = "<p>No trucks in truck view</p>"
+                $('#importTruck').append($('<option>', {
+                    value: 0,
+                    text: 'Empty',
+                    disabled: true
+                })).selectmenu("refresh");
             }
+
+
             if (loadID != ''){
                 $('#importTruck').val(loadID).selectmenu("refresh");
                 document.getElementById('importText').innerHTML = "<p>Import from "+loadID+" again?</p>"
@@ -151,6 +171,7 @@ function getDBData(truckID) {
         DBPromise.then(v => {
             if (_errorDB == '') {
                 loadFromDB(_returnedData);
+
             } else {
                 document.getElementById('infoDialog').innerHTML = "<P>" + _errorDB + "</p>"
                 $(function () {
