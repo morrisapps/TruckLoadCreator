@@ -231,6 +231,9 @@ function load(content) {
             canvas.remove(obj);
     });
 
+    //Re-add weight text to canvas
+    canvas.add(topLeftWeightText,topMiddleWeightText,topRightWeightText,botLeftWeightText,botMiddleWeightText,botRightWeightText);
+
     //Recreate units
     updateUnits(content[0]);
 

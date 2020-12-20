@@ -26,11 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed import still allowing different import trucks after loading from save.">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed empty truck dialog">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bug List.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Bug List.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/DBHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/connect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/file/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/file.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,27 +178,6 @@
       <workItem from="1607980200032" duration="7262000" />
       <workItem from="1608050550411" duration="9234000" />
       <workItem from="1608427917714" duration="29000" />
-    </task>
-    <task id="LOCAL-00014" summary="Units now have brackets around tag numbers">
-      <created>1604701916087</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1604701916087</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Units now have brackets around tag numbers">
-      <created>1604703306130</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1604703306130</updated>
-    </task>
-    <task id="LOCAL-00016" summary="&#10;Fix bug relating to checking the rack toggle if customer is in rack when typing in customer name">
-      <created>1604750840985</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1604750840985</updated>
     </task>
     <task id="LOCAL-00017" summary="&#10;Fixed preview css so that unit height does not change element height. Was causing issues with drag and drop unit lists.">
       <created>1604796189451</created>
@@ -521,7 +501,28 @@
       <option name="project" value="LOCAL" />
       <updated>1608331575126</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Fixed empty trucks dialog">
+      <created>1608471499809</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1608471499818</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Fixed empty trucks dialog">
+      <created>1608471612935</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1608471612936</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Fixed empty truck dialog">
+      <created>1608471628515</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1608471628515</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,8 +553,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Basic DB connectivity added. Ready for initial importing of information from DB" />
-    <MESSAGE value="Added initial import functionality. &#10;&#10;Customer box is now reversed" />
     <MESSAGE value="Put Custom Truck under Trucks. DBHandler now has a global variable for table" />
     <MESSAGE value="Completed weight counting functionality. Various bug fixes" />
     <MESSAGE value="Condensed all truck functions into one file labelled trucks in ./canvas&#10;&#10;trucks folder removed" />
@@ -577,7 +576,9 @@
     <MESSAGE value="Syntax formatting" />
     <MESSAGE value="Fixed import still allowing different import trucks after loading from save." />
     <MESSAGE value="Added locations to queries through GET location parameter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added locations to queries through GET location parameter" />
+    <MESSAGE value="Fixed empty trucks dialog" />
+    <MESSAGE value="Fixed empty truck dialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed empty truck dialog" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">

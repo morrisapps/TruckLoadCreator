@@ -22,6 +22,7 @@ $(function () {
         maxHeight: 400,
         buttons: {
             "Import": function () {
+                //Checks if truck is labled empty to disable importing
                 if ($('#importTruck').find('option').text() == 'Empty'){
                     $('#importDialog').dialog("close");
                 }else {

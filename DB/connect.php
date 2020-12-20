@@ -5,12 +5,12 @@
 * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
 */
 
-$connectionTable = 'dbo.alexmo_truck_manifest';
-$connectionServer = 'am-ax2012-db,56487';
+$connectionTable = 'dbo.alex_test_sample';
+$connectionServer = 'localHost';
 $connectionLogin = array(
-    "Database" => "AX2012DB",
-    "Uid" => "ax_worldship",
-    "PWD" => "0nlyworldship"
+    "Database" => "SampleDB",
+    "Uid" => "sa",
+    "PWD" => "test"
 );
 
 $connectionQuery = '';
