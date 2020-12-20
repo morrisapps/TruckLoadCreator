@@ -206,8 +206,8 @@ function loadFromDB(data) {
         let unitWidth = 0;
 
         //Checks if bundles or Units then creates and adds them
-        //Tests if dimensions contain a number and adds as unit
-        if (/\d/.test(dimensions)){
+        //Tests if dimensions contain a number and a X then adds as unit
+        if (/\d/.test(dimensions) && /x/.test(dimensions)){
             unitWidth = dimensions.split(/x/)[1];
             //Adding unit
             createUnit(unitWidth, Math.trunc(item[11]), customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], '', false, item[8],item[10],Math.round(item[12]));
