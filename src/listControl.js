@@ -270,7 +270,6 @@ function onUnitSearch() {
 
 
 function onSearch(input, list) {
-    //Credit to https://www.w3schools.com/howto/howto_js_filter_lists.asp
     var filter, div, a, i, txtValue;
     filter = input.value.toUpperCase();
     div = list.getElementsByTagName('div');
