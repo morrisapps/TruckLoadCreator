@@ -176,6 +176,7 @@
       <workItem from="1607829589780" duration="3108000" />
       <workItem from="1607980200032" duration="7262000" />
       <workItem from="1608050550411" duration="9234000" />
+      <workItem from="1608427917714" duration="29000" />
     </task>
     <task id="LOCAL-00014" summary="Units now have brackets around tag numbers">
       <created>1604701916087</created>
@@ -551,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Further DB testing" />
     <MESSAGE value="Basic DB connectivity added. Ready for initial importing of information from DB" />
     <MESSAGE value="Added initial import functionality. &#10;&#10;Customer box is now reversed" />
     <MESSAGE value="Put Custom Truck under Trucks. DBHandler now has a global variable for table" />
@@ -576,7 +576,8 @@
     <MESSAGE value="Added promises to DBConnections to fix connection errors" />
     <MESSAGE value="Syntax formatting" />
     <MESSAGE value="Fixed import still allowing different import trucks after loading from save." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed import still allowing different import trucks after loading from save." />
+    <MESSAGE value="Added locations to queries through GET location parameter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added locations to queries through GET location parameter" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -745,23 +746,23 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1608331577391">
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1608418540825">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1608008517538" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1608331577391" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1608418540825" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605586559998" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.13.1080.1880/1920.0.1920.1040@0.0.1920.1040" timestamp="1607361430614" />
-    <state x="553" y="304" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605900868105">
+    <state x="553" y="304" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608468291699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604791606800" />
-    <state x="553" y="304" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1605900868105" />
+    <state x="553" y="304" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1608468291699" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352162689" />
     <state x="2099" y="233" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607828399117">
       <screen x="1360" y="0" width="1920" height="1040" />

@@ -22,7 +22,7 @@ $(function () {
         maxHeight: 400,
         buttons: {
             "Import": function () {
-                if ($('#importTruck').find(0).text() == 'Empty'){
+                if ($('#importTruck').find('option').text() == 'Empty'){
                     $('#importDialog').dialog("close");
                 }else {
                     getDBData($("#importTruck").val());
