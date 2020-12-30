@@ -944,10 +944,10 @@ function truck35(truckid) {
 
     //set weight text location
     topLeftWeightText.set('left', 434).setCoords();
-    topMiddleWeightText.set({left: 0, top: 0, text: ''}).setCoords();
+    topMiddleWeightText.set({left: 0, text: ''}).setCoords();
     topRightWeightText.set('left', 818).setCoords();
     botLeftWeightText.set('left', 434).setCoords();
-    botMiddleWeightText.set({left: 0, top: 0, text: ''}).setCoords();
+    botMiddleWeightText.set({left: 0, text: ''}).setCoords();
     botRightWeightText.set('left', 818).setCoords();
     //Set region's size and location
     topLeftWeightRegion.set({left: 434, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();

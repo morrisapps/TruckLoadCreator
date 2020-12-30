@@ -81,7 +81,7 @@ let topLeftWeightRegion = new fabric.Rect({
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 0
+    opacity: 1
 });
 let topMiddleWeightRegion = new fabric.Rect({
     left: 625,
@@ -95,7 +95,7 @@ let topMiddleWeightRegion = new fabric.Rect({
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 0
+    opacity: 1
 });
 let topRightWeightRegion = new fabric.Rect({
     left: 1009,
@@ -109,7 +109,7 @@ let topRightWeightRegion = new fabric.Rect({
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 0
+    opacity: 1
 });
 let botLeftWeightRegion = new fabric.Rect({
     left: 218,
@@ -123,7 +123,7 @@ let botLeftWeightRegion = new fabric.Rect({
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 0
+    opacity: 1
 });
 let botMiddleWeightRegion = new fabric.Rect({
     left: 625,
@@ -137,7 +137,7 @@ let botMiddleWeightRegion = new fabric.Rect({
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 0
+    opacity: 1
 });
 let botRightWeightRegion = new fabric.Rect({
     left: 1009,
@@ -151,7 +151,7 @@ let botRightWeightRegion = new fabric.Rect({
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 0
+    opacity: 1
 });
 let weightRegions = [topLeftWeightRegion, topMiddleWeightRegion, topRightWeightRegion, botLeftWeightRegion, botMiddleWeightRegion, botRightWeightRegion];
 
