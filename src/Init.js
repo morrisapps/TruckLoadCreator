@@ -74,84 +74,84 @@ let topLeftWeightRegion = new fabric.Rect({
     top: 239,
     width: 216 * 2,
     height: 162 * 2,
-    fill: "white",
+    fill: "grey",
     stroke: 'green',
     strokeWidth: 2,
     originX: 'center',
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 1
+    opacity: 0
 });
 let topMiddleWeightRegion = new fabric.Rect({
     left: 625,
     top: 239,
     width: 192 * 2,
     height: 162 * 2,
-    fill: "white",
+    fill: "grey",
     stroke: 'green',
     strokeWidth: 2,
     originX: 'center',
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 1
+    opacity: 0
 });
 let topRightWeightRegion = new fabric.Rect({
     left: 1009,
     top: 239,
     width: 192 * 2,
     height: 162 * 2,
-    fill: "white",
+    fill: "grey",
     stroke: 'green',
     strokeWidth: 2,
     originX: 'center',
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 1
+    opacity: 0
 });
 let botLeftWeightRegion = new fabric.Rect({
     left: 218,
     top: 566,
     width: 216 * 2,
     height: 162 * 2,
-    fill: "white",
+    fill: "grey",
     stroke: 'green',
     strokeWidth: 2,
     originX: 'center',
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 1
+    opacity: 0
 });
 let botMiddleWeightRegion = new fabric.Rect({
     left: 625,
     top: 566,
     width: 192 * 2,
     height: 162 * 2,
-    fill: "white",
-    stroke: 'white',
-    strokeWidth: 2,
-    originX: 'center',
-    originY: 'center',
-    selectable: false,
-    isRegion: true,
-    opacity: 1
-});
-let botRightWeightRegion = new fabric.Rect({
-    left: 1009,
-    top: 566,
-    width: 192 * 2,
-    height: 162 * 2,
-    fill: "white",
+    fill: "grey",
     stroke: 'green',
     strokeWidth: 2,
     originX: 'center',
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 1
+    opacity: 0
+});
+let botRightWeightRegion = new fabric.Rect({
+    left: 1009,
+    top: 566,
+    width: 192 * 2,
+    height: 162 * 2,
+    fill: "grey",
+    stroke: 'green',
+    strokeWidth: 2,
+    originX: 'center',
+    originY: 'center',
+    selectable: false,
+    isRegion: true,
+    opacity: 0
 });
 let weightRegions = [topLeftWeightRegion, topMiddleWeightRegion, topRightWeightRegion, botLeftWeightRegion, botMiddleWeightRegion, botRightWeightRegion];
 

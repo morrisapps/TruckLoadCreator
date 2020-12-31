@@ -231,6 +231,8 @@ function load(content) {
             canvas.remove(obj);
     });
 
+    //Re-add weight regions to canvas
+    canvas.add(topLeftWeightRegion,topMiddleWeightRegion,topRightWeightRegion,botLeftWeightRegion,botMiddleWeightRegion,botRightWeightRegion);
     //Re-add weight text to canvas
     canvas.add(topLeftWeightText,topMiddleWeightText,topRightWeightText,botLeftWeightText,botMiddleWeightText,botRightWeightText);
 
@@ -244,10 +246,15 @@ function load(content) {
     document.getElementById("tUnits").innerText = units.length.toString();
     document.getElementById("drops").innerText = customers.length.toString();
 
+    //Re-init Customers box
     rackLoad();
     updateRack();
+
+    //Sort customer and unit lists
     sortCustomer();
     sortUnit();
+
+    //Re-init canvas text fields
     textLoad();
 
     //Restore truckid and truck size

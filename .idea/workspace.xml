@@ -26,12 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Update Bug list">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed: Selecting a 2 section trucks then a 3 section trucks cause weight text to be placed wrong">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bug List.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Bug List.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/trucks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/file/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/file.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,13 +88,15 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -178,14 +179,8 @@
       <workItem from="1607980200032" duration="7262000" />
       <workItem from="1608050550411" duration="9234000" />
       <workItem from="1608427917714" duration="29000" />
-      <workItem from="1609289833416" duration="246000" />
-    </task>
-    <task id="LOCAL-00020" summary="Unit selection box is now closer to unit's text if the text went outside of the unit">
-      <created>1604956232464</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1604956232464</updated>
+      <workItem from="1609289833416" duration="1448000" />
+      <workItem from="1609386115803" duration="626000" />
     </task>
     <task id="LOCAL-00021" summary="Fixed bug toggling unit brackets does not reset height counters">
       <created>1604958365547</created>
@@ -523,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608480983530</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Fixed: Selecting a 2 section trucks then a 3 section trucks cause weight text to be placed wrong">
+      <created>1609290147559</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1609290147560</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +556,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Moved file and print to ./src/file" />
     <MESSAGE value="Print now hides weight information if not all units have a weight" />
     <MESSAGE value="Added trailers 2003,2004,2005,2006,2007 as flatbeds" />
     <MESSAGE value="Fixed weight not counting properly on unit updating&#10;&#10;Fixed extra text appearing on bottom of canvas" />
@@ -579,7 +580,8 @@
     <MESSAGE value="Fixed weight text disappearing after loading a save" />
     <MESSAGE value="FBundles with numbers in type (Bundle 20&quot;) no longer imported as units" />
     <MESSAGE value="Trucks in import dialog now are properly ordered" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trucks in import dialog now are properly ordered" />
+    <MESSAGE value="Fixed: Selecting a 2 section trucks then a 3 section trucks cause weight text to be placed wrong" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed: Selecting a 2 section trucks then a 3 section trucks cause weight text to be placed wrong" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -748,10 +750,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1608482068765">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609290323956">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1608008517538" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609290323956" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
