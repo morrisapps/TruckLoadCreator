@@ -26,11 +26,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed: Selecting a 2 section trucks then a 3 section trucks cause weight text to be placed wrong">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Restoring from save causes weight regions to be placed wrong">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bug List.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Bug List.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,19 +86,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/js-truckwrite/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -180,14 +165,9 @@
       <workItem from="1608050550411" duration="9234000" />
       <workItem from="1608427917714" duration="29000" />
       <workItem from="1609289833416" duration="1448000" />
-      <workItem from="1609386115803" duration="626000" />
-    </task>
-    <task id="LOCAL-00021" summary="Fixed bug toggling unit brackets does not reset height counters">
-      <created>1604958365547</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1604958365547</updated>
+      <workItem from="1609386115803" duration="3723000" />
+      <workItem from="1609494513894" duration="1948000" />
+      <workItem from="1609570264784" duration="2324000" />
     </task>
     <task id="LOCAL-00022" summary="Tag bracket option now saves on save/load">
       <created>1604960115175</created>
@@ -525,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609290147560</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Restoring from save causes weight regions to be placed wrong">
+      <created>1609386875467</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1609386875467</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +543,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Print now hides weight information if not all units have a weight" />
     <MESSAGE value="Added trailers 2003,2004,2005,2006,2007 as flatbeds" />
     <MESSAGE value="Fixed weight not counting properly on unit updating&#10;&#10;Fixed extra text appearing on bottom of canvas" />
     <MESSAGE value="Fixed tools not being able to be selected after changing truck" />
@@ -581,7 +567,8 @@
     <MESSAGE value="FBundles with numbers in type (Bundle 20&quot;) no longer imported as units" />
     <MESSAGE value="Trucks in import dialog now are properly ordered" />
     <MESSAGE value="Fixed: Selecting a 2 section trucks then a 3 section trucks cause weight text to be placed wrong" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed: Selecting a 2 section trucks then a 3 section trucks cause weight text to be placed wrong" />
+    <MESSAGE value="Restoring from save causes weight regions to be placed wrong" />
+    <option name="LAST_COMMIT_MESSAGE" value="Restoring from save causes weight regions to be placed wrong" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -734,6 +721,10 @@
     </state>
     <state width="1899" height="119" key="GridCell.Tab.3.right/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604437605292" />
     <state width="1899" height="119" key="GridCell.Tab.3.right/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605001731356" />
+    <state x="540" y="263" key="IDE.errors.dialog" timestamp="1609570271580">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="263" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609570271580" />
     <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1607361363251">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -750,10 +741,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609290323956">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609386879753">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609290323956" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609386879753" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
@@ -781,12 +772,13 @@
     </state>
     <state x="476" y="231" width="672" height="677" key="run.anything.popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1608006049664" />
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1607202036483" />
-    <state x="443" y="158" width="672" height="475" key="search.everywhere.popup" timestamp="1607897514862">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="623" y="226" width="945" height="679" key="search.everywhere.popup" timestamp="1609570300368">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="226" width="945" height="679" key="search.everywhere.popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606910881500" />
     <state x="443" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1607897514862" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604958177395" />
+    <state x="623" y="226" width="945" height="679" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609570300368" />
     <state x="682" y="432" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604463075377">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -736,16 +736,20 @@ function sortUnit() {
     listUnits();
 }
 
+/**
+ *  Adds a unit to units array
+ * @param {unit} unit - the unit to be added
+ * @returns {boolean} Success exit status.
+ */
 function addUnit(unit) {
     if (unit.id != '') {
-        if (!checkIfUnitIDExists(unit.id)) {
             units.push(unit);
             document.getElementById("tUnits").innerText = units.length.toString();
             sortUnit();
             saveToBrowser();
             return true;
-        }
     }
+    return false;
 }
 
 function removeUnit(unit) {
@@ -804,20 +808,15 @@ function removeCustomer(cName) {
 
 function checkIfUnitIDExists(id) {
     unitIndex = 0;
-    //returnIndex disabled due to error with units existing after delete
-    let returnIndex = false;
     while (unitIndex < units.length) {
         if (units[unitIndex].id == id) {
             return true;
-            //returnIndex = true;
             break;
         }
         unitIndex++;
     }
     unitIndex = 0;
     return false;
-    //return returnIndex;
-
 }
 
 function checkIfCustomerExists(cName) {
