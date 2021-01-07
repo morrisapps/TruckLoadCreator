@@ -4,21 +4,19 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
-var customers = [];
-var units = [];
-var unitIndex;
-var customerIndex;
-var canvasSide = new fabric.Canvas('d', {selection: false});
-var currentGroup;
-var currentColor;
-var currentFill;
-var currentCustomerName;
-var currentDrop;
-canvasSide.setHeight(126);
-canvasSide.setWidth(251);
-var grid = 25;
-let sideUnit = document.getElementById('sideUnit');
+//Adding side unit preview on first launch
+AddSide(+_width.value, +_height.value, _customer.value, _tag.value, currentColor, currentFill, _drop.value, _location.value);
+_sideUnit.src = currentGroup.toDataURL();
+_sideUnit.height = +_height.value;
+_sideUnit.width = +_width.value;
 
+/**
+ * Shortens the text given utilizing slice(start, end)
+ * @param text - The text to be cut
+ * @param start - The index to start the cut
+ * @param end - The index to stop the cut
+ * @returns {string} text - The text is returned as either cut or full
+ */
 function cutText(text, start, end) {
     if (text.length <= end) {
         return text;
@@ -27,6 +25,9 @@ function cutText(text, start, end) {
     }
 }
 
+/**
+ * Called when input fields are clicked and de-selects the active unit
+ */
 //Called when input fields are clicked
 function inputFieldsSelected(){
     if (editing != true) {
@@ -42,12 +43,26 @@ function inputFieldsSelected(){
     }
 }
 
+/**
+ * Called from options toggling, updates units and saves to browser
+ */
 function optionsUpdate() {
     updateUnits(units);
     canvas.requestRenderAll();
     saveToBrowser();
 }
 
+/**
+ * Formats the text displayed in the unit
+ * @param cName - The customer name
+ * @param width - The width of the unit
+ * @param height - The height of the unit
+ * @param unitDrop - The drop number of the customer of the unit
+ * @param AE - The tag of the unit
+ * @param text - The fabric.Itext object of the unit
+ * @param rect - The fabric.Rect object of the unit
+ * @param loc - The physical location of the unit
+ */
 function unitText(cName, width, height, unitDrop, AE, text, rect, loc) {
 
     if (_custInUnits.checked != true){
@@ -86,7 +101,6 @@ function unitText(cName, width, height, unitDrop, AE, text, rect, loc) {
             break;
         }
     }
-
 
     //Set location to bottom if text is still too large
     if (location.length > 0) {
@@ -362,6 +376,23 @@ function unitText(cName, width, height, unitDrop, AE, text, rect, loc) {
     }
 }
 
+/**
+ * Creates a fabric.js group with one Rect and one Itext item representing the unit as global variable currentGroup
+ * @param width - The width of the fabric.Rect object in the unit
+ * @param height - The height of the fabric.Rect object in the unit
+ * @param cName - The customer of the unit
+ * @param AE - The tag number of the unit
+ * @param color - The border color of fabric.Rect
+ * @param fill - The background color of fabric.Rect
+ * @param left - The left position of the fabric.Group
+ * @param top - The top position of the fabric.Group
+ * @param unitDrop - The drop of the customer of the unit
+ * @param location - The physical location of the unit
+ * @param {boolean} inCanvas - Flag to signal if the unit is current displayed on canvas
+ * @param customerText - The displayed name of the customer in the unit
+ * @param fullAE - The full tag number
+ * @param weight - The weight of the unit
+ */
 function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, customerText, fullAE, weight) {
     var custName = cName;
     var rect = new fabric.Rect({
@@ -439,36 +470,28 @@ function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, 
     });
 }
 
+/**
+ * Creates a preview unit on the side bar
+ * @param width - The width of the preview unit
+ * @param height - The height of the preview unit
+ * @param custName - The customer of the preview unit
+ * @param AE - The tag of the preview unit
+ * @param color - The border color of the preview unit
+ * @param fill - The background color of the preview unit
+ * @param unitDrop - The drop number of the customer of the preview unit
+ * @param location - The physical location of the preview unit
+ */
 function AddSide(width, height, custName, AE, color, fill, unitDrop, location) {
     createUnit(width, height, custName, AE, color, fill, 0, 0, unitDrop, location, true, custName, AE, 0);
     canvasSide.add(currentGroup);
     canvasSide.centerObject(currentGroup);
 }
 
-
-currentFill = "white";
-// Random color currentColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-currentColor = 'black';
-
-
-//Adding objects
-AddSide(+_width.value, +_height.value, _customer.value, _tag.value, currentColor, currentFill, _drop.value, _location.value);
-sideUnit.src = currentGroup.toDataURL();
-sideUnit.height = +_height.value;
-sideUnit.width = +_width.value;
-
-function getDropUnit(drop) {
-    //Checks if any unit exists with drop number. Returns first unit found.
-    var b;
-    var unit = 'none';
-    for (b = 0; b < units.length; b++) {
-        if (units[b].drop == drop) {
-            unit = units[b];
-        }
-    }
-    return unit;
-}
-
+/**
+ * Retrieves the customer at given drop number
+ * @param drop - The drop number to match the customer's drop
+ * @returns {string} cust - The customer that matches the given drop
+ */
 function getDropCustomer(drop) {
     var b;
     var cust = 'none';
@@ -480,6 +503,11 @@ function getDropCustomer(drop) {
     return cust;
 }
 
+/**
+ * Updates the customer drop based on given customer name
+ * @param {string} cName - The customer to be drop number updated
+ * @returns {string} error - The error message, if empty no error occurred
+ */
 function updateDrop(cName) {
     var error = "";
     var i;
@@ -505,27 +533,9 @@ function updateDrop(cName) {
     return error;
 }
 
-function setDropCheck(cName) {
-    var cust = getCustomer(cName);
-    if (cust == null) {
-    } else if (cust.drop > 0) {
-        _drop.value = cust.drop;
-    }
-}
-
-function onDropChange() {
-    createSide();
-}
-
-function checkDropAssigned(newCustName, currentCust) {
-    if (currentCust.name != newCustName && currentCust != 'none') {
-        _drop.value = '';
-        return "Drop " + _drop.value + " is already assigned to " + currentCust.name + "\n";
-    } else {
-        return "";
-    }
-}
-
+/**
+ * Updates the selected unit based on inputted sidebar fields
+ */
 function updateUnit() {
     if (editing == true) {
         let unUpdatedUnit;
@@ -574,6 +584,9 @@ function updateUnit() {
     }
 }
 
+/**
+ * Calls createSide() function and sets related elements for general field input changes
+ */
 function onChange() {
     createSide();
     if (editing != true) {
@@ -582,6 +595,10 @@ function onChange() {
     }
 }
 
+/**
+ * Sets customer data based on customer name field
+ * @param {boolean} list - If true, Flag to run listCustomer() function
+ */
 function onNameChange(list) {
     currentCustomerName = _customer.value;
     let customer = getCustomer(currentCustomerName);
@@ -592,35 +609,41 @@ function onNameChange(list) {
         _drop.value = customer.drop;
     }
     createSide();
+
+    //Flag list
     if (list == true) {
         listCustomer();
     }
-
-
 }
 
+/**
+ * Creates preview unit on sidebar
+ */
 function createSide() {
-
     canvasSide.remove(currentGroup);
     currentCustomerName = _customer.value;
     AddSide(+_width.value, +_height.value, currentCustomerName, _tag.value, "black", "white", _drop.value, _location.value);
-
     canvasSide.setHeight(currentGroup.height);
     canvasSide.setWidth(+_width.value);
-
-    sideUnit.src = currentGroup.toDataURL();
-    sideUnit.height = currentGroup.height / 2;
-    sideUnit.width = currentGroup.width / 2;
-
+    _sideUnit.src = currentGroup.toDataURL();
+    _sideUnit.height = currentGroup.height / 2;
+    _sideUnit.width = currentGroup.width / 2;
     canvasSide.requestRenderAll();
 }
 
+/**
+ * Called when height or weight sliders are moved
+ */
 function onChangeSlider() {
     _width.value = document.getElementById("swidth").value * 24;
     _height.value = document.getElementById("sheight").value;
     onChange();
 }
 
+/**
+ * Checks if given customer has bundles and sets rack toggle
+ * @param {string} cName - The customer name to be checked
+ */
 function setBundleCheck(cName) {
     if (checkIfCustomerExists(cName) && customers[getCustomerIndex(cName)].rack == true) {
         _rack.checked = true;
@@ -629,6 +652,9 @@ function setBundleCheck(cName) {
     }
 }
 
+/**
+ * Checks if hasBundles is checked. Adds customer if checked. Removes customer if unchecked and has no units,
+ */
 function isBundlesChecked() {
     var exists = false;
     currentCustomerName = _customer.value;
@@ -648,13 +674,18 @@ function isBundlesChecked() {
     }
 }
 
+/**
+ * Sets customer in or out of bundle rack
+ */
 function checkRack() {
-    let checkDrop = checkDropAssigned(_customer.value, getDropCustomer(_drop.value));
+    let dropCustomer = getDropCustomer(_drop.value);
+
     if (_drop.value == '') {
         alert("Drop cannot be empty or contain letters");
         _rack.checked = false;
-    } else if (checkDrop != '') {
-        alert(checkDrop);
+    } else if (dropCustomer.name != _customer.value && dropCustomer.name != 'none') {
+        _drop.value = '';
+        alert("Drop " + _drop.value + " is already assigned to " + dropCustomer.name + "\n");
         _rack.checked = false;
     } else if (!isNaN(_customer.value)) {
         alert("Customer must contain a letter");
@@ -669,7 +700,11 @@ function checkRack() {
     }
 }
 
-
+/**
+ * Returns customer that matches given name
+ * @param {string} name - The name of the customer
+ * @returns {null, array} -
+ */
 function getCustomer(name) {
     let tempCust = null;
     customers.forEach(function (customer) {
@@ -681,6 +716,11 @@ function getCustomer(name) {
     return tempCust;
 }
 
+/**
+ * Determines if customer is in truck by checking all unit's customer
+ * @param {string} cust - The customer name to be checked
+ * @returns {boolean} inTruck - True if is in truck, false if not.
+ */
 function isCustInTruck(cust) {
     let inTruck = false;
     let customer = getCustomer(cust);
@@ -696,18 +736,26 @@ function isCustInTruck(cust) {
     return inTruck;
 }
 
+/**
+ * Checks units array if a unit's customer matches given customer name
+ * @param {string} cust - The customer name to be checked
+ * @returns {null, unit} tempUnit - Returns matched unit if found, else returns null
+ */
 function getCustUnit(cust) {
     var tempUnit = null;
     units.forEach(function (unit) {
         if (unit.customer == cust) {
             tempUnit = unit;
-            return tempUnit;
         }
     });
     return tempUnit;
-
 }
 
+/**
+ * Checks units array if a unit's id matches given id
+ * @param {string} id - The id to be checked
+ * @returns {null, unit} tempUnit - Returns matched unit if found, else returns null
+ */
 function getIDUnit(id) {
     let tempUnit = null;
     units.forEach(function (unit) {
@@ -718,6 +766,11 @@ function getIDUnit(id) {
     return tempUnit;
 }
 
+/**
+ * Checks units array if a unit's tag matches given tag
+ * @param {string} tag - The tag to be checked
+ * @returns {null, unit} tempUnit - Returns matched unit if found, else returns null
+ */
 function getTagUnit(tag) {
     let tempUnit = null;
     units.forEach(function (unit) {
@@ -728,6 +781,9 @@ function getTagUnit(tag) {
     return tempUnit;
 }
 
+/**
+ * Sorts unit list
+ */
 function sortUnit() {
     units.sort(function (a, b) {
         return a.drop - b.drop
@@ -737,8 +793,8 @@ function sortUnit() {
 }
 
 /**
- *  Adds a unit to units array
- * @param {unit} unit - the unit to be added
+ * Adds a unit to units array
+ * @param {unit} unit - The unit to be added
  * @returns {boolean} Success exit status.
  */
 function addUnit(unit) {
@@ -752,6 +808,10 @@ function addUnit(unit) {
     return false;
 }
 
+/**
+ * Removes unit from units array and updates customer array
+ * @param {unit} unit - The unit to be removed
+ */
 function removeUnit(unit) {
     if (unit.id != '') {
         if (checkIfUnitIDExists(unit.id)) {
@@ -770,6 +830,9 @@ function removeUnit(unit) {
     }
 }
 
+/**
+ * Sorts customers array and then relists customer list
+ */
 function sortCustomer() {
     customers.sort(function (a, b) {
         return a.drop - b.drop
@@ -778,6 +841,12 @@ function sortCustomer() {
     listCustomer();
 }
 
+/**
+ * Adds a customer to customer array
+ * @param {string} cName - The name of the customer
+ * @param {string} cDrop - The drop number of the customer in string
+ * @returns {boolean} True if success
+ */
 function addCustomer(cName, cDrop) {
     if (cName != '') {
         if (!checkIfCustomerExists(cName)) {
@@ -793,6 +862,10 @@ function addCustomer(cName, cDrop) {
     }
 }
 
+/**
+ * Removes customer from customer array
+ * @param {string} cName - The customer name
+ */
 function removeCustomer(cName) {
     if (cName != '') {
         if (checkIfCustomerExists(cName)) {
@@ -806,6 +879,11 @@ function removeCustomer(cName) {
     }
 }
 
+/**
+ * Checks units array if any unit id matches given id
+ * @param {string} id - The id to be tested
+ * @returns {boolean} True: success. False: unsuccessful
+ */
 function checkIfUnitIDExists(id) {
     unitIndex = 0;
     while (unitIndex < units.length) {
@@ -819,6 +897,11 @@ function checkIfUnitIDExists(id) {
     return false;
 }
 
+/**
+ * Checks customers array if any customer matches given customer name
+ * @param {string} cName - Customer name to be tested
+ * @returns {boolean} exists - Returned true if exists, false if not
+ */
 function checkIfCustomerExists(cName) {
     let i = 0;
     let exists = false;
@@ -832,6 +915,11 @@ function checkIfCustomerExists(cName) {
     return exists;
 }
 
+/**
+ * Returns the index of customers array for the given customer name
+ * @param {string} cName - The customer name to be tested
+ * @returns {null, number} index - Returns null if not found, else returns the matched index number
+ */
 function getCustomerIndex(cName) {
     customerIndex = 0;
     let index = null;

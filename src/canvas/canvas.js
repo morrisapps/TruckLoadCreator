@@ -7,9 +7,6 @@
 let canvas;
 var grid = 24;
 var rackCanvas;
-var mouseDownEvent = false;
-var pointerDrag;
-var imageOffsetX, imageOffsetY;
 var midLine;
 var vLine1;
 var vLine2;
@@ -31,6 +28,49 @@ var door6 = "";
 let topUnits;
 let botUnits;
 
+//Initialization
+initializeCounters();
+createCanvas();
+$(document).ready(function () {
+    _tag.value = "";
+    _width.value = 96;
+    _height.value = 10;
+
+    window.topCounters = new Array();
+    window.botCounters = new Array();
+
+    //Drag and drop stuff
+    var canvasContainer = document.getElementById("printableArea");
+    canvasContainer.addEventListener('drop', handleDrop, false);
+
+    fabric.Object.prototype.set({borderScaleFactor: 3,});
+    fabric.Object.prototype.setControlsVisibility({
+        tl: false, //top-left
+        mt: false, // middle-top
+        tr: false, //top-right
+        ml: false, //middle-left
+        mr: false, //middle-right
+        bl: false, // bottom-left
+        mb: false, //middle-bottom
+        br: false, //bottom-right
+        mtr: true //rotating-point
+    });
+
+    createCounters();
+
+    //Add weight regions and text
+    weightRegions.forEach(function (region){canvas.add(region);});
+    canvas.add(topLeftWeightText,topMiddleWeightText,topRightWeightText,botLeftWeightText,botMiddleWeightText,botRightWeightText);
+
+    canvas.requestRenderAll();
+
+    //Checks if previous session was saved, and if not asks to restore.
+    if (!loadFromBrowser()){truckLoad();}
+});
+
+/**
+ * Initializes height counters
+ */
 function initializeCounters() {
     topLines = new Array();
     botLines = new Array();
@@ -91,8 +131,10 @@ function initializeCounters() {
         bot1032Units, bot1080Units, bot1128Units, bot1176Units];
 }
 
-initializeCounters();
-
+/**
+ * Updates height and weight counters with the given target
+ * @param target - Object that has height and/or weight in canvas
+ */
 function updateCount(target) {
     if (target != null) {
         if (target.unit == true || target.id == "rack") {
@@ -134,7 +176,13 @@ function updateCount(target) {
     }
 }
 
-
+/**
+ * Counts the height of the target intersecting the line with all other units in lineUnits and displays the total height in a counter
+ * @param target - The object that will have it's height counted
+ * @param line - The fabric.Line that the object is intersecting
+ * @param lineCounter - The fabric.Itext that is associated with line
+ * @param lineUnits - The array that contains units intersecting line
+ */
 function heightCount(target, line, lineCounter, lineUnits) {
     var counter = 0;
     if (intersects(target, line) && target.remove != true) {
@@ -156,7 +204,13 @@ function heightCount(target, line, lineCounter, lineUnits) {
     }
 }
 
-//returns true if both objects intersect
+
+/**
+ * Determines if the given objects intersect with each other
+ * @param obj - The first object to test
+ * @param target - The second object to test
+ * @returns {boolean} - True if both objects intersect, false if not
+ */
 function intersects(obj, target) {
     if (obj.intersects == true) {
         if (obj != target) {
@@ -173,7 +227,12 @@ function intersects(obj, target) {
     }
 }
 
-
+/**
+ * Checks the given customer and the given drop if they exist
+ * @param cName - The customer to check
+ * @param drop - The customer drop to check
+ * @returns {string} text - An error message is returned if exists, else returned blank
+ */
 function checkIfCustomerDropExists(cName, drop) {
     let getCust = getCustomer(cName);
     let text = '';
@@ -185,6 +244,22 @@ function checkIfCustomerDropExists(cName, drop) {
     return text;
 }
 
+/**
+ * Creates and adds a unit to the canvas
+ * @param width - The width of the unit
+ * @param height - The height of the unit
+ * @param cName - The customer name of the unit
+ * @param AE - The tag of the unit
+ * @param color - The border color of the unit
+ * @param fill - The background color of the unit
+ * @param left - The left (X) position of the unit
+ * @param top - The top (Y) position of the unit
+ * @param unitDrop - The customer's drop of the unit
+ * @param location - The physical location of the unit
+ * @param {boolean} inCanvas - Set true if unit is in canvas
+ * @param weight - The weight of the unit
+ * @returns {string} addError - The error message if the add does not succeed, blank if succeeded
+ */
 function Add(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, weight) {
     var custName = cName;
     var unitid = custName + AE;
@@ -241,6 +316,10 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
     return addError;
 }
 
+/**
+ * Keep the dragging object within the bounds of the canvas
+ * @param object - The object to be contained within the canvas
+ */
 function keepInBounds(object) {
     if (object != null) {
         var outBounds = outOfBounds(object);
@@ -268,6 +347,11 @@ function keepInBounds(object) {
     }
 }
 
+/**
+ * Determines if any of the object's four sides are out of bounds
+ * @param object - The object to be tested
+ * @returns {boolean[]} - A boolean array of the four sides (right, left, top, bottom). Booleans are set to true if they are outside of bounds
+ */
 function outOfBounds(object) {
     var right = false;
     var left = false;
@@ -449,41 +533,3 @@ function objectIntersects(obj, target) {
     }
 }
 
-createCanvas();
-
-$(document).ready(function () {
-    _tag.value = "";
-    _width.value = 96;
-    _height.value = 10;
-
-    window.topCounters = new Array();
-    window.botCounters = new Array();
-
-    //Drag and drop stuff
-    var canvasContainer = document.getElementById("printableArea");
-    canvasContainer.addEventListener('drop', handleDrop, false);
-
-    fabric.Object.prototype.set({borderScaleFactor: 3,});
-    fabric.Object.prototype.setControlsVisibility({
-        tl: false, //top-left
-        mt: false, // middle-top
-        tr: false, //top-right
-        ml: false, //middle-left
-        mr: false, //middle-right
-        bl: false, // bottom-left
-        mb: false, //middle-bottom
-        br: false, //bottom-right
-        mtr: true //rotating-point
-    });
-
-    createCounters();
-
-    //Add weight regions and text
-    weightRegions.forEach(function (region){canvas.add(region);});
-    canvas.add(topLeftWeightText,topMiddleWeightText,topRightWeightText,botLeftWeightText,botMiddleWeightText,botRightWeightText);
-
-    canvas.requestRenderAll();
-
-    //Checks if previous session was saved, and if not asks to restore.
-    if (!loadFromBrowser()){truckLoad();}
-});

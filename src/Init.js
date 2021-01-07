@@ -4,7 +4,18 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
-//Place all global variables here
+//***********Place all global variables here***********
+
+var customers = [];
+var units = [];
+var unitIndex;
+var customerIndex;
+var canvasSide = new fabric.Canvas('d', {selection: false, height: 126, width: 251});
+var currentGroup = 'white';
+var currentColor = 'black';
+var currentFill;
+var currentCustomerName;
+var currentDrop;
 
 //Version number
 let version = "0.19.1";
@@ -15,7 +26,7 @@ let truckID = '';
 //LoadID is set after importing and forces only this load id to be used.
 let loadID = '';
 
-//These variables are used for line counting
+//These variables are used for height line counting
 var topLines;
 var botLines;
 var top72Units;
@@ -304,6 +315,9 @@ let _tag = document.getElementById('tag');
 let _rack = document.getElementById('hasBundle');
 let _location = document.getElementById('location');
 let _weight = document.getElementById('weight');
+
+//Side bar unit preview
+let _sideUnit = document.getElementById('sideUnit');
 
 
 //These variables are used for selecting objects and deselecting

@@ -24,7 +24,7 @@ Sortable.create(custList, {
         let custName = e.item.attributes.id.value.replace(/%/g, " ");
         _customer.value = custName;
 
-        //Calls onNameChange() to set customer information in the sideway as it's selected.
+        //Calls onNameChange() to set customer information in the sidebar as it's selected.
         //False parameter tells onNameChange() to not call listCustomer()
         onNameChange(false);
         //Sets the border style of each element in Customer List, if element is currently selected, apply selected border color

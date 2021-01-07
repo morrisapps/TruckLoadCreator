@@ -346,10 +346,6 @@ function handleDragStart(e) {
             img.classList.remove('img_dragging');
         });
         this.classList.add('img_dragging');
-
-        var imageOffset = $(this).offset();
-        imageOffsetX = e.clientX - imageOffset.left;
-        imageOffsetY = e.clientY - imageOffset.top;
     }
 }
 
@@ -364,8 +360,6 @@ function handleDragEnd(e) {
             type = cList;
         }
     }
-
-    // this/e.target is the source node.
     if (type != null) {
         [].forEach.call(type, function (img) {
             img.classList.remove('img_dragging');
