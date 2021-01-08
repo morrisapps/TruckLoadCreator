@@ -4,8 +4,10 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
-//Called when Add/Update button is clicked
-//Create a unit to list if Add. Replaces a unit in canvas with a new one if Update.
+/**
+ * Called when Add/Update button is clicked
+ * Create a unit to list if Add. Replaces a unit in canvas with a new one if Update.
+ */
 function AddUpdateButton() {
     if (document.getElementById('add').name == 'update') {
         updateUnit()
@@ -33,8 +35,10 @@ function AddUpdateButton() {
     }
 }
 
-//Called when Remove Button is clicked
-//Removes unit that is currently in edit
+/**
+ * Called when Remove Button is clicked
+ * Removes unit that is currently in edit
+ */
 function RemoveButton() {
     if (editingUnit != null && editingUnit.unit == true) {
         deleteObject(null, editingUnit);

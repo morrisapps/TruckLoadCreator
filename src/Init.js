@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
-//***********Place all global variables here***********
+//***********Global variables***********
 
 var customers = [];
 var units = [];
@@ -351,7 +351,9 @@ let _returnedData = null;
 let _errorDB = '';
 
 
-//Creates Change Log dialog
+/**
+ * Creates change log dialog
+ */
 $(function() {
     $("#changeLog").dialog({
         autoOpen: false,
@@ -361,7 +363,10 @@ $(function() {
         height: 500,
     });
 });
-//Displays Change log
+
+/**
+ * Displays change log
+ */
 function changeLog(){
     $(function() {
         $( "#changeLog" ).dialog( "open" );

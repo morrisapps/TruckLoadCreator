@@ -26,15 +26,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Removed check unit id from addUnit function">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Initial Jsdocs implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bug List.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Bug List.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/handle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/handle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/listControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/listControl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unitButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/unitButtons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unitControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/unitControl.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +92,19 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/js-truckwrite/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -177,14 +189,7 @@
       <workItem from="1609570264784" duration="6974000" />
       <workItem from="1609758293034" duration="6105000" />
       <workItem from="1609945997566" duration="10079000" />
-      <workItem from="1610017889485" duration="109000" />
-    </task>
-    <task id="LOCAL-00023" summary="Implemented session restore feature&#10;&#10;Fixed bug drop count not updating after loading from file/session">
-      <created>1604997359416</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1604997359416</updated>
+      <workItem from="1610017889485" duration="6645000" />
     </task>
     <task id="LOCAL-00024" summary="Fixed bug not removing truck lines when changing truck size">
       <created>1604999172344</created>
@@ -522,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609586677338</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Initial Jsdocs implementation">
+      <created>1610018037147</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1610018037148</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +565,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed weight not counting properly on unit updating&#10;&#10;Fixed extra text appearing on bottom of canvas" />
     <MESSAGE value="Fixed tools not being able to be selected after changing truck" />
     <MESSAGE value="Implemented barcode support" />
     <MESSAGE value="Fixed JsBarcode giving error if no text for barcode" />
@@ -578,7 +589,8 @@
     <MESSAGE value="Fixed: Selecting a 2 section trucks then a 3 section trucks cause weight text to be placed wrong" />
     <MESSAGE value="Restoring from save causes weight regions to be placed wrong" />
     <MESSAGE value="Removed check unit id from addUnit function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed check unit id from addUnit function" />
+    <MESSAGE value="Initial Jsdocs implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Jsdocs implementation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -755,7 +767,7 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609586684224">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610018317983">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609386879753" />
@@ -767,7 +779,7 @@
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.13.1080.1880/1920.0.1920.1040@0.0.1920.1040" timestamp="1607361430614" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609586684224" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610018317983" />
     <state x="553" y="304" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608468291699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

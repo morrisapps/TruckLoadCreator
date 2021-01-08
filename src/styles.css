@@ -82,8 +82,6 @@
     background-repeat: no-repeat; /* Do not repeat the icon image */
 }
 
-
-
 .list-group-item-unit:hover:not(.header) {
     background-color: #eee; /* Add a hover effect to all links, except for headers */
 }
@@ -113,9 +111,6 @@
     cursor: -webkit-grabbing;
 }
 
-
-
-
 .printableArea{
     display: block;
     margin-left: auto;
@@ -134,7 +129,6 @@ sideElement {
     width: 200px;
     height: 150px;
 }
-
 
 .slider {
     -webkit-appearance: none;
@@ -189,8 +183,6 @@ sideElement {
 
 }
 
-
-
 .vslider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -216,10 +208,6 @@ sideElement {
     background-color: green;
 }
 
-
-
-
-/* tooltip taken from https://codepen.io/neogomo/pen/BjqJzr*/
 /* setup tooltips */
 .tooltip {
     position: relative;
@@ -338,29 +326,7 @@ sideElement {
 #add:hover {
     background-color: green;
 }
-/*
-.button .buttontiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    left: -10px;
-    top: 55px;
-    font-size: 12px;
 
-
-    position: absolute;
-    z-index: 1;
-}
-
-.button:hover .buttontiptext {
-    visibility: visible;
-}
-
-*/
 #remove {
     visibility: hidden;
     position: relative;
@@ -378,29 +344,6 @@ sideElement {
 #remove:hover {
     background-color: #b80505;
 }
-/*
-.buttonRemove .buttontiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    left: -10px;
-    top: 55px;
-    font-size: 12px;
-
-
-    position: absolute;
-    z-index: 1;
-}
-
-.buttonRemove:hover .buttontiptext {
-    visibility: visible;
-}
-*/
-
 
 * {
     scrollbar-width: thin;

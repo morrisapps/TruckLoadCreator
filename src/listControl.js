@@ -18,7 +18,9 @@ let unitsNotInCanvas;
 //To get around this, all whitespaces are replaced with % and then replaced again to whitespaces when needed.
 
 
-//Create sortable Customer list
+/**
+ * Create sortable Customer List
+ */
 Sortable.create(custList, {
     onChoose: function (e) {
         let custName = e.item.attributes.id.value.replace(/%/g, " ");
@@ -73,6 +75,10 @@ Sortable.create(custList, {
     animation: 150
 });
 
+/**
+ * Selects unit in unit list. If unit exists in canvas also makes it actively selected
+ * @param e - The selected unit in the list element
+ */
 function unitsOnSelect(e) {
     let id;
     if (e.item.attributes.id.value != null) {
@@ -109,7 +115,9 @@ function unitsOnSelect(e) {
 }
 
 
-//Create sortable Unit list
+/**
+ * Create sortable Unit list
+ */
 Sortable.create(unitsList, {
     onChoose: function (e) {
         unitsOnSelect(e);
@@ -122,6 +130,10 @@ Sortable.create(unitsList, {
     animation: 150
 });
 
+/**
+ * Selects customer in customer list.
+ * @param e - The selected customer in the list element
+ */
 function updateListCust(CustName) {
     for (var i = 0, len = customers.length; i < len; i++) {
         let tempCustName = customers[i].name.replace(/ /g, '%');
@@ -146,6 +158,10 @@ function updateListCust(CustName) {
     }
 }
 
+/**
+ * Updates the unitsList and highlights the given unit in the list
+ * @param unit - The unit that is to be highlighted as selected
+ */
 function updateListUnits(unit) {
     for (var i = 0, len = units.length; i < len; i++) {
         let tempName = document.getElementById(units[i].id.replace(/ /g, '%'));
@@ -163,6 +179,10 @@ function updateListUnits(unit) {
     }
 }
 
+/**
+ * Creates unitsList and sets appropriate colors to each unit. Sets drag handlers for dragging to canvas
+ * @param {unit} unitFromList - The currently selected unit
+ */
 function listUnits(unitFromList) {
     var html = '';
     for (var i = 0, len = units.length; i < len; i++) {
@@ -219,6 +239,9 @@ function listUnits(unitFromList) {
     });
 }
 
+/**
+ * Creates custList and sets appropriate colors to each customer
+ */
 function listCustomer() {
     var html = '';
     let custsNotInCanvas = 0;
@@ -254,6 +277,9 @@ function listCustomer() {
     document.getElementById('cNot').innerText = custsNotInCanvas.toString();
 }
 
+/**
+ * Triggers searching the list for customers
+ */
 function onCustSearch() {
     var input, list;
     input = document.getElementById('custSearch');
@@ -261,6 +287,9 @@ function onCustSearch() {
     onSearch(input, list);
 }
 
+/**
+ * Triggers searching the list for units
+ */
 function onUnitSearch() {
     var input, list;
     input = document.getElementById('unitSearch');
@@ -268,7 +297,11 @@ function onUnitSearch() {
     onSearch(input, list);
 }
 
-
+/**
+ * Searches the list based on input and displays only the matching results in the list
+ * @param input - The text input that will be the search value
+ * @param list - The list to search though
+ */
 function onSearch(input, list) {
     var filter, div, a, i, txtValue;
     filter = input.value.toUpperCase();

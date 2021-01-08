@@ -33,12 +33,14 @@ let editButton = new fabric.Control({
 });
 fabric.Object.prototype.controls.mtr = editButton;
 
-
-//delete icon
-var deleteIcon = "./src/resources/ThirdParty/img/cancel.svg";
-var deleteImg = document.createElement('img');
-deleteImg.src = deleteIcon;
+/**
+ * Renders the delete icon that will be displayed on selected canvas objects
+ */
 function renderDeleteIcon(ctx, left, top, styleOverride, fabricObject) {
+    //delete icon
+    var deleteIcon = "./src/resources/ThirdParty/img/cancel.svg";
+    var deleteImg = document.createElement('img');
+    deleteImg.src = deleteIcon;
     var size = this.cornerSize;
     ctx.save();
     ctx.translate(left, top);
@@ -47,11 +49,14 @@ function renderDeleteIcon(ctx, left, top, styleOverride, fabricObject) {
     ctx.restore();
 }
 
-//edit icon
-var editIcon = "./src/resources/ThirdParty/img/menu.svg";
-var editImg = document.createElement('img');
-editImg.src = editIcon;
+/**
+ * Renders the edit icon that will be displayed on selected canvas objects
+ */
 function renderEditIcon(ctx, left, top, styleOverride, fabricObject) {
+    //edit icon
+    var editIcon = "./src/resources/ThirdParty/img/menu.svg";
+    var editImg = document.createElement('img');
+    editImg.src = editIcon;
     var size = this.cornerSize;
     ctx.save();
     ctx.translate(left, top);
@@ -60,9 +65,11 @@ function renderEditIcon(ctx, left, top, styleOverride, fabricObject) {
     ctx.restore();
 }
 
-//Deletes object from canvas
-//@eventData is not used
-//@target is the object to be delete
+/**
+ * Deletes object from canvas
+ * @param eventData - Not used
+ * @param target - The object to be deleted
+ */
 function deleteObject(eventData, target) {
     let removeResponse = confirm("Are you sure you want to remove " + target.id + "?");
     if (removeResponse == true) {
@@ -76,7 +83,11 @@ function deleteObject(eventData, target) {
     }
 }
 
-//Enables object to be edited
+/**
+ * Toggles the target to be edited on/off and sets side bar fields to the object's properties
+ * @param eventData - Not used
+ * @param target - The object to have editing turned on or off
+ */
 function editObject(eventData, target){
     if (editing == false){
         editing = true;
@@ -95,7 +106,10 @@ function editObject(eventData, target){
     canvas.requestRenderAll();
 }
 
-//Disables object from being edited
+/**
+ * Disables the object from being edited
+ * @param unit - The object that will have editing disabled
+ */
 function editOff(unit){
     _tag.value = '';
     _location.value = '';

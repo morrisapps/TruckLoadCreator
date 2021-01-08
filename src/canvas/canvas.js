@@ -374,29 +374,21 @@ function outOfBounds(object) {
         return [right, bottom, left, top];
     }
 }
-//Creation of Canvas
+
+/**
+ * Creation of fabric canvas.
+ * Sets up canvas related object handlers.
+ */
 function createCanvas() {
     canvas = new fabric.Canvas('c', {
         selection: false,
         imageSmoothingEnabled: false,
     });
-    var canvasWrapper = document.getElementById('printableArea');
-
-    //Fires when tab is pressed on canvas
-    canvasWrapper.onkeypress = keyPress;
-    function keyPress(key) {
-        //Feature to be implemented in the future.
-    }
-    canvasWrapper.addEventListener("keydown", (event) => {
-        //Feature to be implemented in the future.
-    }, false);
 
     // snap to grid
     canvas.on('object:moving', function (options) {
         let target = options.target;
         keepInBounds(target);
-
-
         if (target.isComment != true) {
             if ( _snapToggle.checked == true){
                 //Snap to horizontal grid
@@ -423,7 +415,6 @@ function createCanvas() {
             updateCount(target);
         }
     });
-
     canvas.on('mouse:up', function (options) {
         var intersectedObjects = [];
         canvas.forEachObject(function (obj) {
@@ -433,7 +424,6 @@ function createCanvas() {
                 }
             }
             if (obj.isRegion != true){obj.set('opacity', 1);};
-
         });
         //check if intersected bundle is above or below
         intersectedObjects.forEach(function (obj) {
@@ -461,6 +451,10 @@ function createCanvas() {
     canvas.hoverCursor = 'default';
 }
 
+/**
+ * Sets side bar fields with information from given unit
+ * @param unit - The unit which will contain the information for related side bar fields
+ */
 function setUnitFields(unit) {
     _customer.value = unit.customer.toString();
     _drop.value = unit.drop;
@@ -471,7 +465,11 @@ function setUnitFields(unit) {
     currentDrop = unit.drop;
 }
 
-//Runs when objects are selected
+/**
+ * Triggered when objects in canvas is selected.
+ * Determines if unit and if so then sets the appropriate unit fields/variables
+ * @param obj - The object that is selected on canvas
+ */
 function selectObject(obj) {
     document.getElementById("unitContainer").style.borderColor = "#ccc";
     document.getElementById('add').outerHTML = '<button style="margin-top: 20px;" class="tip expand" id="add" name="add" data-title="Add to List" onclick="AddUpdateButton()">Add</button>';
@@ -495,7 +493,11 @@ function selectObject(obj) {
     }
 }
 
-//Runs when objects are deselected
+/**
+ * Triggered when objects are deselected
+ * Removes/defaults sidebar fields
+ * @param obj - The object that is deselected
+ */
 function deselectObject(obj) {
     if (!(obj == null || obj.deselected === undefined)) {
         if (cListChoose == false) {
@@ -515,7 +517,11 @@ function deselectObject(obj) {
     }
 }
 
-//This function moves the active moving object top or bottom of the intersected object
+/**
+ * Moves the target object top or bottom of the intersected object in canvas
+ * @param obj - The object that is being intersected
+ * @param target - The object that will be moved top or bottom based on the intersected object
+ */
 function objectIntersects(obj, target) {
     if (obj != null) {
         if (intersects(obj, target)) {
