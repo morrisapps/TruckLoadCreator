@@ -296,9 +296,10 @@ function handleDrop(e) {
                     _location.value,
                     true,
                     +_weight.value,
+                    true
                 );
                 if (addError == "") {
-                    addCustomer(_customer.value, _drop.value);
+                    addCustomer(_customer.value, _drop.value, false);
                 }
                 _tag.value = '';
                 _location.value = '';

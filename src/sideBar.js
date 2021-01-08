@@ -549,17 +549,23 @@ function updateUnit() {
         let oldColor = unUpdatedUnit.item(0).stroke;
         let oldLeft = unUpdatedUnit.left;
         let oldTop = unUpdatedUnit.top;
+        let oldCustomer = unUpdatedUnit.customerText;
+
+        let addCheck = true;
 
         if (_drop.value != '') {
-
             removeUnit(unUpdatedUnit);
             unUpdatedUnit.set('remove', true);
-            let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, oldColor, oldFill, oldLeft, oldTop, _drop.value, _location.value, unUpdatedUnit.inCanvas, +_weight.value);
+            let tempCustomer = getDropCustomer(_drop.value);
+            if (tempCustomer.names.includes(_customer.value)){
+                addCheck = false;
+            }
+            let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, oldColor, oldFill, oldLeft, oldTop, _drop.value, _location.value, unUpdatedUnit.inCanvas, +_weight.value, addCheck);
             if (AddError == '') {
                 updateCount(canvas.getActiveObject());
                 canvas.remove(unUpdatedUnit);
                 updateCount(unUpdatedUnit);
-                addCustomer(_customer.value, _drop.value);
+                addCustomer(_customer.value, _drop.value, false);
             } else {
                 unUpdatedUnit.set('remove', false);
                 let rUnit = canvas.getActiveObject();
@@ -569,7 +575,7 @@ function updateUnit() {
                 addUnit(unUpdatedUnit);
                 canvas.add(unUpdatedUnit);
                 updateCount(unUpdatedUnit);
-                addCustomer(unUpdatedUnit.customer, unUpdatedUnit.drop);
+                addCustomer(unUpdatedUnit.customer, unUpdatedUnit.drop, false);
             }
         } else {
             alert(dropError + 'Drop cannot be empty' + "\n");
@@ -664,7 +670,7 @@ function isBundlesChecked() {
         }
     });
     if (_rack.checked == true) {
-        addCustomer(currentCustomerName, _drop.value);
+        addCustomer(currentCustomerName, _drop.value, false);
         customers[getCustomerIndex(currentCustomerName)].rack = true;
     } else if (exists == false) {
         customers[getCustomerIndex(currentCustomerName)].rack = false;
@@ -708,10 +714,12 @@ function checkRack() {
 function getCustomer(name) {
     let tempCust = null;
     customers.forEach(function (customer) {
-        if (customer.name == name) {
-            tempCust = customer;
-            return tempCust;
-        }
+        customer.names.forEach(function (names){
+            if (names == name) {
+                tempCust = customer;
+                return tempCust;
+            }
+        });
     });
     return tempCust;
 }
@@ -845,18 +853,26 @@ function sortCustomer() {
  * Adds a customer to customer array
  * @param {string} cName - The name of the customer
  * @param {string} cDrop - The drop number of the customer in string
+ * @param {boolean} importing - Flag if importing, enables array of names
+ * @param {string} importingCustomer - The customer name from importing
  * @returns {boolean} True if success
  */
-function addCustomer(cName, cDrop) {
+function addCustomer(cName, cDrop, importing, importingCustomer) {
     if (cName != '') {
         if (!checkIfCustomerExists(cName)) {
             if (checkIfCustomerDropExists(cDrop) == '') {
-                customers.push({name: cName, rack: false, drop: cDrop, oDrop: cDrop});
+                customers.push({name: cName, rack: false, drop: cDrop, oDrop: cDrop, names: Array(cName)});
                 document.getElementById("drops").innerText = customers.length.toString();
                 sortCustomer();
                 updateRack();
                 saveToBrowser();
                 return true;
+            }
+        }
+        if (importing){
+            let customer = getDropCustomer(cDrop)
+            if (!customer.names.includes(importingCustomer)){
+                customer.names.push(importingCustomer);
             }
         }
     }
@@ -906,10 +922,12 @@ function checkIfCustomerExists(cName) {
     let i = 0;
     let exists = false;
     while (i < customers.length) {
-        if (customers[i].name == cName) {
-            exists = true;
-            break;
-        }
+        customers[i].names.forEach(function (names){
+            if (names == cName) {
+                exists = true;
+                return exists;
+            }
+        });
         i++;
     }
     return exists;
@@ -923,11 +941,13 @@ function checkIfCustomerExists(cName) {
 function getCustomerIndex(cName) {
     customerIndex = 0;
     let index = null;
-    while (customerIndex <= customers.length) {
-        if (customers[customerIndex].name == cName) {
-            index = customerIndex;
-            break;
-        }
+    while (customerIndex < customers.length) {
+        customers[customerIndex].names.forEach(function (names){
+            if (names == cName) {
+                index = customerIndex;
+                return index;
+            }
+        });
         customerIndex++;
     }
     return index;

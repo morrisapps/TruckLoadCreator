@@ -258,24 +258,28 @@ function checkIfCustomerDropExists(cName, drop) {
  * @param location - The physical location of the unit
  * @param {boolean} inCanvas - Set true if unit is in canvas
  * @param weight - The weight of the unit
+ * @param {boolean} check - True to check if customer exists, false to not check
  * @returns {string} addError - The error message if the add does not succeed, blank if succeeded
  */
-function Add(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, weight) {
+function Add(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, weight, check) {
     var custName = cName;
     var unitid = custName + AE;
     var addError = "";
     let getDCust = getDropCustomer(unitDrop);
     addError = addError + checkIfCustomerDropExists(cName, unitDrop);
-    let dropError = updateDrop(cName);
+    let dropError = '';
+
+    if (check){
+        dropError = updateDrop(cName);
+    }
     if (checkIfUnitIDExists(unitid)) {
         addError = addError + "Unit " + custName + " " + AE + " already exists" + "\n";
     }
-    if (getDCust.name != custName && getDCust != 'none') {
+    if (check && getDCust.name != custName && getDCust != 'none') {
         addError = addError + "Drop " + unitDrop + " is already assigned to " + getDCust.name + "\n";
         _drop.value = '';
     }
     if (Math.sign(_weight.value) == -1){
-        console.log(Math.sign(_weight.value));
         addError = addError + 'Weight cannot be a negative number';
         _weight.value = '';
     }
@@ -456,7 +460,7 @@ function createCanvas() {
  * @param unit - The unit which will contain the information for related side bar fields
  */
 function setUnitFields(unit) {
-    _customer.value = unit.customer.toString();
+    _customer.value = unit.customerText.toString();
     _drop.value = unit.drop;
     _height.value = unit.unitHeight;
     _width.value = unit.unitWidth;

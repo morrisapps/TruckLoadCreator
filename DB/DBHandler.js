@@ -214,12 +214,12 @@ function loadFromDB(data) {
             if (addUnit(currentGroup)){
                 importUnits++;
             }
-            if (addCustomer(customerText, item[9])){
+            if (addCustomer(customerText, item[9], true, item[8])){
                 importCusts++;
             }
         } //Checks if bundles
         else if (item[13].includes('Bundle') || item[13].includes('Box')){
-            if (addCustomer(customerText, item[9])){
+            if (addCustomer(customerText, item[9], false)){
                 importCusts++
             }
             customers[getCustomerIndex(customerText)].rack = true;
@@ -257,4 +257,5 @@ function loadFromDB(data) {
         $('#infoDialog').dialog('option', 'title', 'Imported');
         $("#infoDialog").dialog("open");
     });
+    console.log(customers)
 }

@@ -4,6 +4,16 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
+//delete icon
+var deleteIcon = "./src/resources/ThirdParty/img/cancel.svg";
+var deleteImg = document.createElement('img');
+deleteImg.src = deleteIcon;
+
+//edit icon
+var editIcon = "./src/resources/ThirdParty/img/menu.svg";
+var editImg = document.createElement('img');
+editImg.src = editIcon;
+
 //Delete Button
 let unitButtons = new fabric.Control({
     x: .5,
@@ -37,10 +47,6 @@ fabric.Object.prototype.controls.mtr = editButton;
  * Renders the delete icon that will be displayed on selected canvas objects
  */
 function renderDeleteIcon(ctx, left, top, styleOverride, fabricObject) {
-    //delete icon
-    var deleteIcon = "./src/resources/ThirdParty/img/cancel.svg";
-    var deleteImg = document.createElement('img');
-    deleteImg.src = deleteIcon;
     var size = this.cornerSize;
     ctx.save();
     ctx.translate(left, top);
@@ -53,10 +59,6 @@ function renderDeleteIcon(ctx, left, top, styleOverride, fabricObject) {
  * Renders the edit icon that will be displayed on selected canvas objects
  */
 function renderEditIcon(ctx, left, top, styleOverride, fabricObject) {
-    //edit icon
-    var editIcon = "./src/resources/ThirdParty/img/menu.svg";
-    var editImg = document.createElement('img');
-    editImg.src = editIcon;
     var size = this.cornerSize;
     ctx.save();
     ctx.translate(left, top);

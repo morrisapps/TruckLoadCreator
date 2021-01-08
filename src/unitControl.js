@@ -22,10 +22,10 @@ function AddUpdateButton() {
         } else if (!isNaN(_customer.value)){
             alert("Customer must contain a letter");
         } else {
-            let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, 'black', 'white', 200, 200, _drop.value, _location.value, false, Math.round(+_weight.value));
+            let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, 'black', 'white', 200, 200, _drop.value, _location.value, false, Math.round(+_weight.value), true);
             if (AddError == '') {
                 updateCount(canvas.getActiveObject());
-                addCustomer(_customer.value, _drop.value);
+                addCustomer(_customer.value, _drop.value, false);
                 _tag.value = '';
                 _location.value = '';
                 _weight.value = '';
