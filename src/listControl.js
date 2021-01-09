@@ -112,6 +112,9 @@ function unitsOnSelect(e) {
         }
     }
     previousUnitListElement = id;
+
+    //reset search text
+    document.getElementById('unitSearch').value = '';
 }
 
 
