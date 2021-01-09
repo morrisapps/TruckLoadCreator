@@ -516,10 +516,10 @@ function updateDrop(cName) {
             currentDrop = _drop.value;
         }
         for (i = 0; i < customers.length; i++) {
-            if (customers[i].drop == currentDrop && customers[i].name != currentCustomerName) {
+            if (customers[i].drop == currentDrop && !customers[i].names.includes(currentCustomerName)) {
                 error = 'Drop Error';
                 break;
-            } else if (customers[i].drop != currentDrop && customers[i].name == currentCustomerName) {
+            } else if (customers[i].drop != currentDrop && !customers[i].names.includes(currentCustomerName)) {
                 error = 'Drop already exists'
                 break;
             }
@@ -664,11 +664,7 @@ function setBundleCheck(cName) {
 function isBundlesChecked() {
     var exists = false;
     currentCustomerName = _customer.value;
-    units.forEach(function (unit) {
-        if (unit.customer == currentCustomerName) {
-            exists = true;
-        }
-    });
+    exists = checkIfCustomerExists(currentCustomerName);
     if (_rack.checked == true) {
         addCustomer(currentCustomerName, _drop.value, false);
         customers[getCustomerIndex(currentCustomerName)].rack = true;
@@ -689,9 +685,9 @@ function checkRack() {
     if (_drop.value == '') {
         alert("Drop cannot be empty or contain letters");
         _rack.checked = false;
-    } else if (dropCustomer.name != _customer.value && dropCustomer.name != 'none') {
-        _drop.value = '';
+    } else if (!dropCustomer.names.includes(_customer.value) && dropCustomer.name != 'none') {
         alert("Drop " + _drop.value + " is already assigned to " + dropCustomer.name + "\n");
+        _drop.value = '';
         _rack.checked = false;
     } else if (!isNaN(_customer.value)) {
         alert("Customer must contain a letter");
