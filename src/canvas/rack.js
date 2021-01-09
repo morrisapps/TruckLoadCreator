@@ -8,7 +8,9 @@ var rackBox;
 var rackText;
 var rackCustomers = [];
 
-
+/**
+ * Creates a fabric.Group() to display all customers in the truck manifest
+ */
 function rackLoad() {
     rackBox = new fabric.Rect({
         width: 747,
@@ -96,6 +98,9 @@ function rackLoad() {
     canvas.add(rack);
 }
 
+/**
+ * Populates rack object in canvas with customer's names and if they are in the rack
+ */
 function updateRack() {
     let i = 0;
     customers.reverse();

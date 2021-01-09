@@ -4,12 +4,20 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
+//Initializes all images with drag handlers
 var images = document.querySelectorAll('.images img');
 [].forEach.call(images, function (img) {
     img.addEventListener('dragstart', handleDragStart, false);
     img.addEventListener('dragend', handleDragEnd, false);
 });
 
+/**
+ * Creates a dashed fabric.Line to be used on canvas
+ * @param top - The top position of dash
+ * @param left - The left position of dash
+ * @param width - The width of the dash
+ * @returns {fabric.Group()} dashGroup - The dash object to be used on fabric canvas
+ */
 function createDash(top, left, width) {
     var dash = new fabric.Line([0, 20, width - 4, 20], {
         strokeUniform: true,
@@ -82,6 +90,14 @@ function createDash(top, left, width) {
     return dashGroup;
 }
 
+/**
+ * Creates a fabric.Textbox with the given text
+ * @param top - The top position
+ * @param left - The left position
+ * @param text - The text to be placed in the fabric.Textbox
+ * @param width - The width of the fabric.Textbox
+ * @returns {fabric.Textbox()} comment - The comment object to be used on fabric canvas
+ */
 function createComment(top, left, text, width) {
     let commentText = '';
     if (text != null) {
@@ -142,6 +158,14 @@ function createComment(top, left, text, width) {
     return comment;
 }
 
+/**
+ * Creates a fabric.Group containing fabric.Rect and fabric.Itext representing a rack
+ * @param top - The top position of the rack
+ * @param left - The left position of the rack
+ * @param id - The id of the rack, used for representing the size of the rack
+ * @param {boolean} drag - Flag if rack is being created by drag and drop to set position accordingly
+ * @returns {fabric.Group()} - The rack object to be used on fabric canvas
+ */
 function createRack(top, left, id, drag) {
     let rackHeight = 0;
     let rackText = '';
@@ -223,6 +247,11 @@ function createRack(top, left, id, drag) {
     return rackNew;
 }
 
+/**
+ * Triggered when image element is dropped on canvas.
+ * Determines what type of object to create on canvas.
+ * @returns {boolean} - Returns false
+ */
 function handleDrop(e) {
     if (e.preventDefault) {
         e.preventDefault();
@@ -333,6 +362,9 @@ function handleDrop(e) {
     return false;
 }
 
+/**
+ * Determines the type of image being dragged and adds it to img.classList
+ */
 function handleDragStart(e) {
     let type = null;
     if (e.target.tagName == "IMG") {
@@ -350,6 +382,9 @@ function handleDragStart(e) {
     }
 }
 
+/**
+ * Removes the dragged unit from the img.classList
+ */
 function handleDragEnd(e) {
     let type = null;
     if (e.target.parentElement != null) {

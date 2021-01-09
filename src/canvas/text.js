@@ -22,6 +22,9 @@ var driverSide;
 //Barcode variable for truckID
 let loadBarcode = new fabric.Image();
 
+/**
+ * Generates a barcode image based on current load number to be added into canvas
+ */
 function createLoadBarcode(){
     canvas.remove(loadBarcode);
     if (loadTextEdit.text == 'Enter load' || loadTextEdit.text == ''){
@@ -46,6 +49,9 @@ function createLoadBarcode(){
     canvas.requestRenderAll();
 }
 
+/**
+ * Generates fabric.iText objects for text information or edit fields in canvas. Also sets handlers for edit fields.
+ */
 function textLoad(){
     //remove old texts if they exist
     if (driverSide != null){canvas.remove(driverSide)}
