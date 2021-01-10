@@ -14,7 +14,7 @@ All other components/content in this project is the work of Corey Morris for Tru
 
 The MIT License (MIT)
 
-TruckLoadCreator: Copyright (c) 2020 Corey Morris, https://github.com/morrisapps/TruckLoadCreator
+TruckLoadCreator: Copyright (c) 2020-2021 Corey Morris, https://github.com/morrisapps/TruckLoadCreator
 jQueryUI: Copyright jQuery Foundation and other contributors, https://jquery.org/
 jQuery: Copyright OpenJS Foundation and other contributors, https://openjsf.org/
 Bootstrap: Copyright (c) 2011-2020 Twitter, Inc.

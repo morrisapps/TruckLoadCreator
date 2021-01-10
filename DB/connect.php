@@ -1,7 +1,7 @@
 <?php
 /*
 * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
-* Copyright 2020 (c) Corey Morris
+* Copyright 2021 (c) Corey Morris
 * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
 */
 
@@ -14,6 +14,13 @@ $connectionLogin = array(
     "PWD" => "0nlyworldship"
 );
 
+//Set queries
+$getTrucksQuery = 'SELECT DISTINCT TRUCKID, DLVMODEID FROM ' . $connectionTable . ' WHERE site = \'' . $site . '\' ORDER BY DLVMODEID;';
+$getUnitsQuery = 'SELECT * FROM ' . $connectionTable . ' WHERE TRUCKID = \'' . $_POST['tID'] . '\';';
+
+//set rows
+$getTrucksRows = array('TRUCKID', 'DLVMODEID');
+$getUnitsRows = array('TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES');
 
 $connectionQuery = '';
 $return = array();
@@ -33,14 +40,6 @@ switch ($_POST['location']) {
     default: //Default AlexEast
         $site = 'east';
 }
-
-//Set queries
-$getTrucksQuery = 'SELECT DISTINCT TRUCKID, DLVMODEID FROM ' . $connectionTable . ' WHERE site = \'' . $site . '\' ORDER BY DLVMODEID;';
-$getUnitsQuery = 'SELECT * FROM ' . $connectionTable . ' WHERE TRUCKID = \'' . $_POST['tID'] . '\';';
-
-//set rows
-$getTrucksRows = array('TRUCKID', 'DLVMODEID');
-$getUnitsRows = array('TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES');
 
 //Set which query to use from POST
 if ($_POST['query'] == '1'){$connectionQuery = $getTrucksQuery; $rows = $getTrucksRows;}

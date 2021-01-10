@@ -1,30 +1,37 @@
 /*!
  * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
- * Copyright 2020 (c) Corey Morris
+ * Copyright 2021 (c) Corey Morris
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
 //***********Global variables***********
 
-var customers = [];
-var units = [];
-var unitIndex;
-var customerIndex;
-var canvasSide = new fabric.Canvas('d', {selection: false, height: 126, width: 251});
-var currentGroup = 'white';
-var currentColor = 'black';
-var currentFill;
-var currentCustomerName;
-var currentDrop;
-
 //Version number
-let version = "0.19.1";
+let version = "1.0.2";
 
 //TruckID used for loading the appropriate size truck
 let truckID = '';
 
 //LoadID is set after importing and forces only this load id to be used.
 let loadID = '';
+
+//Customer variables
+var customers = [];
+var customerIndex;
+
+//Unit variables
+var units = [];
+var unitIndex;
+
+//Sidebar variables
+var canvasSide = new fabric.Canvas('d', {selection: false, height: 126, width: 251});
+
+//Current unit variables
+var currentGroup = 'white';
+var currentColor = 'black';
+var currentFill;
+var currentCustomerName;
+var currentDrop;
 
 //These variables are used for height line counting
 var topLines;
