@@ -7,7 +7,9 @@
 //GET location URL parameter to be passed to connect.php
 let URLlocation = new URL(window.location.href).searchParams.get("location");
 
-//Creates import dialog
+/**
+ * Creates import dialog
+ */
 $(function () {
     $("#importDialog").dialog({
         autoOpen: false,
@@ -38,7 +40,9 @@ $(function () {
     $("#importTruck").selectmenu();
 });
 
-//Creates error dialog
+/**
+ * Creates error dialog
+ */
 $(function () {
     $("#infoDialog").dialog({
         autoOpen: false,
@@ -58,7 +62,11 @@ $(function () {
     }).prev().find(".ui-dialog-titlebar-close").hide();
 });
 
-//Launches connect.php which attempts to establish a connection to import data.
+/**
+ * Launches connect.php which attempts to establish a connection to import data.
+ * @param {[Query number, query rows, truckID]} input - An array containing query number, the rows, and optionally the truckID
+ * @returns {*} - Sets _errorDB to any error messages encountered
+ */
 function DBConnect(input) {
     _errorDB = '';
     let query = input[0];
@@ -103,6 +111,9 @@ function DBConnect(input) {
         });
 }
 
+/**
+ * Retrieves a list of Trucks and displays them in a selectable dialog
+ */
 function getDBTruckIDs() {
     let rows = ['TRUCKID', 'DLVMODEID'];
     let input = ['1', rows];
@@ -158,6 +169,11 @@ function getDBTruckIDs() {
     });
 }
 
+/**
+ * Retrieves the customer, unit, and bundle information from given truckID.
+ * Calls loadFromDB with returned data
+ * @param truckID - The truck trailer number
+ */
 function getDBData(truckID) {
     let rows = ['TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES'];
     let input = ['2', rows, truckID];
@@ -185,6 +201,10 @@ function getDBData(truckID) {
     }, 1000);
 }
 
+/**
+ * Loads customer, unit, bundle, and truck information from the given database data
+ * @param data - An array containing arrays representing each returned row
+ */
 function loadFromDB(data) {
     let importUnits = 0;
     let importCusts = 0;

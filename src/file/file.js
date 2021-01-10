@@ -4,6 +4,9 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
+/**
+ * Saves all relevant truck information to the browser's localStorage
+ */
 function saveToBrowser(){
     //Saves all relevant information to browser
     localStorage.saveContent = JSON.stringify(getSaveContent());
@@ -11,6 +14,10 @@ function saveToBrowser(){
     localStorage.saved = false;
 }
 
+/**
+ * Retrieves all truck information to be used for saving
+ * @returns {[]} - An array containing units, customers, canvas text, canvas racks, canvas dashes,canvas comments, truckID, program options, fileName
+ */
 function getSaveContent() {
     //Saves important unit information
     let savedUnits = [];
@@ -115,6 +122,9 @@ function getSaveContent() {
     return saveContents;
 }
 
+/**
+ * Saves current state of the program to a .truck file to be used for loading back later
+ */
 function save() {
     //Get saved contents and convert to JSON object
     let saveContent = getSaveContent();
@@ -127,7 +137,6 @@ function save() {
         type: "text/plain"
     }));
 
-
     a.setAttribute("download", saveContent[8] + ".truck");
     document.body.appendChild(a);
     a.click();
@@ -137,6 +146,10 @@ function save() {
     localStorage.saved = true;
 }
 
+/**
+ * Replaces all units in canvas with the given array of updateUnits
+ * @param {[unit]} updateUnits - Array of units
+ */
 function updateUnits(updateUnits) {
     //Reinitialize all units
     canvas.forEachObject(function (obj) {
@@ -185,6 +198,9 @@ function updateUnits(updateUnits) {
     });
 }
 
+/**
+ * Loads a saved state from a file using a selection dialog
+ */
 function loadFromFile() {
     //Retrieving data
     let content;
@@ -201,6 +217,10 @@ function loadFromFile() {
     });
 }
 
+/**
+ * Loads the saved state in the browser
+ * @returns {boolean} - Returns true if successful
+ */
 function loadFromBrowser(){
     if (localStorage.saved == 'false'){
         let savedContent = JSON.parse(localStorage.saveContent);
@@ -211,6 +231,11 @@ function loadFromBrowser(){
     }
 }
 
+/**
+ * Loads given save.
+ * Restores units, customers, canvas text, canvas racks, canvas dashes,canvas comments, truckID, and program options.
+ * @param {[units, customers, canvas text, canvas racks, canvas dashes,canvas comments, truckID, and program options, file name]} content - The save content
+ */
 function load(content) {
     //Reset all input to blank
     _customer.value = '';

@@ -4,7 +4,10 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
-
+/**
+ * Loads all truck related objects on canvas based on the appropriate trailer with the given ID
+ * @param id - The id number of the trailer that will be loaded.
+ */
 function truckLoad(id) {
     //Remove all drawn truck lines
     canvas.forEachObject(function (obj) {
@@ -14,7 +17,6 @@ function truckLoad(id) {
     });
     createCounters();
     truckTemplate();
-
 
     truckID = id;
     if (id == '' || id == null || id == 'start'){trailerTextEdit.set({text: "Enter trailer", fontSize: 15, fontStyle: "italic", top: 25});}
@@ -57,6 +59,12 @@ function truckLoad(id) {
     if (id != 'start') {saveToBrowser();}
 }
 
+/**
+ * Initializes/reinitializes height and weight counters, canvas lines, and weight unit containers
+ * Counters are fabric.Itext objects on canvas
+ * Lines are fabric.Lines objects used for intersection checking with units on canvas
+ * Weight unit containers used to store which units are in which region for counting weight
+ */
 function createCounters() {
     canvas.forEachObject(function (obj) {
         if (obj.isCounter == true) {
@@ -143,6 +151,9 @@ function createCounters() {
     weightUnits = [topLeftWeightUnits,topMiddleWeightUnits,topRightWeightUnits,botLeftWeightUnits,botMiddleWeightUnits,botRightWeightUnits];
 }
 
+/**
+ * Creates several fabric.Line that all trailers will use, such as the canvas and text input borders
+ */
 function truckTemplate(){
     //Create universal lines on canvas
 
@@ -217,9 +228,10 @@ function truckTemplate(){
     canvas.add(new fabric.Line([600 * 2, 725, 600 * 2, 925], {stroke: 'black', strokeWidth: 2, selectable: false}));
 }
 
+/**
+ * Creates lines, sets weight and region locations for truck custom
+ */
 function truckCustom() {
-    //Creates lines, sets weight and region locations for truck custom
-
     //set weight text location
     topLeftWeightText.set('left', 248).setCoords();
     topMiddleWeightText.set('left', 626).setCoords();
@@ -236,7 +248,6 @@ function truckCustom() {
     botMiddleWeightRegion.set({left: 626, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
     botRightWeightRegion.set({left: 1010, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
 
-
     //vertical lines
     vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
     canvas.add(vLine1);
@@ -249,7 +260,11 @@ function truckCustom() {
     vLine5 = new fabric.Line([600 * 2, 15, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
     canvas.add(vLine5);
 }
-
+/**
+ * Creates lines, sets weight and region locations for curtain trucks.
+ * Uses truckid to determine where lines, counter text, and weight regions should be placed
+ * @param truckid - The trailer number
+ */
 function truckCurtain(truckid) {
     //door2 to door6 are not used for curtains
     door2 = '';
@@ -468,8 +483,12 @@ function truckCurtain(truckid) {
     canvas.add(doorText6);
 }
 
+/**
+ * Creates lines, sets weight and region locations for 53' trucks.
+ * Uses truckid to determine where lines, counter text, and weight regions should be placed
+ * @param truckid - The trailer number
+ */
 function truck53(truckid) {
-
     //set weight text location
     topLeftWeightText.set('left', 248).setCoords();
     topMiddleWeightText.set('left', 626).setCoords();
@@ -624,8 +643,12 @@ function truck53(truckid) {
     canvas.add(vLine5);
 }
 
+/**
+ * Creates lines, sets weight and region locations for 48' trucks.
+ * Uses truckid to determine where lines, counter text, and weight regions should be placed
+ * @param truckid - The trailer number
+ */
 function truck48(truckid) {
-
     //set weight text location
     topLeftWeightText.set('left', 242).setCoords();
     topMiddleWeightText.set('left', 578).setCoords();
@@ -795,8 +818,12 @@ function truck48(truckid) {
     canvas.add(new fabric.Line([600 * 2, 400, 600 * 2 - 96, 725], {stroke: 'black', selectable: false}));
 }
 
+/**
+ * Creates lines, sets weight and region locations for 45' trucks.
+ * Uses truckid to determine where lines, counter text, and weight regions should be placed
+ * @param truckid - The trailer number
+ */
 function truck45(truckid) {
-
     //set weight text location
     topLeftWeightText.set('left', 290).setCoords();
     topMiddleWeightText.set('left', 602).setCoords();
@@ -940,8 +967,12 @@ function truck45(truckid) {
     canvas.add(new fabric.Line([600 * 2, 400, 600 * 2 - 96, 725], {stroke: 'black', selectable: false}));
 }
 
+/**
+ * Creates lines, sets weight and region locations for 35' trucks.
+ * Uses truckid to determine where lines, counter text, and weight regions should be placed
+ * @param truckid - The trailer number
+ */
 function truck35(truckid) {
-
     //set weight text location
     topLeftWeightText.set('left', 434).setCoords();
     topMiddleWeightText.set({left: 0, text: ''}).setCoords();

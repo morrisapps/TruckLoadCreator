@@ -21,6 +21,9 @@ if (screenHeightRatio > 1) {
 
 setZoom();
 
+/**
+ * Changes the size of canvas to match the screen dimensions
+ */
 function setZoom() {
     canvas.setWidth(canvas.width * screenWidthRatio);
     canvas.setHeight(canvas.height * screenWidthRatio);

@@ -26,9 +26,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed bug: Selecting unit from list should remove any search text">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed bug: Cant update units twice if they are the only unique name on a customer with many names">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bug List.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Bug List.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/DBHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/trucks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/zoom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/zoom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/file/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/file/print.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/print.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +92,19 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/js-truckwrite/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -173,13 +191,6 @@
       <workItem from="1609945997566" duration="10079000" />
       <workItem from="1610017889485" duration="6645000" />
       <workItem from="1610240780365" duration="2512000" />
-    </task>
-    <task id="LOCAL-00027" summary="Bug fixed: Unit text colliding with other text if two units with long text were beside each other.">
-      <created>1605078005813</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1605078005813</updated>
     </task>
     <task id="LOCAL-00028" summary="Further tweaked unit text to stay inside the unit's width more">
       <created>1605128231386</created>
@@ -517,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610210058067</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Fixed bug: Cant update units twice if they are the only unique name on a customer with many names">
+      <created>1610277512371</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1610277512371</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +566,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented loader circle to display to the user while waiting for importing from database" />
     <MESSAGE value="Updated Db connection" />
     <MESSAGE value="Updated FabricJS to 4.2" />
     <MESSAGE value="Update control items positions due to fabric 4.2" />
@@ -573,7 +590,8 @@
     <MESSAGE value="Fixed bug: Updating units would change name to main customer name if customer has multiple names" />
     <MESSAGE value="Fixed bug: Selecting unit from list should remove any search text" />
     <MESSAGE value="Fixed bug: More jsdocs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug: More jsdocs" />
+    <MESSAGE value="Fixed bug: Cant update units twice if they are the only unique name on a customer with many names" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug: Cant update units twice if they are the only unique name on a customer with many names" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -751,14 +769,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1610233005629">
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1610277769030">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609386879753" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1610233005629" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1610277769030" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605586559998" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />

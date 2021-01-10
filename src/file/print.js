@@ -4,6 +4,9 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
+/**
+ * Prepares and prints the canvas, reverts the canvas to previous state after print
+ */
 function printPageArea() {
     //Checks if any units are not yet in the the truck from unit list
     let unitsNotInResponse = true;
@@ -14,7 +17,7 @@ function printPageArea() {
         unitsNotInResponse = confirm("There are " + unitsNotInCanvas.toString() + " unit(s) from unit list not in the truck. \n\nContinue with print?");
     }
     units.forEach(function (unit){
-        if (unit.inCanvas && unit.weight <= 0){
+        if (unit.inCanvas && unit.weight <= 2){
             weightZeroUnits.push(unit);
             weightZeroText = weightZeroText + unit.item(1).text + '\n';
         }
