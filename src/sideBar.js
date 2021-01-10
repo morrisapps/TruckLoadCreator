@@ -537,6 +537,7 @@ function updateDrop(cName) {
  * Updates the selected unit based on inputted sidebar fields
  */
 function updateUnit() {
+    console.log(customers)
     if (editing == true) {
         let unUpdatedUnit;
         if (editingUnit == null) {
@@ -588,6 +589,7 @@ function updateUnit() {
         _location.value = '';
         _tag.value = '';
     }
+    console.log(customers)
 }
 
 /**
@@ -748,7 +750,8 @@ function isCustInTruck(cust) {
 function getCustUnit(cust) {
     var tempUnit = null;
     units.forEach(function (unit) {
-        if (unit.customer == cust) {
+        let tCustomer = getCustomer(unit.customer);
+        if (tCustomer.names.includes(cust)) {
             tempUnit = unit;
         }
     });
