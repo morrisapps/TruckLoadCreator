@@ -69,11 +69,10 @@ $(function () {
  */
 function DBConnect(input) {
     _errorDB = '';
-    let query = input[0];
-    let rows = input[1];
-    let tID = input[2];
+    let query = input[0];;
+    let tID = input[1];
     //Runs connect.php which connects to DB and returns associated rows as a double array
-    return $.post('./DB/connect.php', {query: query, rows: rows, tID: tID, location: URLlocation}, function (response) {
+    return $.post('./DB/connect.php', {query: query, tID: tID, location: URLlocation}, function (response) {
         //Returned message
         if (response) {
             try {
@@ -115,8 +114,7 @@ function DBConnect(input) {
  * Retrieves a list of Trucks and displays them in a selectable dialog
  */
 function getDBTruckIDs() {
-    let rows = ['TRUCKID', 'DLVMODEID'];
-    let input = ['1', rows];
+    let input = ['1'];
     $("#overlay").fadeIn(300);
     let DBReturn = null;
     let DBPromise = new Promise((finished) => {
@@ -175,8 +173,7 @@ function getDBTruckIDs() {
  * @param truckID - The truck trailer number
  */
 function getDBData(truckID) {
-    let rows = ['TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES'];
-    let input = ['2', rows, truckID];
+    let input = ['2', truckID];
     $("#overlay").fadeIn(300);
     $(function () {$("#importDialog").dialog("close");});
     //Delay to wait for dialog to close

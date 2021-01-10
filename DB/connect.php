@@ -16,7 +16,6 @@ $connectionLogin = array(
 
 
 $connectionQuery = '';
-$rows = $_POST['rows'];
 $return = array();
 $site = '';
 
@@ -39,9 +38,13 @@ switch ($_POST['location']) {
 $getTrucksQuery = 'SELECT DISTINCT TRUCKID, DLVMODEID FROM ' . $connectionTable . ' WHERE site = \'' . $site . '\' ORDER BY DLVMODEID;';
 $getUnitsQuery = 'SELECT * FROM ' . $connectionTable . ' WHERE TRUCKID = \'' . $_POST['tID'] . '\';';
 
+//set rows
+$getTrucksRows = array('TRUCKID', 'DLVMODEID');
+$getUnitsRows = array('TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES');
+
 //Set which query to use from POST
-if ($_POST['query'] == '1'){$connectionQuery = $getTrucksQuery;}
-else if ($_POST['query'] == '2'){$connectionQuery = $getUnitsQuery;}
+if ($_POST['query'] == '1'){$connectionQuery = $getTrucksQuery; $rows = $getTrucksRows;}
+else if ($_POST['query'] == '2'){$connectionQuery = $getUnitsQuery; $rows = $getUnitsRows;}
 
 //Establishes the connection
 $conn = sqlsrv_connect($connectionServer, $connectionLogin);

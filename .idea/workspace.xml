@@ -26,14 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed bug: Cant update units twice if they are the only unique name on a customer with many names">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="JSDOCS fully implemented for functions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bug List.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Bug List.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/DBHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/trucks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/zoom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/zoom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/file.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file/print.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/print.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/connect.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,13 +188,6 @@
       <workItem from="1609945997566" duration="10079000" />
       <workItem from="1610017889485" duration="6645000" />
       <workItem from="1610240780365" duration="2512000" />
-    </task>
-    <task id="LOCAL-00028" summary="Further tweaked unit text to stay inside the unit's width more">
-      <created>1605128231386</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1605128231386</updated>
     </task>
     <task id="LOCAL-00029" summary="Unit Text that is rotated now behaves like the same as the non rotated units">
       <created>1605131024713</created>
@@ -535,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610277512371</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="JSDOCS fully implemented for functions">
+      <created>1610306450898</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1610306450898</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +563,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated Db connection" />
     <MESSAGE value="Updated FabricJS to 4.2" />
     <MESSAGE value="Update control items positions due to fabric 4.2" />
     <MESSAGE value="Fix printing on chrome based browsers" />
@@ -591,7 +587,8 @@
     <MESSAGE value="Fixed bug: Selecting unit from list should remove any search text" />
     <MESSAGE value="Fixed bug: More jsdocs" />
     <MESSAGE value="Fixed bug: Cant update units twice if they are the only unique name on a customer with many names" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug: Cant update units twice if they are the only unique name on a customer with many names" />
+    <MESSAGE value="JSDOCS fully implemented for functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="JSDOCS fully implemented for functions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -769,14 +766,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1610277769030">
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1610306454230">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609386879753" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1610277769030" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1610306454230" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605586559998" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
