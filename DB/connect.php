@@ -14,10 +14,6 @@ $connectionLogin = array(
     "PWD" => "0nlyworldship"
 );
 
-//Set queries
-$getTrucksQuery = 'SELECT DISTINCT TRUCKID, DLVMODEID FROM ' . $connectionTable . ' WHERE site = \'' . $site . '\' ORDER BY DLVMODEID;';
-$getUnitsQuery = 'SELECT * FROM ' . $connectionTable . ' WHERE TRUCKID = \'' . $_POST['tID'] . '\';';
-
 //set rows
 $getTrucksRows = array('TRUCKID', 'DLVMODEID');
 $getUnitsRows = array('TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES');
@@ -40,6 +36,11 @@ switch ($_POST['location']) {
     default: //Default AlexEast
         $site = 'east';
 }
+
+//Set queries
+$getTrucksQuery = 'SELECT DISTINCT TRUCKID, DLVMODEID FROM ' . $connectionTable . ' WHERE site = \'' . $site . '\' ORDER BY DLVMODEID;';
+$getUnitsQuery = 'SELECT * FROM ' . $connectionTable . ' WHERE TRUCKID = \'' . $_POST['tID'] . '\';';
+
 
 //Set which query to use from POST
 if ($_POST['query'] == '1'){$connectionQuery = $getTrucksQuery; $rows = $getTrucksRows;}
