@@ -4,8 +4,6 @@
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
-//GET location URL parameter to be passed to connect.php
-let URLlocation = new URL(window.location.href).searchParams.get("location");
 
 /**
  * Creates import dialog

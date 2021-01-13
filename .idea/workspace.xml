@@ -26,10 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed bug Not allowing duplicated units if customer and tag was the same">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed importing still not working for units that have the same id">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/DBHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,14 +187,7 @@
       <workItem from="1610017889485" duration="6645000" />
       <workItem from="1610240780365" duration="2512000" />
       <workItem from="1610494452221" duration="3905000" />
-      <workItem from="1610555249580" duration="8090000" />
-    </task>
-    <task id="LOCAL-00033" summary="Added jquery map">
-      <created>1605169753556</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1605169753556</updated>
+      <workItem from="1610555249580" duration="9376000" />
     </task>
     <task id="LOCAL-00034" summary="Added jquery map">
       <created>1605169780592</created>
@@ -531,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610558225712</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Fixed importing still not working for units that have the same id">
+      <created>1610564083688</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1610564083688</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +563,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Applied Math.trunc to imported unit height to remove the large amount of decimals" />
     <MESSAGE value="0.19.1" />
     <MESSAGE value="Added promises to DBConnections to fix connection errors" />
     <MESSAGE value="Syntax formatting" />
@@ -587,7 +587,8 @@
     <MESSAGE value="Fixed bug not allowing importing to retrieve any trucks" />
     <MESSAGE value="Fixed bud saying drop error when adding more than one unit to a customer" />
     <MESSAGE value="Fixed bug Not allowing duplicated units if customer and tag was the same" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug Not allowing duplicated units if customer and tag was the same" />
+    <MESSAGE value="Fixed importing still not working for units that have the same id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed importing still not working for units that have the same id" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -765,7 +766,7 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610558238433">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610564102723">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609386879753" />
@@ -777,7 +778,7 @@
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.13.1080.1880/1920.0.1920.1040@0.0.1920.1040" timestamp="1607361430614" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610558238433" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610564102723" />
     <state x="553" y="304" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608468291699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
