@@ -357,17 +357,18 @@ _custInUnits.checked = true;
 let _returnedData = null;
 let _errorDB = '';
 
-//GET location URL parameter to be passed to connect.php
+//GET location and backtrack variables
 let URLlocation = new URL(window.location.href).searchParams.get("location");
-
 let URLbacktrack = new URL(window.location.href).searchParams.get("backtrack");
 let _backtrack = document.getElementById('backtrack');
 let backtrackToggle;
+//Set previous or go back to current version link
 if (URLbacktrack == '1'){
     backtrackToggle = "0";
     _backtrack.innerText = "Back to current version";
     _backtrack.href = "http://am-ax2012-web1:88/?location="+URLlocation+"&backtrack="+backtrackToggle
 }else{
+    _backtrack.innerText = "Previous version";
     backtrackToggle = "1"
     _backtrack.href = "http://am-ax2012-web1:86/?location="+URLlocation+"&backtrack="+backtrackToggle
 }
