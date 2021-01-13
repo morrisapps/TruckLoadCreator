@@ -26,9 +26,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed importing still not working for units that have the same id">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Previous version testing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/DBHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
     </list>
@@ -187,14 +186,7 @@
       <workItem from="1610017889485" duration="6645000" />
       <workItem from="1610240780365" duration="2512000" />
       <workItem from="1610494452221" duration="3905000" />
-      <workItem from="1610555249580" duration="9376000" />
-    </task>
-    <task id="LOCAL-00034" summary="Added jquery map">
-      <created>1605169780592</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1605169780592</updated>
+      <workItem from="1610555249580" duration="9988000" />
     </task>
     <task id="LOCAL-00035" summary="Made customers appear in bold and with - RK if they are in the rack.&#10;&#10;Fixed height counts not working with snap off.&#10;&#10;Fixed sometimes not being able to add to rack">
       <created>1605303518148</created>
@@ -532,7 +524,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610564083688</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Previous version testing">
+      <created>1610565353344</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1610565353345</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +562,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="0.19.1" />
     <MESSAGE value="Added promises to DBConnections to fix connection errors" />
     <MESSAGE value="Syntax formatting" />
     <MESSAGE value="Fixed import still allowing different import trucks after loading from save." />
@@ -588,7 +586,8 @@
     <MESSAGE value="Fixed bud saying drop error when adding more than one unit to a customer" />
     <MESSAGE value="Fixed bug Not allowing duplicated units if customer and tag was the same" />
     <MESSAGE value="Fixed importing still not working for units that have the same id" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed importing still not working for units that have the same id" />
+    <MESSAGE value="Previous version testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Previous version testing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -766,7 +765,7 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610564102723">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610565354379">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609386879753" />
@@ -778,7 +777,7 @@
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.13.1080.1880/1920.0.1920.1040@0.0.1920.1040" timestamp="1607361430614" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610564102723" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610565354379" />
     <state x="553" y="304" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608468291699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
