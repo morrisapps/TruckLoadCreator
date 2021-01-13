@@ -268,12 +268,22 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
     let getDCust = getDropCustomer(unitDrop);
     addError = addError + checkIfCustomerDropExists(cName, unitDrop);
     let dropError = '';
+    let duplicateUnit = getTagUnit(_tag.value);
 
     if (check){
         dropError = updateDrop(cName);
     }
+    //Checks if ID exists. If it does and user accepts confirm append + to ID to signal it's a duplicate but still valid
     if (checkIfUnitIDExists(unitid)) {
-        addError = addError + "Unit " + custName + " " + AE + " already exists" + "\n";
+        let existsResponse = confirm("Unit " + custName + " " + AE + " already exists. Do you still want to add?");
+        if (existsResponse){
+           while (getIDUnit(unitid) != null){
+               unitid += '+';
+           }
+           duplicateUnit = null;
+        }else {
+            addError = addError + "Unit " + custName + " " + AE + " already exists" + "\n";
+        }
     }
     if (check && getDCust.name != custName && getDCust != 'none') {
         addError = addError + "Drop " + unitDrop + " is already assigned to " + getDCust.name + "\n";
@@ -287,7 +297,6 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
         addError = addError + dropError;
     }
     //Check if tag is possible duplicate
-    let duplicateUnit = getTagUnit(_tag.value);
     let response = true;
     if (duplicateUnit != null && duplicateUnit.id != unitid) {
         response = confirm("The tag " + _tag.value + " matches " + duplicateUnit.id + "\n Are you sure you want to add?");

@@ -806,6 +806,10 @@ function sortUnit() {
  */
 function addUnit(unit) {
     if (unit.id != '') {
+        //Checks if ID already exists and if it does append + to it to signal it's both a different unit but also has a duplicate ID
+        while (getIDUnit(unit.id) != null){
+            unit.id += '+';
+        }
             units.push(unit);
             document.getElementById("tUnits").innerText = units.length.toString();
             sortUnit();

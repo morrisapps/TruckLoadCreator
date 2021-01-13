@@ -26,10 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed bug not allowing importing to retrieve any trucks">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed bud saying drop error when adding more than one unit to a customer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bug List.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Bug List.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,6 +90,17 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/js-truckwrite/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -175,14 +187,8 @@
       <workItem from="1609945997566" duration="10079000" />
       <workItem from="1610017889485" duration="6645000" />
       <workItem from="1610240780365" duration="2512000" />
-      <workItem from="1610494452221" duration="2621000" />
-    </task>
-    <task id="LOCAL-00031" summary="Fixed bug: Loading from a file would not remove tools causing duplicated tools.">
-      <created>1605139195625</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1605139195625</updated>
+      <workItem from="1610494452221" duration="3905000" />
+      <workItem from="1610555249580" duration="2772000" />
     </task>
     <task id="LOCAL-00032" summary="Fixed bug:Drop could be empty on checking rack">
       <created>1605165953186</created>
@@ -520,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610419137112</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Fixed bud saying drop error when adding more than one unit to a customer">
+      <created>1610497202574</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1610497202574</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +564,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix printing on chrome based browsers" />
     <MESSAGE value="Weight field now resets when typing a new unit" />
     <MESSAGE value="Applied Math.trunc to imported unit height to remove the large amount of decimals" />
     <MESSAGE value="0.19.1" />
@@ -576,7 +588,8 @@
     <MESSAGE value="JSDOCS fully implemented for functions" />
     <MESSAGE value="Row information moved to php/server side" />
     <MESSAGE value="Fixed bug not allowing importing to retrieve any trucks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug not allowing importing to retrieve any trucks" />
+    <MESSAGE value="Fixed bud saying drop error when adding more than one unit to a customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bud saying drop error when adding more than one unit to a customer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -754,7 +767,7 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610419152794">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610497237725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609386879753" />
@@ -766,7 +779,7 @@
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.13.1080.1880/1920.0.1920.1040@0.0.1920.1040" timestamp="1607361430614" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610419152794" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610497237725" />
     <state x="553" y="304" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608468291699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -786,13 +799,13 @@
     </state>
     <state x="476" y="231" width="672" height="677" key="run.anything.popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1608006049664" />
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1607202036483" />
-    <state x="623" y="226" width="945" height="679" key="search.everywhere.popup" timestamp="1609587618449">
+    <state x="623" y="226" width="945" height="679" key="search.everywhere.popup" timestamp="1610556165022">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="226" width="945" height="679" key="search.everywhere.popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606910881500" />
     <state x="443" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1607897514862" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604958177395" />
-    <state x="623" y="226" width="945" height="679" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609587618449" />
+    <state x="623" y="226" width="945" height="679" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610556165022" />
     <state x="682" y="432" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604463075377">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
