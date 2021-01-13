@@ -7,7 +7,7 @@
 //***********Global variables***********
 
 //Version number
-let version = "1.0.3";
+let version = "1.0.4";
 
 //TruckID used for loading the appropriate size truck
 let truckID = '';
@@ -363,8 +363,14 @@ let URLlocation = new URL(window.location.href).searchParams.get("location");
 let URLbacktrack = new URL(window.location.href).searchParams.get("backtrack");
 let _backtrack = document.getElementById('backtrack');
 let backtrackToggle;
-if (URLbacktrack == '1'){ backtrackToggle = "0";_backtrack.innerText = "Back to current version";}else{backtrackToggle = "1"}
-_backtrack.href = "http://am-ax2012-web1:86/?location="+URLlocation+"&backtrack="+backtrackToggle
+if (URLbacktrack == '1'){
+    backtrackToggle = "0";
+    _backtrack.innerText = "Back to current version";
+    _backtrack.href = "http://am-ax2012-web1:88/?location="+URLlocation+"&backtrack="+backtrackToggle
+}else{
+    backtrackToggle = "1"
+    _backtrack.href = "http://am-ax2012-web1:86/?location="+URLlocation+"&backtrack="+backtrackToggle
+}
 
 
 
