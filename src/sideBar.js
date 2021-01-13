@@ -519,7 +519,7 @@ function updateDrop(cName) {
             if (customers[i].drop == currentDrop && !customers[i].names.includes(currentCustomerName)) {
                 error = 'Drop Error';
                 break;
-            } else if (customers[i].drop != currentDrop && !customers[i].names.includes(currentCustomerName)) {
+            } else if (customers[i].drop != currentDrop && customers[i].names.includes(currentCustomerName)) {
                 error = 'Drop already exists'
                 break;
             }
