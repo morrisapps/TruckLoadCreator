@@ -273,13 +273,9 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
     if (check){
         dropError = updateDrop(cName);
     }
-    //Checks if ID exists. If it does and user accepts confirm append + to ID to signal it's a duplicate but still valid
     if (checkIfUnitIDExists(unitid)) {
         let existsResponse = confirm("Unit " + custName + " " + AE + " already exists. Do you still want to add?");
         if (existsResponse){
-           while (getIDUnit(unitid) != null){
-               unitid += '+';
-           }
            duplicateUnit = null;
         }else {
             addError = addError + "Unit " + custName + " " + AE + " already exists" + "\n";

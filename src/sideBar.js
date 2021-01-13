@@ -418,13 +418,17 @@ function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, 
 
     unitText(customerText, width, height, unitDrop, AE, text, rect, location);
 
+    let id = custName + AE;
+    while (getIDUnit(id) != null){
+        id += '+';
+    }
     currentGroup = new fabric.Group([rect, text], {
         unitHeight: height,
         unitWidth: width,
         left: left,
         top: top,
         selectable: true,
-        id: custName + AE,
+        id: id,
         unit: true,
         remove: false,
         hasControls: true,
@@ -806,10 +810,6 @@ function sortUnit() {
  */
 function addUnit(unit) {
     if (unit.id != '') {
-        //Checks if ID already exists and if it does append + to it to signal it's both a different unit but also has a duplicate ID
-        while (getIDUnit(unit.id) != null){
-            unit.id += '+';
-        }
             units.push(unit);
             document.getElementById("tUnits").innerText = units.length.toString();
             sortUnit();
