@@ -204,7 +204,6 @@ function loadFromDB(data) {
     let importUnits = 0;
     let importCusts = 0;
     data.forEach(function (item) {
-        console.log(item);
         //Checks if Customer drop exists and if name is different. Forces use of the same name.
         let customer = null;
         for (let i = 0; i < customers.length; i++) {
@@ -227,7 +226,7 @@ function loadFromDB(data) {
             unitWidth = dimensions.split(/x/)[1];
             //Adding unit
             createUnit(unitWidth, Math.trunc(item[11]), customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], item[15], false, item[8],item[10],Math.round(item[12]));
-            if (addUnit(currentGroup)){
+            if (getTagUnit(item[10]) == null && addUnit(currentGroup)){
                 importUnits++;
             }
             if (addCustomer(customerText, item[9], true, item[8])){
@@ -273,5 +272,4 @@ function loadFromDB(data) {
         $('#infoDialog').dialog('option', 'title', 'Imported');
         $("#infoDialog").dialog("open");
     });
-    console.log(customers)
 }

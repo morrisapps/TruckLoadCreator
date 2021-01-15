@@ -785,7 +785,7 @@ function getIDUnit(id) {
 function getTagUnit(tag) {
     let tempUnit = null;
     units.forEach(function (unit) {
-        if (unit.ae == tag) {
+        if (unit.ae == tag || unit.fullAE == tag) {
             tempUnit = unit;
         }
     });
@@ -874,7 +874,8 @@ function addCustomer(cName, cDrop, importing, importingCustomer) {
         }
         if (importing){
             let customer = getDropCustomer(cDrop)
-            if (!customer.names.includes(importingCustomer)){
+            console.log(customer)
+            if (customer != 'none' && !customer.names.includes(importingCustomer)){
                 customer.names.push(importingCustomer);
             }
         }
