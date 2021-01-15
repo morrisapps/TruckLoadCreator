@@ -35,7 +35,7 @@ $(function () {
             }
         }
     }).prev().find(".ui-dialog-titlebar-close").hide();
-    $("#importTruck").selectmenu();
+    $("#importTruck").selectmenu({});
 });
 
 /**

@@ -553,3 +553,6 @@ input[type=number] {
 
 /* Places jQueryUI dialogs below spinner */
 .ui-dialog { z-index: 500 !important ;}
+
+/* JqueryUI selectmenu drop down height */
+.ui-selectmenu-menu .ui-menu {max-height: 300px;}
