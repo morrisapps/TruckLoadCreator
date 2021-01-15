@@ -16,7 +16,7 @@ $connectionLogin = array(
 
 //set rows
 $getTrucksRows = array('TRUCKID', 'DLVMODEID');
-$getUnitsRows = array('TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES');
+$getUnitsRows = array('TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES', 'WMSLOCATIONID');
 
 $connectionQuery = '';
 $return = array();
@@ -30,8 +30,14 @@ switch ($_POST['location']) {
     case '2': //AlexWest
         $site = 'west';
         break;
-    case '3':
-
+    case '3': //Penneast
+        $site = 'penn';
+        break;
+    case '4': //Midwest
+        $site = 'midw';
+        break;
+    case '5': //RWW
+        $site = 'rwwl';
         break;
     default: //Default AlexEast
         $site = 'east';
