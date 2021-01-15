@@ -6,12 +6,12 @@
 */
 
 //Server variables
-$connectionTable = 'dbo.alex_test_sample';
-$connectionServer = 'localHost';
+$connectionTable = 'dbo.alexmo_truck_manifest';
+$connectionServer = 'am-ax2012-db,56487';
 $connectionLogin = array(
-    "Database" => "SampleDB",
-    "Uid" => "sa",
-    "PWD" => "test"
+    "Database" => "AX2012DB",
+    "Uid" => "ax_worldship",
+    "PWD" => "0nlyworldship"
 );
 
 //set rows
