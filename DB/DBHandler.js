@@ -204,6 +204,7 @@ function loadFromDB(data) {
     let importUnits = 0;
     let importCusts = 0;
     data.forEach(function (item) {
+        console.log(item);
         //Checks if Customer drop exists and if name is different. Forces use of the same name.
         let customer = null;
         for (let i = 0; i < customers.length; i++) {
@@ -216,6 +217,12 @@ function loadFromDB(data) {
             customerText = customer.name;
         }
 
+        //Location - If in correct truck do set location to blank
+        let physical = item[15].replace(/\D/g,'');
+        let truckID = item[2].replace(/\D/g,'');
+        let location = item[15];
+        if (parseInt(physical) == parseInt(truckID)){location = '';}
+
         //Format pallet type to dimensions only
         let dimensions = item[13].replace(/[a-wy-z\s&\/\\#,+'"()$~%.:*?<>\-_{}]/gi, '');
         let unitWidth = 0;
@@ -225,7 +232,7 @@ function loadFromDB(data) {
         if (/\d/.test(dimensions) && /x/.test(dimensions)){
             unitWidth = dimensions.split(/x/)[1];
             //Adding unit
-            createUnit(unitWidth, Math.trunc(item[11]), customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], item[15], false, item[8],item[10],Math.round(item[12]));
+            createUnit(unitWidth, Math.trunc(item[11]), customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], location, false, item[8],item[10],Math.round(item[12]));
             if (getTagUnit(item[10]) == null && addUnit(currentGroup)){
                 importUnits++;
             }
@@ -272,4 +279,6 @@ function loadFromDB(data) {
         $('#infoDialog').dialog('option', 'title', 'Imported');
         $("#infoDialog").dialog("open");
     });
+
+    saveToBrowser();
 }
