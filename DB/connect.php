@@ -6,14 +6,13 @@
 */
 
 //Server variables
-$connectionTable = 'dbo.alexmo_truck_manifest';
-$connectionServer = 'am-ax2012-db,56487';
+$connectionTable = 'dbo.alex_test_sample';
+$connectionServer = 'localHost';
 $connectionLogin = array(
-    "Database" => "AX2012DB",
-    "Uid" => "ax_worldship",
-    "PWD" => "0nlyworldship"
+    "Database" => "SampleDB",
+    "Uid" => "sa",
+    "PWD" => "test"
 );
-
 //set rows
 $getTrucksRows = array('TRUCKID', 'DLVMODEID');
 $getUnitsRows = array('TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES', 'WMSLOCATIONID');

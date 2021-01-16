@@ -541,7 +541,6 @@ function updateDrop(cName) {
  * Updates the selected unit based on inputted sidebar fields
  */
 function updateUnit() {
-    console.log(customers)
     if (editing == true) {
         let unUpdatedUnit;
         if (editingUnit == null) {
@@ -561,8 +560,8 @@ function updateUnit() {
         if (_drop.value != '') {
             removeUnit(unUpdatedUnit);
             unUpdatedUnit.set('remove', true);
-            let tempCustomer = getDropCustomer(_drop.value);
-            if (tempCustomer.names.includes(_customer.value)){
+            let tempCustomer = getDropCustomer(unUpdatedUnit.drop);
+            if (getCustomer(_customer.value) != null && tempCustomer.names.includes(_customer.value)){
                 addCheck = false;
             }
             let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, oldColor, oldFill, oldLeft, oldTop, _drop.value, _location.value, unUpdatedUnit.inCanvas, +_weight.value, addCheck);
@@ -864,7 +863,8 @@ function addCustomer(cName, cDrop, importing, importingCustomer) {
     if (cName != '') {
         if (!checkIfCustomerExists(cName)) {
             if (checkIfCustomerDropExists(cDrop) == '') {
-                customers.push({name: cName, rack: false, drop: cDrop, oDrop: cDrop, names: Array(cName)});
+                customers.push({name: cName, rack: false, drop: cDrop, oDrop: cDrop, names: Array()});
+                customers[customers.length-1].names.push(cName);
                 document.getElementById("drops").innerText = customers.length.toString();
                 sortCustomer();
                 updateRack();
