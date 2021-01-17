@@ -69,6 +69,10 @@ function unitText(cName, width, height, unitDrop, AE, text, rect, loc) {
         cName = '';
     }
 
+    if (_locToggle.checked != true){
+        loc = '';
+    }
+
     let custName = cName;
     let textAE = AE;
     let rectWidth = rect.width;

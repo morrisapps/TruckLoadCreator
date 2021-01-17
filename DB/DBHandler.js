@@ -221,7 +221,7 @@ function loadFromDB(data) {
         let physical = item[15].replace(/\D/g,'');
         let truckID = item[2].replace(/\D/g,'');
         let location = item[15];
-        if (parseInt(physical) == parseInt(truckID) || location == 'Shipping'){location = '';}
+        if (parseInt(physical) == parseInt(truckID) || location == 'SHIPPING'){location = '';}
 
         //Format pallet type to dimensions only
         let dimensions = item[13].replace(/[a-wy-z\s&\/\\#,+'"()$~%.:*?<>\-_{}]/gi, '');

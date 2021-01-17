@@ -7,7 +7,7 @@
 //***********Global variables***********
 
 //Version number
-let version = "1.0.5";
+let version = "1.0.6";
 
 //TruckID used for loading the appropriate size truck
 let truckID = '';
@@ -347,6 +347,7 @@ let editingUnit;
 let _tagBrackets = document.getElementById('unitBrackets');
 let _snapToggle = document.getElementById('snapToggle');
 let _custInUnits = document.getElementById('custInUnits');
+let _locToggle = document.getElementById('locToggle');
 
 //Reset options to default
 _tagBrackets.checked = false;

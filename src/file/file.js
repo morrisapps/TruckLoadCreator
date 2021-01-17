@@ -89,7 +89,7 @@ function getSaveContent() {
     });
 
     //Save options
-    let options = [_tagBrackets.checked, _custInUnits.checked];
+    let options = [_tagBrackets.checked, _custInUnits.checked, _locToggle.checked];
 
     //Create file name
     var date = new Date();
@@ -250,6 +250,7 @@ function load(content) {
     //Set options
     _tagBrackets.checked = content[7][0];
     _custInUnits.checked = content[7][1];
+    _locToggle.checked = content[7][2];
 
     //Remove all objects
     canvas.forEachObject(function (obj){
