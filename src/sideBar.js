@@ -48,6 +48,7 @@ function inputFieldsSelected(){
  */
 function optionsUpdate() {
     updateUnits(units);
+    listUnits();
     canvas.requestRenderAll();
     saveToBrowser();
 }
