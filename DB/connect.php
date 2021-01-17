@@ -13,6 +13,7 @@ $connectionLogin = array(
     "Uid" => "sa",
     "PWD" => "test"
 );
+
 //set rows
 $getTrucksRows = array('TRUCKID', 'DLVMODEID');
 $getUnitsRows = array('TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES', 'WMSLOCATIONID');

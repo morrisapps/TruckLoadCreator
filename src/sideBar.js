@@ -801,7 +801,7 @@ function getTagUnit(tag) {
  */
 function sortUnit() {
     units.sort(function (a, b) {
-        return a.drop - b.drop || a.width - b.width
+        return a.drop - b.drop || a.width - b.width || a.height - b.height
     });
     units.reverse();
     listUnits();

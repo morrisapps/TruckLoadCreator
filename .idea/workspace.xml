@@ -26,8 +26,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Added feature: Option to toggle location unit text on or off">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed bug: Unit list not updating when toggling options">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/connect.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,14 +176,7 @@
       <workItem from="1610240780365" duration="2512000" />
       <workItem from="1610494452221" duration="3905000" />
       <workItem from="1610555249580" duration="12745000" />
-      <workItem from="1610798589059" duration="12182000" />
-    </task>
-    <task id="LOCAL-00049" summary="Implemented barcode support">
-      <created>1607361337299</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1607361337299</updated>
+      <workItem from="1610798589059" duration="12960000" />
     </task>
     <task id="LOCAL-00050" summary="Fixed JsBarcode giving error if no text for barcode">
       <created>1607369244131</created>
@@ -520,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610889788691</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Fixed bug: Unit list not updating when toggling options">
+      <created>1610890401269</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1610890401269</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed bug: Updating units would change name to main customer name if customer has multiple names" />
     <MESSAGE value="Fixed bug: Selecting unit from list should remove any search text" />
     <MESSAGE value="Fixed bug: More jsdocs" />
     <MESSAGE value="Fixed bug: Cant update units twice if they are the only unique name on a customer with many names" />
@@ -576,7 +576,8 @@
     <MESSAGE value="Fixed units not updating" />
     <MESSAGE value="Keep in bounds fixed" />
     <MESSAGE value="Added feature: Option to toggle location unit text on or off" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added feature: Option to toggle location unit text on or off" />
+    <MESSAGE value="Fixed bug: Unit list not updating when toggling options" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug: Unit list not updating when toggling options" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -754,14 +755,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1610889823864">
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1610890405315">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609386879753" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1610889823864" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1610890405315" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605586559998" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
