@@ -26,10 +26,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed bug: Unit list not updating when toggling options">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Sorting units now sorts by customer drop, then width, then height">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/connect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/file/print.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/print.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +57,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="JupyterTrust" id="aa4ca16f-deed-4a48-b9e2-5a1184f94da4" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1jiCuFQUZBoxu6ySoWg35DFx1Jm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -69,10 +69,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Program Files/iis express/PHP/v7.4/php.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Python" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -176,14 +176,9 @@
       <workItem from="1610240780365" duration="2512000" />
       <workItem from="1610494452221" duration="3905000" />
       <workItem from="1610555249580" duration="12745000" />
-      <workItem from="1610798589059" duration="12960000" />
-    </task>
-    <task id="LOCAL-00050" summary="Fixed JsBarcode giving error if no text for barcode">
-      <created>1607369244131</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1607369244132</updated>
+      <workItem from="1610798589059" duration="16098000" />
+      <workItem from="1610975375589" duration="122000" />
+      <workItem from="1610975516803" duration="526000" />
     </task>
     <task id="LOCAL-00051" summary="Load Barcode now scales properly to fit">
       <created>1607395001554</created>
@@ -521,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610890401269</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Sorting units now sorts by customer drop, then width, then height">
+      <created>1610891618317</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1610891618317</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +554,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed bug: Selecting unit from list should remove any search text" />
     <MESSAGE value="Fixed bug: More jsdocs" />
     <MESSAGE value="Fixed bug: Cant update units twice if they are the only unique name on a customer with many names" />
     <MESSAGE value="JSDOCS fully implemented for functions" />
@@ -577,7 +578,8 @@
     <MESSAGE value="Keep in bounds fixed" />
     <MESSAGE value="Added feature: Option to toggle location unit text on or off" />
     <MESSAGE value="Fixed bug: Unit list not updating when toggling options" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug: Unit list not updating when toggling options" />
+    <MESSAGE value="Sorting units now sorts by customer drop, then width, then height" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sorting units now sorts by customer drop, then width, then height" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -619,11 +621,12 @@
     </state>
     <state x="65" y="64" width="1236" height="600" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1610143758710" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="651" y="170" key="FileChooserDialogImpl" timestamp="1605490412218">
+    <state x="651" y="170" key="FileChooserDialogImpl" timestamp="1610975964447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605306293228" />
     <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605490412218" />
+    <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1610975964447" />
     <state width="265" height="272" key="Git.Branch.Popup" timestamp="1605919012278">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -747,22 +750,23 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1605452282467" />
-    <state x="184" y="9" key="SettingsEditor" timestamp="1605377858516">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="259" y="13" key="SettingsEditor" timestamp="1610975835237">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1605377858516" />
+    <state x="259" y="13" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1610975835237" />
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog" timestamp="1604999034347">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1610890405315">
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1610891632547">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609386879753" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1610890405315" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1610891632547" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605586559998" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
@@ -782,6 +786,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="774" y="364" key="git4idea.ui.GitTagDialog/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604366798897" />
+    <state x="342" y="140" key="new project wizard" timestamp="1610976041615">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1610976041615" />
     <state x="476" y="231" width="672" height="677" key="run.anything.popup" timestamp="1608006049664">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
