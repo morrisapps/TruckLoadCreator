@@ -7,7 +7,7 @@
 //***********Global variables***********
 
 //Version number
-let version = "1.0.6";
+let version = "1.0.7";
 
 //TruckID used for loading the appropriate size truck
 let truckID = '';

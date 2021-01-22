@@ -6,14 +6,13 @@
 */
 
 //Server variables
-$connectionTable = 'dbo.alex_test_sample';
+$connectionTable = 'dbo.fakesample';
 $connectionServer = 'localHost';
 $connectionLogin = array(
     "Database" => "SampleDB",
     "Uid" => "sa",
     "PWD" => "test"
 );
-
 //set rows
 $getTrucksRows = array('TRUCKID', 'DLVMODEID');
 $getUnitsRows = array('TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES', 'WMSLOCATIONID');

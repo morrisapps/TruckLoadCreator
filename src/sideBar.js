@@ -695,7 +695,7 @@ function checkRack() {
     if (_drop.value == '') {
         alert("Drop cannot be empty or contain letters");
         _rack.checked = false;
-    } else if (!dropCustomer.names.includes(_customer.value) && dropCustomer.name != 'none') {
+    } else if (!dropCustomer.names == undefined && !dropCustomer.names.includes(_customer.value) && dropCustomer.name != 'none') {
         alert("Drop " + _drop.value + " is already assigned to " + dropCustomer.name + "\n");
         _drop.value = '';
         _rack.checked = false;

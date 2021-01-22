@@ -334,7 +334,7 @@ function keepInBounds(object) {
         var outBounds = outOfBounds(object);
         if (outBounds[0] == true) {
             object.set({
-                left: Math.round((canvas.getWidth() - 12) * invertedWidthRatio - object.getScaledWidth())
+                left: Math.round(canvas.getWidth() * invertedWidthRatio - (object.getScaledWidth() + 24))
             })
         }
         if (outBounds[1] == true) {
