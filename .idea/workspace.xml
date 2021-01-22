@@ -26,11 +26,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Removed do not display weight if any unit is zero weight (Requested)">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed Bug: Checking rack sometimes would not work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/connect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/zoom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/zoom.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,13 +179,6 @@
       <workItem from="1610798589059" duration="16098000" />
       <workItem from="1610975375589" duration="122000" />
       <workItem from="1610975516803" duration="526000" />
-    </task>
-    <task id="LOCAL-00052" summary="Implemented loader circle to display to the user while waiting for importing from database">
-      <created>1607626479931</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1607626479932</updated>
     </task>
     <task id="LOCAL-00053" summary="Updated Db connection">
       <created>1607727524958</created>
@@ -526,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611343606650</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Fixed Bug: Checking rack sometimes would not work">
+      <created>1611351666651</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1611351666651</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +554,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed bug: Cant update units twice if they are the only unique name on a customer with many names" />
     <MESSAGE value="JSDOCS fully implemented for functions" />
     <MESSAGE value="Row information moved to php/server side" />
     <MESSAGE value="Fixed bug not allowing importing to retrieve any trucks" />
@@ -582,7 +578,8 @@
     <MESSAGE value="Fixed bug: Unit list not updating when toggling options" />
     <MESSAGE value="Sorting units now sorts by customer drop, then width, then height" />
     <MESSAGE value="Removed do not display weight if any unit is zero weight (Requested)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed do not display weight if any unit is zero weight (Requested)" />
+    <MESSAGE value="Fixed Bug: Checking rack sometimes would not work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Bug: Checking rack sometimes would not work" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -762,14 +759,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1611343696371">
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1611351681748">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609386879753" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611343696371" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611351681748" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605586559998" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
@@ -793,11 +790,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1610976041615" />
-    <state x="476" y="231" width="672" height="677" key="run.anything.popup" timestamp="1608006049664">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1611351924429">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="476" y="231" width="672" height="677" key="run.anything.popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1608006049664" />
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1607202036483" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1611351924429" />
     <state x="623" y="226" width="945" height="679" key="search.everywhere.popup" timestamp="1610556165022">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

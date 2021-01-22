@@ -674,7 +674,9 @@ function setBundleCheck(cName) {
 function isBundlesChecked() {
     var exists = false;
     currentCustomerName = _customer.value;
-    exists = checkIfCustomerExists(currentCustomerName);
+    if (getCustUnit(currentCustomerName) != null){
+        exists = true;
+    }
     if (_rack.checked == true) {
         addCustomer(currentCustomerName, _drop.value, false);
         customers[getCustomerIndex(currentCustomerName)].rack = true;
