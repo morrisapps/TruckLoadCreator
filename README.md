@@ -1,3 +1,4 @@
+
 # TruckLoadCreator  
   
 This program is created for the purpose of creating a planned way of loading trailers from the driver and passenger sides (typically flatbed and barn door trailers) in a visual and efficient way. In addition, the secondary goal is to reduce errors (forgotten items in truck, weight restrictions, wrong drop sequence, etc) that one may encounter without this software.  
@@ -7,17 +8,16 @@ This program is created for the purpose of creating a planned way of loading tra
 <img src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/Import1.gif" />  
 </p> 
 
-<p style="float:left;">
-
-
+<p align="left">
 <b>Drag and Drop support for unit creation:   </b>
-<img src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/DragDrop1.gif" />  
+<img align="right" src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/DragDrop1.gif"  />    
+
 </p> 
 
-<p style="float:right;">
 <b>Easy customer drop change: </b>
-<img src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/CUSTOMERSWAP1.gif" />  
+<img align="left" src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/CUSTOMERSWAP1.gif" />
 
+<p align="right">
 
 <b>Rack, comments, and straps are tools to utilize: </b>
 <img src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/TOOLS1.gif" />  
@@ -25,6 +25,7 @@ This program is created for the purpose of creating a planned way of loading tra
 </p> 
 
 <p style="float:right;">
+
 <b>Update the unit:   </b>
 <img src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/UPDATE1.gif" />  
 </p> 
@@ -36,10 +37,9 @@ This program is created for the purpose of creating a planned way of loading tra
 
 
 </div>
-<p style="text-align: center; position:relative; top:10px;">
-The project leverages the following MIT licensed projects: jQueryUI, jQuery, Bootstrap, Sortable, Drawer, Fabric JS, JsBarcode, and Open Iconic.  
+<p align="center">The project leverages the following MIT licensed projects: jQueryUI, jQuery, Bootstrap, Sortable, Drawer, Fabric JS, JsBarcode, and Open Iconic.  
 For more information on these projects, please see LICENSE.MD  
-  
-TruckLoadCreator is licensed under MIT.
-  </p>
+</p> 
+<p align="center">TruckLoadCreator is licensed under MIT.</p>
+
 
