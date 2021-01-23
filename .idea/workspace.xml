@@ -26,7 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed Bug: Checking rack sometimes would not work">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Updating readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -190,13 +190,6 @@
       <workItem from="1610798589059" duration="16098000" />
       <workItem from="1610975375589" duration="122000" />
       <workItem from="1610975516803" duration="526000" />
-    </task>
-    <task id="LOCAL-00053" summary="Updated Db connection">
-      <created>1607727524958</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1607727524993</updated>
     </task>
     <task id="LOCAL-00054" summary="Updated FabricJS to 4.2">
       <created>1607784842626</created>
@@ -534,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611351666651</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Updating readme">
+      <created>1611355939108</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1611355939108</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +580,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JSDOCS fully implemented for functions" />
     <MESSAGE value="Row information moved to php/server side" />
     <MESSAGE value="Fixed bug not allowing importing to retrieve any trucks" />
     <MESSAGE value="Fixed bud saying drop error when adding more than one unit to a customer" />
@@ -605,7 +604,8 @@
     <MESSAGE value="Sorting units now sorts by customer drop, then width, then height" />
     <MESSAGE value="Removed do not display weight if any unit is zero weight (Requested)" />
     <MESSAGE value="Fixed Bug: Checking rack sometimes would not work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Bug: Checking rack sometimes would not work" />
+    <MESSAGE value="Updating readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating readme" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -785,14 +785,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1611351681748">
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1611355948727">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609386879753" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611351681748" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611355948727" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605586559998" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />
