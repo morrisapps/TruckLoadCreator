@@ -20,7 +20,6 @@ This program is created for the purpose of creating a planned way of loading tra
 </p>
 
 <p align="left">
-&nbsp;
 <img
 src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/CUSTOMERSWAP1.gif" /> 
 <b>&nbsp;&nbsp;&nbsp;&nbsp;Easy customer drop change </b> 
