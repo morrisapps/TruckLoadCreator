@@ -27,7 +27,7 @@ src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/CUSTOMERSWAP
 <b>&nbsp;&nbsp;&nbsp;&nbsp;Easy customer drop change </b> 
 </p>
 
-<p align="center">&nbsp; </P>
+
 
 <p align="right">
 <b>Rack, comments, and straps are tools to utilize&nbsp;&nbsp;&nbsp;&nbsp; </b>
