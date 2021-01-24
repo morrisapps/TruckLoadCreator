@@ -26,9 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="README Updated">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="README V2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/trucks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,13 +192,6 @@
       <workItem from="1610798589059" duration="16098000" />
       <workItem from="1610975375589" duration="122000" />
       <workItem from="1610975516803" duration="526000" />
-    </task>
-    <task id="LOCAL-00055" summary="Update control items positions due to fabric 4.2">
-      <created>1607794159612</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1607794159612</updated>
     </task>
     <task id="LOCAL-00056" summary="Fix printing on chrome based browsers">
       <created>1607870729399</created>
@@ -534,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611435085905</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="README V2">
+      <created>1611442501059</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1611442501063</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +582,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed bug not allowing importing to retrieve any trucks" />
     <MESSAGE value="Fixed bud saying drop error when adding more than one unit to a customer" />
     <MESSAGE value="Fixed bug Not allowing duplicated units if customer and tag was the same" />
     <MESSAGE value="Fixed importing still not working for units that have the same id" />
@@ -605,7 +606,8 @@
     <MESSAGE value="Fixed Bug: Checking rack sometimes would not work" />
     <MESSAGE value="Updating readme" />
     <MESSAGE value="README Updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="README Updated" />
+    <MESSAGE value="README V2" />
+    <option name="LAST_COMMIT_MESSAGE" value="README V2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
@@ -785,14 +787,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1604999034347" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1611435104404">
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2" timestamp="1611442506086">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609386879753" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-603.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1606141291344" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-650.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1604534971523" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611435104404" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611442506086" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-557.1080.1880@0.0.1920.1040" timestamp="1605586559998" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-603.1080.1880@0.0.1920.1040" timestamp="1604352865263" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-650.1080.1880@0.0.1920.1040" timestamp="1604927483261" />

@@ -37,7 +37,7 @@ function truckLoad(id) {
         truck45(truckID);
     } else if (truckID == "9002" || truckID == "1303" || truckID == "1603") {
         truck35(truckID);
-    } else if (truckID == "1903" || truckID == 'Custom Flatbed' || truckID == '46 Flatbed' || truckID == '48 Flatbed' || truckID == "110" || truckID == "801" || truckID == "802" || truckID == "RWW114" || truckID == '2003' || truckID == '2004' || truckID == '2005' || truckID == '2006' || truckID == '2007') {
+    } else if (truckID == "1903" || truckID == 'Custom Flatbed' || truckID == '46 Flatbed' || truckID == '48 Flatbed' || truckID == "0110" || truckID == "0801" || truckID == "0802" || truckID == "RWW114" || truckID == '2003' || truckID == '2004' || truckID == '2005' || truckID == '2006' || truckID == '2007'|| truckID == '2008') {
         truckCurtain(truckID);
     } else {
         truckCustom();
@@ -322,7 +322,7 @@ function truckCurtain(truckid) {
         botMiddleWeightRegion.set({left: 626, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
         botRightWeightRegion.set({left: 1010, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
         door1 = '90"H - 90"D (Full flatbed) - 48\'W';
-    } else if (truckid == "110" || truckid == "801" || truckid == "802" || truckid == '2003' || truckid == '2004' || truckid == '2005' || truckid == '2006' || truckid == '2007') {
+    } else if (truckid == "0110" || truckid == "0801" || truckid == "0802" || truckid == '2003' || truckid == '2004' || truckid == '2005' || truckid == '2006' || truckid == '2007' || truckid == "Custom Flatbed") {
         //set weight text location
         topLeftWeightText.set('left', 206).setCoords();
         topMiddleWeightText.set('left', 602).setCoords();
@@ -337,7 +337,7 @@ function truckCurtain(truckid) {
         botLeftWeightRegion.set({left: 206, top: 565, width: 204 * 2, height: 162 * 2,}).setCoords();
         botMiddleWeightRegion.set({left: 602, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
         botRightWeightRegion.set({left: 998, top: 565, width: 204 * 2, height: 162 * 2,}).setCoords();
-        if (truckid == '110' || truckid == '801' || truckid == '802'){
+        if (truckid == '0110' || truckid == '0801' || truckid == '0802'){
             door1 = '95"H - 90"D (Full flatbed) - 3x16\'W';
         } else if (truckid == '2003'){
             door1 = '95"H - 90"D (Roll-Tite) - 3x16\'W';
@@ -379,22 +379,6 @@ function truckCurtain(truckid) {
             selectable: false
         });
         midLine.set({x1: 24*2, y1: 400, x2: 1200 - 48, y2: 400,});
-    } else if (truckid == "Custom Flatbed") {
-        vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {
-            stroke: 'black',
-            strokeWidth: 2,
-            selectable: true,
-            lockMovementY: true,
-            line: true
-        });
-        vLine5 = new fabric.Line([600 * 2, 75, 600 * 2, 725], {
-            stroke: 'black',
-            strokeWidth: 2,
-            selectable: true,
-            lockMovementY: true,
-            line: true
-        });
-        midLine.set({x1: 24*2, y1: 400, x2: 1200, y2: 400});
     } else if (truckid == "48 Flatbed") {
         vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         vLine5 = new fabric.Line([600 * 2, 75, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
