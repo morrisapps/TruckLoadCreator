@@ -6,6 +6,11 @@ This program is created for the purpose of creating a planned way of loading tra
 <p align="center">&nbsp; </P>
 
 <p align="center">
+<img src="https://raw.githubusercontent.com/morrisapps/TruckLoadCreator/PreDev/TruckWriteGifs/TruckLoad.PNG" />  
+</p> 
+<p align="center">&nbsp; </P>
+
+<p align="center">
 <b>Importing from a database   </b>
 </p>
 <p align="center">
