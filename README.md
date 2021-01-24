@@ -11,6 +11,7 @@ This program is created for the purpose of creating a planned way of loading tra
 <p align="center">
 <img src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/Import1.gif" />  
 </p> 
+<p align="center">&nbsp; </P>
 
 <p align="center">
 <b>Drag and Drop support for unit creation</b>
@@ -18,6 +19,7 @@ This program is created for the purpose of creating a planned way of loading tra
 <p align=center>
 <img  src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/DragDrop1.gif"/> 
 </p>
+<p align="center">&nbsp; </P>
 
 <p align="left">
 <img
@@ -25,17 +27,20 @@ src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/CUSTOMERSWAP
 <b>&nbsp;&nbsp;&nbsp;&nbsp;Easy customer drop change </b> 
 </p>
 
+<p align="center">&nbsp; </P>
 
 <p align="right">
 <b>Rack, comments, and straps are tools to utilize&nbsp;&nbsp;&nbsp;&nbsp; </b>
 <img src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/TOOLS1.gif" />  
 </p> 
 
+<p align="center">&nbsp; </P>
 
 <p align="center">
 <b>Update the unit   </b></p>
 <p align="center"><img src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/UPDATE1.gif" />  
 </p>
+<p align="center">&nbsp; </P>
 
 <p align="center">
 <b>Many trailer sizes and types    </b></p>
