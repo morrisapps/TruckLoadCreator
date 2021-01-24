@@ -31,7 +31,7 @@ src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/CUSTOMERSWAP
 
 
 <p align="right">
-<b>Rack, comments, and straps are tools to utilize&nbsp;&nbsp; </b>
+<b>Tools to utilize&nbsp;&nbsp;&nbsp;&nbsp; </b>
 <img src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/TOOLS1.gif" />  
 </p> 
 
