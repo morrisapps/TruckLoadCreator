@@ -109,7 +109,7 @@ function updateRack() {
             let custText = "(" + customers[i].drop + ") " + customers[i].name;
             let inRack = '';
             if (customers[i].rack == true){
-                inRack = ' -RK';
+                if (URLlocation != 3){inRack = ' -RK';}
                 rack.item(i+2).set({fontWeight: 'bold'});
             }else {
                 rack.item(i+2).set({fontWeight: 'normal'});
