@@ -11,11 +11,15 @@ function printPageArea() {
     //Checks if any units are not yet in the the truck from unit list
     let unitsNotInResponse = true;
     let weightZeroResponse = true;
+    let heightCheckResponse = true;
+    let weightCheckResponse = true;
     let weightZeroUnits = [];
     let weightZeroText = '';
+    let heightCheck = true;
     if (unitsNotInCanvas > 0){
         unitsNotInResponse = confirm("There are " + unitsNotInCanvas.toString() + " unit(s) from unit list not in the truck. \n\nContinue with print?");
     }
+    //Checks if any units have a zero weight
     units.forEach(function (unit){
         if (unit.inCanvas && unit.weight <= 2){
             weightZeroUnits.push(unit);
@@ -25,7 +29,14 @@ function printPageArea() {
     if (weightZeroUnits.length > 0){
         weightZeroResponse = confirm(weightZeroUnits.length.toString() + ' units with zero weight. \n Truck weight might be inaccurate. \n\nContinue with print?\n\n' + weightZeroText);
     }
-    if (unitsNotInResponse && weightZeroResponse){
+    //Checks if any height counters are red.
+    topCounters.forEach(function (line){if (line.fill == 'red'){heightCheck = false;}});
+    botCounters.forEach(function (line){if (line.fill == 'red'){heightCheck = false;}});
+    if (!heightCheck){heightCheckResponse = confirm('Some height counter(s) exceed the height of '+ (truck.getHeight()+5) + '\n\nContinue with print?\n\n');}
+
+    if (_tWeight.style.color == "red"){weightCheckResponse = confirm('Total weight exceeds maximum of '+ (truck.getWeight()) + '\n\nContinue with print?\n\n');}
+
+    if (unitsNotInResponse && weightZeroResponse && heightCheckResponse && weightCheckResponse){
         //Remove Height Lines from print
         var i = 0;
         while (i <= 11) {
@@ -33,6 +44,10 @@ function printPageArea() {
             botLines[i].opacity = 0;
             i++;
         }
+
+        //Set all height counters to grey
+        topCounters.forEach(function (line){line.set({restorefill: line.fill}); line.set({fill: '#4c4c4c'});});
+        botCounters.forEach(function (line){line.set({restorefill: line.fill}); line.set({fill: '#4c4c4c'});});
 
         //Hide Door Text
         doorText1.opacity = 0;
@@ -81,6 +96,12 @@ function printPageArea() {
             WinPrint.focus();
             WinPrint.print();
             WinPrint.close();
+
+            //Restore height counter colors
+            topCounters.forEach(function (line){line.set("fill", line.restorefill);});
+            botCounters.forEach(function (line){line.set("fill", line.restorefill);});
+
+            canvas.renderAll();
 
             saveToBrowser();
             //Delay confirm dialog to fix chrome not closing winPrint before confirm pop up

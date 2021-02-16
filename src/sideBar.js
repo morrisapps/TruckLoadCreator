@@ -466,8 +466,8 @@ function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, 
             }
         }
     }
-    weightCount = weightCount + Math.round(weight);
-    _tWeight.innerText = weightCount;
+
+    truckWeightUpdate(Math.round(weight))
 
     currentGroup.hoverCursor = 'move';
     currentGroup.moveCursor = 'grabbing';
@@ -836,10 +836,9 @@ function removeUnit(unit) {
             document.getElementById("tUnits").innerText = units.length.toString();
             document.getElementById("drops").innerText = customers.length.toString();
             sortUnit();
-            weightCount = weightCount - unit.weight;
-            _tWeight.innerText = weightCount;
             saveToBrowser();
         }
+        truckWeightUpdate(-(unit.weight));
         if (getCustUnit(unit.customer) == null) {
             removeCustomer(unit.customer);
             updateRack();

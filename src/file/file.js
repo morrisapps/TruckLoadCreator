@@ -164,6 +164,8 @@ function updateUnits(updateUnits) {
     createCounters();
     weightCount = 0;
     _tWeight.innerText = '';
+    _mWeight.innerText = '';
+    _hWeight.innerText = '';
 
     topUnits.forEach(function (tUnit) {
         tUnit = new Array();

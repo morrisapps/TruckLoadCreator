@@ -65,7 +65,8 @@ $(document).ready(function () {
     canvas.requestRenderAll();
 
     //Checks if previous session was saved, and if not asks to restore.
-    if (!loadFromBrowser()){truckLoad();}
+    if (!loadFromBrowser()){truckLoad('start');}
+    truckListUpdate(URLlocation);
 });
 
 /**
@@ -201,6 +202,13 @@ function heightCount(target, line, lineCounter, lineUnits) {
     lineCounter.text = counter.toString() + '\"';
     if (counter == 0) {
         lineCounter.text = '';
+    }
+    if (truck.getHeight() > 0 && counter > truck.getHeight() && counter <= truck.getHeight()+5){
+        lineCounter.set({fill: '#d35400'});
+    } else if (truck.getHeight() > 0 && counter > truck.getHeight()+5){
+        lineCounter.set({fill: 'red'});
+    } else {
+        lineCounter.set({fill: '#4c4c4c'});
     }
 }
 

@@ -7,7 +7,13 @@
 //***********Global variables***********
 
 //Version number
-let version = "1.0.8";
+let version = "1.0.9";
+
+//truck is an instance of Truck class that represents the current truck template
+let truck = new Truck("start",105,65000,45000,53,48,48,48,48,48,48,16,16,16,16,16,16,false);
+
+//truck array of all instances of the truck class
+let truckList = [];
 
 //TruckID used for loading the appropriate size truck
 let truckID = '';
@@ -309,9 +315,11 @@ let botRightWeightText = new fabric.IText('', {
 });
 let weightTexts = [topLeftWeightText, topMiddleWeightText, topRightWeightText, botLeftWeightText, botMiddleWeightText, botRightWeightText];
 
-//Total Weight of truck
+//Total Weight and maximum of truck
 let weightCount = 0;
 let _tWeight = document.getElementById('tWeight');
+let _mWeight = document.getElementById('mWeight');
+let _hWeight = document.getElementById('hWeight');
 
 //Variables representing unit/customer input fields
 let _width = document.getElementById('width');
