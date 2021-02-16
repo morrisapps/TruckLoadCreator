@@ -1211,7 +1211,9 @@ function truckListUpdate(location){
  * @param {int} weightChange - The weight amount that will be added or subtracted.
  */
 function truckWeightUpdate(weightChange){
-    weightCount = weightCount + weightChange;
+    if (!isNaN(weightChange)){
+        weightCount = weightCount + (weightChange);
+    }
     _tWeight.innerText = weightCount;
     if (truck.getWeight() > 0 && truck.getWeight() != "?" && (weightCount > truck.getWeight())){_tWeight.style.color="red";} else {_tWeight.style.color="black";}
 }
