@@ -324,7 +324,8 @@ function handleDrop(e) {
                     _location.value,
                     true,
                     +_weight.value,
-                    true
+                    true,
+                    _striped.checked
                 );
                 if (addError == "") {
                     addCustomer(_customer.value, _drop.value, false);

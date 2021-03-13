@@ -267,9 +267,10 @@ function checkIfCustomerDropExists(cName, drop) {
  * @param {boolean} inCanvas - Set true if unit is in canvas
  * @param weight - The weight of the unit
  * @param {boolean} check - True to check if customer exists, false to not check
+ * @param {boolean} striped - Flag to signal if unit background is striped in unit
  * @returns {string} addError - The error message if the add does not succeed, blank if succeeded
  */
-function Add(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, weight, check) {
+function Add(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, weight, check, striped) {
     var custName = cName;
     var unitid = custName + AE;
     var addError = "";
@@ -307,13 +308,13 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
     }
     if (addError == "" && response == true) {
         if (inCanvas) {
-            createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, cName, AE, weight);
+            createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, cName, AE, weight, striped);
             canvas.add(currentGroup);
             canvas.setActiveObject(currentGroup);
             addUnit(currentGroup);
             keepInBounds(currentGroup);
         } else {
-            createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, cName, AE, weight);
+            createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, cName, AE, weight, striped);
             addUnit(currentGroup);
         }
         midLine.bringToFront();
@@ -480,6 +481,7 @@ function setUnitFields(unit) {
     _weight.value = unit.weight;
     currentCustomerName = unit.customer.toString();
     currentDrop = unit.drop;
+    _striped.checked = unit.striped;
 }
 
 /**
@@ -527,6 +529,7 @@ function deselectObject(obj) {
             currentCustomerName = selectCurrentCustomer;
             setBundleCheck(currentCustomerName);
             editing = false;
+            _striped.checked = false;
         }
         unitSelected = false;
         listCustomer();

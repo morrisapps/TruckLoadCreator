@@ -7,7 +7,7 @@
 //***********Global variables***********
 
 //Version number
-let version = "1.0.9";
+let version = "1.1.0";
 
 //truck is an instance of Truck class that represents the current truck template
 let truck = new Truck("start",105,65000,45000,53,48,48,48,48,48,48,16,16,16,16,16,16,false);
@@ -330,9 +330,26 @@ let _tag = document.getElementById('tag');
 let _rack = document.getElementById('hasBundle');
 let _location = document.getElementById('location');
 let _weight = document.getElementById('weight');
+let _striped = document.getElementById('isStriped');
 
 //Side bar unit preview
 let _sideUnit = document.getElementById('sideUnit');
+
+//Stripe background image
+let stripePattern = 'white';
+fabric.Image.fromURL('./src/resources/img/stripe.png', function(img) {
+    var patternSourceCanvas = new fabric.StaticCanvas()
+    patternSourceCanvas.add(img)
+    //patternSourceCanvas.setBackgroundColor(imgColor, patternSourceCanvas.renderAll.bind(patternSourceCanvas))
+
+    patternSourceCanvas.renderAll();
+
+    stripePattern = new fabric.Pattern({
+        source: patternSourceCanvas.getElement(),
+        repeat: 'repeat'
+    })
+
+});
 
 
 //These variables are used for selecting objects and deselecting

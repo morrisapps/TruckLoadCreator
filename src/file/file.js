@@ -43,6 +43,7 @@ function getSaveContent() {
             customerText: unit.customerText,
             fullAE: unit.fullAE,
             weight: unit.weight,
+            striped: unit.striped
         });
         savedUnits.push(saved);
     });
@@ -190,7 +191,7 @@ function updateUnits(updateUnits) {
     //Restore units
     updateUnits.forEach(function (unit) {
         if (unit != null) {
-            createUnit(unit.unitWidth, unit.unitHeight, unit.customer, unit.ae, unit.color, unit.fill, unit.left, unit.top, unit.drop, unit.location, unit.inCanvas, unit.customerText, unit.fullAE, unit.weight);
+            createUnit(unit.unitWidth, unit.unitHeight, unit.customer, unit.ae, unit.color, unit.fill, unit.left, unit.top, unit.drop, unit.location, unit.inCanvas, unit.customerText, unit.fullAE, unit.weight, unit.striped);
             units.push(currentGroup);
             if (currentGroup.inCanvas == true) {
                 canvas.add(currentGroup);
@@ -242,11 +243,12 @@ function load(content) {
     //Reset all input to blank
     _customer.value = '';
     _drop.value = '';
-    _rack.value = false;
+    _rack.checked = false;
     _tag.value = '';
     _height.value = '';
     _width.value = '';
     _weight.value = '';
+    _striped.checked = false;
     createSide();
 
     //Set options

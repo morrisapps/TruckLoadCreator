@@ -5,7 +5,7 @@
  */
 
 //Adding side unit preview on first launch
-AddSide(+_width.value, +_height.value, _customer.value, _tag.value, currentColor, currentFill, _drop.value, _location.value);
+AddSide(+_width.value, +_height.value, _customer.value, _tag.value, currentColor, currentFill, _drop.value, _location.value, _striped.checked);
 _sideUnit.src = currentGroup.toDataURL();
 _sideUnit.height = +_height.value;
 _sideUnit.width = +_width.value;
@@ -397,8 +397,12 @@ function unitText(cName, width, height, unitDrop, AE, text, rect, loc) {
  * @param customerText - The displayed name of the customer in the unit
  * @param fullAE - The full tag number
  * @param weight - The weight of the unit
+ * @param {boolean} striped - Flag to signal if unit background is striped
  */
-function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, customerText, fullAE, weight) {
+function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, customerText, fullAE, weight, striped) {
+
+    if (striped) {fill = stripePattern;}
+
     var custName = cName;
     var rect = new fabric.Rect({
         width: width * 2 - 4,
@@ -447,7 +451,8 @@ function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, 
         inCanvas: inCanvas,
         customerText: customerText,
         fullAE: fullAE,
-        weight, weight
+        weight: weight,
+        striped: striped
     });
 
     //Place unit text more centered and unit border more closer to text
@@ -489,9 +494,10 @@ function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, 
  * @param fill - The background color of the preview unit
  * @param unitDrop - The drop number of the customer of the preview unit
  * @param location - The physical location of the preview unit
+ * @param {boolean} striped - Flag to signal if unit background is striped
  */
-function AddSide(width, height, custName, AE, color, fill, unitDrop, location) {
-    createUnit(width, height, custName, AE, color, fill, 0, 0, unitDrop, location, true, custName, AE, 0);
+function AddSide(width, height, custName, AE, color, fill, unitDrop, location, striped) {
+    createUnit(width, height, custName, AE, color, fill, 0, 0, unitDrop, location, true, custName, AE, 0, striped);
     canvasSide.add(currentGroup);
     canvasSide.centerObject(currentGroup);
 }
@@ -569,7 +575,7 @@ function updateUnit() {
             if (getCustomer(_customer.value) != null && tempCustomer.names.includes(_customer.value)){
                 addCheck = false;
             }
-            let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, oldColor, oldFill, oldLeft, oldTop, _drop.value, _location.value, unUpdatedUnit.inCanvas, +_weight.value, addCheck);
+            let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, oldColor, oldFill, oldLeft, oldTop, _drop.value, _location.value, unUpdatedUnit.inCanvas, +_weight.value, addCheck, _striped.checked);
             if (AddError == '') {
                 updateCount(canvas.getActiveObject());
                 canvas.remove(unUpdatedUnit);
@@ -638,7 +644,7 @@ function onNameChange(list) {
 function createSide() {
     canvasSide.remove(currentGroup);
     currentCustomerName = _customer.value;
-    AddSide(+_width.value, +_height.value, currentCustomerName, _tag.value, "black", "white", _drop.value, _location.value);
+    AddSide(+_width.value, +_height.value, currentCustomerName, _tag.value, "black", "white", _drop.value, _location.value, _striped.checked);
     canvasSide.setHeight(currentGroup.height);
     canvasSide.setWidth(+_width.value);
     _sideUnit.src = currentGroup.toDataURL();
