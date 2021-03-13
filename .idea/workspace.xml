@@ -26,9 +26,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed documentation for truck type">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed bug: Unable to remove stripes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,14 +205,7 @@
       <workItem from="1614203825505" duration="1521000" />
       <workItem from="1614366841158" duration="626000" />
       <workItem from="1614796359066" duration="785000" />
-      <workItem from="1615633985687" duration="19173000" />
-    </task>
-    <task id="LOCAL-00063" summary="Fixed empty trucks dialog">
-      <created>1608471499809</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1608471499818</updated>
+      <workItem from="1615633985687" duration="19529000" />
     </task>
     <task id="LOCAL-00064" summary="Fixed empty trucks dialog">
       <created>1608471612935</created>
@@ -550,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615664012667</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="Fixed bug: Unable to remove stripes">
+      <created>1615665455723</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1615665455723</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,7 +596,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sort now sorts by customer and then by width of each unit" />
     <MESSAGE value="Location is now enabled" />
     <MESSAGE value="Fixed bug: Importing would not work twice" />
     <MESSAGE value="Do not display location if in correct location" />
@@ -621,7 +620,8 @@
     <MESSAGE value="Fixed weight updating" />
     <MESSAGE value="Added options for units to have stripes." />
     <MESSAGE value="Fixed documentation for truck type" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed documentation for truck type" />
+    <MESSAGE value="Fixed bug: Unable to remove stripes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug: Unable to remove stripes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="723" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612857933532">
