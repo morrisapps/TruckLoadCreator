@@ -575,7 +575,7 @@ function updateUnit() {
             if (getCustomer(_customer.value) != null && tempCustomer.names.includes(_customer.value)){
                 addCheck = false;
             }
-            let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, oldColor, oldFill, oldLeft, oldTop, _drop.value, _location.value, unUpdatedUnit.inCanvas, +_weight.value, addCheck, _striped.checked);
+            let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, oldColor, 'white', oldLeft, oldTop, _drop.value, _location.value, unUpdatedUnit.inCanvas, +_weight.value, addCheck, _striped.checked);
             if (AddError == '') {
                 updateCount(canvas.getActiveObject());
                 canvas.remove(unUpdatedUnit);
@@ -603,7 +603,6 @@ function updateUnit() {
         _location.value = '';
         _tag.value = '';
     }
-    console.log(customers)
 }
 
 /**
