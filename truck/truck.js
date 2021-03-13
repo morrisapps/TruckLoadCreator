@@ -292,8 +292,8 @@ class Truck {
         this.w6 = w6;
     }
     /**
-     * Gets the boolean if truck is flatbed.
-     * @returns {boolean} - Returns true if flatbed. Returns false if not.
+     * Gets the int representing which trailer type it is.
+     * @returns {int} - 1 = Flatbed, 2 = Roll-Tite, 3 = Curtain, 4 = Conestoga
      */
     getType(){
         return this.type;

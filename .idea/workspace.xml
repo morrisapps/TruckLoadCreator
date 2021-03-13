@@ -26,16 +26,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed weight updating">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/DBHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/file.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/handle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/handle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unitControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/unitControl.js" afterDir="false" />
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Added options for units to have stripes.">
+      <change beforePath="$PROJECT_DIR$/truck/truck.js" beforeDir="false" afterPath="$PROJECT_DIR$/truck/truck.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,14 +204,7 @@
       <workItem from="1614203825505" duration="1521000" />
       <workItem from="1614366841158" duration="626000" />
       <workItem from="1614796359066" duration="785000" />
-      <workItem from="1615633985687" duration="17679000" />
-    </task>
-    <task id="LOCAL-00061" summary="Syntax formatting">
-      <created>1608330277696</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1608330277697</updated>
+      <workItem from="1615633985687" duration="17872000" />
     </task>
     <task id="LOCAL-00062" summary="Fixed import still allowing different import trucks after loading from save.">
       <created>1608331575125</created>
@@ -557,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613483764034</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="Added options for units to have stripes.">
+      <created>1615663792553</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1615663792553</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +595,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Previous version implemented" />
     <MESSAGE value="Jquery dropdown menu maxheight set to 300 through css" />
     <MESSAGE value="Sort now sorts by customer and then by width of each unit" />
     <MESSAGE value="Location is now enabled" />
@@ -628,7 +619,8 @@
     <MESSAGE value="Updated for additional trailers" />
     <MESSAGE value="Removed -rk text from location 3" />
     <MESSAGE value="Fixed weight updating" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed weight updating" />
+    <MESSAGE value="Added options for units to have stripes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added options for units to have stripes." />
   </component>
   <component name="WindowStateProjectService">
     <state x="370" y="27" key="#CLI_Interpreters" timestamp="1605490416692">
