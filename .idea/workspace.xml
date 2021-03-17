@@ -26,9 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed bug: Unable to remove stripes">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Update striped graphic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/file/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/file.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +78,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\SYNC\js-truckwrite\src\resources\bootstrap" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\SYNC\js-truckwrite\truck" />
       <recent name="C:\SYNC\js-truckwrite\src\file" />
@@ -83,22 +88,8 @@
       <recent name="D:\SYNC\js-truckwrite\src" />
       <recent name="D:\SYNC\js-truckwrite\src\resources" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\SYNC\js-truckwrite\src\resources\bootstrap" />
-    </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/js-truckwrite/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -205,14 +196,10 @@
       <workItem from="1614203825505" duration="1521000" />
       <workItem from="1614366841158" duration="626000" />
       <workItem from="1614796359066" duration="785000" />
-      <workItem from="1615633985687" duration="19529000" />
-    </task>
-    <task id="LOCAL-00064" summary="Fixed empty trucks dialog">
-      <created>1608471612935</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1608471612936</updated>
+      <workItem from="1615633985687" duration="20867000" />
+      <workItem from="1615841451522" duration="138000" />
+      <workItem from="1615918681736" duration="2018000" />
+      <workItem from="1615990874305" duration="4452000" />
     </task>
     <task id="LOCAL-00065" summary="Fixed empty truck dialog">
       <created>1608471628515</created>
@@ -550,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615665455723</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="Update striped graphic">
+      <created>1615665616842</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1615665616842</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,7 +590,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Location is now enabled" />
     <MESSAGE value="Fixed bug: Importing would not work twice" />
     <MESSAGE value="Do not display location if in correct location" />
     <MESSAGE value="Reverted zoom changes" />
@@ -621,7 +614,8 @@
     <MESSAGE value="Added options for units to have stripes." />
     <MESSAGE value="Fixed documentation for truck type" />
     <MESSAGE value="Fixed bug: Unable to remove stripes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug: Unable to remove stripes" />
+    <MESSAGE value="Update striped graphic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update striped graphic" />
   </component>
   <component name="WindowStateProjectService">
     <state x="723" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612857933532">
@@ -660,14 +654,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="259" y="13" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1610975835237" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1615664021059">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1615665623081">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1609386879753" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1080.13.1080.1880/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607395007014" />
     <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611519057453" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.13.1080.1880/1920.0.1920.1040@0.0.1920.1040" timestamp="1607361430614" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615664021059" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615665623081" />
     <state x="553" y="304" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608468291699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -680,11 +674,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1610976041615" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1611351924429">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="476" y="231" key="run.anything.popup" timestamp="1615993525674">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="476" y="231" width="672" height="677" key="run.anything.popup/-1080.-557.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1608006049664" />
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1611351924429" />
+    <state x="476" y="231" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615993525674" />
     <state x="623" y="226" width="945" height="679" key="search.everywhere.popup" timestamp="1610556165022">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

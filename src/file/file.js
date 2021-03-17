@@ -97,16 +97,20 @@ function getSaveContent() {
     let loadNumber = '';
     let modeNumber = '';
     let trailerNumber = '';
+    let driverName = '';
     if (loadTextEdit.text != "Enter load") {
-        loadNumber = loadTextEdit.text + '_';
+        loadNumber = loadTextEdit.text + " – ";
     }
     if (modeTextEdit.text != "Enter mode") {
-        modeNumber = modeTextEdit.text + '_';
+        modeNumber = modeTextEdit.text + " – ";
     }
     if (trailerTextEdit.text != "Enter trailer") {
-        trailerNumber = trailerTextEdit.text + '_';
+        trailerNumber = trailerTextEdit.text + " – ";
     }
-    let fileName = modeNumber + loadNumber + trailerNumber + date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getHours() + 'h' + date.getMinutes() + 'm';
+    if (driverTextEdit.text != "Enter driver") {
+        driverName = driverTextEdit.text + " – ";
+    }
+    let fileName = modeNumber + loadNumber + trailerNumber + driverName + (date.getMonth() + 1) + "." + date.getDate() + "." + date.getFullYear();
 
     //Bundles all content
     let saveContents = [
