@@ -401,7 +401,8 @@ function unitText(cName, width, height, unitDrop, AE, text, rect, loc) {
  */
 function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, customerText, fullAE, weight, striped) {
 
-    if (striped) {fill = stripePattern;}
+    let dashArray = [0];
+    if (striped) {fill = stripePattern; dashArray = [15, 5];}
 
     var custName = cName;
     var rect = new fabric.Rect({
@@ -410,6 +411,7 @@ function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, 
         fill: fill,
         stroke: color,
         strokeWidth: 2,
+        strokeDashArray: dashArray,
         originX: 'center',
         originY: 'center',
         rx: 5,
