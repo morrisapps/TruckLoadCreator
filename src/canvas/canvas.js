@@ -66,6 +66,7 @@ $(document).ready(function () {
 
     //Stripe background image
     fabric.Image.fromURL('./src/resources/img/stripe.png', function(img) {
+        img.scaleToHeight(151.5);
         var patternSourceCanvas = new fabric.StaticCanvas()
         patternSourceCanvas.add(img)
         patternSourceCanvas.renderAll();
