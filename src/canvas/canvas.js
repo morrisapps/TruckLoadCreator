@@ -64,9 +64,21 @@ $(document).ready(function () {
 
     canvas.requestRenderAll();
 
-    //Checks if previous session was saved, and if not asks to restore.
-    if (!loadFromBrowser()){truckLoad('start');}
-    truckListUpdate(URLlocation);
+    //Stripe background image
+    fabric.Image.fromURL('./src/resources/img/stripe.png', function(img) {
+        var patternSourceCanvas = new fabric.StaticCanvas()
+        patternSourceCanvas.add(img)
+        patternSourceCanvas.renderAll();
+
+        stripePattern = new fabric.Pattern({
+            source: patternSourceCanvas.getElement(),
+            repeat: 'repeat'
+        })
+        //Load from browser placed in image load function to ensure async of loading image before loading the save
+        if (!loadFromBrowser()){truckLoad('start');}
+        truckListUpdate(URLlocation);
+    });
+
 });
 
 /**

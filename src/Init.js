@@ -39,6 +39,9 @@ var currentFill;
 var currentCustomerName;
 var currentDrop;
 
+//Stripe unit background
+let stripePattern = 'white';
+
 //These variables are used for height line counting
 var topLines;
 var botLines;
@@ -334,23 +337,6 @@ let _striped = document.getElementById('isStriped');
 
 //Side bar unit preview
 let _sideUnit = document.getElementById('sideUnit');
-
-//Stripe background image
-let stripePattern = 'white';
-fabric.Image.fromURL('./src/resources/img/stripe.png', function(img) {
-    var patternSourceCanvas = new fabric.StaticCanvas()
-    patternSourceCanvas.add(img)
-    //patternSourceCanvas.setBackgroundColor(imgColor, patternSourceCanvas.renderAll.bind(patternSourceCanvas))
-
-    patternSourceCanvas.renderAll();
-
-    stripePattern = new fabric.Pattern({
-        source: patternSourceCanvas.getElement(),
-        repeat: 'repeat'
-    })
-
-});
-
 
 //These variables are used for selecting objects and deselecting
 let selectCurrentCustomer = '';
