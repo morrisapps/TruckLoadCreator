@@ -26,23 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Fixed bug where stripes would not repeat seamlessly">
-      <change afterPath="$PROJECT_DIR$/src/resources/ThirdParty/html2pdf/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/ThirdParty/html2pdf/html2pdf.bundle.js" afterDir="false" />
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Added date to canvas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/DBHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/rack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/rack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas/text.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/text.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/file.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file/print.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/print.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/handle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/handle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sideBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unitButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/unitButtons.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +89,17 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/js-truckwrite/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -230,14 +228,7 @@
       <workItem from="1618152796674" duration="28000" />
       <workItem from="1618163358203" duration="1199000" />
       <workItem from="1618259162209" duration="635000" />
-      <workItem from="1618314975344" duration="3284000" />
-    </task>
-    <task id="LOCAL-00068" summary="Trucks in import dialog now are properly ordered">
-      <created>1608480983530</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1608480983530</updated>
+      <workItem from="1618314975344" duration="4644000" />
     </task>
     <task id="LOCAL-00069" summary="Fixed: Selecting a 2 section trucks then a 3 section trucks cause weight text to be placed wrong">
       <created>1609290147559</created>
@@ -575,7 +566,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616084164970</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="Added date to canvas">
+      <created>1618319144537</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1618319144537</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -621,7 +619,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed zoom to scale properly" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Fixed zoom to scale properly Changelog" />
     <MESSAGE value="If location is Shipping set to blank" />
     <MESSAGE value="Fixed units not updating" />
@@ -646,7 +644,8 @@
     <MESSAGE value="Updated file name format." />
     <MESSAGE value="Update stripe.png to be darker and thicker. Also made striped units have stripe borders as well" />
     <MESSAGE value="Fixed bug where stripes would not repeat seamlessly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug where stripes would not repeat seamlessly" />
+    <MESSAGE value="Added date to canvas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added date to canvas" />
   </component>
   <component name="WindowStateProjectService">
     <state x="723" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612857933532">
@@ -729,11 +728,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="259" y="13" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1610975835237" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1616081845508">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1618319173137">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611519057453" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1616081845508" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1618319173137" />
     <state x="547" y="432" key="git4idea.rebase.GitUnstructuredEditor" timestamp="1616081880460">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -751,17 +750,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="226" width="945" height="679" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610556165022" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/file/file.js</url>
-          <line>9</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
