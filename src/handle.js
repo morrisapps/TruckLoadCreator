@@ -357,7 +357,7 @@ function handleDrop(e) {
         }
         //Update the line count when dropped
         updateCount(canvas.getActiveObject());
-        saveToBrowser();
+        if (!loading){saveToBrowser();}
     }
     return false;
 }

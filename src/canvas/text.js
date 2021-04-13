@@ -19,6 +19,7 @@ var modeTextEdit;
 var driverText;
 var driverTextEdit;
 var driverSide;
+var timeText;
 //Barcode variable for truckID
 let loadBarcode = new fabric.Image();
 
@@ -69,8 +70,9 @@ function textLoad(){
     if (loadTextEdit != null){canvas.remove(loadTextEdit)}
     if (verificationText != null){canvas.remove(verificationText)}
     if (verificationLines != null){canvas.remove(verificationLines)}
+    if (timeText != null){canvas.remove(timeText)}
 
-    verificationText = new fabric.IText(' Lift Truck Driver(s) verifies no visible damage: ' +
+    window.verificationText = new fabric.IText(' Lift Truck Driver(s) verifies no visible damage: ' +
         '\n' +
         '\n' +
         '\n Shunter verifies no visible damage and load is secure:' +
@@ -419,6 +421,28 @@ function textLoad(){
         fixedFontSize: 12
     });
 
+    timeText = new fabric.IText('', {
+        width: 1000,
+        height: 500,
+        top: 23,
+        left: 1100,
+        stroke: "black",
+        fontWeight: 'bold',
+        strokeWidth: 0,
+        hasControls: false,
+        selectable: false,
+        lockMovementX: true,
+        lockMovementY: true,
+        hasBorders: false,
+        backgroundColor: 'white',
+        editingBorderColor: 'blue',
+        editable: true,
+        fontSize: 16,
+        fixedWidth: 150,
+        fixedHeight: 300,
+        fixedFontSize: 12
+    });
+
     loadTextEdit.on('selected', function (options) {
         loadTextEdit.set({fontSize: 16, fontStyle: "normal", top: 23});
         if (loadTextEdit.text == "Enter load"){
@@ -432,7 +456,7 @@ function textLoad(){
             loadTextEdit.text = "Enter load";
             loadTextEdit.set({fontSize: 15, fontStyle: "italic", top: 25});
         }
-        saveToBrowser();
+        if (!loading){saveToBrowser();}
     });
 
     loadTextEdit.on('changed', function (options) {
@@ -454,7 +478,7 @@ function textLoad(){
             trailerTextEdit.set({fontSize: 15, fontStyle: "italic", top: 25});
         }
         trailerTextEdit.text = trailerTextEdit.text.slice(0, 15);
-        saveToBrowser();
+        if (!loading){saveToBrowser();}
     });
 
     modeTextEdit.on('selected', function (options) {
@@ -471,7 +495,7 @@ function textLoad(){
             modeTextEdit.set({fontSize: 15, fontStyle: "italic", top: 25});
         }
         modeTextEdit.text = modeTextEdit.text.slice(0, 12);
-        saveToBrowser();
+        if (!loading){saveToBrowser();}
 
     });
     dropsTextEdit.on('selected', function (options) {
@@ -488,7 +512,7 @@ function textLoad(){
             dropsTextEdit.set({fontSize: 15, fontStyle: "italic", top: 25});
         }
         dropsTextEdit.text = dropsTextEdit.text.slice(0, 12);
-        saveToBrowser();
+        if (!loading){saveToBrowser();}
     });
 
     shipperTextEdit.on('selected', function (options) {
@@ -505,7 +529,7 @@ function textLoad(){
             shipperTextEdit.set({fontSize: 15, fontStyle: "italic", top: 55});
         }
         shipperTextEdit.text = shipperTextEdit.text.slice(0, 20);
-        saveToBrowser();
+        if (!loading){saveToBrowser();}
     });
 
     driverTextEdit.on('selected', function (options) {
@@ -522,7 +546,7 @@ function textLoad(){
             driverTextEdit.set({fontSize: 15, fontStyle: "italic", top: 55});
         }
         driverTextEdit.text = driverTextEdit.text.slice(0, 12);
-        saveToBrowser();
+        if (!loading){saveToBrowser();}
     });
 
     //Hover cursor
@@ -548,6 +572,7 @@ function textLoad(){
     canvas.add(loadTextEdit);
     canvas.add(verificationText);
     canvas.add(verificationLines);
+    canvas.add(timeText);
 }
 
 

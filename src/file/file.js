@@ -19,6 +19,9 @@ function saveToBrowser(){
  * @returns {[]} - An array containing units, customers, canvas text, canvas racks, canvas dashes,canvas comments, truckID, program options, fileName
  */
 function getSaveContent() {
+    //Sets current date of canvas to signify this is the date of the current version
+    timeText.text = new Date().toDateString().slice(4);
+
     //Saves important unit information
     let savedUnits = [];
     units.forEach(function (unit) {
@@ -54,7 +57,8 @@ function getSaveContent() {
         shipperTextEdit: shipperTextEdit.text,
         trailerTextEdit: trailerTextEdit.text,
         modeTextEdit: modeTextEdit.text,
-        loadTextEdit: loadTextEdit.text
+        loadTextEdit: loadTextEdit.text,
+        timeText: timeText.text
     });
 
     //Save comment, dashline, racks
@@ -92,7 +96,26 @@ function getSaveContent() {
     //Save options
     let options = [_tagBrackets.checked, _custInUnits.checked, _locToggle.checked];
 
-    //Create file name
+    //Bundles all content
+    let saveContents = [
+        savedUnits,
+        customers,
+        savedText,
+        savedRacks,
+        savedDashes,
+        savedComments,
+        truckID,
+        options,
+        getFileName()
+    ];
+    return saveContents;
+}
+
+/**
+ * Creates a name that can be used for saving
+ * @returns {string} - The file name
+ */
+function getFileName(){
     var date = new Date();
     let loadNumber = '';
     let modeNumber = '';
@@ -110,21 +133,30 @@ function getSaveContent() {
     if (driverTextEdit.text != "Enter driver") {
         driverName = driverTextEdit.text + " – ";
     }
-    let fileName = modeNumber + loadNumber + trailerNumber + driverName + (date.getMonth() + 1) + "." + date.getDate() + "." + date.getFullYear();
+    return (modeNumber + loadNumber + trailerNumber + driverName + (date.getMonth() + 1) + "." + date.getDate() + "." + date.getFullYear());
+}
 
-    //Bundles all content
-    let saveContents = [
-        savedUnits,
-        customers,
-        savedText,
-        savedRacks,
-        savedDashes,
-        savedComments,
-        truckID,
-        options,
-        fileName
-    ];
-    return saveContents;
+/**
+ * Saves current truck as a PDF file.
+ */
+function saveAsPDF(){
+    html2pdf(document.getElementById('printableArea'),
+        {   html2canvas: {
+                width: canvas.width,
+                logging: false
+            },
+            margin: [0, 25,0,-5],
+            image: {
+                type: 'jpeg',
+                quality: 1
+            },
+            filename: getFileName()+".pdf",
+            jsPDF:{
+                unit: 'mm',
+                format: 'letter',
+                orientation: 'landscape',
+                format:[canvas.width,canvas.height] }
+        });
 }
 
 /**
@@ -244,6 +276,9 @@ function loadFromBrowser(){
  * @param {[units, customers, canvas text, canvas racks, canvas dashes,canvas comments, truckID, and program options, file name]} content - The save content
  */
 function load(content) {
+    //Set loading to true
+    loading = true;
+
     //Reset all input to blank
     _customer.value = '';
     _drop.value = '';
@@ -319,6 +354,7 @@ function load(content) {
     modeTextEdit.text = content[2].modeTextEdit;
     loadTextEdit.text = content[2].loadTextEdit;
     loadID = content[2].loadTextEdit;
+    timeText.text = content[2].timeText;
     createLoadBarcode();
 
     //Triggers selection and deselection of each field to call handlers to set properties
@@ -330,4 +366,7 @@ function load(content) {
     canvas.setActiveObject(loadTextEdit);
     canvas.discardActiveObject();
     canvas.requestRenderAll();
+
+    //Set loading to false
+    loading = false;
 }

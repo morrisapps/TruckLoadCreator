@@ -7,7 +7,7 @@
 //***********Global variables***********
 
 //Version number
-let version = "1.1.2";
+let version = "1.1.3";
 
 //truck is an instance of Truck class that represents the current truck template
 let truck = new Truck("start",105,65000,45000,53,48,48,48,48,48,48,16,16,16,16,16,16,false);
@@ -20,6 +20,9 @@ let truckID = '';
 
 //LoadID is set after importing and forces only this load id to be used.
 let loadID = '';
+
+//loading is used to flag if loading a truck is currently in process.
+let loading = false;
 
 //Customer variables
 var customers = [];

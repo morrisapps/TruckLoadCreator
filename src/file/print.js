@@ -103,11 +103,14 @@ function printPageArea() {
 
             canvas.renderAll();
 
-            saveToBrowser();
+            if (!loading){saveToBrowser();}
             //Delay confirm dialog to fix chrome not closing winPrint before confirm pop up
             setTimeout(function() {
                 if (confirm('Would you like to save?')){
                     save();
+                }
+                if (URLlocation === null || URLlocation == 1){
+                    saveAsPDF();
                 }}, 200);
         });
     }

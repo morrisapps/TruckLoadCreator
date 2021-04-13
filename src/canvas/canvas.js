@@ -66,20 +66,22 @@ $(document).ready(function () {
 
     //Stripe background image
     fabric.Image.fromURL('./src/resources/img/stripe.png', function(img) {
-        img.scaleToHeight(151.5);
-        var patternSourceCanvas = new fabric.StaticCanvas()
-        patternSourceCanvas.add(img)
+        img.scaleToHeight(151.5); // Fix stripes not repeating seamlessly
+        var patternSourceCanvas = new fabric.StaticCanvas();
+        patternSourceCanvas.add(img);
         patternSourceCanvas.renderAll();
 
         stripePattern = new fabric.Pattern({
             source: patternSourceCanvas.getElement(),
             repeat: 'repeat'
         })
-        //Load from browser placed in image load function to ensure async of loading image before loading the save
-        if (!loadFromBrowser()){truckLoad('start');}
+        //If not load from save
+        if (!loadFromBrowser()){
+            truckLoad('start');
+            timeText.text = new Date().toDateString().slice(4);
+        }
         truckListUpdate(URLlocation);
     });
-
 });
 
 /**
@@ -414,6 +416,7 @@ function createCanvas() {
     canvas = new fabric.Canvas('c', {
         selection: false,
         imageSmoothingEnabled: false,
+        backgroundColor: "white"
     });
 
     // snap to grid

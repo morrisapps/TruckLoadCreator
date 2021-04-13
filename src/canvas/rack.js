@@ -129,5 +129,5 @@ function updateRack() {
     }
     customers.reverse();
     canvas.requestRenderAll();
-    saveToBrowser();
+    if (!loading){saveToBrowser();}
 }

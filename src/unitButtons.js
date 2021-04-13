@@ -81,7 +81,7 @@ function deleteObject(eventData, target) {
         updateCount(target);
         _weight.value = '';
         canvas.requestRenderAll();
-        saveToBrowser();
+        if (!loading){saveToBrowser();}
     }
 }
 

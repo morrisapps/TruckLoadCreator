@@ -285,5 +285,5 @@ function loadFromDB(data) {
         $("#infoDialog").dialog("open");
     });
 
-    saveToBrowser();
+    if (!loading){saveToBrowser();}
 }

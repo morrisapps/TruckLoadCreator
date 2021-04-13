@@ -27,8 +27,7 @@ This program is created for the purpose of creating a planned way of loading tra
 <p align="center">&nbsp; </P>
 
 <p align="left">
-<img
-src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/CUSTOMERSWAP1.gif" /> 
+<img src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/CUSTOMERSWAP1.gif" /> 
 <b>&nbsp;&nbsp;&nbsp;&nbsp;Easy customer drop change </b> 
 </p>
 
@@ -58,7 +57,7 @@ src="https://github.com/morrisapps/TruckLoadCreator/raw/PreDev/Gifs/CUSTOMERSWAP
 
 <p align="center">&nbsp; </P>
 <p align="center">&nbsp; </P>
-<p align="center">The project leverages the following MIT licensed projects: jQueryUI, jQuery, Bootstrap, Sortable, Drawer, Fabric JS, JsBarcode, and Open Iconic.  
+<p align="center">The project leverages the following MIT licensed projects: jQueryUI, jQuery, Bootstrap, Sortable, Drawer, Fabric JS, JsBarcode, html2pdf, and Open Iconic.  
 For more information on these projects, please see LICENSE.MD  
 </p> 
 <p align="center">TruckLoadCreator is licensed under MIT.</p>

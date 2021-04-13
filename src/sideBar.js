@@ -50,7 +50,7 @@ function optionsUpdate() {
     updateUnits(units);
     listUnits();
     canvas.requestRenderAll();
-    saveToBrowser();
+    if (!loading){saveToBrowser();}
 }
 
 /**
@@ -826,7 +826,7 @@ function addUnit(unit) {
             units.push(unit);
             document.getElementById("tUnits").innerText = units.length.toString();
             sortUnit();
-            saveToBrowser();
+            if (!loading){saveToBrowser();}
             return true;
     }
     return false;
@@ -843,7 +843,7 @@ function removeUnit(unit) {
             document.getElementById("tUnits").innerText = units.length.toString();
             document.getElementById("drops").innerText = customers.length.toString();
             sortUnit();
-            saveToBrowser();
+            if (!loading){saveToBrowser();}
         }
         truckWeightUpdate(-(unit.weight));
         if (getCustUnit(unit.customer) == null) {
@@ -881,7 +881,7 @@ function addCustomer(cName, cDrop, importing, importingCustomer) {
                 document.getElementById("drops").innerText = customers.length.toString();
                 sortCustomer();
                 updateRack();
-                saveToBrowser();
+                if (!loading){saveToBrowser();}
                 return true;
             }
         }
@@ -906,7 +906,7 @@ function removeCustomer(cName) {
                 customers.splice(customers.indexOf(customers[getCustomerIndex(cName)]), 1);
                 document.getElementById("drops").innerText = customers.length.toString();
                 sortCustomer();
-                saveToBrowser();
+                if (!loading){saveToBrowser();}
             }
         }
     }
