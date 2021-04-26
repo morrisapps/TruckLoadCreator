@@ -7,10 +7,10 @@
 //***********Global variables***********
 
 //Version number
-let version = "1.1.4";
+let version = "1.1.5";
 
 //truck is an instance of Truck class that represents the current truck template
-let truck = new Truck("start",105,65000,45000,53,48,48,48,48,48,48,16,16,16,16,16,16,false);
+let truck = new Truck("start",105,65000,45000,53,48,48,48,48,48,48,16,16,16,16,16,16,0);
 
 //truck array of all instances of the truck class
 let truckList = [];
