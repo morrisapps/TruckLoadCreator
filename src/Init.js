@@ -7,7 +7,7 @@
 //***********Global variables***********
 
 //Version number
-let version = "1.1.5";
+let version = "1.1.6";
 
 //truck is an instance of Truck class that represents the current truck template
 let truck = new Truck("start",105,65000,45000,53,48,48,48,48,48,48,16,16,16,16,16,16,0);
@@ -387,8 +387,6 @@ if (URLbacktrack == '1'){
     backtrackToggle = "1"
     _backtrack.href = "http://am-ax2012-web1:86/?location="+URLlocation+"&backtrack="+backtrackToggle
 }
-
-
 
 /**
  * Creates change log dialog

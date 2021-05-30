@@ -26,7 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Version 1.1.4">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="New AlexEast Trailers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
@@ -222,14 +222,8 @@
       <workItem from="1618314975344" duration="5496000" />
       <workItem from="1618673819413" duration="133000" />
       <workItem from="1619384459244" duration="1649000" />
-      <workItem from="1619445370541" duration="3148000" />
-    </task>
-    <task id="LOCAL-00070" summary="Restoring from save causes weight regions to be placed wrong">
-      <created>1609386875467</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1609386875467</updated>
+      <workItem from="1619445370541" duration="3958000" />
+      <workItem from="1622352896390" duration="650000" />
     </task>
     <task id="LOCAL-00071" summary="Removed check unit id from addUnit function">
       <created>1609586677337</created>
@@ -567,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618320773147</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="New AlexEast Trailers">
+      <created>1619451997521</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1619451997521</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +615,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="If location is Shipping set to blank" />
     <MESSAGE value="Fixed units not updating" />
     <MESSAGE value="Keep in bounds fixed" />
     <MESSAGE value="Added feature: Option to toggle location unit text on or off" />
@@ -639,29 +639,10 @@
     <MESSAGE value="Fixed bug where stripes would not repeat seamlessly" />
     <MESSAGE value="Added date to canvas" />
     <MESSAGE value="Version 1.1.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 1.1.4" />
+    <MESSAGE value="New AlexEast Trailers" />
+    <option name="LAST_COMMIT_MESSAGE" value="New AlexEast Trailers" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="723" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612857933532">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="723" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1612857933532" />
-    <state x="707" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1609954957581">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="707" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1609954957581" />
-    <state x="65" y="64" width="1236" height="600" key="DiffContextDialog" timestamp="1610143758710">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="65" y="64" width="1236" height="600" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1610143758710" />
-    <state x="651" y="170" key="FileChooserDialogImpl" timestamp="1613505350515">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613505350515" />
-    <state width="269" height="276" key="Git.Branch.Popup" timestamp="1613435862355">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="269" height="276" key="Git.Branch.Popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613435862355" />
     <state width="938" height="209" key="GridCell.Tab.0.bottom" timestamp="1618321682606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -714,35 +695,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616081872981" />
-    <state x="625" y="224" key="NewModule_or_Project.wizard" timestamp="1613505363081">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1622352926592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="625" y="224" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1613505363081" />
-    <state x="259" y="13" key="SettingsEditor" timestamp="1610975835237">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="259" y="13" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1610975835237" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1618320776234">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611519057453" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1618320776234" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622352926592" />
     <state x="547" y="432" key="git4idea.rebase.GitUnstructuredEditor" timestamp="1616081880460">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="547" y="432" key="git4idea.rebase.GitUnstructuredEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1616081880460" />
-    <state x="342" y="140" key="new project wizard" timestamp="1610976041615">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1610976041615" />
     <state x="476" y="231" key="run.anything.popup" timestamp="1615993525674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1611351924429" />
     <state x="476" y="231" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615993525674" />
-    <state x="623" y="226" width="945" height="679" key="search.everywhere.popup" timestamp="1610556165022">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="226" width="945" height="679" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610556165022" />
   </component>
 </project>
