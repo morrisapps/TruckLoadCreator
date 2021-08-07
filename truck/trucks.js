@@ -1151,45 +1151,32 @@ function truck35(truckid) {
  */
 function truckListUpdate(location){
     let brand = document.getElementById("brandText");
-    let t35_1 = document.getElementById('35Trucks_1');
-    let t47_1 = document.getElementById('47Trucks_1');
-    let t48_1 = document.getElementById('48Trucks_1');
-    let t53_1 = document.getElementById('53Trucks_1');
-    let flat_1 = document.getElementById('flatbedTrucks_1');
-    let flat_3 = document.getElementById('flatbedTrucks_3');
-    let cur_3 = document.getElementById('curtainTrucks_3');
-    let con_3 = document.getElementById('conestogaTrucks_3');
-    let cus_a = document.getElementById('customTruck_a');
+    let truck_1 = document.getElementById("Trucks_1");
+    let truck_3 = document.getElementById("Trucks_3");
+    //let t35_1 = document.getElementById('35Trucks_1');
+    //let t47_1 = document.getElementById('47Trucks_1');
+    //let t48_1 = document.getElementById('48Trucks_1');
+    //let t53_1 = document.getElementById('53Trucks_1');
+    //let flat_1 = document.getElementById('flatbedTrucks_1');
+    //let flat_3 = document.getElementById('flatbedTrucks_3');
+    //let cur_3 = document.getElementById('curtainTrucks_3');
+    //let con_3 = document.getElementById('conestogaTrucks_3');
+    //let cus_a = document.getElementById('customTruck_a');
 
-    t35_1.style.display = "none";
-    t47_1.style.display = "none";
-    t48_1.style.display = "none";
-    t53_1.style.display = "none";
-    flat_1.style.display = "none";
-    flat_3.style.display = "none";
-    cur_3.style.display = "none";
-    con_3.style.display = "none";
-    cus_a.style.display = "none";
+    truck_1.style.display = "none";
+    truck_3.style.display = "none";
 
     switch(location) {
         case '1': //AlexEast
             brand.innerText = "AlexEast"
-            t35_1.style.display = "block";
-            t47_1.style.display = "block";
-            t48_1.style.display = "block";
-            t53_1.style.display = "block";
-            flat_1.style.display = "block";
-            cus_a.style.display = "block";
+            truck_1.style.display = "block";
             break;
         case '2': //AlexWest
             brand.innerText = "AlexWest"
             break;
         case '3': //Penneast
             brand.innerText = "PennEast"
-            cur_3.style.display="block";
-            flat_3.style.display = "block";
-            con_3.style.display = "block";
-            cus_a.style.display = "block";
+            truck_3.style.display = "block";
             break;
         case '4': //Midwest
             brand.innerText = "MidWest"
@@ -1199,12 +1186,7 @@ function truckListUpdate(location){
             break;
         default: //Default AlexEast
             brand.innerText = "AlexEast"
-            t35_1.style.display = "block";
-            t47_1.style.display = "block";
-            t48_1.style.display = "block";
-            t53_1.style.display = "block";
-            flat_1.style.display = "block";
-            cus_a.style.display = "block";
+            truck_1.style.display = "block";
     }
 }
 /**
