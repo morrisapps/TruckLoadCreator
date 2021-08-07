@@ -26,13 +26,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Re structured how trucks are displayed per site location">
-      <change afterPath="$PROJECT_DIR$/src/resources/img/stripe.png" afterDir="false" />
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Added another warehouse for Alexandria Moulding">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/truck/truckList.js" beforeDir="false" afterPath="$PROJECT_DIR$/truck/truckList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/truck/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/truck/trucks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvas/rack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/rack.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,14 +232,7 @@
       <workItem from="1619384459244" duration="1649000" />
       <workItem from="1619445370541" duration="3958000" />
       <workItem from="1622352896390" duration="1839000" />
-      <workItem from="1628276287127" duration="9696000" />
-    </task>
-    <task id="LOCAL-00073" summary="Fixed bug: Updating customers with different text names reverted them to the main name">
-      <created>1610146689387</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1610146689388</updated>
+      <workItem from="1628276287127" duration="10716000" />
     </task>
     <task id="LOCAL-00074" summary="Fixed bug: Updating units would change name to main customer name if customer has multiple names">
       <created>1610209654252</created>
@@ -581,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628295434323</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Added another warehouse for Alexandria Moulding">
+      <created>1628301804336</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1628301804336</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,7 +624,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Added feature: Option to toggle location unit text on or off" />
     <MESSAGE value="Fixed bug: Unit list not updating when toggling options" />
     <MESSAGE value="Sorting units now sorts by customer drop, then width, then height" />
     <MESSAGE value="Removed do not display weight if any unit is zero weight (Requested)" />
@@ -653,72 +648,13 @@
     <MESSAGE value="New AlexEast Trailers" />
     <MESSAGE value="New AlexEast Trailer - 2008 Roll-Tite" />
     <MESSAGE value="Re structured how trucks are displayed per site location" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re structured how trucks are displayed per site location" />
+    <MESSAGE value="Added another warehouse for Alexandria Moulding" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added another warehouse for Alexandria Moulding" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="938" height="209" key="GridCell.Tab.0.bottom" timestamp="1618321682606">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1628301863874">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="209" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618321682606" />
-    <state width="938" height="209" key="GridCell.Tab.0.center" timestamp="1618321682605">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="209" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618321682605" />
-    <state width="938" height="209" key="GridCell.Tab.0.left" timestamp="1618321682605">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="209" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618321682605" />
-    <state width="938" height="209" key="GridCell.Tab.0.right" timestamp="1618321682606">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="209" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618321682606" />
-    <state width="938" height="209" key="GridCell.Tab.1.bottom" timestamp="1618321682606">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="209" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618321682606" />
-    <state width="938" height="209" key="GridCell.Tab.1.center" timestamp="1618321682606">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="209" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618321682606" />
-    <state width="938" height="209" key="GridCell.Tab.1.left" timestamp="1618321682606">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="209" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618321682606" />
-    <state width="938" height="209" key="GridCell.Tab.1.right" timestamp="1618321682606">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="209" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618321682606" />
-    <state width="938" height="209" key="GridCell.Tab.2.bottom" timestamp="1618321682606">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="209" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618321682606" />
-    <state width="938" height="209" key="GridCell.Tab.2.center" timestamp="1618321682606">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="209" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618321682606" />
-    <state width="938" height="209" key="GridCell.Tab.2.left" timestamp="1618321682606">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="209" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618321682606" />
-    <state width="938" height="209" key="GridCell.Tab.2.right" timestamp="1618321682606">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="209" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618321682606" />
-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1616081872981">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616081872981" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1622352926592">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622352926592" />
-    <state x="547" y="432" key="git4idea.rebase.GitUnstructuredEditor" timestamp="1616081880460">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="547" y="432" key="git4idea.rebase.GitUnstructuredEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1616081880460" />
-    <state x="476" y="231" key="run.anything.popup" timestamp="1615993525674">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="476" y="231" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615993525674" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1628301863874" />
   </component>
 </project>
