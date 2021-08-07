@@ -20,8 +20,8 @@ function truckLoad(id) {
 
     truckID = id;
     truck = getTruckByID(id);
-
-    if (id == '' || id == null || id == 'start' || id == 'Custom Flatbed'){trailerTextEdit.set({text: "Enter trailer", fontSize: 15, fontStyle: "italic", top: 25});}
+    //If id starts with underscore _ then do not display it in Trailer Number it as it's a generic truck ID
+    if (id == '' || id == null || id == 'start' || id == 'Custom Flatbed' || id.charAt(0) == "_" ){trailerTextEdit.set({text: "Enter trailer", fontSize: 15, fontStyle: "italic", top: 25});}
     else {trailerTextEdit.set({text: truckID, fontSize: 16, fontStyle: "normal", top: 23});}
 
     canvas.remove(doorText1);
@@ -570,7 +570,7 @@ function truckCurtain(truckid) {
         vLine5 = new fabric.Line([600 * 2 - 48, 75, 600 * 2 - 48, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         //Set mid line to match left and right border
         midLine.set({x1: 24*2, y1: 400, x2: 1200 - 48, y2: 400,});
-    } else if (truckid == '48 Flatbed' || truckid == 300 || truckid == 'Carrier-48-72-100' || truckid == 'Carrier-48-90-100') {
+    } else if (truckid == '48 Flatbed' || truckid == 300 || truckid == 'Carrier-48-72-100' || truckid == 'Carrier-48-90-100' || truckid == "_MWRED48" || truckid == "_MWCONE48") {
         //48' Flatbed trailers
         //set weight text location
         topLeftWeightText.set('left', 242).setCoords();
@@ -597,7 +597,7 @@ function truckCurtain(truckid) {
         || truckid == "611" || truckid == "NE101" || truckid == "NE102" || truckid == "NE103" || truckid == "NE104" || truckid == "NE105" || truckid == "NE106" || truckid == "NE107" || truckid == "NE108" || truckid == "NE109" || truckid == "NE110"
         || truckid == "TC2" || truckid == "131" || truckid == "132" || truckid == "133" || truckid == "135" || truckid == "150" || truckid == "161" || truckid == "162" || truckid == "164" || truckid == "168" || truckid == "171" || truckid == "172"
         || truckid == "173" || truckid == "177" || truckid == "189" || truckid == "193" || truckid == "201" || truckid == "224" || truckid == "Carrier-53-72-100" || truckid == "Carrier-53-90-100"
-        || truckid == "2101" || truckid == "2102" || truckid == "2103" || truckid == "2104" || truckid == "2105" || truckid == "2106") {
+        || truckid == "2101" || truckid == "2102" || truckid == "2103" || truckid == "2104" || truckid == "2105" || truckid == "2106" || truckid == "_MWRED53" || truckid == "_MWCONE53") {
         //53' Flatbed trailers
         //set weight text location
         topLeftWeightText.set('left', 206).setCoords();
@@ -1153,15 +1153,7 @@ function truckListUpdate(location){
     let brand = document.getElementById("brandText");
     let truck_1 = document.getElementById("Trucks_1");
     let truck_3 = document.getElementById("Trucks_3");
-    //let t35_1 = document.getElementById('35Trucks_1');
-    //let t47_1 = document.getElementById('47Trucks_1');
-    //let t48_1 = document.getElementById('48Trucks_1');
-    //let t53_1 = document.getElementById('53Trucks_1');
-    //let flat_1 = document.getElementById('flatbedTrucks_1');
-    //let flat_3 = document.getElementById('flatbedTrucks_3');
-    //let cur_3 = document.getElementById('curtainTrucks_3');
-    //let con_3 = document.getElementById('conestogaTrucks_3');
-    //let cus_a = document.getElementById('customTruck_a');
+    let truck_4 = document.getElementById("Trucks_4");
 
     truck_1.style.display = "none";
     truck_3.style.display = "none";
@@ -1180,6 +1172,7 @@ function truckListUpdate(location){
             break;
         case '4': //Midwest
             brand.innerText = "MidWest"
+            truck_4.style.display = "block";
             break;
         case '5': //RWW
             brand.innerText = "RWW"

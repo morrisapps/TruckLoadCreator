@@ -107,7 +107,11 @@ truckList.push(new Truck("Carrier-53-90-100",90,44000,"?",53,100,0,0,0,0,0,0,0,0
 truckList.push(new Truck("Hotshot-40-72-96",72,16000,"?",40,96,0,0,0,0,0,0,0,0,0,0,0,1));
 truckList.push(new Truck("Hotshot-32-72-96",72,16000,"?",32,96,0,0,0,0,0,0,0,0,0,0,0,1));
 
-
+//MidWest trailers
+truckList.push(new Truck("_MWRED53",95,45000,"?",53,100,0,0,0,0,0,0,0,0,0,0,0,3));
+truckList.push(new Truck("_MWRED48",95,42000,"?",48,100,0,0,0,0,0,0,0,0,0,0,0,3));
+truckList.push(new Truck("_MWCONE53",95,47500,"?",53,100,0,0,0,0,0,0,0,0,0,0,0,4));
+truckList.push(new Truck("_MWCONE48",95,42000,"?",48,100,0,0,0,0,0,0,0,0,0,0,0,4));
 
 /**
  * Get the truck that matches given ID

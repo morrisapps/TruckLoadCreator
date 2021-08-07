@@ -26,9 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="New AlexEast Trailer - 2008 Roll-Tite">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Re structured how trucks are displayed per site location">
+      <change afterPath="$PROJECT_DIR$/src/resources/img/stripe.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/truck/truckList.js" beforeDir="false" afterPath="$PROJECT_DIR$/truck/truckList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/truck/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/truck/trucks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,6 +92,17 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/js-truckwrite/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -222,14 +236,7 @@
       <workItem from="1619384459244" duration="1649000" />
       <workItem from="1619445370541" duration="3958000" />
       <workItem from="1622352896390" duration="1839000" />
-      <workItem from="1628276287127" duration="3666000" />
-    </task>
-    <task id="LOCAL-00072" summary="Initial Jsdocs implementation">
-      <created>1610018037147</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1610018037148</updated>
+      <workItem from="1628276287127" duration="9696000" />
     </task>
     <task id="LOCAL-00073" summary="Fixed bug: Updating customers with different text names reverted them to the main name">
       <created>1610146689387</created>
@@ -567,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622353632037</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="Re structured how trucks are displayed per site location">
+      <created>1628295434322</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1628295434323</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +628,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Keep in bounds fixed" />
     <MESSAGE value="Added feature: Option to toggle location unit text on or off" />
     <MESSAGE value="Fixed bug: Unit list not updating when toggling options" />
     <MESSAGE value="Sorting units now sorts by customer drop, then width, then height" />
@@ -639,7 +652,8 @@
     <MESSAGE value="Version 1.1.4" />
     <MESSAGE value="New AlexEast Trailers" />
     <MESSAGE value="New AlexEast Trailer - 2008 Roll-Tite" />
-    <option name="LAST_COMMIT_MESSAGE" value="New AlexEast Trailer - 2008 Roll-Tite" />
+    <MESSAGE value="Re structured how trucks are displayed per site location" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re structured how trucks are displayed per site location" />
   </component>
   <component name="WindowStateProjectService">
     <state width="938" height="209" key="GridCell.Tab.0.bottom" timestamp="1618321682606">
