@@ -684,7 +684,7 @@ function truck53(truckid) {
     botMiddleWeightRegion.set({left: 626, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
     botRightWeightRegion.set({left: 1010, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
 
-    if (truckid == "1904" || truckid == "1905") {
+    if (truckid == "1904" || truckid == "1905" || truckid == "2107" || truckid == "2108") {
         //Set region's size and location
         topLeftWeightRegion.set({left: 242, top: 239, width: 240 * 2, height: 162 * 2,}).setCoords();
         topMiddleWeightRegion.set({left: 650, top: 239, width: 168 * 2-4, height: 162 * 2,}).setCoords();
@@ -762,7 +762,7 @@ function truck53(truckid) {
 //vertical lines
     vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
     canvas.add(vLine1);
-    if (truckid == "1904" || truckid == "1905") {
+    if (truckid == "1904" || truckid == "1905" || truckid == "2107" || truckid == "2108") {
         vLine2 = new fabric.Line();
         vLine3 = new fabric.Line([240 * 2, 75, 240 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false})
         doorText1.set({left: 24});

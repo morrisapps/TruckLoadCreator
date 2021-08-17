@@ -26,11 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="">
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Corrected offset of trailer 1603 for Alex East">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/truck/truckList.js" beforeDir="false" afterPath="$PROJECT_DIR$/truck/truckList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/truck/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/truck/trucks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +60,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="be4f5f8d-08c8-4842-9640-85f1b2eccd95" />
+  </component>
   <component name="JupyterTrust" id="aa4ca16f-deed-4a48-b9e2-5a1184f94da4" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1jiCuFQUZBoxu6ySoWg35DFx1Jm" />
@@ -72,10 +84,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Python" />
+    <property name="last_opened_file_path" value="D:/SYNC/PostEZ" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -239,14 +251,11 @@
       <workItem from="1619445370541" duration="3958000" />
       <workItem from="1622352896390" duration="1839000" />
       <workItem from="1628276287127" duration="9696000" />
-      <workItem from="1628706090875" duration="585000" />
-    </task>
-    <task id="LOCAL-00073" summary="Fixed bug: Updating customers with different text names reverted them to the main name">
-      <created>1610146689387</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1610146689388</updated>
+      <workItem from="1628706090875" duration="1381000" />
+      <workItem from="1628822682840" duration="1725000" />
+      <workItem from="1628830558965" duration="752000" />
+      <workItem from="1628918620188" duration="666000" />
+      <workItem from="1629212360128" duration="2013000" />
     </task>
     <task id="LOCAL-00074" summary="Fixed bug: Updating units would change name to main customer name if customer has multiple names">
       <created>1610209654252</created>
@@ -584,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628295434323</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Corrected offset of trailer 1603 for Alex East">
+      <created>1628706802596</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1628706802596</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -631,7 +647,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Added feature: Option to toggle location unit text on or off" />
     <MESSAGE value="Fixed bug: Unit list not updating when toggling options" />
     <MESSAGE value="Sorting units now sorts by customer drop, then width, then height" />
     <MESSAGE value="Removed do not display weight if any unit is zero weight (Requested)" />
@@ -656,6 +671,7 @@
     <MESSAGE value="New AlexEast Trailers" />
     <MESSAGE value="New AlexEast Trailer - 2008 Roll-Tite" />
     <MESSAGE value="Re structured how trucks are displayed per site location" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re structured how trucks are displayed per site location" />
+    <MESSAGE value="Corrected offset of trailer 1603 for Alex East" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected offset of trailer 1603 for Alex East" />
   </component>
 </project>
