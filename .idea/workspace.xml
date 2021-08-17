@@ -26,12 +26,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="Corrected offset of trailer 1603 for Alex East">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/truck/truckList.js" beforeDir="false" afterPath="$PROJECT_DIR$/truck/truckList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/truck/trucks.js" beforeDir="false" afterPath="$PROJECT_DIR$/truck/trucks.js" afterDir="false" />
+    <list default="true" id="3f3ca4e6-0ba1-4f1c-b39e-f1b9c015ad0f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/canvas/rack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas/rack.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,13 +252,7 @@
       <workItem from="1628830558965" duration="752000" />
       <workItem from="1628918620188" duration="666000" />
       <workItem from="1629212360128" duration="2013000" />
-    </task>
-    <task id="LOCAL-00074" summary="Fixed bug: Updating units would change name to main customer name if customer has multiple names">
-      <created>1610209654252</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1610209654252</updated>
+      <workItem from="1629240457822" duration="285000" />
     </task>
     <task id="LOCAL-00075" summary="Fixed bug: Selecting unit from list should remove any search text">
       <created>1610210058067</created>
@@ -600,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628706802596</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Added new trailers 2107, 2108 for Alex East Warehouse">
+      <created>1629240556783</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1629240556783</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +644,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Fixed bug: Unit list not updating when toggling options" />
     <MESSAGE value="Sorting units now sorts by customer drop, then width, then height" />
     <MESSAGE value="Removed do not display weight if any unit is zero weight (Requested)" />
     <MESSAGE value="Fixed Bug: Checking rack sometimes would not work" />
@@ -672,6 +668,7 @@
     <MESSAGE value="New AlexEast Trailer - 2008 Roll-Tite" />
     <MESSAGE value="Re structured how trucks are displayed per site location" />
     <MESSAGE value="Corrected offset of trailer 1603 for Alex East" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected offset of trailer 1603 for Alex East" />
+    <MESSAGE value="Added new trailers 2107, 2108 for Alex East Warehouse" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new trailers 2107, 2108 for Alex East Warehouse" />
   </component>
 </project>
