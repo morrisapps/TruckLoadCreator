@@ -245,7 +245,7 @@ function loadFromDB(data) {
                 importCusts++;
             }
         } //Checks if bundles
-        else if (item[13].includes('Bundle') || item[13].includes('Box')){
+        else if (item[13].includes('Bundle') || item[13].includes('Box') || item[13].includes('RWW ARCH')){
             if (addCustomer(customerText, item[9], false)){
                 importCusts++
             }
