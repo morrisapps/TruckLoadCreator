@@ -111,7 +111,8 @@ let topLeftWeightRegion = new fabric.Rect({
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 0
+    opacity: 50,
+    units: new Set()
 });
 let topMiddleWeightRegion = new fabric.Rect({
     left: 625,
@@ -125,7 +126,8 @@ let topMiddleWeightRegion = new fabric.Rect({
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 0
+    opacity: 50,
+    units: new Set()
 });
 let topRightWeightRegion = new fabric.Rect({
     left: 1009,
@@ -139,7 +141,8 @@ let topRightWeightRegion = new fabric.Rect({
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 0
+    opacity: 50,
+    units: new Set()
 });
 let botLeftWeightRegion = new fabric.Rect({
     left: 218,
@@ -153,7 +156,8 @@ let botLeftWeightRegion = new fabric.Rect({
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 0
+    opacity: 50,
+    units: new Set()
 });
 let botMiddleWeightRegion = new fabric.Rect({
     left: 625,
@@ -167,7 +171,8 @@ let botMiddleWeightRegion = new fabric.Rect({
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 0
+    opacity: 50,
+    units: new Set()
 });
 let botRightWeightRegion = new fabric.Rect({
     left: 1009,
@@ -181,18 +186,10 @@ let botRightWeightRegion = new fabric.Rect({
     originY: 'center',
     selectable: false,
     isRegion: true,
-    opacity: 0
+    opacity: 50,
+    units: new Set()
 });
 let weightRegions = [topLeftWeightRegion, topMiddleWeightRegion, topRightWeightRegion, botLeftWeightRegion, botMiddleWeightRegion, botRightWeightRegion];
-
-//Weight unit containers
-let topLeftWeightUnits = new Set();
-let topMiddleWeightUnits = new Set();
-let topRightWeightUnits = new Set();
-let botLeftWeightUnits = new Set();
-let botMiddleWeightUnits = new Set();
-let botRightWeightUnits = new Set();
-let weightUnits = [topLeftWeightUnits,topMiddleWeightUnits,topRightWeightUnits,botLeftWeightUnits,botMiddleWeightUnits,botRightWeightUnits];
 
 //Weight text
 let topLeftWeightText = new fabric.IText('', {

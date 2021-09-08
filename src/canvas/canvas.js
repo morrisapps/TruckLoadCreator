@@ -153,34 +153,73 @@ function initializeCounters() {
  */
 function updateCount(target) {
     if (target != null) {
+
+        //Update Height
         if (target.unit == true || target.id == "rack") {
             var i = 0;
             while (i <= 11) {
-                //Update Height
                 heightCount(target, topLines[i], topCounters[i], topUnits[i]);
                 heightCount(target, botLines[i], botCounters[i], botUnits[i]);
                 i++;
             }
         }
+
         //Update weight
         if (target.weight > 0){
-            //Get middle coordinates of object
-            let targetY = (target.top + target.height/2)*screenWidthRatio;
-            let targetX = (target.left + target.width/2)*screenWidthRatio;
-            let objMiddle = new fabric.Point(targetX,targetY);
-            //Checks if weight Regions contain center of object
-            for (let i = 0; i < weightRegions.length; i++){
-                let weight = 0;
+            //intersectedIndex is used to count the # of intersections.
+            let intersectedIndex = []
+            //Checks if weight Regions intersect object
+            for (let i = 0; i < weightRegions.length; i++) {
                 //Removes object if already added to ensure duplication doesn't occur
-                if (weightUnits[i].has(target)) {weightUnits[i].delete(target);}
-                //Add unit to unit list if center is within region
-                if (weightRegions[i].containsPoint(objMiddle)){
-                    if (target.remove != true){
-                        weightUnits[i].add(target);
-                    }
+                for (const unit of weightRegions[i].units) {
+                    if (unit[0] === target) {weightRegions[i].units.delete(unit);break;}
                 }
-                weightUnits[i].forEach(function (unit){
-                    weight = weight + unit.weight;
+                //Checks if the unit is fully within a region.
+                //If it is then 100% of the weight is within this region
+                if (target.isContainedWithinObject(weightRegions[i]) || weightRegions[i].isContainedWithinObject(target)){
+                    if (target.remove != true){weightRegions[i].units.add([target,100]);}
+                }
+                //Checks if unit intersects with a region. Adds index to be used later.
+                else if (weightRegions[i].intersectsWithObject(target)){intersectedIndex.push(i);}
+            }
+            if (intersectedIndex.length == 1){
+                //if only one intersection, then 100% of weight should still be in this region.
+                if (target.remove != true){weightRegions[intersectedIndex[0]].units.add([target,100])}
+            } else {
+                let overlapAreas = []
+                let overlapTotal = 0
+                //Loops through all intersected regions
+                //Splits weight to each intersected region based on how much of the target unit is in each region
+                intersectedIndex.forEach(function (i){
+                    let d1x = weightRegions[i].left - weightRegions[i].width /2
+                    let d1y = weightRegions[i].top - weightRegions[i].height /2
+                    let d1xMax = d1x + weightRegions[i].width
+                    let d1yMax = d1y + weightRegions[i].height
+                    let d2x = target.left
+                    let d2y = target.top
+                    let d2xMax = target.left + target.width
+                    let d2yMax = target.top + target.height
+
+                    let x_overlap = Math.max(0, Math.min(d1xMax,d2xMax) - Math.max(d1x,d2x))
+                    let y_overlap = Math.max(0, Math.min(d1yMax,d2yMax) - Math.max(d1y,d2y));
+
+                    overlapAreas.push([i,x_overlap*y_overlap])
+                    overlapTotal += x_overlap*y_overlap
+                })
+                //Iterates over each overlap area against total overlap
+                //This ensures the total percent of the weight distribution is 100%
+                overlapAreas.forEach(function (area){
+                    if (target.remove != true){weightRegions[area[0]].units.add([target,(area[1]/overlapTotal)*100])}
+                })
+
+            }
+            //Updates all weight texts with all the updated weightUnits array
+            //This Loops through each weightRegion again to ensure weight counting will be accurate after intersection
+            for (let i = 0; i < weightRegions.length; i++) {
+                let weight = 0;
+                //Adds each Unit's weight for each index
+                weightRegions[i].units.forEach(function (unit){
+                    weight = weight + Math.round(unit[0].weight*(unit[1]/100));
                 });
                 if (weight > 0){
                     weightTexts[i].text = weight.toString() + ' lb';
