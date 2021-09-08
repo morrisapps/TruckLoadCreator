@@ -192,6 +192,12 @@ function updateUnits(updateUnits) {
     canvas.forEachObject(function (obj) {
         if (obj.unit == true) {
             truckWeightUpdate(-(obj.weight));
+            //Remove unit from all weight regions
+            weightRegions.forEach(function(region){
+                for (const unit of region.units) {
+                    if (unit[0] === obj) {region.units.delete(unit);break;}
+                }
+            })
             canvas.remove(obj);
         }
     });
