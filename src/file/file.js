@@ -191,6 +191,7 @@ function updateUnits(updateUnits) {
     //Reinitialize all units
     canvas.forEachObject(function (obj) {
         if (obj.unit == true) {
+            truckWeightUpdate(-(obj.weight));
             canvas.remove(obj);
         }
     });
@@ -199,7 +200,6 @@ function updateUnits(updateUnits) {
     //Reinitialize counters
     initializeCounters();
     createCounters();
-    weightCount = 0;
     _tWeight.innerText = '';
     _mWeight.innerText = '';
     _hWeight.innerText = '';
