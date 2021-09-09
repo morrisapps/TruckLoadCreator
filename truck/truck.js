@@ -14,7 +14,9 @@ class Truck {
      * @param ID - The ID of the truck
      * @param height - The maximum height of the truck
      * @param weight - The maximum weight of the truck
-     * @param halfWeight - The half weight of the truck
+     * @param frontWeight - The maximum weight of the front half of the truck
+     * @param backWeight - The maximum weight of the back half of the truck
+     * @param halfWeight - The half weight of the truck (Not just 50% of the maximum weight)
      * @param length - The full length of the truck
      * @param d1 - The top left depth (Or the full truck's depth if flatbed)
      * @param d2 - The top middle depth of the section
@@ -30,10 +32,12 @@ class Truck {
      * @param w6 - The bottom right width of the section
      * @param {int} type - Type of trailer. 0 Barndoor, 1 flatbed, 2 Roll-Tite, 3 curtain, 4 Conestoga
      */
-    constructor(ID, height, weight, halfWeight, length, d1, d2, d3, d4, d5, d6, w1, w2, w3, w4, w5, w6, type) {
+    constructor(ID, height, weight, frontWeight, backWeight, halfWeight, length, d1, d2, d3, d4, d5, d6, w1, w2, w3, w4, w5, w6, type) {
         this.ID = ID;
         this.height = height;
         this.weight = weight;
+        this.frontWeight = frontWeight;
+        this.backWeight = backWeight;
         this.halfWeight = halfWeight;
         this.length = length;
         this.d1 = d1;
@@ -96,7 +100,35 @@ class Truck {
         this.weight = weight;
     }
     /**
-     * Gets the Truck's maximum half weight
+     * Gets the Truck's maximum front half weight
+     * @returns The maximum front half weight of the truck
+     */
+    getFrontWeight(){
+        return this.frontWeight;
+    }
+    /**
+     * Sets the truck's front half maximum weight
+     * @param weight - The maximum weight of the front half of the truck
+     */
+    setFrontWeight(weight){
+        this.frontWeight = weight;
+    }
+    /**
+     * Gets the Truck's maximum back half weight
+     * @returns The maximum back half weight of the truck
+     */
+    getBackWeight(){
+        return this.backWeight;
+    }
+    /**
+     * Sets the truck's back half maximum weight
+     * @param weight - The maximum weight of the back half of the truck
+     */
+    setBackWeight(weight){
+        this.backWeight = weight;
+    }
+    /**
+     * Gets the truck's half maximum weight
      * @returns The maximum half weight of the truck
      */
     getHalfWeight(){

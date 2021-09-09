@@ -211,7 +211,6 @@ function updateCount(target) {
                 overlapAreas.forEach(function (area){
                     if (target.remove != true){weightRegions[area[0]].units.add([target,(area[1]/overlapTotal)*100])}
                 })
-
             }
             //Updates all weight texts with all the updated weightUnits array
             //This Loops through each weightRegion again to ensure weight counting will be accurate after intersection
