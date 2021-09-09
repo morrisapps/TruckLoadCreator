@@ -215,11 +215,23 @@ function updateCount(target) {
             }
             //Updates all weight texts with all the updated weightUnits array
             //This Loops through each weightRegion again to ensure weight counting will be accurate after intersection
+            let roundHalf = false;
             for (let i = 0; i < weightRegions.length; i++) {
                 let weight = 0;
                 //Adds each Unit's weight for each index
                 weightRegions[i].units.forEach(function (unit){
-                    weight = weight + Math.round(unit[0].weight*(unit[1]/100));
+                    let unitRegionWeight = unit[0].weight*(unit[1]/100)
+                    //Checks if unitRegionWeight decimal is .5
+                    //This makes it so a remainder of .5 won't be rounded up twice. If .5 twice then simply minus 1 from second round
+                    if (unitRegionWeight % 1 == 0.5) {
+                        if (roundHalf == false){
+                            roundHalf = true
+                        }else {
+                            unitRegionWeight = unitRegionWeight - 1
+                            roundHalf = false
+                        }
+                    }
+                    weight = weight + Math.round(unitRegionWeight);
                 });
                 if (weight > 0){
                     weightTexts[i].text = weight.toString() + ' lb';
