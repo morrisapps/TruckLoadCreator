@@ -63,12 +63,12 @@ function truckLoad(id) {
     _hWeight.innerText = truck.getHalfWeight();
     truckWeightUpdate(0);
 
-    midLine.bringToFront();
     vLine1.bringToFront();
     vLine2.bringToFront();
     vLine3.bringToFront();
     vLine4.bringToFront();
     vLine5.bringToFront();
+    midGroup.bringToFront();
 
     if (id != 'start') {saveToBrowser();}
 }
@@ -219,16 +219,8 @@ function truckTemplate(){
         strokeWidth: 2,
         selectable: false
     }));
-    //middle canvas line
-    midLine = new fabric.Line([0, 400, 1200, 400], {
-        id: "midLine",
-        stroke: 'black',
-        strokeWidth: 5,
-        height: 7,
-        intersects: true,
-        selectable: false
-    });
-    canvas.add(midLine);
+
+    createMidGroup(1200, 0);
     //bottom canvas line
     canvas.add(new fabric.Line([0, 725, 1200, 725], {
         id: 'canvasBotton',
@@ -240,6 +232,80 @@ function truckTemplate(){
     canvas.add(new fabric.Line([0, 725, 0, 925], {stroke: 'black', strokeWidth: 2, selectable: false}));
     //bottom right lower corner
     canvas.add(new fabric.Line([600 * 2, 725, 600 * 2, 925], {stroke: 'black', strokeWidth: 2, selectable: false}));
+}
+
+/**
+ * Creates a fabric.Group representing the middle separator/divider
+ * @param width The width of the entire group
+ * @param left The left position in pixels of the group
+ */
+function createMidGroup(width, left){
+    //Removes old Mid group
+    canvas.remove(midGroup);
+
+    //Corrects left position due to setting the group to originX: center
+    left += width/2 + 1
+
+    //Represents the middle separator
+    let midRect = new fabric.Rect({
+        width: width,
+        height: 19,
+        fill: "white",
+        stroke: "black",
+        strokeWidth: 2,
+        intersects: true,
+        selectable: false,
+    });
+
+    let backWeight = new fabric.IText("Back Weight: ",{
+        top: 10,
+        left: width/8,
+        textAlign: 'left',
+        fill: 'black',
+        hasControls: false,
+        selectable: false,
+        fontSize: 14,
+        originX: 'center',
+        originY: 'center',
+        startText: "Back Weight: "
+    });
+
+    let totalWeight = new fabric.IText("Total: ",{
+        top: 10,
+        left: width/2,
+        textAlign: 'left',
+        fill: 'black',
+        hasControls: false,
+        selectable: false,
+        fontSize: 14,
+        originX: 'center',
+        originY: 'center',
+        startText: "total: "
+    });
+
+    let frontWeight = new fabric.IText("Front Weight: ",{
+        top: 10,
+        left: width/1.135,
+        textAlign: 'left',
+        fill: 'black',
+        hasControls: false,
+        selectable: false,
+        fontSize: 14,
+        originX: 'center',
+        originY: 'center',
+        startText: "Front Weight: "
+    });
+
+    //midGroup is the group that holds all text and objects for the middle divider.
+    midGroup = new fabric.Group([midRect, backWeight, totalWeight, frontWeight], {
+        left: left,
+        top: 392,
+        intersects: true,
+        selectable: false,
+        remove: false,
+        originX: 'center',
+    });
+    canvas.add(midGroup);
 }
 
 /**
@@ -386,8 +452,8 @@ function truckCurtain(truckid) {
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 14, 75, 24 * 14, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         vLine5 = new fabric.Line([600 * 2 - 240, 75, 600 * 2 - 240, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        //Set mid line to match left and right border
-        midLine.set( {x1: 24*14, y1: 400, x2: 1200-240, y2: 400,});
+        //Set mid group to match left and right border
+        createMidGroup(vLine5.left - vLine2.left, vLine2.left)
 
     }   else if (truckid == "933" || truckid == "Hotshot-32-72-96") {
         //32' Flatbed trailers
@@ -423,8 +489,8 @@ function truckCurtain(truckid) {
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 10, 75, 24 * 10, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         vLine5 = new fabric.Line([600 * 2 - 192, 75, 600 * 2 - 192, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        //Set mid line to match left and right border
-        midLine.set( {x1: 24*10, y1: 400, x2: 1200-192, y2: 400,});
+        //Set mid group to match left and right border
+        createMidGroup(vLine5.left - vLine2.left, vLine2.left)
 
     }   else if (truckid == "3601" || truckid == "3602" || truckid == "3603" || truckid == "3604") {
         //36' Flatbed trailers
@@ -458,8 +524,8 @@ function truckCurtain(truckid) {
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 6, 75, 24 * 6, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         vLine5 = new fabric.Line([600 * 2 - 192, 75, 600 * 2 - 192, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        //Set mid line to match left and right border
-        midLine.set( {x1: 24*6, y1: 400, x2: 1200-192, y2: 400,});
+        //Set mid group to match left and right border
+        createMidGroup(vLine5.left - vLine2.left, vLine2.left)
 
     }   else if (truckid == "Hotshot-40-72-96") {
         //40' Flatbed trailers
@@ -491,8 +557,8 @@ function truckCurtain(truckid) {
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 5, 75, 24 * 5, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         vLine5 = new fabric.Line([600 * 2 - 120, 75, 600 * 2 - 120, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        //Set mid line to match left and right border
-        midLine.set( {x1: 24*5, y1: 400, x2: 1200-120, y2: 400,});
+        //Set mid group to match left and right border
+        createMidGroup(vLine5.left - vLine2.left, vLine2.left)
 
     } else if (truckid == "M42") {
         //42' Flatbed trailers
@@ -522,8 +588,8 @@ function truckCurtain(truckid) {
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         vLine5 = new fabric.Line([600 * 2 - 144, 75, 600 * 2 - 144, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        //Set mid line to match left and right border
-        midLine.set( {x1: 24*2, y1: 400, x2: 1200-144, y2: 400,});
+        //Set mid group to match left and right border
+        createMidGroup(vLine5.left - vLine2.left, vLine2.left)
 
     }   else if (truckid == "RWW114") {
         //44' Flatbed trailers
@@ -545,8 +611,8 @@ function truckCurtain(truckid) {
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         vLine5 = new fabric.Line([600 * 2 - 96, 75, 600 * 2 - 96, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        //Set mid line to match left and right border
-        midLine.set( {x1: 24*2, y1: 400, x2: 1200-96, y2: 400,});
+        //Set mid group to match left and right border
+        createMidGroup(vLine5.left - vLine2.left, vLine2.left);
 
     } else if (truckid == '46 Flatbed' || truckid == '1903') {
         //46' Flatbed trailers
@@ -568,8 +634,8 @@ function truckCurtain(truckid) {
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         vLine5 = new fabric.Line([600 * 2 - 48, 75, 600 * 2 - 48, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        //Set mid line to match left and right border
-        midLine.set({x1: 24*2, y1: 400, x2: 1200 - 48, y2: 400,});
+        //Set mid group to match left and right border
+        createMidGroup(vLine5.left - vLine2.left, vLine2.left)
     } else if (truckid == '48 Flatbed' || truckid == 300 || truckid == 'Carrier-48-72-100' || truckid == 'Carrier-48-90-100' || truckid == "_MWRED48" || truckid == "_MWCONE48") {
         //48' Flatbed trailers
         //set weight text location
@@ -590,8 +656,8 @@ function truckCurtain(truckid) {
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         vLine5 = new fabric.Line([600 * 2, 75, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        //Set mid line to match left and right border
-        midLine.set({x1: 24 * 2, y1: 400, x2: 1200, y2: 400});
+        //Set mid group to match left and right border
+        createMidGroup(vLine5.left - vLine2.left, vLine2.left)
 
     } else if (truckid == "0110" || truckid == "0801" || truckid == "0802" || truckid == '2003' || truckid == '2004' || truckid == '2005' || truckid == '2006' || truckid == '2007' || truckid == '2008' || truckid == "Custom Flatbed"
         || truckid == "611" || truckid == "NE101" || truckid == "NE102" || truckid == "NE103" || truckid == "NE104" || truckid == "NE105" || truckid == "NE106" || truckid == "NE107" || truckid == "NE108" || truckid == "NE109" || truckid == "NE110"
@@ -617,9 +683,8 @@ function truckCurtain(truckid) {
         //Set left and right borders
         vLine2 = new fabric.Line([0, 75, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         vLine5 = new fabric.Line([600 * 2, 75, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        //Set mid line to match left and right border
-        midLine.set({x1: 0, y1: 400, x2: 1200, y2: 400});
-
+        //Set mid group to match left and right border
+        createMidGroup(vLine5.left - vLine2.left, vLine2.left)
     } else {
         //set weight text location
         topLeftWeightText.set('left', 206).setCoords();
@@ -639,8 +704,9 @@ function truckCurtain(truckid) {
         //Set left and right borders
         vLine2 = new fabric.Line([0, 75, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
         vLine5 = new fabric.Line([600 * 2, 75, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        //Set mid line to match left and right border
-        midLine.set({x1: 0, y1: 400, x2: 1200, y2: 400});
+
+        //Set mid groups to match left and right border
+        createMidGroup(vLine5.left - vLine2.left, vLine2.left)
 
         door1 = '';
     }
@@ -756,9 +822,6 @@ function truck53(truckid) {
     });
     canvas.add(doorText6);
 
-//middle canvas line
-    midLine.set({x1: 0, y1: 400, x2: 1200, y2: 400});
-
 //vertical lines
     vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
     canvas.add(vLine1);
@@ -779,6 +842,9 @@ function truck53(truckid) {
     canvas.add(vLine4);
     vLine5 = new fabric.Line([600 * 2, 15, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
     canvas.add(vLine5);
+
+//Middle separator
+    createMidGroup(vLine5.left - vLine1.left, vLine1.left)
 }
 
 /**
@@ -802,9 +868,6 @@ function truck48(truckid) {
     botMiddleWeightRegion.set({left: 578, top: 565, width: 144 * 2-4, height: 162 * 2,}).setCoords();
     botRightWeightRegion.set({left: 915, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
 
-//middle canvas line
-    midLine.set({x1: 0, y1: 400, x2: 1200, y2: 400});
-
 //vertical lines
     vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
     canvas.add(vLine1);
@@ -827,6 +890,12 @@ function truck48(truckid) {
 
     //right Border
     canvas.add(new fabric.Line([600 * 2, 15, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false}));
+
+    //Middle separator
+    createMidGroup(vLine5.left - vLine2.left, vLine2.left)
+
+    //middle canvas line
+    canvas.add(new fabric.Line([0, 400, 1200, 400], {stroke: 'black', strokeWidth: 2, selectable: false}));
 
     //Truck size info
     doorText1 = new fabric.IText(door1, {
@@ -1081,6 +1150,12 @@ function truck35(truckid) {
 
     //right Border
     canvas.add(new fabric.Line([600 * 2, 15, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false}));
+
+    //Middle separator
+    createMidGroup(vLine4.left - vLine2.left, vLine2.left)
+
+    //middle canvas line
+    canvas.add(new fabric.Line([0, 400, 1200, 400], {stroke: 'black', strokeWidth: 2, selectable: false}));
 
     //diagonal lines
     canvas.add(new fabric.Line([0, 75, 120 * 2, 400], {stroke: 'black', selectable: false}));

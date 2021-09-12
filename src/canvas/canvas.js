@@ -7,7 +7,7 @@
 let canvas;
 var grid = 24;
 var rackCanvas;
-var midLine;
+var midGroup;
 var vLine1;
 var vLine2;
 var vLine3;
@@ -382,12 +382,12 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
             createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, cName, AE, weight, striped);
             addUnit(currentGroup);
         }
-        midLine.bringToFront();
         vLine1.bringToFront();
         vLine2.bringToFront();
         vLine3.bringToFront();
         vLine4.bringToFront();
         vLine5.bringToFront();
+        midGroup.bringToFront();
     } else {
         if (addError != '') {
             alert(addError);
@@ -469,53 +469,58 @@ function createCanvas() {
         backgroundColor: "white"
     });
 
-    // snap to grid
+    // snap to grid & check for object intersection. If intersected, snap off of unit
     canvas.on('object:moving', function (options) {
         let target = options.target;
         keepInBounds(target);
-        if (target.isComment != true) {
+        if (target.isComment != true && target !== midGroup) {
             if ( _snapToggle.checked == true){
                 //Snap to horizontal grid
                 target.set({left: (Math.round(target.left / grid) * grid) + 2});
                 //Do when Objects collide during drag
                 target.setCoords();
                 var pointer = canvas.getPointer(event.e);
-                //objectIntersects(midLine, target);
-                if (intersects(midLine, target) && target.line != true) {
-                    if (pointer.y < midLine.top + midLine.strokeWidth / 2) {
-                        target.set('top', (midLine.top - 1) - target.height);
-                    } else {
-                        target.set('top', (midLine.top + 1) + midLine.strokeWidth);
-                    }
-                    target.setCoords();
-                }
+                //Checks all objects if they intersect
                 canvas.forEachObject(function (obj) {
                     if (obj.intersects == true) {
                         objectIntersects(obj, target);
                         target.set('opacity', 1);
                     }
                 });
+                //Check if object intersects with middle group. Move obj if it does.
+                if (intersects(midGroup, target) && target.line != true) {
+                    if (pointer.y < midGroup.top + midGroup.strokeWidth / 2) {
+                        target.set('top', midGroup.top - target.height - 1);
+                    } else {
+                        target.set('top', midGroup.top + midGroup.height + midGroup.strokeWidth + 1);
+                    }
+                    target.setCoords();
+                }
             }
             updateCount(target);
         }
     });
     canvas.on('mouse:up', function (options) {
-        var intersectedObjects = [];
-        canvas.forEachObject(function (obj) {
-            if (options.target != null) {
-                if (intersects(obj, options.target)) {
-                    intersectedObjects.push(obj);
+        if (options.target !== midGroup){
+            var intersectedObjects = [];
+            canvas.forEachObject(function (obj) {
+                if (options.target != null) {
+                    if (intersects(obj, options.target)) {
+                        intersectedObjects.push(obj);
+                    }
                 }
-            }
-            if (obj.isRegion != true){obj.set('opacity', 1);};
-        });
-        //check if intersected bundle is above or below
-        intersectedObjects.forEach(function (obj) {
-            keepInBounds(obj);
-            if (!intersects(obj, options.target)) {
                 if (obj.isRegion != true){obj.set('opacity', 1);};
-            }
-        });
+            });
+            //check if intersected bundle is above or below
+            intersectedObjects.forEach(function (obj) {
+                if (obj !== midGroup){
+                    keepInBounds(obj);
+                    if (!intersects(obj, options.target)) {
+                        if (obj.isRegion != true){obj.set('opacity', 1);};
+                    }
+                }
+            });
+        }
     });
 
     //These fire when any object is selected, needs both
@@ -617,7 +622,9 @@ function objectIntersects(obj, target) {
             } else {
                 target.set('top', (obj.top + 1) + obj.height);
             }
-            obj.set('opacity', 0.5);
+            if (obj !== midGroup){
+                obj.set('opacity', 0.5);
+            }
         } else {
             obj.set('opacity', 1);
         }
