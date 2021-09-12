@@ -1261,25 +1261,32 @@ function truckListUpdate(location){
  * Updates the total weight of the truck's contents
  */
 function truckWeightUpdate(){
-    let wCount = 0
-    let objList = new Set()
+    try{
+        let wCount = 0
+        let objList = new Set()
+        //Retrieves every rack or unit currently in canvas
+        canvas.forEachObject(function (obj) {
+            if (obj.isRack || obj.unit){objList.add(obj)}
+        });
+        //Retrieves every unit that is not in the canvas
+        units.forEach(function (unit){objList.add(unit)})
 
-    //Retrieves every rack or unit currently in canvas
-    canvas.forEachObject(function (obj) {
-        if (obj.isRack || obj.unit){objList.add(obj)}
-    });
-    //Retrieves every unit that is not in the canvas
-    units.forEach(function (unit){objList.add(unit)})
+        //Counts all obj's weight
+        objList.forEach(function (obj){wCount += obj.weight;})
 
-    //Counts all obj's weight
-    objList.forEach(function (obj){wCount += obj.weight;})
+        let weightText = wCount.toString()
+        if (weightText.length > 10){
+            weightText = weightText.substring(0, 10) + "..."
+        }
 
-    let weightText = wCount.toString()
-    if (weightText.length > 10){
-        weightText = weightText.substring(0, 10) + "..."
+        _tWeight.innerText = weightText;
+
+        if (truck.getWeight() > 0 && truck.getWeight() != "?" && (wCount > truck.getWeight())){_tWeight.style.color="red";} else {_tWeight.style.color="black";}
+    }catch (e){
+        if ( e instanceof ReferenceError ) {
+            //Do nothing
+        } else {
+            console.log(e)
+        }
     }
-
-    _tWeight.innerText = weightText;
-
-    if (truck.getWeight() > 0 && truck.getWeight() != "?" && (wCount > truck.getWeight())){_tWeight.style.color="red";} else {_tWeight.style.color="black";}
 }

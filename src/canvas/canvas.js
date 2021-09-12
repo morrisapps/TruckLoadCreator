@@ -212,9 +212,11 @@ function updateCount(target) {
                     if (target.remove != true){weightRegions[area[0]].units.add([target,(area[1]/overlapTotal)*100])}
                 })
             }
-            //Updates all weight texts with all the updated weightUnits array
+            //Updates all weight region texts with all the updated weightUnits array
+            //Also updates total weight in canvas
             //This Loops through each weightRegion again to ensure weight counting will be accurate after intersection
             let roundHalf = false;
+            let totalWeight = 0
             for (let i = 0; i < weightRegions.length; i++) {
                 let weight = 0;
                 //Adds each Unit's weight for each index
@@ -231,6 +233,7 @@ function updateCount(target) {
                         }
                     }
                     weight = weight + Math.round(unitRegionWeight);
+                    totalWeight += weight;
                 });
                 if (weight > 0){
                     weightTexts[i].text = weight.toString() + ' lb';
@@ -238,6 +241,8 @@ function updateCount(target) {
                     weightTexts[i].text = '';
                 }
             }
+            // midGroup.item(2).set({text: midGroup.item(2).startText + totalWeight.toString() + " lb"});
+            // if (truck.getWeight() > 0 && truck.getWeight() != "?" && (totalWeight > truck.getWeight())){midGroup.item(2).set({fill: "red"});} else {midGroup.item(2).set({fill: "black"});}
         }
     }
 }
