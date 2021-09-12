@@ -164,7 +164,7 @@ function updateCount(target) {
             }
         }
 
-        //Update weight
+        //Update weight regions
         if (target.weight > 0){
             //intersectedIndex is used to count the # of intersections.
             let intersectedIndex = []
@@ -535,6 +535,16 @@ function createCanvas() {
     canvas.on("selection:cleared", function (obj) {
         deselectObject(obj);
     });
+
+    //Fires when object has been added
+    canvas.on("object:added", function (obj) {
+        truckWeightUpdate();
+    });
+    //Fires when object has been removed
+    canvas.on("object:removed", function (obj) {
+        truckWeightUpdate();
+    });
+
     textLoad();
     rackLoad();
     canvas.hoverCursor = 'default';

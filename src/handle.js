@@ -224,7 +224,7 @@ function createRack(top, left, id, drag) {
         weight: 2000
     });
 
-    truckWeightUpdate(2000);
+    truckWeightUpdate();
 
     rackNew.hoverCursor = 'move';
     rackNew.moveCursor = 'grabbing';

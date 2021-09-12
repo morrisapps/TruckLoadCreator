@@ -474,7 +474,7 @@ function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, 
         }
     }
 
-    truckWeightUpdate(Math.round(weight))
+    truckWeightUpdate()
 
     currentGroup.hoverCursor = 'move';
     currentGroup.moveCursor = 'grabbing';
@@ -845,7 +845,7 @@ function removeUnit(unit) {
             sortUnit();
             if (!loading){saveToBrowser();}
         }
-        truckWeightUpdate(-(unit.weight));
+        truckWeightUpdate();
         if (getCustUnit(unit.customer) == null) {
             removeCustomer(unit.customer);
             updateRack();

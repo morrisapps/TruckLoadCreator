@@ -61,7 +61,7 @@ function truckLoad(id) {
 
     _mWeight.innerText = truck.getWeight();
     _hWeight.innerText = truck.getHalfWeight();
-    truckWeightUpdate(0);
+    truckWeightUpdate();
 
     vLine1.bringToFront();
     vLine2.bringToFront();
@@ -280,7 +280,7 @@ function createMidGroup(width, left){
         fontSize: 14,
         originX: 'center',
         originY: 'center',
-        startText: "total: "
+        startText: "Total: "
     });
 
     let frontWeight = new fabric.IText("Front Weight: ",{
@@ -1259,12 +1259,27 @@ function truckListUpdate(location){
 }
 /**
  * Updates the total weight of the truck's contents
- * @param {int} weightChange - The weight amount that will be added or subtracted.
  */
-function truckWeightUpdate(weightChange){
-    if (!isNaN(weightChange)){
-        weightCount = weightCount + (weightChange);
+function truckWeightUpdate(){
+    let wCount = 0
+    let objList = new Set()
+
+    //Retrieves every rack or unit currently in canvas
+    canvas.forEachObject(function (obj) {
+        if (obj.isRack || obj.unit){objList.add(obj)}
+    });
+    //Retrieves every unit that is not in the canvas
+    units.forEach(function (unit){objList.add(unit)})
+
+    //Counts all obj's weight
+    objList.forEach(function (obj){wCount += obj.weight;})
+
+    let weightText = wCount.toString()
+    if (weightText.length > 10){
+        weightText = weightText.substring(0, 10) + "..."
     }
-    _tWeight.innerText = weightCount;
-    if (truck.getWeight() > 0 && truck.getWeight() != "?" && (weightCount > truck.getWeight())){_tWeight.style.color="red";} else {_tWeight.style.color="black";}
+
+    _tWeight.innerText = weightText;
+
+    if (truck.getWeight() > 0 && truck.getWeight() != "?" && (wCount > truck.getWeight())){_tWeight.style.color="red";} else {_tWeight.style.color="black";}
 }
