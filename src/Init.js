@@ -112,6 +112,7 @@ let topLeftWeightRegion = new fabric.Rect({
     selectable: false,
     isRegion: true,
     opacity: 0,
+    weight: 0,
     units: new Set()
 });
 let topRightWeightRegion = new fabric.Rect({
@@ -127,6 +128,7 @@ let topRightWeightRegion = new fabric.Rect({
     selectable: false,
     isRegion: true,
     opacity: 0,
+    weight: 0,
     units: new Set()
 });
 let botLeftWeightRegion = new fabric.Rect({
@@ -142,6 +144,7 @@ let botLeftWeightRegion = new fabric.Rect({
     selectable: false,
     isRegion: true,
     opacity: 0,
+    weight: 0,
     units: new Set()
 });
 let botRightWeightRegion = new fabric.Rect({
@@ -157,6 +160,7 @@ let botRightWeightRegion = new fabric.Rect({
     selectable: false,
     isRegion: true,
     opacity: 0,
+    weight: 0,
     units: new Set()
 });
 let weightRegions = [topLeftWeightRegion, topRightWeightRegion, botLeftWeightRegion, botRightWeightRegion];

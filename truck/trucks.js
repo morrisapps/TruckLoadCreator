@@ -256,6 +256,7 @@ function createMidGroup(width, left){
         fontSize: 14,
         originX: 'center',
         originY: 'center',
+        weight: 0,
         startText: "Back Weight: "
     });
 
@@ -269,6 +270,7 @@ function createMidGroup(width, left){
         fontSize: 14,
         originX: 'center',
         originY: 'center',
+        weight: 0,
         startText: "Total: "
     });
 
@@ -282,6 +284,7 @@ function createMidGroup(width, left){
         fontSize: 14,
         originX: 'center',
         originY: 'center',
+        weight: 0,
         startText: "Front Weight: "
     });
 

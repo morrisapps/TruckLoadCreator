@@ -34,7 +34,11 @@ function printPageArea() {
     botCounters.forEach(function (line){if (line.fill == 'red'){heightCheck = false;}});
     if (!heightCheck){heightCheckResponse = confirm('Some height counter(s) exceed the height of '+ (truck.getHeight()+5) + '\n\nContinue with print?\n\n');}
 
-    if (_tWeight.style.color == "red"){weightCheckResponse = confirm('Total weight exceeds maximum of '+ (truck.getWeight()) + '\n\nContinue with print?\n\n');}
+    //Check if any weight counters are red/overweight
+    if (midGroup.item(2).fill == "red"){weightCheckResponse = confirm('Total weight exceeds maximum of '+ (truck.getWeight()) + '\n\nContinue with print?\n\n');}
+    if (midGroup.item(1).fill == "red"){weightCheckResponse = confirm('Back weight exceeds maximum of '+ (truck.getWeight()/2) + '\n\nContinue with print?\n\n');}
+    if (midGroup.item(3).fill == "red"){weightCheckResponse = confirm('Front weight exceeds maximum of '+ (truck.getWeight()/2) + '\n\nContinue with print?\n\n');}
+    //if (_tWeight.style.color == "red"){weightCheckResponse = confirm('Total weight exceeds maximum of '+ (truck.getWeight()) + '\n\nContinue with print?\n\n');}
 
     if (unitsNotInResponse && weightZeroResponse && heightCheckResponse && weightCheckResponse){
         //Remove Height Lines from print

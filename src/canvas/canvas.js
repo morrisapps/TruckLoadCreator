@@ -216,7 +216,6 @@ function updateCount(target) {
             //Also updates total weight in canvas
             //This Loops through each weightRegion again to ensure weight counting will be accurate after intersection
             let roundHalf = false;
-            let totalWeight = 0
             for (let i = 0; i < weightRegions.length; i++) {
                 let weight = 0;
                 //Adds each Unit's weight for each index
@@ -234,19 +233,45 @@ function updateCount(target) {
                     }
                     weight = weight + Math.round(unitRegionWeight);
                 });
-                totalWeight += weight;
+                weightRegions[i].weight = weight;
                 if (weight > 0){
                     weightTexts[i].text = weight.toString() + ' lb';
                 }else {
                     weightTexts[i].text = '';
                 }
             }
+
+            //Set Back, Front, and Total weight in canvas
             if (midGroup !== undefined){
-                midGroup.item(2).set({text: midGroup.item(2).startText + totalWeight.toString() + " lb"});
-                if (truck.getWeight() > 0 && truck.getWeight() != "?" && (totalWeight > truck.getWeight())){midGroup.item(2).set({fill: "red"});} else {midGroup.item(2).set({fill: "black"});}
+                //Total weight
+                midGroup.item(2).weight = (weightRegions[0].weight + weightRegions[1].weight + weightRegions[2].weight + weightRegions[3].weight);
+                weightTextFormat(midGroup.item(2), midGroup.item(2).weight.toString())
+                if (truck.getWeight() > 0 && truck.getWeight() != "?" && (midGroup.item(2).weight > truck.getWeight())){midGroup.item(2).set({fill: "red"});} else {midGroup.item(2).set({fill: "black"});}
+                //Back weight
+                midGroup.item(1).weight = weightRegions[0].weight + weightRegions[2].weight
+                weightTextFormat(midGroup.item(1), midGroup.item(1).weight.toString())
+                if (truck.getWeight() > 0 && truck.getWeight() != "?" && (midGroup.item(1).weight > truck.getWeight()/2)){midGroup.item(1).set({fill: "red"});} else {midGroup.item(1).set({fill: "black"});}
+                //Front weight
+                midGroup.item(3).weight = weightRegions[1].weight + weightRegions[3].weight
+                weightTextFormat(midGroup.item(3), midGroup.item(3).weight.toString())
+                if (truck.getWeight() > 0 && truck.getWeight() != "?" && (midGroup.item(3).weight > truck.getWeight()/2)){midGroup.item(3).set({fill: "red"});} else {midGroup.item(3).set({fill: "black"});}
             }
+
         }
     }
+}
+
+/**
+ * Formats the given textObj with the given weight text by substring if over 10 characters
+ * @param textObj Text object from middle separator in canvas
+ * @param text The text that will be formatted with substring
+ */
+function weightTextFormat(textObj, text){
+    let formattedText = text
+    if (text.length > 10){
+        formattedText = text.substring(0, 10) + "..."
+    }
+    textObj.set({text: textObj.startText + formattedText + " lb"});
 }
 
 /**
