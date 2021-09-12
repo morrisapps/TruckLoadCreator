@@ -126,7 +126,7 @@ function getDBTruckIDs() {
             if (_returnedData.length > 0){
                 for (let i = 0; i < _returnedData.length; i++) {
                     let disabled = false;
-                    if (loadID != '' && loadID != _returnedData[i][0]){
+                    if (loadID != '' && loadID != 'Enter load' && loadID != _returnedData[i][0]){
                         disabled = true;
                     }
                     $('#importTruck').append($('<option>', {
@@ -146,8 +146,7 @@ function getDBTruckIDs() {
                 })).selectmenu("refresh");
             }
 
-
-            if (loadID != ''){
+            if (loadID != '' && loadID != "Enter load"){
                 $('#importTruck').val(loadID).selectmenu("refresh");
                 document.getElementById('importText').innerHTML = "<p>Import from "+loadID+" again?</p>"
             }
@@ -274,7 +273,7 @@ function loadFromDB(data) {
     updateRack();
     listUnits();
     loadTextEdit.set({text: data[0][0], fontSize: 16, fontStyle: "normal", top: 23});
-    if (loadID == ''){loadID = data[0][0];}
+    if (loadID == '' || loadID == 'Enter load'){loadID = data[0][0];}
     createLoadBarcode();
     modeTextEdit.set({text: data[0][2], fontSize: 16, fontStyle: "normal", top: 23});
     dropsTextEdit.set({text: customers.length.toString(), fontSize: 16, fontStyle: "normal", top: 23});

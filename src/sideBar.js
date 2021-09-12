@@ -887,7 +887,6 @@ function addCustomer(cName, cDrop, importing, importingCustomer) {
         }
         if (importing){
             let customer = getDropCustomer(cDrop)
-            console.log(customer)
             if (customer != 'none' && !customer.names.includes(importingCustomer)){
                 customer.names.push(importingCustomer);
             }
