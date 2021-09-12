@@ -43,8 +43,6 @@ function truckLoad(id) {
         truck53(truckID);
     } else if ((truck.getLength() == 48 || truck.getLength() == 47) && truck.getType() == 0) {
         truck48(truckID);
-    } else if (truck.getLength() == 45  && truck.getType() == 0) {
-        truck45(truckID);
     } else if (truck.getLength() == 35 && truck.getType() == 0) {
         truck35(truckID);
     } else if (truck.getType() != 0) {
@@ -154,15 +152,6 @@ function createCounters() {
         canvas.add(botLines[i]);
         i++;
     }
-
-    //Weight unit containers
-    topLeftWeightUnits = new Set();
-    topMiddleWeightUnits = new Set();
-    topRightWeightUnits = new Set();
-    botLeftWeightUnits = new Set();
-    botMiddleWeightUnits = new Set();
-    botRightWeightUnits = new Set();
-    weightUnits = [topLeftWeightUnits,topMiddleWeightUnits,topRightWeightUnits,botLeftWeightUnits,botMiddleWeightUnits,botRightWeightUnits];
 }
 
 /**
@@ -312,21 +301,19 @@ function createMidGroup(width, left){
  * Creates lines, sets weight and region locations for truck custom
  */
 function truckCustom() {
+    //Default empty truck template using 53'
+
     //set weight text location
     topLeftWeightText.set('left', 248).setCoords();
-    topMiddleWeightText.set('left', 626).setCoords();
     topRightWeightText.set('left', 1010).setCoords();
     botLeftWeightText.set('left', 248).setCoords();
-    botMiddleWeightText.set('left', 626).setCoords();
     botRightWeightText.set('left', 1010).setCoords();
-
     //Set region's size and location
-    topLeftWeightRegion.set({left: 218, top: 239, width: 216 * 2, height: 162 * 2,}).setCoords();
-    topMiddleWeightRegion.set({left: 626, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-    topRightWeightRegion.set({left: 1010, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-    botLeftWeightRegion.set({left: 218, top: 565, width: 216 * 2, height: 162 * 2,}).setCoords();
-    botMiddleWeightRegion.set({left: 626, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-    botRightWeightRegion.set({left: 1010, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
+    topLeftWeightRegion.set({left: 300, top: 239, width: 600, height: 162 * 2,}).setCoords();
+    topRightWeightRegion.set({left: 902, top: 239, width: 600, height: 162 * 2,}).setCoords();
+    botLeftWeightRegion.set({left: 300, top: 565, width: 600, height: 162 * 2,}).setCoords();
+    botRightWeightRegion.set({left: 902, top: 565, width: 600, height: 162 * 2,}).setCoords();
+
 
     //vertical lines
     vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
@@ -435,19 +422,15 @@ function truckCurtain(truckid) {
         botLines[11] = new fabric.Line();
 
         //set weight text location
-        topLeftWeightText.set('left', 442).setCoords();
-        topMiddleWeightText.set('left', 650).setCoords();
-        topRightWeightText.set('left', 858).setCoords();
-        botLeftWeightText.set('left', 442).setCoords();
-        botMiddleWeightText.set('left', 660).setCoords();
-        botRightWeightText.set('left', 858).setCoords();
+        topLeftWeightText.set('left', 493).setCoords();
+        topRightWeightText.set('left', 807).setCoords();
+        botLeftWeightText.set('left', 493).setCoords();
+        botRightWeightText.set('left', 807).setCoords();
         //Set region's size and location
-        topLeftWeightRegion.set({left: 442, top: 239, width: 104 * 2, height: 162 * 2,}).setCoords();
-        topMiddleWeightRegion.set({left: 650, top: 239, width: 104 * 2-4, height: 162 * 2,}).setCoords();
-        topRightWeightRegion.set({left: 858, top: 239, width: 104 * 2, height: 162 * 2,}).setCoords();
-        botLeftWeightRegion.set({left: 442, top: 565, width: 104 * 2, height: 162 * 2,}).setCoords();
-        botMiddleWeightRegion.set({left: 650, top: 565, width: 104 * 2-4, height: 162 * 2,}).setCoords();
-        botRightWeightRegion.set({left: 858, top: 565, width: 104 * 2, height: 162 * 2,}).setCoords();
+        topLeftWeightRegion.set({left: 494-1, top: 239, width: 104 * 3, height: 162 * 2,}).setCoords();
+        topRightWeightRegion.set({left: 806+1, top: 239, width: 104 * 3, height: 162 * 2,}).setCoords();
+        botLeftWeightRegion.set({left: 494-1, top: 565, width: 104 * 3, height: 162 * 2,}).setCoords();
+        botRightWeightRegion.set({left: 806+1, top: 565, width: 104 * 3, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 14, 75, 24 * 14, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
@@ -472,19 +455,15 @@ function truckCurtain(truckid) {
         botLines[11] = new fabric.Line();
 
         //set weight text location
-        topLeftWeightText.set('left', 370).setCoords();
-        topMiddleWeightText.set('left', 626).setCoords();
-        topRightWeightText.set('left', 882).setCoords();
-        botLeftWeightText.set('left', 370).setCoords();
-        botMiddleWeightText.set('left', 626).setCoords();
-        botRightWeightText.set('left', 882).setCoords();
+        topLeftWeightText.set('left', 433).setCoords();
+        topRightWeightText.set('left', 817).setCoords();
+        botLeftWeightText.set('left', 433).setCoords();
+        botRightWeightText.set('left', 817).setCoords();
         //Set region's size and location
-        topLeftWeightRegion.set({left: 370, top: 239, width: 128 * 2, height: 162 * 2,}).setCoords();
-        topMiddleWeightRegion.set({left: 626, top: 239, width: 128 * 2-4, height: 162 * 2,}).setCoords();
-        topRightWeightRegion.set({left: 882, top: 239, width: 128 * 2, height: 162 * 2,}).setCoords();
-        botLeftWeightRegion.set({left: 370, top: 565, width: 128 * 2, height: 162 * 2,}).setCoords();
-        botMiddleWeightRegion.set({left: 626, top: 565, width: 128 * 2-4, height: 162 * 2,}).setCoords();
-        botRightWeightRegion.set({left: 882, top: 565, width: 128 * 2, height: 162 * 2,}).setCoords();
+        topLeftWeightRegion.set({left: 433, top: 239, width: 128 * 3, height: 162 * 2,}).setCoords();
+        topRightWeightRegion.set({left: 817, top: 239, width: 128 * 3, height: 162 * 2,}).setCoords();
+        botLeftWeightRegion.set({left: 433, top: 565, width: 128 * 3, height: 162 * 2,}).setCoords();
+        botRightWeightRegion.set({left: 817, top: 565, width: 128 * 3, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 10, 75, 24 * 10, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
@@ -507,19 +486,15 @@ function truckCurtain(truckid) {
         botLines[11] = new fabric.Line();
 
         //set weight text location
-        topLeftWeightText.set('left', 290).setCoords();
-        topMiddleWeightText.set('left', 578).setCoords();
-        topRightWeightText.set('left', 866).setCoords();
-        botLeftWeightText.set('left', 290).setCoords();
-        botMiddleWeightText.set('left', 578).setCoords();
-        botRightWeightText.set('left', 866).setCoords();
+        topLeftWeightText.set('left', 361).setCoords();
+        topRightWeightText.set('left', 795).setCoords();
+        botLeftWeightText.set('left', 361).setCoords();
+        botRightWeightText.set('left', 795).setCoords();
         //Set region's size and location
-        topLeftWeightRegion.set({left: 290, top: 239, width: 144 * 2, height: 162 * 2,}).setCoords();
-        topMiddleWeightRegion.set({left: 578, top: 239, width: 144 * 2-4, height: 162 * 2,}).setCoords();
-        topRightWeightRegion.set({left: 866, top: 239, width: 144 * 2, height: 162 * 2,}).setCoords();
-        botLeftWeightRegion.set({left: 290, top: 565, width: 144 * 2, height: 162 * 2,}).setCoords();
-        botMiddleWeightRegion.set({left: 578, top: 565, width: 144 * 2-4, height: 162 * 2,}).setCoords();
-        botRightWeightRegion.set({left: 866, top: 565, width: 144 * 2, height: 162 * 2,}).setCoords();
+        topLeftWeightRegion.set({left: 361, top: 239, width: 144 * 3, height: 162 * 2,}).setCoords();
+        topRightWeightRegion.set({left: 793, top: 239, width: 144 * 3, height: 162 * 2,}).setCoords();
+        botLeftWeightRegion.set({left: 361, top: 565, width: 144 * 3, height: 162 * 2,}).setCoords();
+        botRightWeightRegion.set({left: 793, top: 565, width: 144 * 3, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 6, 75, 24 * 6, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
@@ -540,19 +515,15 @@ function truckCurtain(truckid) {
         botLines[11] = new fabric.Line();
 
         //set weight text location
-        topLeftWeightText.set('left', 290).setCoords();
-        topMiddleWeightText.set('left', 602).setCoords();
-        topRightWeightText.set('left', 914).setCoords();
-        botLeftWeightText.set('left', 290).setCoords();
-        botMiddleWeightText.set('left', 602).setCoords();
-        botRightWeightText.set('left', 914).setCoords();
+        topLeftWeightText.set('left', 361).setCoords();
+        topRightWeightText.set('left', 841).setCoords();
+        botLeftWeightText.set('left', 361).setCoords();
+        botRightWeightText.set('left', 841).setCoords();
         //Set region's size and location
-        topLeftWeightRegion.set({left: 290, top: 239, width: 168 * 2, height: 162 * 2,}).setCoords();
-        topMiddleWeightRegion.set({left: 602, top: 239, width: 144 * 2-4, height: 162 * 2,}).setCoords();
-        topRightWeightRegion.set({left: 914, top: 239, width: 168 * 2, height: 162 * 2,}).setCoords();
-        botLeftWeightRegion.set({left: 290, top: 565, width: 168 * 2, height: 162 * 2,}).setCoords();
-        botMiddleWeightRegion.set({left: 602, top: 565, width: 144 * 2-4, height: 162 * 2,}).setCoords();
-        botRightWeightRegion.set({left: 914, top: 565, width: 168 * 2, height: 162 * 2,}).setCoords();
+        topLeftWeightRegion.set({left: 361, top: 239, width: 168 * 2 + 142, height: 162 * 2,}).setCoords();
+        topRightWeightRegion.set({left: 841, top: 239, width: 168 * 2 + 142, height: 162 * 2,}).setCoords();
+        botLeftWeightRegion.set({left: 361, top: 565, width: 168 * 2 + 142, height: 162 * 2,}).setCoords();
+        botRightWeightRegion.set({left: 841, top: 565, width: 168 * 2 + 142, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 5, 75, 24 * 5, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
@@ -571,19 +542,15 @@ function truckCurtain(truckid) {
         botLines[11] = new fabric.Line();
 
         //set weight text location
-        topLeftWeightText.set('left', 218).setCoords();
-        topMiddleWeightText.set('left', 554).setCoords();
-        topRightWeightText.set('left', 890).setCoords();
-        botLeftWeightText.set('left', 218).setCoords();
-        botMiddleWeightText.set('left', 554).setCoords();
-        botRightWeightText.set('left', 890).setCoords();
+        topLeftWeightText.set('left', 301).setCoords();
+        topRightWeightText.set('left', 805).setCoords();
+        botLeftWeightText.set('left', 301).setCoords();
+        botRightWeightText.set('left', 805).setCoords();
         //Set region's size and location
-        topLeftWeightRegion.set({left: 218, top: 239, width: 168 * 2, height: 162 * 2,}).setCoords();
-        topMiddleWeightRegion.set({left: 554, top: 239, width: 168 * 2-4, height: 162 * 2,}).setCoords();
-        topRightWeightRegion.set({left: 890, top: 239, width: 168 * 2, height: 162 * 2,}).setCoords();
-        botLeftWeightRegion.set({left: 218, top: 565, width: 168 * 2, height: 162 * 2,}).setCoords();
-        botMiddleWeightRegion.set({left: 554, top: 565, width: 168 * 2-4, height: 162 * 2,}).setCoords();
-        botRightWeightRegion.set({left: 890, top: 565, width: 168 * 2, height: 162 * 2,}).setCoords();
+        topLeftWeightRegion.set({left: 301, top: 239, width: 168 * 3, height: 162 * 2,}).setCoords();
+        topRightWeightRegion.set({left: 805, top: 239, width: 168 * 3, height: 162 * 2,}).setCoords();
+        botLeftWeightRegion.set({left: 301, top: 565, width: 168 * 3, height: 162 * 2,}).setCoords();
+        botRightWeightRegion.set({left: 805, top: 565, width: 168 * 3, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
@@ -594,19 +561,15 @@ function truckCurtain(truckid) {
     }   else if (truckid == "RWW114") {
         //44' Flatbed trailers
         //set weight text location
-        topLeftWeightText.set('left', 242).setCoords();
-        topMiddleWeightText.set('left', 578).setCoords();
-        topRightWeightText.set('left', 914).setCoords();
-        botLeftWeightText.set('left', 242).setCoords();
-        botMiddleWeightText.set('left', 578).setCoords();
-        botRightWeightText.set('left', 914).setCoords();
+        topLeftWeightText.set('left', 312).setCoords();
+        topRightWeightText.set('left', 842).setCoords();
+        botLeftWeightText.set('left', 312).setCoords();
+        botRightWeightText.set('left', 842).setCoords();
         //Set region's size and location
-        topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-        topMiddleWeightRegion.set({left: 578, top: 239, width: 144 * 2-4, height: 162 * 2,}).setCoords();
-        topRightWeightRegion.set({left: 914, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-        botLeftWeightRegion.set({left: 242, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
-        botMiddleWeightRegion.set({left: 578, top: 565, width: 144 * 2-4, height: 162 * 2,}).setCoords();
-        botRightWeightRegion.set({left: 914, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
+        topLeftWeightRegion.set({left: 312, top: 239, width: 192 * 3-48, height: 162 * 2,}).setCoords();
+        topRightWeightRegion.set({left: 842, top: 239, width: 192 * 3-48, height: 162 * 2,}).setCoords();
+        botLeftWeightRegion.set({left: 312, top: 565, width: 192 * 3-48, height: 162 * 2,}).setCoords();
+        botRightWeightRegion.set({left: 842, top: 565, width: 192 * 3-48, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
@@ -617,19 +580,15 @@ function truckCurtain(truckid) {
     } else if (truckid == '46 Flatbed' || truckid == '1903') {
         //46' Flatbed trailers
         //set weight text location
-        topLeftWeightText.set('left', 242).setCoords();
-        topMiddleWeightText.set('left', 602).setCoords();
-        topRightWeightText.set('left', 962).setCoords();
-        botLeftWeightText.set('left', 242).setCoords();
-        botMiddleWeightText.set('left', 602).setCoords();
-        botRightWeightText.set('left', 962).setCoords();
+        topLeftWeightText.set('left', 326).setCoords();
+        topRightWeightText.set('left', 876).setCoords();
+        botLeftWeightText.set('left', 326).setCoords();
+        botRightWeightText.set('left', 876).setCoords();
         //Set region's size and location
-        topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-        topMiddleWeightRegion.set({left: 602, top: 239, width: 168 * 2-4, height: 162 * 2,}).setCoords();
-        topRightWeightRegion.set({left: 962, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-        botLeftWeightRegion.set({left: 242, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
-        botMiddleWeightRegion.set({left: 602, top: 565, width: 168 * 2-4, height: 162 * 2,}).setCoords();
-        botRightWeightRegion.set({left: 962, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
+        topLeftWeightRegion.set({left: 326, top: 239, width: 192 * 3-26, height: 162 * 2,}).setCoords();
+        topRightWeightRegion.set({left: 876, top: 239, width: 192 * 3-26, height: 162 * 2,}).setCoords();
+        botLeftWeightRegion.set({left: 326, top: 565, width: 192 * 3-26, height: 162 * 2,}).setCoords();
+        botRightWeightRegion.set({left: 876, top: 565, width: 192 * 3-26, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
@@ -639,19 +598,15 @@ function truckCurtain(truckid) {
     } else if (truckid == '48 Flatbed' || truckid == 300 || truckid == 'Carrier-48-72-100' || truckid == 'Carrier-48-90-100' || truckid == "_MWRED48" || truckid == "_MWCONE48") {
         //48' Flatbed trailers
         //set weight text location
-        topLeftWeightText.set('left', 242).setCoords();
-        topMiddleWeightText.set('left', 626).setCoords();
-        topRightWeightText.set('left', 1010).setCoords();
-        botLeftWeightText.set('left', 242).setCoords();
-        botMiddleWeightText.set('left', 626).setCoords();
-        botRightWeightText.set('left', 1010).setCoords();
+        topLeftWeightText.set('left', 337).setCoords();
+        topRightWeightText.set('left', 913).setCoords();
+        botLeftWeightText.set('left', 337).setCoords();
+        botRightWeightText.set('left', 913).setCoords();
         //Set region's size and location
-        topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-        topMiddleWeightRegion.set({left: 626, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-        topRightWeightRegion.set({left: 1010, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-        botLeftWeightRegion.set({left: 242, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
-        botMiddleWeightRegion.set({left: 626, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-        botRightWeightRegion.set({left: 1010, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
+        topLeftWeightRegion.set({left: 337, top: 239, width: 192 * 3-2, height: 162 * 2,}).setCoords();
+        topRightWeightRegion.set({left: 913, top: 239, width: 192 * 3-2, height: 162 * 2,}).setCoords();
+        botLeftWeightRegion.set({left: 337, top: 565, width: 192 * 3-2, height: 162 * 2,}).setCoords();
+        botRightWeightRegion.set({left: 913, top: 565, width: 192 * 3-2, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
         vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
@@ -666,19 +621,15 @@ function truckCurtain(truckid) {
         || truckid == "2101" || truckid == "2102" || truckid == "2103" || truckid == "2104" || truckid == "2105" || truckid == "2106" || truckid == "_MWRED53" || truckid == "_MWCONE53") {
         //53' Flatbed trailers
         //set weight text location
-        topLeftWeightText.set('left', 206).setCoords();
-        topMiddleWeightText.set('left', 602).setCoords();
-        topRightWeightText.set('left', 998).setCoords();
-        botLeftWeightText.set('left', 206).setCoords();
-        botMiddleWeightText.set('left', 602).setCoords();
-        botRightWeightText.set('left', 998).setCoords();
+        topLeftWeightText.set('left', 301).setCoords();
+        topRightWeightText.set('left', 901).setCoords();
+        botLeftWeightText.set('left', 301).setCoords();
+        botRightWeightText.set('left', 901).setCoords();
         //Set region's size and location
-        topLeftWeightRegion.set({left: 206, top: 239, width: 204 * 2, height: 162 * 2,}).setCoords();
-        topMiddleWeightRegion.set({left: 602, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-        topRightWeightRegion.set({left: 998, top: 239, width: 204 * 2, height: 162 * 2,}).setCoords();
-        botLeftWeightRegion.set({left: 206, top: 565, width: 204 * 2, height: 162 * 2,}).setCoords();
-        botMiddleWeightRegion.set({left: 602, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-        botRightWeightRegion.set({left: 998, top: 565, width: 204 * 2, height: 162 * 2,}).setCoords();
+        topLeftWeightRegion.set({left: 301, top: 239, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        topRightWeightRegion.set({left: 901, top: 239, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        botLeftWeightRegion.set({left: 301, top: 565, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        botRightWeightRegion.set({left: 901, top: 565, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
         vLine2 = new fabric.Line([0, 75, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
@@ -687,19 +638,15 @@ function truckCurtain(truckid) {
         createMidGroup(vLine5.left - vLine2.left, vLine2.left)
     } else {
         //set weight text location
-        topLeftWeightText.set('left', 206).setCoords();
-        topMiddleWeightText.set('left', 601).setCoords();
-        topRightWeightText.set('left', 997).setCoords();
-        botLeftWeightText.set('left', 206).setCoords();
-        botMiddleWeightText.set('left', 602).setCoords();
-        botRightWeightText.set('left', 997).setCoords();
+        topLeftWeightText.set('left', 301).setCoords();
+        topRightWeightText.set('left', 901).setCoords();
+        botLeftWeightText.set('left', 301).setCoords();
+        botRightWeightText.set('left', 901).setCoords();
         //Set region's size and location
-        topLeftWeightRegion.set({left: 206, top: 239, width: 204 * 2, height: 162 * 2,}).setCoords();
-        topMiddleWeightRegion.set({left: 601, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-        topRightWeightRegion.set({left: 997, top: 239, width: 204 * 2, height: 162 * 2,}).setCoords();
-        botLeftWeightRegion.set({left: 206, top: 565, width: 204 * 2, height: 162 * 2,}).setCoords();
-        botMiddleWeightRegion.set({left: 601, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-        botRightWeightRegion.set({left: 997, top: 565, width: 204 * 2, height: 162 * 2,}).setCoords();
+        topLeftWeightRegion.set({left: 301, top: 239, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        topRightWeightRegion.set({left: 901, top: 239, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        botLeftWeightRegion.set({left: 301, top: 565, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        botRightWeightRegion.set({left: 901, top: 565, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
         vLine2 = new fabric.Line([0, 75, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
@@ -737,28 +684,14 @@ function truck53(truckid) {
 
     //set weight text location
     topLeftWeightText.set('left', 248).setCoords();
-    topMiddleWeightText.set('left', 626).setCoords();
     topRightWeightText.set('left', 1010).setCoords();
     botLeftWeightText.set('left', 248).setCoords();
-    botMiddleWeightText.set('left', 626).setCoords();
     botRightWeightText.set('left', 1010).setCoords();
     //Set region's size and location
-    topLeftWeightRegion.set({left: 218, top: 239, width: 216 * 2, height: 162 * 2,}).setCoords();
-    topMiddleWeightRegion.set({left: 626, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-    topRightWeightRegion.set({left: 1010, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-    botLeftWeightRegion.set({left: 218, top: 565, width: 216 * 2, height: 162 * 2,}).setCoords();
-    botMiddleWeightRegion.set({left: 626, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-    botRightWeightRegion.set({left: 1010, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
-
-    if (truckid == "1904" || truckid == "1905" || truckid == "2107" || truckid == "2108") {
-        //Set region's size and location
-        topLeftWeightRegion.set({left: 242, top: 239, width: 240 * 2, height: 162 * 2,}).setCoords();
-        topMiddleWeightRegion.set({left: 650, top: 239, width: 168 * 2-4, height: 162 * 2,}).setCoords();
-        topRightWeightRegion.set({left: 1010, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-        botLeftWeightRegion.set({left: 242, top: 565, width: 240 * 2, height: 162 * 2,}).setCoords();
-        botMiddleWeightRegion.set({left: 650, top: 565, width: 168 * 2-4, height: 162 * 2,}).setCoords();
-        botRightWeightRegion.set({left: 1010, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
-    }
+    topLeftWeightRegion.set({left: 300, top: 239, width: 600, height: 162 * 2,}).setCoords();
+    topRightWeightRegion.set({left: 902, top: 239, width: 600, height: 162 * 2,}).setCoords();
+    botLeftWeightRegion.set({left: 300, top: 565, width: 600, height: 162 * 2,}).setCoords();
+    botRightWeightRegion.set({left: 902, top: 565, width: 600, height: 162 * 2,}).setCoords();
 
     //Truck size info
     doorText1 = new fabric.IText(door1, {
@@ -855,18 +788,14 @@ function truck53(truckid) {
 function truck48(truckid) {
     //set weight text location
     topLeftWeightText.set('left', 242).setCoords();
-    topMiddleWeightText.set('left', 578).setCoords();
     topRightWeightText.set('left', 915).setCoords();
     botLeftWeightText.set('left', 242).setCoords();
-    botMiddleWeightText.set('left', 578).setCoords();
     botRightWeightText.set('left', 915).setCoords();
     //Set region's size and location
-    topLeftWeightRegion.set({left: 242, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-    topMiddleWeightRegion.set({left: 578, top: 239, width: 144 * 2-4, height: 162 * 2,}).setCoords();
-    topRightWeightRegion.set({left: 915, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-    botLeftWeightRegion.set({left: 242, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
-    botMiddleWeightRegion.set({left: 578, top: 565, width: 144 * 2-4, height: 162 * 2,}).setCoords();
-    botRightWeightRegion.set({left: 915, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
+    topLeftWeightRegion.set({left: 313, top: 239, width: 192 * 2 + 142, height: 162 * 2,}).setCoords();
+    topRightWeightRegion.set({left: 841, top: 239, width: 192 * 2 + 142, height: 162 * 2,}).setCoords();
+    botLeftWeightRegion.set({left: 313, top: 565, width: 192 * 2 + 142, height: 162 * 2,}).setCoords();
+    botRightWeightRegion.set({left: 841, top: 565, width: 192 * 2 + 142, height: 162 * 2,}).setCoords();
 
 //vertical lines
     vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
@@ -983,139 +912,6 @@ function truck48(truckid) {
 }
 
 /**
- * Creates lines, sets weight and region locations for 45' trucks.
- * Uses truckid to determine where lines, counter text, and weight regions should be placed
- * @param truckid - The trailer number
- */
-function truck45(truckid) {
-    //set weight text location
-    topLeftWeightText.set('left', 290).setCoords();
-    topMiddleWeightText.set('left', 602).setCoords();
-    topRightWeightText.set('left', 914).setCoords();
-    botLeftWeightText.set('left', 290).setCoords();
-    botMiddleWeightText.set('left', 602).setCoords();
-    botRightWeightText.set('left', 914).setCoords();
-    //Set region's size and location
-    topLeftWeightRegion.set({left: 290, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-    topMiddleWeightRegion.set({left: 602, top: 239, width: 120 * 2-4, height: 162 * 2,}).setCoords();
-    topRightWeightRegion.set({left: 914, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-    botLeftWeightRegion.set({left: 290, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
-    botMiddleWeightRegion.set({left: 602, top: 565, width: 120 * 2-4, height: 162 * 2,}).setCoords();
-    botRightWeightRegion.set({left: 914, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
-
-//vertical lines
-    vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-    canvas.add(vLine1);
-    vLine2 = new fabric.Line([24 * 2 + 48, 75, 24 * 2 + 48, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-    canvas.add(vLine2);
-    vLine3 = new fabric.Line([216 * 2 + 48, 75, 216 * 2 + 48, 725], {
-        stroke: 'black',
-        strokeWidth: 2,
-        selectable: false
-    })
-    canvas.add(vLine3);
-    vLine4 = new fabric.Line([408 * 2 - 96, 75, 408 * 2 - 96, 725], {
-        stroke: 'black',
-        strokeWidth: 2,
-        selectable: false
-    });
-    canvas.add(vLine4);
-    vLine5 = new fabric.Line([600 * 2 - 96, 75, 600 * 2 - 96, 725], {
-        stroke: 'black',
-        strokeWidth: 2,
-        selectable: false
-    });
-    canvas.add(vLine5);
-
-    //right Border
-    canvas.add(new fabric.Line([600 * 2, 15, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false}));
-
-    //Truck size info
-    doorText1 = new fabric.IText(door1, {
-        top: 105,
-        left: 68 + 48,
-        textAlign: 'left', //added
-        //originX: 'center', //added
-        //stroke: "grey",
-        fill: 'grey',
-        hasControls: false,
-        selectable: false,
-        fontSize: 16
-    });
-    canvas.add(doorText1);
-    doorText2 = new fabric.IText(door2, {
-        top: 105,
-        left: 452 + 48,
-        textAlign: 'left', //added
-        //originX: 'center', //added
-        //stroke: "grey",
-        fill: 'grey',
-        hasControls: false,
-        selectable: false,
-        fontSize: 16
-    });
-    canvas.add(doorText2);
-    doorText3 = new fabric.IText(door3, {
-        top: 105,
-        left: (408 * 2 - 96) + 20,
-        textAlign: 'left', //added
-        //originX: 'center', //added
-        //stroke: "grey",
-        fill: 'grey',
-        hasControls: false,
-        selectable: false,
-        fontSize: 16
-    });
-    canvas.add(doorText3);
-    doorText4 = new fabric.IText(door4, {
-        top: 675,
-        left: 68 + 48,
-        textAlign: 'left', //added
-        //originX: 'center', //added
-        //stroke: "grey",
-        fill: 'grey',
-        hasControls: false,
-        selectable: false,
-        fontSize: 16
-    })
-    canvas.add(doorText4);
-    doorText5 = new fabric.IText(door5, {
-        top: 675,
-        left: 452 + 48,
-        textAlign: 'left', //added
-        //originX: 'center', //added
-        //stroke: "grey",
-        fill: 'grey',
-        hasControls: false,
-        selectable: false,
-        fontSize: 16
-    })
-    canvas.add(doorText5);
-    doorText6 = new fabric.IText(door6, {
-        top: 675,
-        left: (408 * 2 - 96) + 20,
-        textAlign: 'left', //added
-        //originX: 'center', //added
-        //stroke: "grey",
-        fill: 'grey',
-        hasControls: false,
-        selectable: false,
-        fontSize: 16
-    });
-    canvas.add(doorText6);
-
-    //diagonal lines
-    canvas.add(new fabric.Line([0, 75, 24 * 2 + 48, 400], {stroke: 'black', selectable: false}));
-    canvas.add(new fabric.Line([24 * 2 + 48, 75, 0, 400], {stroke: 'black', selectable: false}));
-    canvas.add(new fabric.Line([0, 400, 24 * 2 + 48, 725], {stroke: 'black', selectable: false}));
-    canvas.add(new fabric.Line([24 * 2 + 48, 400, 0, 725], {stroke: 'black', selectable: false}));
-    canvas.add(new fabric.Line([600 * 2 - 96, 75, 600 * 2, 400], {stroke: 'black', selectable: false}));
-    canvas.add(new fabric.Line([600 * 2, 75, 600 * 2 - 96, 400], {stroke: 'black', selectable: false}));
-    canvas.add(new fabric.Line([600 * 2 - 96, 400, 600 * 2, 725], {stroke: 'black', selectable: false}));
-    canvas.add(new fabric.Line([600 * 2, 400, 600 * 2 - 96, 725], {stroke: 'black', selectable: false}));
-}
-
-/**
  * Creates lines, sets weight and region locations for 35' trucks.
  * Uses truckid to determine where lines, counter text, and weight regions should be placed
  * @param truckid - The trailer number
@@ -1123,17 +919,13 @@ function truck45(truckid) {
 function truck35(truckid) {
     //set weight text location
     topLeftWeightText.set('left', 434).setCoords();
-    topMiddleWeightText.set({left: 0, text: ''}).setCoords();
     topRightWeightText.set('left', 818).setCoords();
     botLeftWeightText.set('left', 434).setCoords();
-    botMiddleWeightText.set({left: 0, text: ''}).setCoords();
     botRightWeightText.set('left', 818).setCoords();
     //Set region's size and location
     topLeftWeightRegion.set({left: 434, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-    topMiddleWeightRegion.set({left: 0, top: 0, width: 0, height: 0,}).setCoords();
     topRightWeightRegion.set({left: 818, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
     botLeftWeightRegion.set({left: 434, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-    botMiddleWeightRegion.set({left: 0, top: 0, width: 0, height: 0,}).setCoords();
     botRightWeightRegion.set({left: 818, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
 
     //vertical lines

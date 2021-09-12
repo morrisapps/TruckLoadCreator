@@ -100,24 +100,9 @@ var bot1176Units;
 //Variables used for counting weight
 //Weight Region
 let topLeftWeightRegion = new fabric.Rect({
-    left: 218,
+    left: 300,
     top: 239,
-    width: 216 * 2,
-    height: 162 * 2,
-    fill: "grey",
-    stroke: 'green',
-    strokeWidth: 2,
-    originX: 'center',
-    originY: 'center',
-    selectable: false,
-    isRegion: true,
-    opacity: 0,
-    units: new Set()
-});
-let topMiddleWeightRegion = new fabric.Rect({
-    left: 625,
-    top: 239,
-    width: 192 * 2,
+    width: 600,
     height: 162 * 2,
     fill: "grey",
     stroke: 'green',
@@ -130,9 +115,9 @@ let topMiddleWeightRegion = new fabric.Rect({
     units: new Set()
 });
 let topRightWeightRegion = new fabric.Rect({
-    left: 1009,
+    left: 902,
     top: 239,
-    width: 192 * 2,
+    width: 600,
     height: 162 * 2,
     fill: "grey",
     stroke: 'green',
@@ -145,24 +130,9 @@ let topRightWeightRegion = new fabric.Rect({
     units: new Set()
 });
 let botLeftWeightRegion = new fabric.Rect({
-    left: 218,
+    left: 300,
     top: 566,
-    width: 216 * 2,
-    height: 162 * 2,
-    fill: "grey",
-    stroke: 'green',
-    strokeWidth: 2,
-    originX: 'center',
-    originY: 'center',
-    selectable: false,
-    isRegion: true,
-    opacity: 0,
-    units: new Set()
-});
-let botMiddleWeightRegion = new fabric.Rect({
-    left: 625,
-    top: 566,
-    width: 192 * 2,
+    width: 600,
     height: 162 * 2,
     fill: "grey",
     stroke: 'green',
@@ -175,9 +145,9 @@ let botMiddleWeightRegion = new fabric.Rect({
     units: new Set()
 });
 let botRightWeightRegion = new fabric.Rect({
-    left: 1009,
+    left: 902,
     top: 566,
-    width: 192 * 2,
+    width: 600,
     height: 162 * 2,
     fill: "grey",
     stroke: 'green',
@@ -189,34 +159,13 @@ let botRightWeightRegion = new fabric.Rect({
     opacity: 0,
     units: new Set()
 });
-let weightRegions = [topLeftWeightRegion, topMiddleWeightRegion, topRightWeightRegion, botLeftWeightRegion, botMiddleWeightRegion, botRightWeightRegion];
+let weightRegions = [topLeftWeightRegion, topRightWeightRegion, botLeftWeightRegion, botRightWeightRegion];
 
 //Weight text
 let topLeftWeightText = new fabric.IText('', {
     id: 'topLeftWeightText',
     top: 90,
     left: 248,
-    stroke: '#4c4c4c',
-    fill: '#4c4c4c',
-    strokeWidth: 0,
-    hasControls: false,
-    selectable: false,
-    lockMovementX: true,
-    lockMovementY: true,
-    hasBorders: false,
-    editable: false,
-    fontSize: 14,
-    fixedWidth: 150,
-    fixedHeight: 300,
-    fixedFontSize: 12,
-    originX: 'center',
-});
-let topMiddleWeightText = new fabric.IText('', {
-    id: 'topMiddleWeightText',
-    width: 1000,
-    height: 500,
-    top: 90,
-    left: 626,
     stroke: '#4c4c4c',
     fill: '#4c4c4c',
     strokeWidth: 0,
@@ -274,27 +223,6 @@ let botLeftWeightText = new fabric.IText('', {
     fixedFontSize: 12,
     originX: 'center',
 });
-let botMiddleWeightText = new fabric.IText('', {
-    id: 'botMiddleWeightText',
-    width: 1000,
-    height: 500,
-    top: 690,
-    left: 626,
-    stroke: '#4c4c4c',
-    fill: '#4c4c4c',
-    strokeWidth: 0,
-    hasControls: false,
-    selectable: false,
-    lockMovementX: true,
-    lockMovementY: true,
-    hasBorders: false,
-    editable: false,
-    fontSize: 14,
-    fixedWidth: 150,
-    fixedHeight: 300,
-    fixedFontSize: 12,
-    originX: 'center',
-});
 let botRightWeightText = new fabric.IText('', {
     id: 'botRightWeightText',
     width: 1000,
@@ -316,7 +244,7 @@ let botRightWeightText = new fabric.IText('', {
     fixedFontSize: 12,
     originX: 'center',
 });
-let weightTexts = [topLeftWeightText, topMiddleWeightText, topRightWeightText, botLeftWeightText, botMiddleWeightText, botRightWeightText];
+let weightTexts = [topLeftWeightText, topRightWeightText, botLeftWeightText, botRightWeightText];
 
 //Total Weight and maximum of truck
 let weightCount = 0;

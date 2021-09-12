@@ -307,9 +307,9 @@ function load(content) {
     });
 
     //Re-add weight regions to canvas
-    canvas.add(topLeftWeightRegion,topMiddleWeightRegion,topRightWeightRegion,botLeftWeightRegion,botMiddleWeightRegion,botRightWeightRegion);
+    canvas.add(topLeftWeightRegion,topRightWeightRegion,botLeftWeightRegion,botRightWeightRegion);
     //Re-add weight text to canvas
-    canvas.add(topLeftWeightText,topMiddleWeightText,topRightWeightText,botLeftWeightText,botMiddleWeightText,botRightWeightText);
+    canvas.add(topLeftWeightText,topRightWeightText,botLeftWeightText,botRightWeightText);
 
     //Recreate units
     updateUnits(content[0]);

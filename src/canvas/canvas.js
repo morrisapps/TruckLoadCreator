@@ -60,7 +60,7 @@ $(document).ready(function () {
 
     //Add weight regions and text
     weightRegions.forEach(function (region){canvas.add(region);});
-    canvas.add(topLeftWeightText,topMiddleWeightText,topRightWeightText,botLeftWeightText,botMiddleWeightText,botRightWeightText);
+    canvas.add(topLeftWeightText,topRightWeightText,botLeftWeightText,botRightWeightText);
 
     canvas.requestRenderAll();
 
@@ -233,16 +233,18 @@ function updateCount(target) {
                         }
                     }
                     weight = weight + Math.round(unitRegionWeight);
-                    totalWeight += weight;
                 });
+                totalWeight += weight;
                 if (weight > 0){
                     weightTexts[i].text = weight.toString() + ' lb';
                 }else {
                     weightTexts[i].text = '';
                 }
             }
-            // midGroup.item(2).set({text: midGroup.item(2).startText + totalWeight.toString() + " lb"});
-            // if (truck.getWeight() > 0 && truck.getWeight() != "?" && (totalWeight > truck.getWeight())){midGroup.item(2).set({fill: "red"});} else {midGroup.item(2).set({fill: "black"});}
+            if (midGroup !== undefined){
+                midGroup.item(2).set({text: midGroup.item(2).startText + totalWeight.toString() + " lb"});
+                if (truck.getWeight() > 0 && truck.getWeight() != "?" && (totalWeight > truck.getWeight())){midGroup.item(2).set({fill: "red"});} else {midGroup.item(2).set({fill: "black"});}
+            }
         }
     }
 }
