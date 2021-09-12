@@ -256,7 +256,6 @@ function updateCount(target) {
                 weightTextFormat(midGroup.item(3), midGroup.item(3).weight.toString())
                 if (truck.getWeight() > 0 && truck.getWeight() != "?" && (midGroup.item(3).weight > truck.getWeight()/2)){midGroup.item(3).set({fill: "red"});} else {midGroup.item(3).set({fill: "black"});}
             }
-
         }
     }
 }

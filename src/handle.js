@@ -315,7 +315,7 @@ function handleDrop(e) {
                     _customer.value,
                     _tag.value,
                     currentColor,
-                    currentFill,
+                    "white",
                     //Takes the mouse coordinates multiplies by invertedWidthRatio and subtracts width or height divided by 2.
                     //Does not add divided by two because the canvas is 2x the pixel size
                     e.layerX * invertedWidthRatio - _width.value,
