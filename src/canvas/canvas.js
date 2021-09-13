@@ -203,14 +203,12 @@ function weightRegionCount(target,regions){
     if (target.weight > 0) {
         //intersectedIndex is used to count the # of intersections.
         let intersectedIndex = []
-
         //Checks if weight Regions intersect object
         for (let i = 0; i < regions.length; i++) {
             //Removes object if already added to ensure duplication doesn't occur
             for (const unit of regions[i].units) {
-                if (unit[0] === target) {
+                if (unit[0].id === target.id) {
                     regions[i].units.delete(unit);
-                    break;
                 }
             }
             //Checks if unit intersects with a region. Adds index to be used later.
