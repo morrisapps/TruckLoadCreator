@@ -209,12 +209,20 @@ function createRack(top, left, id, drag) {
         originY: 'center',
     });
 
+    //Make rack id unique
+    let rackCount = 0
+    canvas.forEachObject(function (obj){
+        if (obj.isRack){rackCount++}
+    });
+    let rackID = id + rackCount;
+
+
     let rackNew = new fabric.Group([rackRect, rText], {
         unitHeight: rackHeight,
         left: left,
         top: top,
         selectable: true,
-        id: 'rack',
+        id: rackID,
         size: id,
         remove: false,
         isRack: true,

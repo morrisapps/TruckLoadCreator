@@ -248,7 +248,7 @@ function createMidGroup(width, left){
 
     let backWeight = new fabric.IText("Back Weight: ",{
         top: 10,
-        left: width/8,
+        left: width*.18,
         textAlign: 'left',
         fill: 'black',
         hasControls: false,
@@ -276,7 +276,7 @@ function createMidGroup(width, left){
 
     let frontWeight = new fabric.IText("Front Weight: ",{
         top: 10,
-        left: width/1.135,
+        left: width/1.2,
         textAlign: 'left',
         fill: 'black',
         hasControls: false,

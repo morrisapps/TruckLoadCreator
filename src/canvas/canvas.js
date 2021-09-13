@@ -156,7 +156,7 @@ function updateCount(target) {
     if (target != null) {
 
         //Update Height
-        if (target.unit == true || target.id == "rack") {
+        if (target.unit || target.isRack) {
             var i = 0;
             while (i <= 11) {
                 heightCount(target, topLines[i], topCounters[i], topUnits[i]);
