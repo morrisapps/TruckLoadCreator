@@ -581,6 +581,7 @@ function updateUnit() {
             if (AddError == '') {
                 updateCount(canvas.getActiveObject());
                 canvas.remove(unUpdatedUnit);
+                unUpdatedUnit.set('remove', false);
                 updateCount(unUpdatedUnit);
                 addCustomer(_customer.value, _drop.value, false);
             } else {

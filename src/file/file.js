@@ -279,11 +279,11 @@ function loadFromBrowser(){
 /**
  * Loads given save.
  * Restores units, customers, canvas text, canvas racks, canvas dashes,canvas comments, truckID, and program options.
- * @param {[units, customers, canvas text, canvas racks, canvas dashes,canvas comments, truckID, and program options, file name]} content - The save content
+ * @param {[units, customers, canvas text, canvas racks, canvas dashes,canvas comments, truckID, program options, file name]} content - The save content
  */
 function load(content) {
     //Set loading to true
-    loading = true;
+    let loading = true;
 
     //Reset all input to blank
     _customer.value = '';
@@ -305,6 +305,10 @@ function load(content) {
     canvas.forEachObject(function (obj){
             canvas.remove(obj);
     });
+
+    //Remove all units from weight regions
+    sideRegions.forEach(function(region){region.units = new Set()})
+    weightRegions.forEach(function(region){region.units = new Set()})
 
     //Re-add weight regions to canvas
     canvas.add(topLeftWeightRegion,topMiddleWeightRegion,topRightWeightRegion,botLeftWeightRegion,botMiddleWeightRegion,botRightWeightRegion);
