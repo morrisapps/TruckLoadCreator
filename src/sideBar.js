@@ -579,16 +579,18 @@ function updateUnit() {
             }
             let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, oldColor, 'white', oldLeft, oldTop, _drop.value, _location.value, unUpdatedUnit.inCanvas, +_weight.value, addCheck, _striped.checked);
             if (AddError == '') {
+                unUpdatedUnit.set('remove', true);
                 updateCount(canvas.getActiveObject());
                 canvas.remove(unUpdatedUnit);
                 unUpdatedUnit.set('remove', false);
-                updateCount(unUpdatedUnit);
+                //updateCount(unUpdatedUnit);
                 addCustomer(_customer.value, _drop.value, false);
             } else {
                 unUpdatedUnit.set('remove', false);
                 let rUnit = canvas.getActiveObject();
                 removeUnit(rUnit);
                 canvas.remove(rUnit);
+                rUnit.set('remove', false);
                 updateCount(rUnit);
                 addUnit(unUpdatedUnit);
                 canvas.add(unUpdatedUnit);
@@ -852,6 +854,24 @@ function removeUnit(unit) {
             updateRack();
         }
     }
+    //Remove unit from all side regions
+    sideRegions.forEach(function(region){
+            //Removes object if already added to ensure duplication doesn't occur
+            for (const regionUnit of region.units) {
+                if (regionUnit[0].id === unit.id) {
+                    region.units.delete(regionUnit);
+                }
+            }
+    });
+    //Remove unit from all weight regions
+    weightRegions.forEach(function(region){
+        //Removes object if already added to ensure duplication doesn't occur
+        for (const regionUnit of region.units) {
+            if (regionUnit[0].id === unit.id) {
+                region.units.delete(regionUnit);
+            }
+        }
+    });
 }
 
 /**
