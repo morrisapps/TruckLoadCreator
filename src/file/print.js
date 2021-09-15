@@ -36,8 +36,8 @@ function printPageArea() {
 
     //Check if any weight counters are red/overweight
     if (midGroup.item(2).fill == "red"){weightCheckResponse = confirm('Total weight exceeds maximum of '+ (truck.getWeight()) + '\n\nContinue with print?\n\n');}
-    if (midGroup.item(1).fill == "red"){weightCheckResponse = confirm('Back weight exceeds maximum of '+ (truck.getWeight()/2) + '\n\nContinue with print?\n\n');}
-    if (midGroup.item(3).fill == "red"){weightCheckResponse = confirm('Front weight exceeds maximum of '+ (truck.getWeight()/2) + '\n\nContinue with print?\n\n');}
+    if (midGroup.item(1).fill == "red"){weightCheckResponse = confirm('Back weight exceeds maximum of '+ (truck.getBackWeightPercent()*truck.getWeight()) + '\n\nContinue with print?\n\n');}
+    if (midGroup.item(3).fill == "red"){weightCheckResponse = confirm('Front weight exceeds maximum of '+ (truck.getFrontWeightPercent()*truck.getWeight()) + '\n\nContinue with print?\n\n');}
     //if (_tWeight.style.color == "red"){weightCheckResponse = confirm('Total weight exceeds maximum of '+ (truck.getWeight()) + '\n\nContinue with print?\n\n');}
 
     if (unitsNotInResponse && weightZeroResponse && heightCheckResponse && weightCheckResponse){
@@ -52,6 +52,14 @@ function printPageArea() {
         //Set all height counters to grey
         topCounters.forEach(function (line){line.set({restorefill: line.fill}); line.set({fill: '#4c4c4c'});});
         botCounters.forEach(function (line){line.set({restorefill: line.fill}); line.set({fill: '#4c4c4c'});});
+
+        //Set all weight counters to black
+        midGroup.item(2).set({restorefill: midGroup.item(2).fill});
+        midGroup.item(2).set({fill: "black"});
+        midGroup.item(1).set({restorefill: midGroup.item(1).fill});
+        midGroup.item(1).set({fill: "black"});
+        midGroup.item(3).set({restorefill: midGroup.item(3).fill});
+        midGroup.item(3).set({fill: "black"});
 
         //Hide Door Text
         doorText1.opacity = 0;
@@ -104,6 +112,11 @@ function printPageArea() {
             //Restore height counter colors
             topCounters.forEach(function (line){line.set("fill", line.restorefill);});
             botCounters.forEach(function (line){line.set("fill", line.restorefill);});
+
+            //Restore weight counter colors
+            midGroup.item(2).set({fill: midGroup.item(2).restorefill});
+            midGroup.item(1).set({fill: midGroup.item(1).restorefill});
+            midGroup.item(3).set({fill: midGroup.item(3).restorefill});
 
             canvas.renderAll();
 

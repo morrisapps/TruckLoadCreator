@@ -180,15 +180,27 @@ function updateCount(target) {
             //Total weight
             midGroup.item(2).weight = (sideRegions[0].weight + sideRegions[1].weight + sideRegions[2].weight + sideRegions[3].weight);
             weightTextFormat(midGroup.item(2), midGroup.item(2).weight.toString())
-            if (truck.getWeight() > 0 && truck.getWeight() != "?" && (midGroup.item(2).weight > truck.getWeight())){midGroup.item(2).set({fill: "red"});} else {midGroup.item(2).set({fill: "black"});}
+            if (truck.getWeight() > 0 && truck.getWeight() != "?"){
+                if (midGroup.item(2).weight >= truck.getWeight()){midGroup.item(2).set({fill: "red"});  midGroup.item(2).text += " !Overweight!";}
+                else if(midGroup.item(2).weight >= truck.getWeight()*.9){midGroup.item(2).set({fill: '#d35400'});}
+                else {midGroup.item(2).set({fill: "black"});}
+            }
             //Back weight
             midGroup.item(1).weight = sideRegions[0].weight + sideRegions[2].weight
             weightTextFormat(midGroup.item(1), midGroup.item(1).weight.toString())
-            if (truck.getWeight() > 0 && truck.getWeight() != "?" && (midGroup.item(1).weight > truck.getWeight()/2)){midGroup.item(1).set({fill: "red"});} else {midGroup.item(1).set({fill: "black"});}
+            if (truck.getBackWeightPercent() > 0 && truck.getWeight() != "?"){
+                if (midGroup.item(1).weight >= truck.getBackWeightPercent()*truck.getWeight()){midGroup.item(1).set({fill: "red"});  midGroup.item(1).text += " !Overweight!";}
+                else if (midGroup.item(1).weight >= truck.getBackWeightPercent()*truck.getWeight()*.9){midGroup.item(1).set({fill: '#d35400'});}
+                else {midGroup.item(1).set({fill: "black"});}
+            }
             //Front weight
             midGroup.item(3).weight = sideRegions[1].weight + sideRegions[3].weight
             weightTextFormat(midGroup.item(3), midGroup.item(3).weight.toString())
-            if (truck.getWeight() > 0 && truck.getWeight() != "?" && (midGroup.item(3).weight > truck.getWeight()/2)){midGroup.item(3).set({fill: "red"});} else {midGroup.item(3).set({fill: "black"});}
+            if (truck.getFrontWeightPercent() > 0 && truck.getWeight() != "?"){
+                if (midGroup.item(3).weight >= truck.getFrontWeightPercent()*truck.getWeight()){midGroup.item(3).set({fill: "red"}); midGroup.item(3).text += " !Overweight!";}
+                else if (midGroup.item(3).weight >= truck.getFrontWeightPercent()*truck.getWeight()*.9){midGroup.item(3).set({fill: '#d35400'});}
+                else {midGroup.item(3).set({fill: "black"});}
+            }
         }
     }
 }
