@@ -397,9 +397,10 @@ function unitText(cName, width, height, unitDrop, AE, text, rect, loc) {
  * @param customerText - The displayed name of the customer in the unit
  * @param fullAE - The full tag number
  * @param weight - The weight of the unit
+ * @param {number} opacity - The opacity of the unit. A number from 0 to 1.
  * @param {boolean} striped - Flag to signal if unit background is striped
  */
-function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, customerText, fullAE, weight, striped) {
+function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, customerText, fullAE, weight, striped,opacity) {
 
     let dashArray = [0];
     if (striped) {fill = stripePattern; dashArray = [15, 5];}
@@ -433,6 +434,10 @@ function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, 
     while (getIDUnit(id) != null){
         id += '+';
     }
+
+    let isIntersected = false;
+    if (opacity != 1){isIntersected = true;};
+
     currentGroup = new fabric.Group([rect, text], {
         unitHeight: height,
         unitWidth: width,
@@ -454,7 +459,9 @@ function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, 
         customerText: customerText,
         fullAE: fullAE,
         weight: weight,
-        striped: striped
+        striped: striped,
+        opacity: opacity,
+        isIntersected: isIntersected
     });
 
     //Place unit text more centered and unit border more closer to text

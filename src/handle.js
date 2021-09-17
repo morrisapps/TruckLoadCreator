@@ -164,9 +164,10 @@ function createComment(top, left, text, width) {
  * @param left - The left position of the rack
  * @param id - The id of the rack, used for representing the size of the rack
  * @param {boolean} drag - Flag if rack is being created by drag and drop to set position accordingly
+ * @param {number} opacity - The opacity of the rack. A number between 0 and 1.
  * @returns {fabric.Group()} - The rack object to be used on fabric canvas
  */
-function createRack(top, left, id, drag) {
+function createRack(top, left, id, drag,opacity) {
     let rackHeight = 0;
     let rackText = '';
 
@@ -216,6 +217,8 @@ function createRack(top, left, id, drag) {
     });
     let rackID = id + rackCount;
 
+    let isIntersected = false;
+    if (opacity != 1){isIntersected = true;};
 
     let rackNew = new fabric.Group([rackRect, rText], {
         unitHeight: rackHeight,
@@ -229,7 +232,9 @@ function createRack(top, left, id, drag) {
         hasControls: true,
         intersects: true,
         tool: true,
-        weight: 2000
+        weight: 2000,
+        opacity: opacity,
+        isIntersected: isIntersected
     });
 
     truckWeightUpdate();

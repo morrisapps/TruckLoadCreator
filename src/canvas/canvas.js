@@ -543,7 +543,20 @@ function createCanvas() {
                 canvas.forEachObject(function (obj) {
                     if (obj.intersects == true) {
                         objectIntersects(obj, target);
-                        target.set('opacity', 1);
+                        //target.set('opacity', 1);
+                        if (obj.opacity == 1){
+                            //Checks if any objs are still intersected
+                            canvas.forEachObject(function (obj2) {
+                                if (obj2.intersects && !obj.isDash && !obj2.isDash && obj2 !== midGroup && obj !== obj2){
+                                    if (intersects(obj, obj2)) {
+                                        obj.set('opacity', .5);
+                                        obj.isIntersected = true;
+                                        obj2.set('opacity', .5);
+                                        obj2.isIntersected = true;
+                                    }
+                                }
+                            });
+                        }
                     }
                 });
                 //Check if object intersects with middle group. Move obj if it does.
@@ -568,18 +581,33 @@ function createCanvas() {
                         intersectedObjects.push(obj);
                     }
                 }
-                if (obj.isRegion != true){obj.set('opacity', 1);};
+                if (obj.isRegion != true){obj.set('opacity', 1);obj.isIntersected = false;};
             });
             //check if intersected bundle is above or below
             intersectedObjects.forEach(function (obj) {
                 if (obj !== midGroup){
                     keepInBounds(obj);
                     if (!intersects(obj, options.target)) {
-                        if (obj.isRegion != true){obj.set('opacity', 1);};
+                        if (obj.isRegion != true){obj.set('opacity', 1);obj.isIntersected = false;};
                     }
                 }
             });
         }
+        //Checks if any objects still intersect
+        canvas.forEachObject(function(obj1){
+           if (obj1.intersects && obj1 !== midGroup){
+                canvas.forEachObject(function(obj2){
+                   if (obj2.intersects && !obj1.isDash && !obj2.isDash && obj2 !== midGroup && obj1 !== obj2){
+                       if (intersects(obj1, obj2)) {
+                           obj1.set('opacity', .5);
+                           obj1.isIntersected = true;
+                           obj2.set('opacity', .5);
+                           obj2.isIntersected = true;
+                       }
+                   }
+               });
+            }
+        });
     });
 
     //These fire when any object is selected, needs both
@@ -696,6 +724,7 @@ function objectIntersects(obj, target) {
             }
         } else {
             obj.set('opacity', 1);
+            obj.isIntersected = false;
         }
         target.setCoords();
     }

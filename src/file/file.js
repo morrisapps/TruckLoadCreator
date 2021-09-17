@@ -46,7 +46,8 @@ function getSaveContent() {
             customerText: unit.customerText,
             fullAE: unit.fullAE,
             weight: unit.weight,
-            striped: unit.striped
+            striped: unit.striped,
+            opacity: unit.opacity
         });
         savedUnits.push(saved);
     });
@@ -88,6 +89,7 @@ function getSaveContent() {
                 left: obj.left,
                 id: obj.size,
                 drag: false,
+                opacity: obj.opacity
             });
             savedRacks.push(rack);
         }
@@ -233,7 +235,7 @@ function updateUnits(updateUnits) {
     //Restore units
     updateUnits.forEach(function (unit) {
         if (unit != null) {
-            createUnit(unit.unitWidth, unit.unitHeight, unit.customer, unit.ae, unit.color, unit.fill, unit.left, unit.top, unit.drop, unit.location, unit.inCanvas, unit.customerText, unit.fullAE, unit.weight, unit.striped);
+            createUnit(unit.unitWidth, unit.unitHeight, unit.customer, unit.ae, unit.color, unit.fill, unit.left, unit.top, unit.drop, unit.location, unit.inCanvas, unit.customerText, unit.fullAE, unit.weight, unit.striped, unit.opacity);
             units.push(currentGroup);
             if (currentGroup.inCanvas == true) {
                 canvas.add(currentGroup);
@@ -342,7 +344,7 @@ function load(content) {
 
     //Restore racks
     content[3].forEach(function (rack) {
-        let savedRack = createRack(rack.top, rack.left, rack.id, rack.drag);
+        let savedRack = createRack(rack.top, rack.left, rack.id, rack.drag, rack.opacity);
         canvas.add(savedRack);
         updateCount(savedRack);
     });

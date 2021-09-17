@@ -13,6 +13,8 @@ function printPageArea() {
     let weightZeroResponse = true;
     let heightCheckResponse = true;
     let weightCheckResponse = true;
+    let intersectedResponse = true;
+    let intersected = 0
     let weightZeroUnits = [];
     let weightZeroText = '';
     let heightCheck = true;
@@ -36,11 +38,19 @@ function printPageArea() {
 
     //Check if any weight counters are red/overweight
     if (midGroup.item(2).fill == "red"){weightCheckResponse = confirm('Total weight exceeds maximum of '+ (truck.getWeight()) + '\n\nContinue with print?\n\n');}
-    if (midGroup.item(1).fill == "red"){weightCheckResponse = confirm('Back weight exceeds maximum of '+ (truck.getBackWeightPercent()*truck.getWeight()) + '\n\nContinue with print?\n\n');}
-    if (midGroup.item(3).fill == "red"){weightCheckResponse = confirm('Front weight exceeds maximum of '+ (truck.getFrontWeightPercent()*truck.getWeight()) + '\n\nContinue with print?\n\n');}
+    if (weightCheckResponse && midGroup.item(1).fill == "red"){weightCheckResponse = confirm('Back weight exceeds maximum of '+ (truck.getBackWeightPercent()*truck.getWeight()) + '\n\nContinue with print?\n\n');}
+    if (weightCheckResponse && midGroup.item(3).fill == "red"){weightCheckResponse = confirm('Front weight exceeds maximum of '+ (truck.getFrontWeightPercent()*truck.getWeight()) + '\n\nContinue with print?\n\n');}
     //if (_tWeight.style.color == "red"){weightCheckResponse = confirm('Total weight exceeds maximum of '+ (truck.getWeight()) + '\n\nContinue with print?\n\n');}
 
-    if (unitsNotInResponse && weightZeroResponse && heightCheckResponse && weightCheckResponse){
+    //Check if any units are still intersected
+
+    canvas.forEachObject(function (obj) {
+        if (obj.isIntersected){intersected++}
+    });
+    if (intersected > 0){intersectedResponse = confirm('There are still '+ intersected +' intersected units in the truck ' + '\n\nContinue with print?\n\n');}
+
+    //If all response is true, continue with print
+    if (unitsNotInResponse && weightZeroResponse && heightCheckResponse && weightCheckResponse && intersectedResponse){
         //Remove Height Lines from print
         var i = 0;
         while (i <= 11) {
@@ -60,6 +70,11 @@ function printPageArea() {
         midGroup.item(1).set({fill: "black"});
         midGroup.item(3).set({restorefill: midGroup.item(3).fill});
         midGroup.item(3).set({fill: "black"});
+
+        //Set all opacity of intersected units to 1
+        canvas.forEachObject(function (obj) {
+            if (obj.isIntersected){obj.set('opacity', 1);}
+        });
 
         //Hide Door Text
         doorText1.opacity = 0;
@@ -112,6 +127,11 @@ function printPageArea() {
             //Restore height counter colors
             topCounters.forEach(function (line){line.set("fill", line.restorefill);});
             botCounters.forEach(function (line){line.set("fill", line.restorefill);});
+
+            //Restore opacity of intersected units
+            canvas.forEachObject(function (obj) {
+                if (obj.isIntersected){obj.set('opacity', .5);}
+            });
 
             //Restore weight counter colors
             midGroup.item(2).set({fill: midGroup.item(2).restorefill});
