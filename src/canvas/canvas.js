@@ -549,10 +549,10 @@ function createCanvas() {
                             canvas.forEachObject(function (obj2) {
                                 if (obj2.intersects && !obj.isDash && !obj2.isDash && obj2 !== midGroup && obj !== obj2){
                                     if (intersects(obj, obj2)) {
-                                        obj.set('opacity', .5);
-                                        obj.isIntersected = true;
-                                        obj2.set('opacity', .5);
-                                        obj2.isIntersected = true;
+                                        if(obj !== target){obj.set('opacity', .5);};
+                                        if(obj !== target){obj.isIntersected = true;};
+                                        if(obj2 !== target){obj2.set('opacity', .5);};
+                                        if(obj2 !== target){obj2.isIntersected = true;};
                                     }
                                 }
                             });
