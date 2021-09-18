@@ -61,7 +61,7 @@ $(document).ready(function () {
     //Add weight regions and text
     weightRegions.forEach(function (region){canvas.add(region);});
     sideRegions.forEach(function (region){canvas.add(region);});
-    canvas.add(topLeftWeightText,topRightWeightText,botLeftWeightText,botRightWeightText);
+    canvas.add(topLeftWeightText, topMiddleWeightText, topRightWeightText, botLeftWeightText, botMiddleWeightText, botRightWeightText);
 
     canvas.requestRenderAll();
 
