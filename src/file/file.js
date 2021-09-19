@@ -232,6 +232,11 @@ function updateUnits(updateUnits) {
         tCounter.text = '';
     }
 
+    //Restore racks
+    canvas.forEachObject(function (obj){
+        if (obj.isRack){updateCount(obj);}
+    });
+
     //Restore units
     updateUnits.forEach(function (unit) {
         if (unit != null) {
