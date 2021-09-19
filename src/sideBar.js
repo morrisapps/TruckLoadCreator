@@ -587,10 +587,9 @@ function updateUnit() {
             let AddError = Add(+_width.value, +_height.value, _customer.value, _tag.value, oldColor, 'white', oldLeft, oldTop, _drop.value, _location.value, unUpdatedUnit.inCanvas, +_weight.value, addCheck, _striped.checked);
             if (AddError == '') {
                 unUpdatedUnit.set('remove', true);
-                updateCount(canvas.getActiveObject());
+                updateCount(unUpdatedUnit);
                 canvas.remove(unUpdatedUnit);
-                unUpdatedUnit.set('remove', false);
-                //updateCount(unUpdatedUnit);
+                updateCount(canvas.getActiveObject());
                 addCustomer(_customer.value, _drop.value, false);
             } else {
                 unUpdatedUnit.set('remove', false);
