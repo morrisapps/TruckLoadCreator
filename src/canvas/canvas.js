@@ -278,11 +278,13 @@ function weightRegionCount(target,regions){
             })
             //Iterates over each overlap area against total overlap
             //This ensures the total percent of the weight distribution is 100%
-            overlapAreas.forEach(function (area) {
-                if (target.remove != true) {
-                    regions[area[0]].units.add([target, (area[1] / overlapTotal) * 100])
-                }
-            })
+            if (overlapTotal != 0){
+                overlapAreas.forEach(function (area) {
+                    if (target.remove != true) {
+                        regions[area[0]].units.add([target, (area[1] / overlapTotal) * 100])
+                    }
+                })
+            }
         }
         //Updates all weight region texts with all the updated weightUnits array
         //Also updates total weight in canvas
