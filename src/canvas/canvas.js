@@ -204,20 +204,20 @@ function updateCount(target) {
             }
             //Display weight warning overlays
             if (midGroup.item(2).fill == "red"){
-                fullWeightRegion.set("opacity", 0.4);
+                fullWeightRegion.set("opacity", 0.45);
             } else {
                 fullWeightRegion.set("opacity", 0);
             }
             if (midGroup.item(2).fill != "red" && midGroup.item(1).fill == "red"){
-                topBackWeightRegion.set("opacity", 0.4);
-                botBackWeightRegion.set("opacity", 0.4);
+                topBackWeightRegion.set("opacity", 0.45);
+                botBackWeightRegion.set("opacity", 0.45);
             }else {
                 topBackWeightRegion.set("opacity", 0);
                 botBackWeightRegion.set("opacity", 0);
             }
             if (midGroup.item(2).fill != "red" && midGroup.item(3).fill == "red"){
-                topFrontWeightRegion.set("opacity", 0.4);
-                botFrontWeightRegion.set("opacity", 0.4);
+                topFrontWeightRegion.set("opacity", 0.45);
+                botFrontWeightRegion.set("opacity", 0.45);
             }else {
                 topFrontWeightRegion.set("opacity", 0);
                 botFrontWeightRegion.set("opacity", 0);
