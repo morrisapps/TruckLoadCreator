@@ -61,6 +61,12 @@ function truckLoad(id) {
     _hWeight.innerText = truck.getHalfWeight();
     truckWeightUpdate();
 
+    //Places objects that should be visible on the top layers.
+    keepObjectsOnTop();
+
+    //Bring all side regions forward, they will be used as a overweight warning overlay and need to be on top.
+    sideRegions.forEach(function(region){region.bringToFront();});
+
     vLine1.bringToFront();
     vLine2.bringToFront();
     vLine3.bringToFront();
@@ -311,6 +317,12 @@ function truckCustom() {
     topFrontWeightRegion.set({left: 902, top: 239, width: 600, height: 162 * 2,}).setCoords();
     botBackWeightRegion.set({left: 300, top: 565, width: 600, height: 162 * 2,}).setCoords();
     botFrontWeightRegion.set({left: 902, top: 565, width: 600, height: 162 * 2,}).setCoords();
+    fullWeightRegion.set({
+        left: topBackWeightRegion.left+topBackWeightRegion.width/2,
+        top: topBackWeightRegion.top+topBackWeightRegion.height/2,
+        width: topBackWeightRegion.width*2,
+        height: topBackWeightRegion.height*2
+    }).setCoords();
     //set weight text location
     topLeftWeightText.set('left', 248).setCoords();
     topMiddleWeightText.set('left', 626).setCoords();
@@ -435,9 +447,15 @@ function truckCurtain(truckid) {
 
         //Set side region's size and location
         topBackWeightRegion.set({left: 494-1, top: 239, width: 104 * 3, height: 162 * 2,}).setCoords();
-        topFrontWeightRegion.set({left: 806+1, top: 239, width: 104 * 3, height: 162 * 2,}).setCoords();
-        botBackWeightRegion.set({left: 494-1, top: 565, width: 104 * 3, height: 162 * 2,}).setCoords();
-        botFrontWeightRegion.set({left: 806+1, top: 565, width: 104 * 3, height: 162 * 2,}).setCoords();
+        topFrontWeightRegion.set({left: topBackWeightRegion.left+topBackWeightRegion.width, top: 239, width: 104 * 3, height: 162 * 2,}).setCoords();
+        botBackWeightRegion.set({left: 494-1, top: 565-1, width: 104 * 3, height: 162 * 2-2,}).setCoords();
+        botFrontWeightRegion.set({left: botBackWeightRegion.left+botBackWeightRegion.width, top: 565-1, width: 104 * 3, height: 162 * 2-2,}).setCoords();
+        fullWeightRegion.set({
+            left: topBackWeightRegion.left+topBackWeightRegion.width/2,
+            top: topBackWeightRegion.top+topBackWeightRegion.height/2,
+            width: topBackWeightRegion.width*2+1,
+            height: topBackWeightRegion.height*2+2
+        }).setCoords();
         //set weight text location
         topLeftWeightText.set('left', 442).setCoords();
         topMiddleWeightText.set('left', 650).setCoords();
@@ -447,10 +465,10 @@ function truckCurtain(truckid) {
         botRightWeightText.set('left', 858).setCoords();
         //Set region's size and location
         topLeftWeightRegion.set({left: 442, top: 239, width: 104 * 2, height: 162 * 2,}).setCoords();
-        topMiddleWeightRegion.set({left: 650, top: 239, width: 104 * 2-4, height: 162 * 2,}).setCoords();
+        topMiddleWeightRegion.set({left: 650, top: 239, width: 104 * 2-2, height: 162 * 2,}).setCoords();
         topRightWeightRegion.set({left: 858, top: 239, width: 104 * 2, height: 162 * 2,}).setCoords();
         botLeftWeightRegion.set({left: 442, top: 565, width: 104 * 2, height: 162 * 2,}).setCoords();
-        botMiddleWeightRegion.set({left: 650, top: 565, width: 104 * 2-4, height: 162 * 2,}).setCoords();
+        botMiddleWeightRegion.set({left: 650, top: 565, width: 104 * 2-2, height: 162 * 2,}).setCoords();
         botRightWeightRegion.set({left: 858, top: 565, width: 104 * 2, height: 162 * 2,}).setCoords();
 
 
@@ -477,10 +495,16 @@ function truckCurtain(truckid) {
         botLines[11] = new fabric.Line();
 
         //Set side region's size and location
-        topBackWeightRegion.set({left: 433, top: 239, width: 128 * 3, height: 162 * 2,}).setCoords();
-        topFrontWeightRegion.set({left: 817, top: 239, width: 128 * 3, height: 162 * 2,}).setCoords();
-        botBackWeightRegion.set({left: 433, top: 565, width: 128 * 3, height: 162 * 2,}).setCoords();
-        botFrontWeightRegion.set({left: 817, top: 565, width: 128 * 3, height: 162 * 2,}).setCoords();
+        topBackWeightRegion.set({left: 433, top: 238, width: 128 * 3, height: 162 * 2,}).setCoords();
+        topFrontWeightRegion.set({left: topBackWeightRegion.left+topBackWeightRegion.width, top: 238, width: 128 * 3, height: 162 * 2,}).setCoords();
+        botBackWeightRegion.set({left: 433, top: 565-1, width: 128 * 3, height: 162 * 2-2,}).setCoords();
+        botFrontWeightRegion.set({left: botBackWeightRegion.left+botBackWeightRegion.width, top: 565-1, width: 128 * 3, height: 162 * 2,}).setCoords();
+        fullWeightRegion.set({
+            left: topBackWeightRegion.left+topBackWeightRegion.width/2,
+            top: topBackWeightRegion.top+topBackWeightRegion.height/2+1,
+            width: topBackWeightRegion.width*2+1,
+            height: topBackWeightRegion.height*2+2
+        }).setCoords();
         //set weight text location
         topLeftWeightText.set('left', 370).setCoords();
         topMiddleWeightText.set('left', 626).setCoords();
@@ -519,8 +543,14 @@ function truckCurtain(truckid) {
         //Set side region's size and location
         topBackWeightRegion.set({left: 361, top: 239, width: 144 * 3, height: 162 * 2,}).setCoords();
         topFrontWeightRegion.set({left: 793, top: 239, width: 144 * 3, height: 162 * 2,}).setCoords();
-        botBackWeightRegion.set({left: 361, top: 565, width: 144 * 3, height: 162 * 2,}).setCoords();
-        botFrontWeightRegion.set({left: 793, top: 565, width: 144 * 3, height: 162 * 2,}).setCoords();
+        botBackWeightRegion.set({left: 361, top: 565-2, width: 144 * 3, height: 162 * 2-2,}).setCoords();
+        botFrontWeightRegion.set({left: 793, top: 565-2, width: 144 * 3, height: 162 * 2-2,}).setCoords();
+        fullWeightRegion.set({
+            left: topBackWeightRegion.left+topBackWeightRegion.width/2,
+            top: topBackWeightRegion.top+topBackWeightRegion.height/2,
+            width: topBackWeightRegion.width*2+1,
+            height: topBackWeightRegion.height*2+2
+        }).setCoords();
         //set weight text location
         topLeftWeightText.set('left', 290).setCoords();
         topMiddleWeightText.set('left', 578).setCoords();
@@ -557,8 +587,14 @@ function truckCurtain(truckid) {
         //Set side region's size and location
         topBackWeightRegion.set({left: 361, top: 239, width: 168 * 2 + 142, height: 162 * 2,}).setCoords();
         topFrontWeightRegion.set({left: 841, top: 239, width: 168 * 2 + 142, height: 162 * 2,}).setCoords();
-        botBackWeightRegion.set({left: 361, top: 565, width: 168 * 2 + 142, height: 162 * 2,}).setCoords();
-        botFrontWeightRegion.set({left: 841, top: 565, width: 168 * 2 + 142, height: 162 * 2,}).setCoords();
+        botBackWeightRegion.set({left: 361, top: 565, width: 168 * 2 + 142, height: 162 * 2-3,}).setCoords();
+        botFrontWeightRegion.set({left: 841, top: 565, width: 168 * 2 + 142, height: 162 * 2-3,}).setCoords();
+        fullWeightRegion.set({
+            left: topBackWeightRegion.left+topBackWeightRegion.width/2+1,
+            top: topBackWeightRegion.top+topBackWeightRegion.height/2,
+            width: topBackWeightRegion.width*2+4,
+            height: topBackWeightRegion.height*2+2
+        }).setCoords();
         //set weight text location
         topLeftWeightText.set('left', 290).setCoords();
         topMiddleWeightText.set('left', 602).setCoords();
@@ -591,10 +627,16 @@ function truckCurtain(truckid) {
         botLines[11] = new fabric.Line();
 
         //Set side region's size and location
-        topBackWeightRegion.set({left: 301, top: 239, width: 168 * 3, height: 162 * 2,}).setCoords();
-        topFrontWeightRegion.set({left: 805, top: 239, width: 168 * 3, height: 162 * 2,}).setCoords();
-        botBackWeightRegion.set({left: 301, top: 565, width: 168 * 3, height: 162 * 2,}).setCoords();
-        botFrontWeightRegion.set({left: 805, top: 565, width: 168 * 3, height: 162 * 2,}).setCoords();
+        topBackWeightRegion.set({left: 301, top: 238, width: 168 * 3, height: 162 * 2,}).setCoords();
+        topFrontWeightRegion.set({left: 805, top: 238, width: 168 * 3, height: 162 * 2,}).setCoords();
+        botBackWeightRegion.set({left: 301, top: 564, width: 168 * 3, height: 162 * 2,}).setCoords();
+        botFrontWeightRegion.set({left: 805, top: 564, width: 168 * 3, height: 162 * 2,}).setCoords();
+        fullWeightRegion.set({
+            left: topBackWeightRegion.left+topBackWeightRegion.width/2,
+            top: topBackWeightRegion.top+topBackWeightRegion.height/2+1,
+            width: topBackWeightRegion.width*2+4-3,
+            height: topBackWeightRegion.height*2+2
+        }).setCoords();
         //set weight text location
         topLeftWeightText.set('left', 218).setCoords();
         topMiddleWeightText.set('left', 554).setCoords();
@@ -619,10 +661,16 @@ function truckCurtain(truckid) {
     }   else if (truckid == "RWW114") {
         //44' Flatbed trailers
         //Set side region's size and location
-        topBackWeightRegion.set({left: 312, top: 239, width: 192 * 3-48, height: 162 * 2,}).setCoords();
-        topFrontWeightRegion.set({left: 842, top: 239, width: 192 * 3-48, height: 162 * 2,}).setCoords();
-        botBackWeightRegion.set({left: 312, top: 565, width: 192 * 3-48, height: 162 * 2,}).setCoords();
-        botFrontWeightRegion.set({left: 842, top: 565, width: 192 * 3-48, height: 162 * 2,}).setCoords();
+        topBackWeightRegion.set({left: 312, top: 238, width: 192 * 3-48, height: 162 * 2,}).setCoords();
+        topFrontWeightRegion.set({left: 842, top: 238, width: 192 * 3-48, height: 162 * 2,}).setCoords();
+        botBackWeightRegion.set({left: 312, top: 564, width: 192 * 3-48, height: 162 * 2,}).setCoords();
+        botFrontWeightRegion.set({left: 842, top: 564, width: 192 * 3-48, height: 162 * 2,}).setCoords();
+        fullWeightRegion.set({
+            left: topBackWeightRegion.left+topBackWeightRegion.width/2+1,
+            top: topBackWeightRegion.top+topBackWeightRegion.height/2+1,
+            width: topBackWeightRegion.width*2+4-3,
+            height: topBackWeightRegion.height*2+2
+        }).setCoords();
         //set weight text location
         topLeftWeightText.set('left', 242).setCoords();
         topMiddleWeightText.set('left', 578).setCoords();
@@ -647,10 +695,16 @@ function truckCurtain(truckid) {
     } else if (truckid == '46 Flatbed' || truckid == '1903') {
         //46' Flatbed trailers
         //Set region's size and location
-        topBackWeightRegion.set({left: 326, top: 239, width: 192 * 3-26, height: 162 * 2,}).setCoords();
-        topFrontWeightRegion.set({left: 876, top: 239, width: 192 * 3-26, height: 162 * 2,}).setCoords();
-        botBackWeightRegion.set({left: 326, top: 565, width: 192 * 3-26, height: 162 * 2,}).setCoords();
-        botFrontWeightRegion.set({left: 876, top: 565, width: 192 * 3-26, height: 162 * 2,}).setCoords();
+        topBackWeightRegion.set({left: 326, top: 238, width: 192 * 3-26, height: 162 * 2,}).setCoords();
+        topFrontWeightRegion.set({left: 876, top: 238, width: 192 * 3-26, height: 162 * 2,}).setCoords();
+        botBackWeightRegion.set({left: 326, top: 564, width: 192 * 3-26, height: 162 * 2,}).setCoords();
+        botFrontWeightRegion.set({left: 876, top: 564, width: 192 * 3-26, height: 162 * 2,}).setCoords();
+        fullWeightRegion.set({
+            left: topBackWeightRegion.left+topBackWeightRegion.width/2,
+            top: topBackWeightRegion.top+topBackWeightRegion.height/2+1,
+            width: topBackWeightRegion.width*2+4,
+            height: topBackWeightRegion.height*2+2
+        }).setCoords();
         //set weight text location
         topLeftWeightText.set('left', 242).setCoords();
         topMiddleWeightText.set('left', 602).setCoords();
@@ -674,10 +728,16 @@ function truckCurtain(truckid) {
     } else if (truckid == '48 Flatbed' || truckid == 300 || truckid == 'Carrier-48-72-100' || truckid == 'Carrier-48-90-100' || truckid == "_MWRED48" || truckid == "_MWCONE48") {
         //48' Flatbed trailers
         //Set region's size and location
-        topBackWeightRegion.set({left: 337, top: 239, width: 192 * 3-2, height: 162 * 2,}).setCoords();
-        topFrontWeightRegion.set({left: 913, top: 239, width: 192 * 3-2, height: 162 * 2,}).setCoords();
-        botBackWeightRegion.set({left: 337, top: 565, width: 192 * 3-2, height: 162 * 2,}).setCoords();
-        botFrontWeightRegion.set({left: 913, top: 565, width: 192 * 3-2, height: 162 * 2,}).setCoords();
+        topBackWeightRegion.set({left: 337, top: 238, width: 192 * 3-2, height: 162 * 2,}).setCoords();
+        topFrontWeightRegion.set({left: 913, top: 238, width: 192 * 3-2, height: 162 * 2,}).setCoords();
+        botBackWeightRegion.set({left: 337, top: 564, width: 192 * 3-2, height: 162 * 2,}).setCoords();
+        botFrontWeightRegion.set({left: 913, top: 564, width: 192 * 3-2, height: 162 * 2,}).setCoords();
+        fullWeightRegion.set({
+            left: topBackWeightRegion.left+topBackWeightRegion.width/2+1,
+            top: topBackWeightRegion.top+topBackWeightRegion.height/2+1,
+            width: topBackWeightRegion.width*2+4,
+            height: topBackWeightRegion.height*2+2
+        }).setCoords();
         //set weight text location
         topLeftWeightText.set('left', 242).setCoords();
         topMiddleWeightText.set('left', 626).setCoords();
@@ -706,10 +766,16 @@ function truckCurtain(truckid) {
         || truckid == "2101" || truckid == "2102" || truckid == "2103" || truckid == "2104" || truckid == "2105" || truckid == "2106" || truckid == "_MWRED53" || truckid == "_MWCONE53") {
         //53' Flatbed trailers
         //Set side region's size and location
-        topBackWeightRegion.set({left: 301, top: 239, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
-        topFrontWeightRegion.set({left: 901, top: 239, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
-        botBackWeightRegion.set({left: 301, top: 565, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
-        botFrontWeightRegion.set({left: 901, top: 565, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        topBackWeightRegion.set({left: 301, top: 238, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        topFrontWeightRegion.set({left: 901, top: 238, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        botBackWeightRegion.set({left: 301, top: 564, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        botFrontWeightRegion.set({left: 901, top: 564, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        fullWeightRegion.set({
+            left: topBackWeightRegion.left+topBackWeightRegion.width/2+2,
+            top: topBackWeightRegion.top+topBackWeightRegion.height/2+1,
+            width: topBackWeightRegion.width*2+5,
+            height: topBackWeightRegion.height*2+2
+        }).setCoords();
         //set weight text location
         topLeftWeightText.set('left', 206).setCoords();
         topMiddleWeightText.set('left', 602).setCoords();
@@ -732,10 +798,16 @@ function truckCurtain(truckid) {
         createMidGroup(vLine5.left - vLine2.left, vLine2.left)
     } else {
         //Set side region's size and location
-        topBackWeightRegion.set({left: 301, top: 239, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
-        topFrontWeightRegion.set({left: 901, top: 239, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
-        botBackWeightRegion.set({left: 301, top: 565, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
-        botFrontWeightRegion.set({left: 901, top: 565, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        topBackWeightRegion.set({left: 301, top: 238, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        topFrontWeightRegion.set({left: 901, top: 238, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        botBackWeightRegion.set({left: 301, top: 564, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        botFrontWeightRegion.set({left: 901, top: 564, width: 204 * 2 + 189, height: 162 * 2,}).setCoords();
+        fullWeightRegion.set({
+            left: topBackWeightRegion.left+topBackWeightRegion.width/2+2,
+            top: topBackWeightRegion.top+topBackWeightRegion.height/2+1,
+            width: topBackWeightRegion.width*2+5,
+            height: topBackWeightRegion.height*2+2
+        }).setCoords();
         //set weight text location
         topLeftWeightText.set('left', 206).setCoords();
         topMiddleWeightText.set('left', 601).setCoords();
@@ -786,10 +858,16 @@ function truck53(truckid) {
     //53' trailers
 
     //Set side region's size and location
-    topBackWeightRegion.set({left: 300, top: 239, width: 600, height: 162 * 2,}).setCoords();
-    topFrontWeightRegion.set({left: 902, top: 239, width: 600, height: 162 * 2,}).setCoords();
-    botBackWeightRegion.set({left: 300, top: 565, width: 600, height: 162 * 2,}).setCoords();
-    botFrontWeightRegion.set({left: 902, top: 565, width: 600, height: 162 * 2,}).setCoords();
+    topBackWeightRegion.set({left: 299, top: 238, width: 600-3, height: 162 * 2,}).setCoords();
+    topFrontWeightRegion.set({left: 903, top: 238, width: 600-3, height: 162 * 2,}).setCoords();
+    botBackWeightRegion.set({left: 299, top: 564, width: 600-3, height: 162 * 2,}).setCoords();
+    botFrontWeightRegion.set({left: 903, top: 564, width: 600-3, height: 162 * 2,}).setCoords();
+    fullWeightRegion.set({
+        left: topBackWeightRegion.left+topBackWeightRegion.width/2+3,
+        top: topBackWeightRegion.top+topBackWeightRegion.height/2+1,
+        width: topBackWeightRegion.width*2+7,
+        height: topBackWeightRegion.height*2+2
+    }).setCoords();
     //set weight text location
     topLeftWeightText.set('left', 248).setCoords();
     topMiddleWeightText.set('left', 626).setCoords();
@@ -913,6 +991,12 @@ function truck48(truckid) {
     topFrontWeightRegion.set({left: 841, top: 239, width: 192 * 2 + 142, height: 162 * 2,}).setCoords();
     botBackWeightRegion.set({left: 313, top: 565, width: 192 * 2 + 142, height: 162 * 2,}).setCoords();
     botFrontWeightRegion.set({left: 841, top: 565, width: 192 * 2 + 142, height: 162 * 2,}).setCoords();
+    fullWeightRegion.set({
+        left: topBackWeightRegion.left+topBackWeightRegion.width/2+1,
+        top: topBackWeightRegion.top+topBackWeightRegion.height/2,
+        width: topBackWeightRegion.width*2+2,
+        height: topBackWeightRegion.height*2+2
+    }).setCoords();
     //set weight text location
     topLeftWeightText.set('left', 242).setCoords();
     topMiddleWeightText.set('left', 578).setCoords();
@@ -1049,10 +1133,16 @@ function truck48(truckid) {
  */
 function truck35(truckid) {
     //Set side region's size and location
-    topBackWeightRegion.set({left: 434, top: 239, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-    topFrontWeightRegion.set({left: 818, top: 239, width: 192 * 2, height: 162 * 2,}).setCoords();
-    botBackWeightRegion.set({left: 434, top: 565, width: 192 * 2-4, height: 162 * 2,}).setCoords();
-    botFrontWeightRegion.set({left: 818, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
+    topBackWeightRegion.set({left: 433, top: 238, width: 192 * 2, height: 162 * 2,}).setCoords();
+    topFrontWeightRegion.set({left: 817, top: 238, width: 192 * 2, height: 162 * 2,}).setCoords();
+    botBackWeightRegion.set({left: 433, top: 564, width: 192 * 2, height: 162 * 2,}).setCoords();
+    botFrontWeightRegion.set({left: 817, top: 564, width: 192 * 2, height: 162 * 2,}).setCoords();
+    fullWeightRegion.set({
+        left: topBackWeightRegion.left+topBackWeightRegion.width/2,
+        top: topBackWeightRegion.top+topBackWeightRegion.height/2+1,
+        width: topBackWeightRegion.width*2,
+        height: topBackWeightRegion.height*2+2
+    }).setCoords();
 
     //set weight text location
     topLeftWeightText.set('left', 434).setCoords();

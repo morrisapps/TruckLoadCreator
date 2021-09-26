@@ -7,7 +7,7 @@
 //***********Global variables***********
 
 //Version number
-let version = "1.2";
+let version = "1.2.1";
 
 //truck is an instance of Truck class that represents the current truck template
 let truck = new Truck("start",105,65000,45000,53,48,48,48,48,48,48,16,16,16,16,16,16,0);
@@ -99,17 +99,38 @@ var bot1176Units;
 
 //Variables used for counting weight
 //Weight Region
+
+let fullWeightRegion = new fabric.Rect({
+    left: 300+600/2,
+    top: 239+162,
+    width: 1204,
+    height: 162 * 4 +4,
+    fill: "red",
+    stroke: 'orange',
+    strokeWidth: 2,
+    originX: 'center',
+    originY: 'center',
+    selectable: false,
+    evented: false,
+    isRegion: true,
+    isSide: false,
+    opacity: 0,
+    weight: 0,
+    units: new Set()
+});
+
 let topBackWeightRegion = new fabric.Rect({
     left: 300,
     top: 239,
     width: 600,
     height: 162 * 2,
-    fill: "grey",
-    stroke: 'green',
+    fill: "red",
+    stroke: 'orange',
     strokeWidth: 2,
     originX: 'center',
     originY: 'center',
     selectable: false,
+    evented: false,
     isRegion: true,
     isSide: true,
     opacity: 0,
@@ -121,12 +142,13 @@ let topFrontWeightRegion = new fabric.Rect({
     top: 239,
     width: 600,
     height: 162 * 2,
-    fill: "grey",
-    stroke: 'green',
+    fill: "red",
+    stroke: 'orange',
     strokeWidth: 2,
     originX: 'center',
     originY: 'center',
     selectable: false,
+    evented: false,
     isRegion: true,
     isSide: true,
     opacity: 0,
@@ -138,12 +160,13 @@ let botBackWeightRegion = new fabric.Rect({
     top: 566,
     width: 600,
     height: 162 * 2,
-    fill: "grey",
-    stroke: 'green',
+    fill: "red",
+    stroke: 'orange',
     strokeWidth: 2,
     originX: 'center',
     originY: 'center',
     selectable: false,
+    evented: false,
     isRegion: true,
     isSide: true,
     opacity: 0,
@@ -155,12 +178,13 @@ let botFrontWeightRegion = new fabric.Rect({
     top: 566,
     width: 600,
     height: 162 * 2,
-    fill: "grey",
-    stroke: 'green',
+    fill: "red",
+    stroke: 'orange',
     strokeWidth: 2,
     originX: 'center',
     originY: 'center',
     selectable: false,
+    evented: false,
     isRegion: true,
     isSide: true,
     opacity: 0,

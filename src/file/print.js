@@ -64,12 +64,13 @@ function printPageArea() {
         botCounters.forEach(function (line){line.set({restorefill: line.fill}); line.set({fill: '#4c4c4c'});});
 
         //Set all weight counters to black
-        midGroup.item(2).set({restorefill: midGroup.item(2).fill});
-        midGroup.item(2).set({fill: "black"});
-        midGroup.item(1).set({restorefill: midGroup.item(1).fill});
-        midGroup.item(1).set({fill: "black"});
-        midGroup.item(3).set({restorefill: midGroup.item(3).fill});
-        midGroup.item(3).set({fill: "black"});
+        midGroup.item(2).set({restorefill: midGroup.item(2).fill, fill: "black"});
+        midGroup.item(1).set({restorefill: midGroup.item(1).fill, fill: "black"});
+        midGroup.item(3).set({restorefill: midGroup.item(3).fill, fill: "black"});
+
+        //Set all weight regions opacity to 0
+        sideRegions.forEach(function(region){region.set({restoreOpacity: region.opacity, opacity: 0})});
+        fullWeightRegion.set({restoreOpacity: fullWeightRegion.opacity, opacity: 0});
 
         //Set all opacity of intersected units to 1
         canvas.forEachObject(function (obj) {
@@ -137,6 +138,11 @@ function printPageArea() {
             midGroup.item(2).set({fill: midGroup.item(2).restorefill});
             midGroup.item(1).set({fill: midGroup.item(1).restorefill});
             midGroup.item(3).set({fill: midGroup.item(3).restorefill});
+
+            //Restore all weight regions opacity
+            sideRegions.forEach(function(region){region.set({opacity: region.restoreOpacity})});
+            fullWeightRegion.set({opacity: fullWeightRegion.restoreOpacity});
+
 
             canvas.renderAll();
 

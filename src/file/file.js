@@ -320,6 +320,7 @@ function load(content) {
     //Re-add weight regions to canvas
     canvas.add(topLeftWeightRegion,topMiddleWeightRegion,topRightWeightRegion,botLeftWeightRegion,botMiddleWeightRegion,botRightWeightRegion);
     canvas.add(topFrontWeightRegion,topBackWeightRegion,botFrontWeightRegion,botBackWeightRegion);
+    canvas.add(fullWeightRegion);
     //Re-add weight text to canvas
     canvas.add(topLeftWeightText,topMiddleWeightText,topRightWeightText,botLeftWeightText,botMiddleWeightText,botRightWeightText);
 
@@ -384,6 +385,9 @@ function load(content) {
     canvas.setActiveObject(loadTextEdit);
     canvas.discardActiveObject();
     canvas.requestRenderAll();
+
+    //Places objects that should be visible on the top layers.
+    keepObjectsOnTop();
 
     //Set loading to false
     loading = false;

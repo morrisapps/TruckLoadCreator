@@ -61,6 +61,7 @@ $(document).ready(function () {
     //Add weight regions and text
     weightRegions.forEach(function (region){canvas.add(region);});
     sideRegions.forEach(function (region){canvas.add(region);});
+    canvas.add(fullWeightRegion);
     canvas.add(topLeftWeightText, topMiddleWeightText, topRightWeightText, botLeftWeightText, botMiddleWeightText, botRightWeightText);
 
     canvas.requestRenderAll();
@@ -201,6 +202,27 @@ function updateCount(target) {
                 else if (midGroup.item(3).weight >= truck.getFrontWeightPercent()*truck.getWeight()*.9){midGroup.item(3).set({fill: '#d35400'});}
                 else {midGroup.item(3).set({fill: "black"});}
             }
+            //Display weight warning overlays
+            if (midGroup.item(2).fill == "red"){
+                fullWeightRegion.set("opacity", 0.4);
+            } else {
+                fullWeightRegion.set("opacity", 0);
+            }
+            if (midGroup.item(2).fill != "red" && midGroup.item(1).fill == "red"){
+                topBackWeightRegion.set("opacity", 0.4);
+                botBackWeightRegion.set("opacity", 0.4);
+            }else {
+                topBackWeightRegion.set("opacity", 0);
+                botBackWeightRegion.set("opacity", 0);
+            }
+            if (midGroup.item(2).fill != "red" && midGroup.item(3).fill == "red"){
+                topFrontWeightRegion.set("opacity", 0.4);
+                botFrontWeightRegion.set("opacity", 0.4);
+            }else {
+                topFrontWeightRegion.set("opacity", 0);
+                botFrontWeightRegion.set("opacity", 0);
+            }
+
         }
     }
 }
@@ -441,12 +463,6 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
             createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, cName, AE, weight, striped);
             addUnit(currentGroup);
         }
-        vLine1.bringToFront();
-        vLine2.bringToFront();
-        vLine3.bringToFront();
-        vLine4.bringToFront();
-        vLine5.bringToFront();
-        midGroup.bringToFront();
     } else {
         if (addError != '') {
             alert(addError);
@@ -455,6 +471,9 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
     if (response == false) {
         addError = addError + " Duplicate unit \n"
     }
+    //After potentially adding unit, calls keepObjectsOnTop to make sure objects that should always be visible stay visible.
+    keepObjectsOnTop()
+
     return addError;
 }
 
@@ -678,6 +697,7 @@ function selectObject(obj) {
         listCustomer();
         updateListUnits(unit);
     }
+
 }
 
 /**
@@ -730,3 +750,21 @@ function objectIntersects(obj, target) {
     }
 }
 
+/**
+ * Brings various objects in canvas to the top layer in order to keep them visible.
+ * Useful after adding new objects to canvas.
+ */
+function keepObjectsOnTop(){
+    //Make fullWeightRegion on top to act as a overweight warning overlay for total weight
+    fullWeightRegion.bringToFront();
+    //Bring all side regions on top, they will be used as a overweight warning overlay and need to be on top of the units.
+    sideRegions.forEach(function(region){region.bringToFront();});
+    //Make sure the separator lines are shown
+    vLine1.bringToFront();
+    vLine2.bringToFront();
+    vLine3.bringToFront();
+    vLine4.bringToFront();
+    vLine5.bringToFront();
+    //Makes the middle separator shown
+    midGroup.bringToFront();
+}

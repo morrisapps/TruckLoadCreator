@@ -367,6 +367,8 @@ function handleDrop(e) {
             canvas.add(rackCanvas);
             canvas.setActiveObject(rackCanvas);
             keepInBounds(rackCanvas);
+            //Places objects that should be visible on the top layers.
+            keepObjectsOnTop();
         }
         //Update the line count when dropped
         updateCount(canvas.getActiveObject());
