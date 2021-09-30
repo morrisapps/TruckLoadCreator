@@ -459,11 +459,13 @@ let _tagBrackets = document.getElementById('unitBrackets');
 let _snapToggle = document.getElementById('snapToggle');
 let _custInUnits = document.getElementById('custInUnits');
 let _locToggle = document.getElementById('locToggle');
+let _halfWeightToggle = document.getElementById('halfLoadToggle');
 
 //Reset options to default
 _tagBrackets.checked = false;
 _snapToggle.checked = true;
 _custInUnits.checked = true;
+_halfWeightToggle.checked = false;
 
 //Data that is returned from DB
 let _returnedData = null;

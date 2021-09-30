@@ -55,6 +55,15 @@ function optionsUpdate() {
 }
 
 /**
+ * Updates weight texts and saves to browser when half Weight is toggled.
+ */
+function halfLoadToggle(){
+    setWeightText();
+    canvas.renderAll();
+    saveToBrowser();
+}
+
+/**
  * Formats the text displayed in the unit
  * @param cName - The customer name
  * @param width - The width of the unit

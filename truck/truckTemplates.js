@@ -61,6 +61,14 @@ function truckLoad(id) {
     _hWeight.innerText = truck.getHalfWeight();
     truckWeightUpdate();
 
+    //If truck doesn't have half load weight disable Half load weight option.
+    if (truck.getHalfWeight() == "?"){
+        _halfWeightToggle.checked = false;
+        _halfWeightToggle.disabled = true;
+    } else {
+        _halfWeightToggle.disabled = false;
+    }
+
     //Places objects that should be visible on the top layers.
     keepObjectsOnTop();
 

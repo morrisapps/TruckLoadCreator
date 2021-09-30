@@ -96,7 +96,7 @@ function getSaveContent() {
     });
 
     //Save options
-    let options = [_tagBrackets.checked, _custInUnits.checked, _locToggle.checked];
+    let options = [_tagBrackets.checked, _custInUnits.checked, _locToggle.checked, _halfWeightToggle.checked];
 
     //Bundles all content
     let saveContents = [
@@ -307,6 +307,7 @@ function load(content) {
     _tagBrackets.checked = content[7][0];
     _custInUnits.checked = content[7][1];
     _locToggle.checked = content[7][2];
+    _halfWeightToggle.checked = content[7][3];
 
     //Remove all objects
     canvas.forEachObject(function (obj){

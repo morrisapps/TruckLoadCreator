@@ -155,7 +155,6 @@ function initializeCounters() {
  */
 function updateCount(target) {
     if (target != null) {
-
         //Update Height
         if (target.unit || target.isRack) {
             var i = 0;
@@ -165,65 +164,11 @@ function updateCount(target) {
                 i++;
             }
         }
+        //Update weight count of each region
         weightRegionCount(target, weightRegions);
         weightRegionCount(target, sideRegions);
-
-        //Set weight texts
-        for (let i = 0; i < weightRegions.length; i++) {
-            if (weightRegions[i].weight > 0){
-                weightTexts[i].text = weightRegions[i].weight.toString() + ' lb';
-            }else {
-                weightTexts[i].text = '';
-            }
-        };
-        //Set Back, Front, and Total weight in canvas
-        if (midGroup !== undefined){
-            //Total weight
-            midGroup.item(2).weight = (sideRegions[0].weight + sideRegions[1].weight + sideRegions[2].weight + sideRegions[3].weight);
-            weightTextFormat(midGroup.item(2), midGroup.item(2).weight.toString())
-            if (truck.getWeight() > 0 && truck.getWeight() != "?"){
-                if (midGroup.item(2).weight >= truck.getWeight()){midGroup.item(2).set({fill: "red"});  midGroup.item(2).text += " !Overweight!";}
-                else if(midGroup.item(2).weight >= truck.getWeight()*.9){midGroup.item(2).set({fill: '#d35400'});}
-                else {midGroup.item(2).set({fill: "black"});}
-            }
-            //Back weight
-            midGroup.item(1).weight = sideRegions[0].weight + sideRegions[2].weight
-            weightTextFormat(midGroup.item(1), midGroup.item(1).weight.toString())
-            if (truck.getBackWeightPercent() > 0 && truck.getWeight() != "?"){
-                if (midGroup.item(1).weight >= truck.getBackWeightPercent()*truck.getWeight()){midGroup.item(1).set({fill: "red"});  midGroup.item(1).text += " !Overweight!";}
-                else if (midGroup.item(1).weight >= truck.getBackWeightPercent()*truck.getWeight()*.9){midGroup.item(1).set({fill: '#d35400'});}
-                else {midGroup.item(1).set({fill: "black"});}
-            }
-            //Front weight
-            midGroup.item(3).weight = sideRegions[1].weight + sideRegions[3].weight
-            weightTextFormat(midGroup.item(3), midGroup.item(3).weight.toString())
-            if (truck.getFrontWeightPercent() > 0 && truck.getWeight() != "?"){
-                if (midGroup.item(3).weight >= truck.getFrontWeightPercent()*truck.getWeight()){midGroup.item(3).set({fill: "red"}); midGroup.item(3).text += " !Overweight!";}
-                else if (midGroup.item(3).weight >= truck.getFrontWeightPercent()*truck.getWeight()*.9){midGroup.item(3).set({fill: '#d35400'});}
-                else {midGroup.item(3).set({fill: "black"});}
-            }
-            //Display weight warning overlays
-            if (midGroup.item(2).fill == "red"){
-                fullWeightRegion.set("opacity", 0.45);
-            } else {
-                fullWeightRegion.set("opacity", 0);
-            }
-            if (midGroup.item(2).fill != "red" && midGroup.item(1).fill == "red"){
-                topBackWeightRegion.set("opacity", 0.45);
-                botBackWeightRegion.set("opacity", 0.45);
-            }else {
-                topBackWeightRegion.set("opacity", 0);
-                botBackWeightRegion.set("opacity", 0);
-            }
-            if (midGroup.item(2).fill != "red" && midGroup.item(3).fill == "red"){
-                topFrontWeightRegion.set("opacity", 0.45);
-                botFrontWeightRegion.set("opacity", 0.45);
-            }else {
-                topFrontWeightRegion.set("opacity", 0);
-                botFrontWeightRegion.set("opacity", 0);
-            }
-
-        }
+        //Set all weight texts
+        setWeightText();
     }
 }
 
@@ -313,7 +258,7 @@ function weightRegionCount(target,regions){
 }
 
 /**
- * Formats the given textObj with the given weight text by substring if over 10 characters
+ * Formats the given textObj with the given weight text by substring if over 10 characters.
  * @param textObj Text object from middle separator in canvas
  * @param text The text that will be formatted with substring
  */
@@ -323,6 +268,76 @@ function weightTextFormat(textObj, text){
         formattedText = text.substring(0, 10) + "..."
     }
     textObj.set({text: textObj.startText + formattedText + " lb"});
+}
+
+/**
+ * Sets all weight texts, weight colors, and warning overlays based on maximum truck weight and total region weights.
+ */
+function setWeightText(){
+    //Set weight texts
+    for (let i = 0; i < weightRegions.length; i++) {
+        if (weightRegions[i].weight > 0){
+            weightTexts[i].text = weightRegions[i].weight.toString() + ' lb';
+        }else {
+            weightTexts[i].text = '';
+        }
+    };
+    //Set Back, Front, and Total weight in canvas
+    if (midGroup !== undefined){
+        let truckWeight = 0;
+        if (_halfWeightToggle.checked == true && truck.getHalfWeight() != "?"){
+            truckWeight = truck.getHalfWeight();
+            //Set middle total weight text to say Half load
+            midGroup.item(2).startText = "Half Load Total:"
+        } else {
+            truckWeight = truck.getWeight();
+            midGroup.item(2).startText = "Total:"
+        }
+        //Total weight
+        midGroup.item(2).weight = (sideRegions[0].weight + sideRegions[1].weight + sideRegions[2].weight + sideRegions[3].weight);
+        weightTextFormat(midGroup.item(2), midGroup.item(2).weight.toString())
+        if (truckWeight > 0 && truckWeight != "?"){
+            if (midGroup.item(2).weight >= truckWeight){midGroup.item(2).set({fill: "red"});  midGroup.item(2).text += " !Overweight!";}
+            else if(midGroup.item(2).weight >= truckWeight*.9){midGroup.item(2).set({fill: '#d35400'});}
+            else {midGroup.item(2).set({fill: "black"});}
+        }
+        //Back weight
+        midGroup.item(1).weight = sideRegions[0].weight + sideRegions[2].weight
+        weightTextFormat(midGroup.item(1), midGroup.item(1).weight.toString())
+        if (truck.getBackWeightPercent() > 0 && truckWeight != "?"){
+            if (midGroup.item(1).weight >= truck.getBackWeightPercent()*truckWeight){midGroup.item(1).set({fill: "red"});  midGroup.item(1).text += " !Overweight!";}
+            else if (midGroup.item(1).weight >= truck.getBackWeightPercent()*truckWeight*.9){midGroup.item(1).set({fill: '#d35400'});}
+            else {midGroup.item(1).set({fill: "black"});}
+        }
+        //Front weight
+        midGroup.item(3).weight = sideRegions[1].weight + sideRegions[3].weight
+        weightTextFormat(midGroup.item(3), midGroup.item(3).weight.toString())
+        if (truck.getFrontWeightPercent() > 0 && truckWeight != "?"){
+            if (midGroup.item(3).weight >= truck.getFrontWeightPercent()*truckWeight){midGroup.item(3).set({fill: "red"}); midGroup.item(3).text += " !Overweight!";}
+            else if (midGroup.item(3).weight >= truck.getFrontWeightPercent()*truckWeight*.9){midGroup.item(3).set({fill: '#d35400'});}
+            else {midGroup.item(3).set({fill: "black"});}
+        }
+        //Display weight warning overlays
+        if (midGroup.item(2).fill == "red"){
+            fullWeightRegion.set("opacity", 0.45);
+        } else {
+            fullWeightRegion.set("opacity", 0);
+        }
+        if (midGroup.item(2).fill != "red" && midGroup.item(1).fill == "red"){
+            topBackWeightRegion.set("opacity", 0.45);
+            botBackWeightRegion.set("opacity", 0.45);
+        }else {
+            topBackWeightRegion.set("opacity", 0);
+            botBackWeightRegion.set("opacity", 0);
+        }
+        if (midGroup.item(2).fill != "red" && midGroup.item(3).fill == "red"){
+            topFrontWeightRegion.set("opacity", 0.45);
+            botFrontWeightRegion.set("opacity", 0.45);
+        }else {
+            topFrontWeightRegion.set("opacity", 0);
+            botFrontWeightRegion.set("opacity", 0);
+        }
+    }
 }
 
 /**
