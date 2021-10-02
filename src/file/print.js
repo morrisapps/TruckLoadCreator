@@ -143,6 +143,9 @@ function printPageArea() {
             sideRegions.forEach(function(region){region.set({opacity: region.restoreOpacity})});
             fullWeightRegion.set({opacity: fullWeightRegion.restoreOpacity});
 
+            //Un-select active object so that PDF does not show it with it's controls.
+            deselectObject(canvas.getActiveObject())
+            canvas.discardActiveObject();
 
             canvas.renderAll();
 
@@ -155,6 +158,7 @@ function printPageArea() {
                 if (URLlocation === null || URLlocation == 1){
                     saveAsPDF();
                 }}, 200);
+
         });
     }
 }

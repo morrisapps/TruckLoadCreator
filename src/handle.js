@@ -218,7 +218,7 @@ function createRack(top, left, id, drag,opacity) {
     let rackID = id + rackCount;
 
     let isIntersected = false;
-    if (opacity != 1){isIntersected = true;};
+    if (opacity != null && opacity != undefined && opacity != 1){isIntersected = true;};
 
     let rackNew = new fabric.Group([rackRect, rText], {
         unitHeight: rackHeight,

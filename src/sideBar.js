@@ -446,7 +446,7 @@ function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, 
     }
 
     let isIntersected = false;
-    if (opacity != 1){isIntersected = true;};
+    if (opacity != null && opacity != undefined && opacity != 1){isIntersected = true;};
 
     currentGroup = new fabric.Group([rect, text], {
         unitHeight: height,
