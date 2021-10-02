@@ -306,6 +306,7 @@ function handleDrop(e) {
                 listUnits();
                 listCustomer();
                 _weight.value = '';
+                keepObjectsOnTop();
             }
         }
         //Add sideUnit
