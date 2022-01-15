@@ -13,6 +13,7 @@ $connectionLogin = array(
     "Uid" => "sa",
     "PWD" => "test"
 );
+
 //set rows
 $getTrucksRows = array('TRUCKID', 'DLVMODEID');
 $getUnitsRows = array('TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES', 'WMSLOCATIONID');
@@ -65,6 +66,8 @@ if ($conn) {
     } else {
         //Fetches rows
         while ($row = sqlsrv_fetch_array($returnedData, SQLSRV_FETCH_ASSOC)) {
+            //Encodes each row as utf8 to ensure all unicode characters are processed
+            $row = array_map('utf8_encode', $row);
             //Creates an array for each row which is then added to the $return array
             $data = array ();
             foreach ($rows as &$value) {
