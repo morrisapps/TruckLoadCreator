@@ -39,28 +39,6 @@ $(function () {
 });
 
 /**
- * Creates error dialog
- */
-$(function () {
-    $("#infoDialog").dialog({
-        autoOpen: false,
-        show: 'fold',
-        hide: "blind",
-        width: 300,
-        height: "auto",
-        draggable: false,
-        resizable: false,
-        minHeight: 220,
-        maxHeight: 400,
-        buttons: {
-            "Ok": function () {
-                $("#infoDialog").dialog("close");
-            }
-        }
-    }).prev().find(".ui-dialog-titlebar-close").hide();
-});
-
-/**
  * Launches connect.php which attempts to establish a connection to import data.
  * @param {[Query number, query rows, truckID]} input - An array containing query number, the rows, and optionally the truckID
  * @returns {*} - Sets _errorDB to any error messages encountered

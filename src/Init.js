@@ -471,6 +471,41 @@ _halfWeightToggle.checked = false;
 let _returnedData = null;
 let _errorDB = '';
 
+/**
+ * Creates change log dialog
+ */
+$(function() {
+    $("#changeLog").dialog({
+        autoOpen: false,
+        show: 'fold',
+        hide: "blind",
+        width: 400,
+        height: 500,
+    });
+});
+
+/**
+ * Creates information dialog
+ */
+$(function () {
+    $("#infoDialog").dialog({
+        autoOpen: false,
+        show: 'fold',
+        hide: "blind",
+        width: 300,
+        height: "auto",
+        draggable: false,
+        resizable: false,
+        minHeight: 220,
+        maxHeight: 400,
+        buttons: {
+            "Ok": function () {
+                $("#infoDialog").dialog("close");
+            }
+        }
+    }).prev().find(".ui-dialog-titlebar-close").hide();
+});
+
 //GET location and backtrack variables
 let URLlocation = new URL(window.location.href).searchParams.get("location");
 let URLbacktrack = new URL(window.location.href).searchParams.get("backtrack");
@@ -486,19 +521,17 @@ if (URLbacktrack == '1'){
     backtrackToggle = "1"
     _backtrack.href = "http://am-ax2012-web1:86/?location="+URLlocation+"&backtrack="+backtrackToggle
 }
-
-/**
- * Creates change log dialog
- */
-$(function() {
-    $("#changeLog").dialog({
-        autoOpen: false,
-        show: 'fold',
-        hide: "blind",
-        width: 400,
-        height: 500,
+//Set test server warnings if port matches test server
+if (location.port == '89'){
+    _backtrack.innerText = "TEST SERVER";
+    backtrackToggle = "0"
+    _backtrack.style = "pointer-events: none; color: red; font-size: 20px; font-weight: bolder;"
+    document.getElementById('infoDialog').innerHTML = "<P>This server is for testing new changes and should not be used in production unless specified otherwise.</p>"
+    $(function () {
+        $('#infoDialog').dialog('option', 'title', 'DO NOT USE IN PRODUCTION');
+        $("#infoDialog").dialog("open");
     });
-});
+}
 
 /**
  * Displays change log
