@@ -7,10 +7,10 @@
 //***********Global variables***********
 
 //Version number
-let version = "1.2.4";
+let version = "1.2.5";
 
 //truck is an instance of Truck class that represents the current truck template
-let truck = new Truck("start",105,65000,45000,53,48,48,48,48,48,48,16,16,16,16,16,16,0);
+let truck = new Truck("start",105,65000,45000,53,48,48,48,48,48,48,16,16,16,16,16,16,16,16,0);
 
 //truck array of all instances of the truck class
 let truckList = [];
@@ -294,7 +294,7 @@ let weightRegions = [topLeftWeightRegion, topMiddleWeightRegion, topRightWeightR
 //Weight text
 let topLeftWeightText = new fabric.IText('', {
     id: 'topLeftWeightText',
-    top: 90,
+    top: 92,
     left: 248,
     stroke: '#4c4c4c',
     fill: '#4c4c4c',
@@ -315,7 +315,7 @@ let topMiddleWeightText = new fabric.IText('', {
     id: 'topMiddleWeightText',
     width: 1000,
     height: 500,
-    top: 90,
+    top: 92,
     left: 626,
     stroke: '#4c4c4c',
     fill: '#4c4c4c',
@@ -336,7 +336,7 @@ let topRightWeightText = new fabric.IText('', {
     id: 'topRightWeightText',
     width: 1000,
     height: 500,
-    top: 90,
+    top: 92,
     left: 1010,
     stroke: '#4c4c4c',
     fill: '#4c4c4c',

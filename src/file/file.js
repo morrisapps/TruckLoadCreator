@@ -358,7 +358,9 @@ function load(content) {
 
     //Restore dash lines
     content[4].forEach(function (dash) {
-        canvas.add(createDash(dash.top, dash.left, (dash.width - 2) * dash.scaleX));
+        let savedDash = createDash(dash.top, dash.left, (dash.width - 2) * dash.scaleX)
+        canvas.add(savedDash);
+        updateCount(savedDash);
     });
 
     //Restore comments

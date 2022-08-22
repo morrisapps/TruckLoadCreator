@@ -39,6 +39,7 @@ function createDash(top, left, width) {
         intersects: true,
         tool: true,
         isDash: true,
+        unitHeight: 0,
         lockScalingFlip: true,
     });
     dashGroup.cornerSize = 16;

@@ -71,18 +71,6 @@ function truckLoad(id) {
 
     //Places objects that should be visible on the top layers.
     keepObjectsOnTop();
-
-    //Bring all side regions forward, they will be used as a overweight warning overlay and need to be on top.
-    sideRegions.forEach(function(region){region.bringToFront();});
-
-    vLine1.bringToFront();
-    vLine2.bringToFront();
-    vLine3.bringToFront();
-    vLine4.bringToFront();
-    vLine5.bringToFront();
-    midGroup.bringToFront();
-
-    if (id != 'start') {saveToBrowser();}
 }
 
 /**
@@ -103,11 +91,11 @@ function createCounters() {
     while (i <= 11) {
 
         topCounters[i] = new fabric.IText('', {
-            id: (i * 96) + (75 - 2),
+            id: (i * 96) + (66),
             width: 1000,
             height: 500,
-            top: 75,
-            left: (i * 96) + (75 - 2),
+            top: 77,
+            left: (i * 96) + (66),
             stroke: '#4c4c4c',
             fill: '#4c4c4c',
             strokeWidth: 0,
@@ -118,20 +106,22 @@ function createCounters() {
             hasBorders: false,
             editable: false,
             fontSize: 14,
+            borderScaleFactor: 0,
             fixedWidth: 150,
             fixedHeight: 300,
             fixedFontSize: 12,
+            backgroundColor: 'white',
             isCounter: true
         });
 
         canvas.add(topCounters[i]);
 
         botCounters[i] = new fabric.IText('', {
-            id: (i * 96) + (75 - 2),
+            id: (i * 96) + (66),
             width: 1000,
             height: 500,
-            top: 710,
-            left: (i * 96) + (75 - 2),
+            top: 708,
+            left: (i * 96) + (66),
             stroke: '#4c4c4c',
             fill: '#4c4c4c',
             strokeWidth: 0,
@@ -142,9 +132,11 @@ function createCounters() {
             hasBorders: false,
             editable: false,
             fontSize: 14,
+            borderScaleFactor: 0,
             fixedWidth: 150,
             fixedHeight: 300,
             fixedFontSize: 12,
+            backgroundColor: 'white',
             isCounter: true
         });
 

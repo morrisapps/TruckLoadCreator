@@ -12,12 +12,14 @@ function printPageArea() {
     let unitsNotInResponse = true;
     let weightZeroResponse = true;
     let heightCheckResponse = true;
+    let strapCheckResponse = true;
     let weightCheckResponse = true;
     let intersectedResponse = true;
     let intersected = 0
     let weightZeroUnits = [];
     let weightZeroText = '';
     let heightCheck = true;
+    let strapCheck = true;
     if (unitsNotInCanvas > 0){
         unitsNotInResponse = confirm("There are " + unitsNotInCanvas.toString() + " unit(s) from unit list not in the truck. \n\nContinue with print?");
     }
@@ -31,10 +33,15 @@ function printPageArea() {
     if (weightZeroUnits.length > 0){
         weightZeroResponse = confirm(weightZeroUnits.length.toString() + ' units with zero weight. \n Truck weight might be inaccurate. \n\nContinue with print?\n\n' + weightZeroText);
     }
-    //Checks if any height counters are red.
-    topCounters.forEach(function (line){if (line.fill == 'red'){heightCheck = false;}});
-    botCounters.forEach(function (line){if (line.fill == 'red'){heightCheck = false;}});
+    //Checks if any height counters are too high.
+    topCounters.forEach(function (lineText){if (lineText.text.includes('Height')){heightCheck = false;}});
+    botCounters.forEach(function (lineText){if (lineText.text.includes('Height')){heightCheck = false;}});
     if (!heightCheck){heightCheckResponse = confirm('Some height counter(s) exceed the height of '+ (truck.getHeight()+5) + '\n\nContinue with print?\n\n');}
+
+    //Checks if any height counters need belly straps.
+    topCounters.forEach(function (lineText){if (lineText.text.includes('Straps')){strapCheck = false;}});
+    botCounters.forEach(function (lineText){if (lineText.text.includes('Straps')){strapCheck = false;}});
+    if (!strapCheck){strapCheckResponse = confirm('Belly straps are required for some sections of the truck.\n\nContinue with print?\n\n');}
 
     //Check if any weight counters are red/overweight
     if (midGroup.item(2).fill == "red"){weightCheckResponse = confirm('Total weight exceeds maximum of '+ (truck.getWeight()) + '\n\nContinue with print?\n\n');}
@@ -50,7 +57,7 @@ function printPageArea() {
     if (intersected > 0){intersectedResponse = confirm('There are still '+ intersected +' intersected units in the truck ' + '\n\nContinue with print?\n\n');}
 
     //If all response is true, continue with print
-    if (unitsNotInResponse && weightZeroResponse && heightCheckResponse && weightCheckResponse && intersectedResponse){
+    if (unitsNotInResponse && weightZeroResponse && heightCheckResponse && strapCheckResponse && weightCheckResponse && intersectedResponse){
         //Remove Height Lines from print
         var i = 0;
         while (i <= 11) {
@@ -62,6 +69,10 @@ function printPageArea() {
         //Set all height counters to grey
         topCounters.forEach(function (line){line.set({restorefill: line.fill}); line.set({fill: '#4c4c4c'});});
         botCounters.forEach(function (line){line.set({restorefill: line.fill}); line.set({fill: '#4c4c4c'});});
+
+        //Set all height counters to no extra warning texts
+        topCounters.forEach(function (line){line.set({restoreText: line.text}); line.set({text: ((line.text).split(' !'))[0]});});
+        botCounters.forEach(function (line){line.set({restoreText: line.text}); line.set({text: ((line.text).split(' !'))[0]});});
 
         //Set all weight counters to black
         midGroup.item(2).set({restorefill: midGroup.item(2).fill, fill: "black"});
@@ -128,6 +139,10 @@ function printPageArea() {
             //Restore height counter colors
             topCounters.forEach(function (line){line.set("fill", line.restorefill);});
             botCounters.forEach(function (line){line.set("fill", line.restorefill);});
+
+            //Restore height counter text
+            topCounters.forEach(function (line){line.text = line.restoreText;});
+            botCounters.forEach(function (line){line.text = line.restoreText;});
 
             //Restore opacity of intersected units
             canvas.forEachObject(function (obj) {

@@ -156,11 +156,11 @@ function initializeCounters() {
 function updateCount(target) {
     if (target != null) {
         //Update Height
-        if (target.unit || target.isRack) {
+        if (target.unit || target.isRack || target.isDash) {
             var i = 0;
             while (i <= 11) {
-                heightCount(target, topLines[i], topCounters[i], topUnits[i]);
-                heightCount(target, botLines[i], botCounters[i], botUnits[i]);
+                lineHeightCount(target, topLines[i], topCounters[i], topUnits[i]);
+                lineHeightCount(target, botLines[i], botCounters[i], botUnits[i]);
                 i++;
             }
         }
@@ -342,13 +342,16 @@ function setWeightText(){
 
 /**
  * Counts the height of the target intersecting the line with all other units in lineUnits and displays the total height in a counter
+ * Displays warnings based on if height exceeds total truck height or height is too great without a belly strap on flatbed or similar trucks.
  * @param target - The object that will have it's height counted
  * @param line - The fabric.Line that the object is intersecting
  * @param lineCounter - The fabric.Itext that is associated with line
  * @param lineUnits - The array that contains units intersecting line
  */
-function heightCount(target, line, lineCounter, lineUnits) {
+function lineHeightCount(target, line, lineCounter, lineUnits) {
     var counter = 0;
+    let dashCounter = 0
+    const strapIndicator = 73
     if (intersects(target, line) && target.remove != true) {
         if (!lineUnits.includes(target)) {
             lineUnits.push(target);
@@ -361,20 +364,72 @@ function heightCount(target, line, lineCounter, lineUnits) {
     var lunits;
     for (lunits of lineUnits) {
         counter = counter + Math.floor(lunits.unitHeight);
+        // Gets the highest dash height within strapIndicator height. Used to determine if strap indicator is shown.
+        if (lunits.isDash){
+            let dashHeight = getUnitHeightCount(lunits, lineUnits)
+            // Highest dash object that is within the strapIndicator height
+            if (dashHeight > dashCounter && dashHeight < strapIndicator){
+                dashCounter = dashHeight
+            }
+        }
     }
     lineCounter.text = counter.toString() + '\"';
     if (counter == 0) {
         lineCounter.text = '';
     }
+
+    let counterMessage = ''
+    let counterFill = ''
+
+    // Set height indicator of the counter text
     if (truck.getHeight() > 0 && counter > truck.getHeight() && counter <= truck.getHeight()+5){
-        lineCounter.set({fill: '#d35400'});
+        counterFill = '#d35400'
     } else if (truck.getHeight() > 0 && counter > truck.getHeight()+5){
-        lineCounter.set({fill: 'red'});
+        if (counterMessage == '') {counterMessage = ' !Height!'}
+        counterFill = 'red'
     } else {
-        lineCounter.set({fill: '#4c4c4c'});
+        counterFill = '#4c4c4c'
     }
+
+    // Set straps indicator of counter text
+    if (truck.getHeight() > 0 && truck.getType() != 0 && counter >= strapIndicator && (dashCounter == 0 || dashCounter > strapIndicator)){
+        if (counterMessage == '') {counterMessage = ' !Straps!'}
+        counterFill = 'red'
+    }
+
+    lineCounter.fill = counterFill
+    lineCounter.text += counterMessage
 }
 
+/**
+ * Gets the height of the unit from the floor of the truck by counting the height of the units below it.
+ * @param obj - The object that will have it's height from the floor counted.
+ * @param lineUnits - The array that contains units intersecting the line the be counted from.
+ * @returns {int} - The number that represents the total height from the floor of the unit. Includes the unit's own height.
+ *                  0 means no height was counted or the obj doesn't exist in lineUnits.
+ */
+function getUnitHeightCount(obj, lineUnits){
+    let counter = 0;
+    if (lineUnits.includes(obj)) {
+            lineUnits.forEach(function (unit){
+                if (obj !== unit){
+                    if (intersects(obj, unit)){
+                        //counter += unit.unitHeight
+                    } else if (obj.top < midGroup.top){ // Units are in the driver side
+                        if ((obj.top + obj.height) < (unit.top + unit.height)){
+                            counter += unit.unitHeight
+                        }
+                    } else { // Units are in the passenger side
+                        if (obj.top > unit.top){
+                            counter += unit.unitHeight
+                        }
+                    }
+                }
+            });
+            counter += obj.unitHeight
+    }
+    return counter
+}
 
 /**
  * Determines if the given objects intersect with each other
@@ -772,16 +827,22 @@ function objectIntersects(obj, target) {
  * Useful after adding new objects to canvas.
  */
 function keepObjectsOnTop(){
-    //Make fullWeightRegion on top to act as a overweight warning overlay for total weight
-    fullWeightRegion.bringToFront();
-    //Bring all side regions on top, they will be used as a overweight warning overlay and need to be on top of the units.
-    sideRegions.forEach(function(region){region.bringToFront();});
     //Make sure the separator lines are shown
     vLine1.bringToFront();
     vLine2.bringToFront();
     vLine3.bringToFront();
     vLine4.bringToFront();
     vLine5.bringToFront();
+
+    //Height counters on top of all lines
+    topCounters.forEach(function(counter){counter.bringToFront();});
+    botCounters.forEach(function(counter){counter.bringToFront();});
+
+    //Make fullWeightRegion on top to act as a overweight warning overlay for total weight
+    fullWeightRegion.bringToFront();
+    //Bring all side regions on top, they will be used as a overweight warning overlay and need to be on top of the units.
+    sideRegions.forEach(function(region){region.bringToFront();});
+
     //Makes the middle separator shown
     midGroup.bringToFront();
 }
