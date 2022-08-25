@@ -638,12 +638,10 @@ function createCanvas() {
                         if (obj.opacity == 1){
                             //Checks if any objs are still intersected
                             canvas.forEachObject(function (obj2) {
-                                if (obj2.intersects && !obj.isDash && !obj2.isDash && obj2 !== midGroup && obj !== obj2){
+                                if (obj2.intersects && obj2 !== midGroup && obj !== obj2){
                                     if (intersects(obj, obj2)) {
-                                        if(obj !== target){obj.set('opacity', .5);};
-                                        if(obj !== target){obj.isIntersected = true;};
-                                        if(obj2 !== target){obj2.set('opacity', .5);};
-                                        if(obj2 !== target){obj2.isIntersected = true;};
+                                        if(obj !== target && !obj.isDash){obj.set('opacity', .5);obj.isIntersected = true;};
+                                        if(obj2 !== target && !obj2.isDash){obj2.set('opacity', .5);obj2.isIntersected = true;};
                                     }
                                 }
                             });
@@ -688,17 +686,22 @@ function createCanvas() {
         canvas.forEachObject(function(obj1){
            if (obj1.intersects && obj1 !== midGroup){
                 canvas.forEachObject(function(obj2){
-                   if (obj2.intersects && !obj1.isDash && !obj2.isDash && obj2 !== midGroup && obj1 !== obj2){
+                   if (obj2.intersects && obj2 !== midGroup && obj1 !== obj2){
                        if (intersects(obj1, obj2)) {
-                           obj1.set('opacity', .5);
-                           obj1.isIntersected = true;
-                           obj2.set('opacity', .5);
-                           obj2.isIntersected = true;
+                           if (!obj1.isDash){
+                               obj1.set('opacity', .5);
+                               obj1.isIntersected = true;
+                           }
+                           if (!obj2.isDash){
+                               obj2.set('opacity', .5);
+                               obj2.isIntersected = true;
+                           }
                        }
                    }
                });
             }
         });
+        updateCount(options.target);
     });
 
     //These fire when any object is selected, needs both
