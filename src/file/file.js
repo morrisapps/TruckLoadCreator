@@ -232,11 +232,6 @@ function updateUnits(updateUnits) {
         tCounter.text = '';
     }
 
-    //Restore racks
-    canvas.forEachObject(function (obj){
-        if (obj.isRack){updateCount(obj);}
-    });
-
     //Restore units
     updateUnits.forEach(function (unit) {
         if (unit != null) {
@@ -247,6 +242,11 @@ function updateUnits(updateUnits) {
                 updateCount(currentGroup);
             }
         }
+    });
+
+    //Restore racks and dash
+    canvas.forEachObject(function (obj){
+        if (obj.isRack || obj.isDash){updateCount(obj);}
     });
 }
 
