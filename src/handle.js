@@ -87,6 +87,7 @@ function createDash(top, left, width) {
             strokeDashArray: [14, 10],
             strokeWidth: 5,
         });
+        updateCount(dashGroup);
     });
     return dashGroup;
 }
