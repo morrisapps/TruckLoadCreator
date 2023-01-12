@@ -201,8 +201,8 @@ function loadFromDB(data) {
 
         //Format pallet type to dimensions only
         let dimensions = item[13].replace(/[a-wy-z\s&\/\\#,+'"()$~%.:*?<>\-_{}]/gi, '');
-        let unitWidth = 0;
-
+        //Get unit width
+        let unitWidth = item[16];
         //If unit type is EC, set stripes true
         let stripes = false;
         if (item[13].substring(0, 2) == "EC"){stripes = true;}
@@ -210,9 +210,6 @@ function loadFromDB(data) {
         //Checks if bundles or Units then creates and adds them
         //Tests if dimensions contain a number and a X then adds as unit
         if (/\d/.test(dimensions) && /x/.test(dimensions)){
-
-            //Get unit width
-            unitWidth = dimensions.split(/x/)[1];
             //Adding unit
             createUnit(unitWidth, Math.trunc(item[11]), customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], location, false, item[8],item[10],Math.round(item[12]),stripes);
             if (getTagUnit(item[10]) == null && addUnit(currentGroup)){

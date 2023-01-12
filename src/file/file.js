@@ -244,7 +244,7 @@ function updateUnits(updateUnits) {
         }
     });
 
-    //Restore racks and dash
+    //Restore racks and dashes
     canvas.forEachObject(function (obj){
         if (obj.isRack || obj.isDash){updateCount(obj);}
     });
