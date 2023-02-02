@@ -389,6 +389,12 @@ function unitText(cName, width, height, unitDrop, AE, text, rect, loc) {
             text.styles[0][i].fontSize = 12;
         }
     }
+
+    //Final Rotate text check if text
+    if (text.width - 2 > rect.width && !text.rotated) {
+        text.set('rotated', true);
+        text.rotate(90);
+    }
 }
 
 /**
