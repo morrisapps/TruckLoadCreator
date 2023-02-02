@@ -1,13 +1,13 @@
 /*!
  * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
- * Copyright 2022 (c) Corey Morris
+ * Copyright 2023 (c) Corey Morris
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
 //***********Global variables***********
 
 //Version number
-let version = "1.2.6";
+let version = "1.3.0";
 
 //truck is an instance of Truck class that represents the current truck template
 let truck = new Truck("start",105,65000,45000,53,48,48,48,48,48,48,16,16,16,16,16,16,16,16,0);

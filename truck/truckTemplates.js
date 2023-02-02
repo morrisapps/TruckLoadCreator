@@ -1,6 +1,6 @@
 /*!
  * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
- * Copyright 2022 (c) Corey Morris
+ * Copyright 2023 (c) Corey Morris
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
@@ -340,15 +340,15 @@ function truckCustom() {
 
 
     //vertical lines
-    vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+    vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine1);
-    vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+    vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine2);
-    vLine3 = new fabric.Line([216 * 2, 75, 216 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false})
+    vLine3 = new fabric.Line([216 * 2, 75, 216 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true})
     canvas.add(vLine3);
-    vLine4 = new fabric.Line([408 * 2, 75, 408 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+    vLine4 = new fabric.Line([408 * 2, 75, 408 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine4);
-    vLine5 = new fabric.Line([600 * 2, 15, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+    vLine5 = new fabric.Line([600 * 2, 15, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine5);
 }
 /**
@@ -473,8 +473,8 @@ function truckCurtain(truckid) {
 
 
         //Set left and right borders
-        vLine2 = new fabric.Line([24 * 14, 75, 24 * 14, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        vLine5 = new fabric.Line([600 * 2 - 240, 75, 600 * 2 - 240, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+        vLine2 = new fabric.Line([24 * 14, 75, 24 * 14, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
+        vLine5 = new fabric.Line([600 * 2 - 240, 75, 600 * 2 - 240, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
         //Set mid group to match left and right border
         createMidGroup(vLine5.left - vLine2.left, vLine2.left)
 
@@ -521,8 +521,8 @@ function truckCurtain(truckid) {
         botRightWeightRegion.set({left: 882, top: 565, width: 128 * 2, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
-        vLine2 = new fabric.Line([24 * 10, 75, 24 * 10, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        vLine5 = new fabric.Line([600 * 2 - 192, 75, 600 * 2 - 192, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+        vLine2 = new fabric.Line([24 * 10, 75, 24 * 10, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
+        vLine5 = new fabric.Line([600 * 2 - 192, 75, 600 * 2 - 192, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
         //Set mid group to match left and right border
         createMidGroup(vLine5.left - vLine2.left, vLine2.left)
 
@@ -567,8 +567,8 @@ function truckCurtain(truckid) {
         botRightWeightRegion.set({left: 866, top: 565, width: 144 * 2, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
-        vLine2 = new fabric.Line([24 * 6, 75, 24 * 6, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        vLine5 = new fabric.Line([600 * 2 - 192, 75, 600 * 2 - 192, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+        vLine2 = new fabric.Line([24 * 6, 75, 24 * 6, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
+        vLine5 = new fabric.Line([600 * 2 - 192, 75, 600 * 2 - 192, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
         //Set mid group to match left and right border
         createMidGroup(vLine5.left - vLine2.left, vLine2.left)
 
@@ -611,8 +611,8 @@ function truckCurtain(truckid) {
         botRightWeightRegion.set({left: 914, top: 565, width: 168 * 2, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
-        vLine2 = new fabric.Line([24 * 5, 75, 24 * 5, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        vLine5 = new fabric.Line([600 * 2 - 120, 75, 600 * 2 - 120, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+        vLine2 = new fabric.Line([24 * 5, 75, 24 * 5, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
+        vLine5 = new fabric.Line([600 * 2 - 120, 75, 600 * 2 - 120, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
         //Set mid group to match left and right border
         createMidGroup(vLine5.left - vLine2.left, vLine2.left)
 
@@ -653,8 +653,8 @@ function truckCurtain(truckid) {
         botRightWeightRegion.set({left: 890, top: 565, width: 168 * 2, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
-        vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        vLine5 = new fabric.Line([600 * 2 - 144, 75, 600 * 2 - 144, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+        vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
+        vLine5 = new fabric.Line([600 * 2 - 144, 75, 600 * 2 - 144, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
         //Set mid group to match left and right border
         createMidGroup(vLine5.left - vLine2.left, vLine2.left)
 
@@ -687,8 +687,8 @@ function truckCurtain(truckid) {
         botRightWeightRegion.set({left: 914, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
-        vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        vLine5 = new fabric.Line([600 * 2 - 96, 75, 600 * 2 - 96, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+        vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
+        vLine5 = new fabric.Line([600 * 2 - 96, 75, 600 * 2 - 96, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
         //Set mid group to match left and right border
         createMidGroup(vLine5.left - vLine2.left, vLine2.left);
 
@@ -721,8 +721,8 @@ function truckCurtain(truckid) {
         botRightWeightRegion.set({left: 962, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
-        vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        vLine5 = new fabric.Line([600 * 2 - 48, 75, 600 * 2 - 48, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+        vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
+        vLine5 = new fabric.Line([600 * 2 - 48, 75, 600 * 2 - 48, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
         //Set mid group to match left and right border
         createMidGroup(vLine5.left - vLine2.left, vLine2.left)
     } else if (truckid == '48 Flatbed' || truckid == 300 || truckid == 'Carrier-48-72-100' || truckid == 'Carrier-48-90-100' || truckid == "_MWRED48" || truckid == "_MWCONE48") {
@@ -754,8 +754,8 @@ function truckCurtain(truckid) {
         botRightWeightRegion.set({left: 1010, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
-        vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        vLine5 = new fabric.Line([600 * 2, 75, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+        vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
+        vLine5 = new fabric.Line([600 * 2, 75, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
         //Set mid group to match left and right border
         createMidGroup(vLine5.left - vLine2.left, vLine2.left)
 
@@ -792,8 +792,8 @@ function truckCurtain(truckid) {
         botRightWeightRegion.set({left: 998, top: 565, width: 204 * 2, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
-        vLine2 = new fabric.Line([0, 75, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        vLine5 = new fabric.Line([600 * 2, 75, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+        vLine2 = new fabric.Line([0, 75, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
+        vLine5 = new fabric.Line([600 * 2, 75, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
         //Set mid group to match left and right border
         createMidGroup(vLine5.left - vLine2.left, vLine2.left)
     } else {
@@ -824,8 +824,8 @@ function truckCurtain(truckid) {
         botRightWeightRegion.set({left: 997, top: 565, width: 204 * 2, height: 162 * 2,}).setCoords();
 
         //Set left and right borders
-        vLine2 = new fabric.Line([0, 75, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        vLine5 = new fabric.Line([600 * 2, 75, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+        vLine2 = new fabric.Line([0, 75, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
+        vLine5 = new fabric.Line([600 * 2, 75, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
 
         //Set mid groups to match left and right border
         createMidGroup(vLine5.left - vLine2.left, vLine2.left)
@@ -956,24 +956,24 @@ function truck53(truckid) {
     canvas.add(doorText6);
 
 //vertical lines
-    vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+    vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine1);
     if (truckid == "1904" || truckid == "1905" || truckid == "2107" || truckid == "2108") {
         vLine2 = new fabric.Line();
-        vLine3 = new fabric.Line([240 * 2, 75, 240 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false})
+        vLine3 = new fabric.Line([240 * 2, 75, 240 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true})
         doorText1.set({left: 24});
         doorText2.set({left: 452 + 48});
         doorText4.set({left: 24});
         doorText5.set({left: 452 + 48});
     } else {
-        vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
-        vLine3 = new fabric.Line([216 * 2, 75, 216 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+        vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
+        vLine3 = new fabric.Line([216 * 2, 75, 216 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     }
     canvas.add(vLine2);
     canvas.add(vLine3);
-    vLine4 = new fabric.Line([408 * 2, 75, 408 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+    vLine4 = new fabric.Line([408 * 2, 75, 408 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine4);
-    vLine5 = new fabric.Line([600 * 2, 15, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+    vLine5 = new fabric.Line([600 * 2, 15, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine5);
 
 //Middle separator
@@ -1013,23 +1013,15 @@ function truck48(truckid) {
     botRightWeightRegion.set({left: 915, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
 
 //vertical lines
-    vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+    vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine1);
-    vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+    vLine2 = new fabric.Line([24 * 2, 75, 24 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine2);
-    vLine3 = new fabric.Line([216 * 2, 75, 216 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false})
+    vLine3 = new fabric.Line([216 * 2, 75, 216 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true})
     canvas.add(vLine3);
-    vLine4 = new fabric.Line([408 * 2 - 96, 75, 408 * 2 - 96, 725], {
-        stroke: 'black',
-        strokeWidth: 2,
-        selectable: false
-    });
+    vLine4 = new fabric.Line([408 * 2 - 96, 75, 408 * 2 - 96, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine4);
-    vLine5 = new fabric.Line([600 * 2 - 96, 75, 600 * 2 - 96, 725], {
-        stroke: 'black',
-        strokeWidth: 2,
-        selectable: false
-    });
+    vLine5 = new fabric.Line([600 * 2 - 96, 75, 600 * 2 - 96, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine5);
 
     //right Border
@@ -1160,15 +1152,15 @@ function truck35(truckid) {
     botRightWeightRegion.set({left: 818, top: 565, width: 192 * 2, height: 162 * 2,}).setCoords();
 
     //vertical lines
-    vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+    vLine1 = new fabric.Line([0, 15, 0, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine1);
-    vLine2 = new fabric.Line([120 * 2, 75, 120 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+    vLine2 = new fabric.Line([120 * 2, 75, 120 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine2);
-    vLine3 = new fabric.Line([312 * 2, 75, 312 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false})
+    vLine3 = new fabric.Line([312 * 2, 75, 312 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true})
     canvas.add(vLine3);
-    vLine4 = new fabric.Line([504 * 2, 75, 504 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+    vLine4 = new fabric.Line([504 * 2, 75, 504 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine4);
-    vLine5 = new fabric.Line([600 * 2, 15, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false});
+    vLine5 = new fabric.Line([600 * 2, 15, 600 * 2, 725], {stroke: 'black', strokeWidth: 2, selectable: false, intersects: true, vLine: true});
     canvas.add(vLine5);
 
     //right Border

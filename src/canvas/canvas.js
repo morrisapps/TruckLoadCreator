@@ -1,11 +1,11 @@
 /*!
  * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
- * Copyright 2022 (c) Corey Morris
+ * Copyright 2023 (c) Corey Morris
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
 let canvas;
-var grid = 24;
+var grid = 12;
 var rackCanvas;
 var midGroup;
 var vLine1;
@@ -619,17 +619,48 @@ function createCanvas() {
         backgroundColor: "white"
     });
 
-    // snap to grid & check for object intersection. If intersected, snap off of unit
+    //Check for object intersection. If intersected, snap to units that are intersecting.
     canvas.on('object:moving', function (options) {
         let target = options.target;
+        //Make sure unit stays on canvas
         keepInBounds(target);
         if (target.isComment != true && target !== midGroup) {
             if ( _snapToggle.checked == true){
-                //Snap to horizontal grid
-                target.set({left: (Math.round(target.left / grid) * grid) + 2});
-                //Do when Objects collide during drag
-                target.setCoords();
-                var pointer = canvas.getPointer(event.e);
+                //Do intersections with vLines first. This makes the units behave better within each section.
+                vLines = [vLine1,vLine2,vLine3,vLine4,vLine5]
+                vLines.forEach(vLine => {
+                    objectIntersects(vLine, target);
+                });
+                //Find the intersected unit with the greatest area (the most intersected)
+                greatestInter = {area: 0, obj: null}
+                canvas.forEachObject(function (obj) {
+                    if (obj.intersects == true && !obj.vLine && intersects(target, obj)) {
+                        let xa1 = obj.oCoords.tl.x
+                        let ya1 = obj.oCoords.tl.y
+                        let xa2 = obj.oCoords.tr.x
+                        let ya2 = obj.oCoords.bl.y
+                        let xb1 = target.oCoords.tl.x
+                        let yb1 = target.oCoords.tl.y
+                        let xb2 = target.oCoords.tr.x
+                        let yb2 = target.oCoords.bl.y
+
+                        let left = Math.max(xa1, xb1)
+                        let right = Math.min(xa2, xb2)
+                        let top = Math.max(ya1, yb1)
+                        let bot = Math.min(ya2, yb2)
+
+                        let area = Math.abs((right-left) * (top-bot))
+                        if (area > greatestInter.area){
+                            greatestInter.area = Math.abs((right-left) * (top-bot))
+                            greatestInter.obj = obj
+                        }
+                    }
+                })
+                //Uses the greatest intersected object to initially align the moving unit.
+                //This helps avoid wrong movement intersecting with multiple units (E.G. two units along same x-axis)
+                if (greatestInter.obj !== null){
+                    objectIntersects(greatestInter.obj, target);
+                }
                 //Checks all objects if they intersect
                 canvas.forEachObject(function (obj) {
                     if (obj.intersects == true) {
@@ -638,9 +669,9 @@ function createCanvas() {
                         if (obj.opacity == 1){
                             //Checks if any objs are still intersected
                             canvas.forEachObject(function (obj2) {
-                                if (obj2.intersects && obj2 !== midGroup && obj !== obj2){
+                                if (obj2.intersects && obj2 !== midGroup && !obj2.vLine && !obj.vLine && obj !== obj2){
                                     if (intersects(obj, obj2)) {
-                                        if(obj !== target && !obj.isDash){obj.set('opacity', .5);obj.isIntersected = true;};
+                                       //if(obj !== target && !obj.isDash){obj.set('opacity', .5);obj.isIntersected = true;};
                                         if(obj2 !== target && !obj2.isDash){obj2.set('opacity', .5);obj2.isIntersected = true;};
                                     }
                                 }
@@ -649,6 +680,7 @@ function createCanvas() {
                     }
                 });
                 //Check if object intersects with middle group. Move obj if it does.
+                var pointer = canvas.getPointer(event.e);
                 if (intersects(midGroup, target) && target.line != true) {
                     if (pointer.y < midGroup.top + midGroup.strokeWidth / 2) {
                         target.set('top', midGroup.top - target.height - 1);
@@ -661,6 +693,7 @@ function createCanvas() {
             updateCount(target);
         }
     });
+
     canvas.on('mouse:up', function (options) {
         if (options.target !== midGroup){
             var intersectedObjects = [];
@@ -684,9 +717,9 @@ function createCanvas() {
         }
         //Checks if any objects still intersect
         canvas.forEachObject(function(obj1){
-           if (obj1.intersects && obj1 !== midGroup){
+           if (obj1.intersects && obj1 !== midGroup && !obj1.vLine){
                 canvas.forEachObject(function(obj2){
-                   if (obj2.intersects && obj2 !== midGroup && obj1 !== obj2){
+                   if (obj2.intersects && obj2 !== midGroup && !obj2.vLine && obj1 !== obj2){
                        if (intersects(obj1, obj2)) {
                            if (!obj1.isDash){
                                obj1.set('opacity', .5);
@@ -806,16 +839,48 @@ function deselectObject(obj) {
  * @param target - The object that will be moved top or bottom based on the intersected object
  */
 function objectIntersects(obj, target) {
-    if (obj != null) {
+    if (obj != null && obj != midGroup) {
         if (intersects(obj, target)) {
-            var pointer = canvas.getPointer(event.e);
-            if (pointer.y < obj.top + obj.height / 2) {
-                target.set('top', (obj.top - 1) - target.height);
+            //moveOffset is to reduce units moving between vLines
+            let moveOffsetPlus = 1
+            let moveOffsetNeg = 1
+            //edge is the amount to allow snapping. The greater the number, the more snap it'll try to do.
+            let edgeSnap = 30
+            //If intersecting with vLine, change moveOffset to reduce unit movement
+            if (obj.vLine){
+                moveOffsetPlus = 3
+                moveOffsetNeg = 0
             } else {
-                target.set('top', (obj.top + 1) + obj.height);
+                //Set edgeSnap to minSize is unit's width or height is less than edgeSnap.
+                //Helps small units to not overly snap.
+                let minSize = Math.min(obj.width, obj.height, target.width, target.height) / 2
+                if (edgeSnap > minSize / 2){
+                    edgeSnap = minSize
+                }
             }
-            if (obj !== midGroup){
-                obj.set('opacity', 0.5);
+
+            //Calculations for which side should be used to snap to.
+            if (Math.abs(target.oCoords.tr.x - obj.oCoords.tl.x) < edgeSnap) {
+                target.left = obj.left - target.width - moveOffsetNeg
+            }
+            else if (Math.abs(target.oCoords.tl.x - obj.oCoords.tr.x) < edgeSnap) {
+                target.left = obj.left + obj.width + moveOffsetPlus
+            }
+            else if (Math.abs(target.oCoords.br.y - obj.oCoords.tr.y) < edgeSnap) {
+                target.top = obj.top - target.height - 1
+            }
+            else if (Math.abs(obj.oCoords.br.y - target.oCoords.tr.y) < edgeSnap) {
+                target.top = obj.top + obj.height + 1
+            }
+
+            //Check if object intersects with middle group. Move obj if it does.
+            let pointer = canvas.getPointer(event.e);
+            if (intersects(midGroup, target) && target.line !== true) {
+                if (pointer.y < midGroup.top + midGroup.strokeWidth / 2) {
+                    target.set('top', midGroup.top - target.height - 1);
+                } else {
+                    target.set('top', midGroup.top + midGroup.height + midGroup.strokeWidth + 1);
+                }
             }
         } else {
             obj.set('opacity', 1);

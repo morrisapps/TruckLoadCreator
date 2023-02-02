@@ -207,10 +207,15 @@ function loadFromDB(data) {
         let stripes = false;
         if (item[13].substring(0, 2) == "EC"){stripes = true;}
 
-        //Checks if bundles or Units then creates and adds them
-        //Tests if dimensions contain a number and a X then adds as unit
-        if (/\d/.test(dimensions) && /x/.test(dimensions)){
-            //Adding unit
+        //Checks if bundle then add bundle
+        if (item[13].includes('Bundle') || item[13].includes('Box') || item[13].includes('RWW ARCH')){
+            if (addCustomer(customerText, item[9], false)){
+                importCusts++
+            }
+            customers[getCustomerIndex(customerText)].rack = true;
+        //If not bundle, add as unit
+        } else {
+            //Create unit
             createUnit(unitWidth, Math.trunc(item[11]), customerText, item[10].slice(item[10].length -4, item[10].length), 'black', 'white', 0, 0, item[9], location, false, item[8],item[10],Math.round(item[12]),stripes);
             if (getTagUnit(item[10]) == null && addUnit(currentGroup)){
                 importUnits++;
@@ -218,12 +223,6 @@ function loadFromDB(data) {
             if (addCustomer(customerText, item[9], true, item[8])){
                 importCusts++;
             }
-        } //Checks if bundles
-        else if (item[13].includes('Bundle') || item[13].includes('Box') || item[13].includes('RWW ARCH')){
-            if (addCustomer(customerText, item[9], false)){
-                importCusts++
-            }
-            customers[getCustomerIndex(customerText)].rack = true;
         }
     });
 
