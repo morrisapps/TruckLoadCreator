@@ -1,6 +1,6 @@
 /*!
  * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
- * Copyright 2022 (c) Corey Morris
+ * Copyright 2023 (c) Corey Morris
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
@@ -208,7 +208,7 @@ function loadFromDB(data) {
         if (item[13].substring(0, 2) == "EC"){stripes = true;}
 
         //Checks if bundle then add bundle
-        if (item[13].includes('Bundle') || item[13].includes('Box') || item[13].includes('RWW ARCH')){
+        if (item[18].includes('Bundle')){
             if (addCustomer(customerText, item[9], false)){
                 importCusts++
             }

@@ -1,7 +1,7 @@
 <?php
 /*
 * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
-* Copyright 2022 (c) Corey Morris
+* Copyright 2023 (c) Corey Morris
 * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
 */
 
@@ -16,7 +16,7 @@ $connectionLogin = array(
 
 //set rows
 $getTrucksRows = array('TRUCKID', 'DLVMODEID');
-$getUnitsRows = array('TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES', 'WMSLOCATIONID', 'ptype_length', 'ptype_width');
+$getUnitsRows = array('TRUCKID', 'TRAILERNUMBER', 'DLVMODEID', 'shipdate', 'ACTUALHEIGHT', 'ACTUALWEIGHT', 'ESTIMATEDHEIGHT', 'ESTIMATEDWEIGHT', 'CUSTOMERNAME', 'DROPNUMBER', 'WMSPALLETID', 'HEIGHT', 'WEIGHT', 'PALLETTYPEID', 'NUMBEROFBUNDLES', 'WMSLOCATIONID', 'ptype_length', 'ptype_width', 'ptype_name');
 
 $connectionQuery = '';
 $return = array();
