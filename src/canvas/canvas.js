@@ -25,8 +25,6 @@ var door3 = "";
 var door4 = "";
 var door5 = "";
 var door6 = "";
-let topUnits;
-let botUnits;
 
 //Initialization
 initializeCounters();
@@ -92,61 +90,6 @@ $(document).ready(function () {
 function initializeCounters() {
     topLines = new Array();
     botLines = new Array();
-    top72Units = new Array();
-    top120Units = new Array();
-    top168Units = new Array();
-    top216Units = new Array();
-    top264Units = new Array();
-    top312Units = new Array();
-    top360Units = new Array();
-    top408Units = new Array();
-    top456Units = new Array();
-    top504Units = new Array();
-    top552Units = new Array();
-    top600Units = new Array();
-    top648Units = new Array();
-    top696Units = new Array();
-    top744Units = new Array();
-    top792Units = new Array();
-    top840Units = new Array();
-    top888Units = new Array();
-    top936Units = new Array();
-    top984Units = new Array();
-    top1032Units = new Array();
-    top1080Units = new Array();
-    top1128Units = new Array();
-    top1176Units = new Array();
-    bot72Units = new Array();
-    bot120Units = new Array();
-    bot168Units = new Array();
-    bot216Units = new Array();
-    bot264Units = new Array();
-    bot312Units = new Array();
-    bot360Units = new Array();
-    bot408Units = new Array();
-    bot456Units = new Array();
-    bot504Units = new Array();
-    bot552Units = new Array();
-    bot600Units = new Array();
-    bot648Units = new Array();
-    bot696Units = new Array();
-    bot744Units = new Array();
-    bot792Units = new Array();
-    bot840Units = new Array();
-    bot888Units = new Array();
-    bot936Units = new Array();
-    bot984Units = new Array();
-    bot1032Units = new Array();
-    bot1080Units = new Array();
-    bot1128Units = new Array();
-    bot1176Units = new Array();
-
-    topUnits = [top72Units, top120Units, top168Units, top216Units, top264Units, top312Units, top360Units, top408Units, top456Units,
-        top504Units, top552Units, top600Units, top648Units, top696Units, top744Units, top792Units, top840Units, top888Units, top936Units, top984Units,
-        top1032Units, top1080Units, top1128Units, top1176Units];
-    botUnits = [bot72Units, bot120Units, bot168Units, bot216Units, bot264Units, bot312Units, bot360Units, bot408Units, bot456Units,
-        bot504Units, bot552Units, bot600Units, bot648Units, bot696Units, bot744Units, bot792Units, bot840Units, bot888Units, bot936Units, bot984Units,
-        bot1032Units, bot1080Units, bot1128Units, bot1176Units];
 }
 
 /**
@@ -157,10 +100,18 @@ function updateCount(target) {
     if (target != null) {
         //Update Height
         if (target.unit || target.isRack || target.isDash) {
+            //Reset all counters to 0
+            topCounters.forEach(function (counter) {
+                counter.counter = 0
+            })
+            botCounters.forEach(function (counter) {
+                counter.counter = 0
+            })
+            //Update all counters utilizing each topLines, botLines and the units that intersect within.
             var i = 0;
-            while (i <= 11) {
-                lineHeightCount(target, topLines[i], topCounters[i], topUnits[i]);
-                lineHeightCount(target, botLines[i], botCounters[i], botUnits[i]);
+            while (i <= 23) {
+                lineHeightCount(target, topLines[i]);
+                lineHeightCount(target, botLines[i]);
                 i++;
             }
         }
@@ -345,60 +296,87 @@ function setWeightText(){
  * Displays warnings based on if height exceeds total truck height or height is too great without a belly strap on flatbed or similar trucks.
  * @param target - The object that will have it's height counted
  * @param line - The fabric.Line that the object is intersecting
- * @param lineCounter - The fabric.Itext that is associated with line
- * @param lineUnits - The array that contains units intersecting line
  */
-function lineHeightCount(target, line, lineCounter, lineUnits) {
-    var counter = 0;
-    let dashCounter = 0
-    const strapIndicator = 73
-    if (intersects(target, line) && target.remove != true) {
-        if (!lineUnits.includes(target)) {
-            lineUnits.push(target);
-        }
-    } else {
-        if (lineUnits.includes(target)) {
-            lineUnits.splice(lineUnits.indexOf(target), 1);
-        }
-    }
-    var lunits;
-    for (lunits of lineUnits) {
-        counter = counter + Math.floor(lunits.unitHeight);
-        // Gets the highest dash height within strapIndicator height. Used to determine if strap indicator is shown.
-        if (lunits.isDash){
-            let dashHeight = getUnitHeightCount(lunits, lineUnits)
-            // Highest dash object that is within the strapIndicator height
-            if (dashHeight > dashCounter && dashHeight < strapIndicator){
-                dashCounter = dashHeight
+function lineHeightCount(target, line) {
+    if (!line.disabled){
+        var counter = 0;
+        let dashCounter = 0
+        let lineCounter = line.counter
+        let lineUnits = line.units
+        const strapIndicator = 73
+        if (intersects(target, line) && target.remove != true) {
+            if (!lineUnits.includes(target)) {
+                lineUnits.push(target);
+            }
+        } else {
+            if (lineUnits.includes(target)) {
+                lineUnits.splice(lineUnits.indexOf(target), 1);
             }
         }
-    }
-    lineCounter.text = counter.toString() + '\"';
-    if (counter == 0) {
-        lineCounter.text = '';
-    }
 
-    let counterMessage = ''
-    let counterFill = ''
+        var lunits;
+        for (lunits of lineUnits) {
+            var countFlag = true
+            if (lunits.isIntersected){
+                lunits.heightCounted = true
+            } else {
+                lunits.heightCounted = false
+            }
+            for (lunits2 of lineUnits){
+                if (intersects(lunits, lunits2)){
+                    if (!(lunits.unitHeight >= lunits2.unitHeight)){
+                        countFlag = false
+                    }
+                }
+            }
+            if (countFlag && !lunits.heightCounted){
+                counter = counter + Math.floor(lunits.unitHeight);
+            }
 
-    // Set height indicator of the counter text
-    if (truck.getHeight() > 0 && counter > truck.getHeight() && counter <= truck.getHeight()+5){
-        counterFill = '#d35400'
-    } else if (truck.getHeight() > 0 && counter > truck.getHeight()+5){
-        if (counterMessage == '') {counterMessage = ' !Height!'}
-        counterFill = 'red'
-    } else {
-        counterFill = '#4c4c4c'
+
+            // Gets the highest dash height within strapIndicator height. Used to determine if strap indicator is shown.
+            if (lunits.isDash){
+                let dashHeight = getUnitHeightCount(lunits, lineUnits)
+                // Highest dash object that is within the strapIndicator height
+                if (dashHeight > dashCounter && dashHeight < strapIndicator){
+                    dashCounter = dashHeight
+                }
+            }
+        }
+
+        if (lineCounter.counter > counter){
+            counter = lineCounter.counter
+        } else {
+            lineCounter.counter = counter
+        }
+
+        lineCounter.text = counter.toString() + '\"';
+        if (counter == 0) {
+            lineCounter.text = '';
+        }
+
+        let counterMessage = ''
+        let counterFill = ''
+
+        // Set height indicator of the counter text
+        if (truck.getHeight() > 0 && counter > truck.getHeight() && counter <= truck.getHeight()+5){
+            counterFill = '#d35400'
+        } else if (truck.getHeight() > 0 && counter > truck.getHeight()+5){
+            if (counterMessage == '') {counterMessage = ' !Height!'}
+            counterFill = 'red'
+        } else {
+            counterFill = '#4c4c4c'
+        }
+
+        // Set straps indicator of counter text
+        if (truck.getHeight() > 0 && truck.getType() != 0 && counter >= strapIndicator && (dashCounter == 0 || dashCounter > strapIndicator)){
+            if (counterMessage == '') {counterMessage = ' !Straps!'}
+            counterFill = 'red'
+        }
+
+        lineCounter.fill = counterFill
+        lineCounter.text += counterMessage
     }
-
-    // Set straps indicator of counter text
-    if (truck.getHeight() > 0 && truck.getType() != 0 && counter >= strapIndicator && (dashCounter == 0 || dashCounter > strapIndicator)){
-        if (counterMessage == '') {counterMessage = ' !Straps!'}
-        counterFill = 'red'
-    }
-
-    lineCounter.fill = counterFill
-    lineCounter.text += counterMessage
 }
 
 /**
@@ -411,22 +389,22 @@ function lineHeightCount(target, line, lineCounter, lineUnits) {
 function getUnitHeightCount(obj, lineUnits){
     let counter = 0;
     if (lineUnits.includes(obj)) {
-            lineUnits.forEach(function (unit){
-                if (obj !== unit){
-                    if (intersects(obj, unit)){
-                        //counter += unit.unitHeight
-                    } else if (obj.top < midGroup.top){ // Units are in the driver side
-                        if ((obj.top + obj.height) < (unit.top + unit.height)){
-                            counter += unit.unitHeight
-                        }
-                    } else { // Units are in the passenger side
-                        if (obj.top > unit.top){
-                            counter += unit.unitHeight
-                        }
+        lineUnits.forEach(function (unit){
+            if (obj !== unit){
+                if (intersects(obj, unit)){
+                    //counter += unit.unitHeight
+                } else if (obj.top < midGroup.top){ // Units are in the driver side
+                    if ((obj.top + obj.height) < (unit.top + unit.height)){
+                        counter += unit.unitHeight
+                    }
+                } else { // Units are in the passenger side
+                    if (obj.top > unit.top){
+                        counter += unit.unitHeight
                     }
                 }
-            });
-            counter += obj.unitHeight
+            }
+        });
+        counter += obj.unitHeight
     }
     return counter
 }
@@ -503,7 +481,7 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
     if (checkIfUnitIDExists(unitid)) {
         let existsResponse = confirm("Unit " + custName + " " + AE + " already exists. Do you still want to add?");
         if (existsResponse){
-           duplicateUnit = null;
+            duplicateUnit = null;
         }else {
             addError = addError + "Unit " + custName + " " + AE + " already exists" + "\n";
         }
@@ -531,6 +509,7 @@ function Add(width, height, cName, AE, color, fill, left, top, unitDrop, locatio
             canvas.setActiveObject(currentGroup);
             addUnit(currentGroup);
             keepInBounds(currentGroup);
+            checkIntersect(currentGroup);
         } else {
             createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, cName, AE, weight, striped);
             addUnit(currentGroup);
@@ -622,6 +601,10 @@ function createCanvas() {
     //Check for object intersection. If intersected, snap to units that are intersecting.
     canvas.on('object:moving', function (options) {
         let target = options.target;
+        let currentLeft = target.left
+        let currentTop = target.top
+
+
         //Make sure unit stays on canvas
         keepInBounds(target);
         if (target.isComment != true && target !== midGroup) {
@@ -634,6 +617,7 @@ function createCanvas() {
                 //Find the intersected unit with the greatest area (the most intersected)
                 greatestInter = {area: 0, obj: null}
                 canvas.forEachObject(function (obj) {
+
                     if (obj.intersects == true && !obj.vLine && intersects(target, obj)) {
                         let xa1 = obj.oCoords.tl.x
                         let ya1 = obj.oCoords.tl.y
@@ -666,19 +650,33 @@ function createCanvas() {
                     if (obj.intersects == true) {
                         objectIntersects(obj, target);
                         //target.set('opacity', 1);
-                        if (obj.opacity == 1){
-                            //Checks if any objs are still intersected
-                            canvas.forEachObject(function (obj2) {
-                                if (obj2.intersects && obj2 !== midGroup && !obj2.vLine && !obj.vLine && obj !== obj2){
-                                    if (intersects(obj, obj2)) {
-                                       //if(obj !== target && !obj.isDash){obj.set('opacity', .5);obj.isIntersected = true;};
-                                        if(obj2 !== target && !obj2.isDash){obj2.set('opacity', .5);obj2.isIntersected = true;};
-                                    }
-                                }
-                            });
-                        }
                     }
                 });
+
+
+                //If target still intersects after processing new coords, then revert back
+                target.setCoords();
+                let intersectedFlag = false
+                canvas.forEachObject(function (obj2) {
+                    if (obj2.unit || obj2.isDash || obj2.isRack){
+                        if (intersects(obj2, target)){
+                            intersectedFlag = true
+                        }
+                    }
+                })
+                if (intersectedFlag){
+                    target.left = currentLeft
+                    target.top = currentTop
+                    target.setCoords();
+                }
+
+                //Do intersections with keepInBounds and vLines again. This reinforces that units are within vLines.
+                keepInBounds(target);
+                vLines = [vLine1,vLine2,vLine3,vLine4,vLine5]
+                vLines.forEach(vLine => {
+                    objectIntersects(vLine, target);
+                });
+
                 //Check if object intersects with middle group. Move obj if it does.
                 var pointer = canvas.getPointer(event.e);
                 if (intersects(midGroup, target) && target.line != true) {
@@ -690,50 +688,27 @@ function createCanvas() {
                     target.setCoords();
                 }
             }
+
+            checkIntersect(target)
+
             updateCount(target);
         }
     });
 
+
     canvas.on('mouse:up', function (options) {
-        if (options.target !== midGroup){
-            var intersectedObjects = [];
-            canvas.forEachObject(function (obj) {
-                if (options.target != null) {
-                    if (intersects(obj, options.target)) {
-                        intersectedObjects.push(obj);
-                    }
+        if (!options.target.isDash && !options.target.isRegion){
+            checkIntersect(options.target)
+            options.target.set('opacity', 1)
+            if (options.target.isIntersected){
+                if (typeof options.target.item(0) !== 'undefined') {
+                    options.target.item(0).set('fill', 'rgba(255,0,0,0.2)');
                 }
-                if (obj.isRegion != true){obj.set('opacity', 1);obj.isIntersected = false;};
-            });
-            //check if intersected bundle is above or below
-            intersectedObjects.forEach(function (obj) {
-                if (obj !== midGroup){
-                    keepInBounds(obj);
-                    if (!intersects(obj, options.target)) {
-                        if (obj.isRegion != true){obj.set('opacity', 1);obj.isIntersected = false;};
-                    }
+                if (typeof options.target.item(1) !== 'undefined') {
+                    options.target.item(1).set('textBackgroundColor', 'rgba(192, 70, 70, 0)');
                 }
-            });
-        }
-        //Checks if any objects still intersect
-        canvas.forEachObject(function(obj1){
-           if (obj1.intersects && obj1 !== midGroup && !obj1.vLine){
-                canvas.forEachObject(function(obj2){
-                   if (obj2.intersects && obj2 !== midGroup && !obj2.vLine && obj1 !== obj2){
-                       if (intersects(obj1, obj2)) {
-                           if (!obj1.isDash){
-                               obj1.set('opacity', .5);
-                               obj1.isIntersected = true;
-                           }
-                           if (!obj2.isDash){
-                               obj2.set('opacity', .5);
-                               obj2.isIntersected = true;
-                           }
-                       }
-                   }
-               });
             }
-        });
+        }
         updateCount(options.target);
     });
 
@@ -763,6 +738,98 @@ function createCanvas() {
     rackLoad();
     canvas.hoverCursor = 'default';
 }
+
+/**
+ * Determines if target or any other object is intersected.
+ * Then change fill to either white (not intersected) or red (intersected).
+ * @param target The object that will be checked for intersections.
+ */
+function checkIntersect(target) {
+    if (target !== midGroup && !target.vLine && !target.isRegion ){
+        var intersectedObjects = [];
+        canvas.forEachObject(function (obj) {
+            if (target.intersects && obj.intersects && obj != null && obj !== midGroup && !obj.vLine && !obj.isRegion) {
+                if (intersects(obj, target)) {
+                    intersectedObjects.push(obj);
+                }
+            }
+            if (obj.isRegion != true){
+                //obj.set('opacity', 1);
+                if (obj.intersects && obj != null && obj !== midGroup && !obj.vLine && (obj.unit || obj.isRack)){
+                    if (obj == target){
+                        target.set('opacity', 1)
+                    }
+                    if (typeof obj.item(0) !== 'undefined') {
+                        obj.item(0).set('fill', 'white');
+                    }
+                    if (typeof obj.item(0) !== 'undefined') {
+                        obj.item(1).set('textBackgroundColor', 'rgba(255,255,255,0.8)');
+                    }
+                }
+
+                obj.isIntersected = false;
+            };
+        });
+        //check if intersected bundle is above or below
+        intersectedObjects.forEach(function (obj) {
+            if (obj !== midGroup){
+                keepInBounds(obj);
+                if (!intersects(obj, target)) {
+                    if (obj.isRegion != true){
+                        if (obj == target){
+                            target.set('opacity', 1)
+                        }
+                        if (typeof obj.item(0) !== 'undefined') {
+                            obj.item(0).set('fill', 'white');
+                        }
+                        if (typeof obj.item(0) !== 'undefined') {
+                            obj.item(1).set('textBackgroundColor', 'rgba(255,255,255,0.8)');
+                        }
+                        obj.isIntersected = false;
+                    };
+                }
+            }
+        });
+    }
+    //Checks if any objects still intersect
+    canvas.forEachObject(function(obj1){
+        if (obj1.intersects && obj1 !== midGroup && !obj1.vLine && !obj1.isRegion){
+            canvas.forEachObject(function(obj2){
+                if (obj2.intersects && obj2 !== midGroup && !obj2.vLine && !obj2.isRegion && obj1 !== obj2){
+                    if (intersects(obj1, obj2)) {
+                        if (!obj1.isDash){
+                            if (typeof obj1.item(0) !== 'undefined') {
+                                if (obj1 == target){
+                                    obj1.item(0).set('fill', 'rgba(255,0,0,0.5)');
+                                } else {
+                                    obj1.item(0).set('fill', 'rgba(255,0,0,0.2)');
+                                }
+                            }
+                            if (typeof obj1.item(1) !== 'undefined') {
+                                obj1.item(1).set('textBackgroundColor', 'rgba(192, 70, 70, 0)');
+                            }
+                        }
+                        obj1.isIntersected = true;
+                        if (!obj2.isDash){
+                            if (typeof obj2.item(0) !== 'undefined') {
+                                if (obj2 == target){
+                                    obj2.item(0).set('fill', 'rgba(255,0,0,0.5)');
+                                } else {
+                                    obj2.item(0).set('fill', 'rgba(255,0,0,0.2)');
+                                }
+                            }
+                            if (typeof obj2.item(1) !== 'undefined') {
+                                obj2.item(1).set('textBackgroundColor', 'rgba(192, 70, 70, 0)');
+                            }
+                        }
+                        obj2.isIntersected = true;
+                    }
+                }
+            });
+        }
+    });
+}
+
 
 /**
  * Sets side bar fields with information from given unit
@@ -834,7 +901,7 @@ function deselectObject(obj) {
 }
 
 /**
- * Moves the target object top or bottom of the intersected object in canvas
+ * Moves the target object to snap to the intersected object in canvas
  * @param obj - The object that is being intersected
  * @param target - The object that will be moved top or bottom based on the intersected object
  */
@@ -848,23 +915,23 @@ function objectIntersects(obj, target) {
             let edgeSnap = 30
             //If intersecting with vLine, change moveOffset to reduce unit movement
             if (obj.vLine){
-                moveOffsetPlus = 3
+                moveOffsetPlus = 1
                 moveOffsetNeg = 0
             } else {
                 //Set edgeSnap to minSize is unit's width or height is less than edgeSnap.
                 //Helps small units to not overly snap.
-                let minSize = Math.min(obj.width, obj.height, target.width, target.height) / 2
-                if (edgeSnap > minSize / 2){
+                let minSize = Math.min(obj.getScaledWidth(), obj.height, target.getScaledWidth(), target.height) / 2
+                if (edgeSnap > minSize / 2 && !obj.isDash && !target.isDash){
                     edgeSnap = minSize
                 }
             }
 
             //Calculations for which side should be used to snap to.
             if (Math.abs(target.oCoords.tr.x - obj.oCoords.tl.x) < edgeSnap) {
-                target.left = obj.left - target.width - moveOffsetNeg
+                target.left = obj.left - target.getScaledWidth() - moveOffsetNeg
             }
             else if (Math.abs(target.oCoords.tl.x - obj.oCoords.tr.x) < edgeSnap) {
-                target.left = obj.left + obj.width + moveOffsetPlus
+                target.left = obj.left + obj.getScaledWidth() + moveOffsetPlus
             }
             else if (Math.abs(target.oCoords.br.y - obj.oCoords.tr.y) < edgeSnap) {
                 target.top = obj.top - target.height - 1
@@ -873,21 +940,21 @@ function objectIntersects(obj, target) {
                 target.top = obj.top + obj.height + 1
             }
 
-            //Check if object intersects with middle group. Move obj if it does.
-            let pointer = canvas.getPointer(event.e);
-            if (intersects(midGroup, target) && target.line !== true) {
-                if (pointer.y < midGroup.top + midGroup.strokeWidth / 2) {
-                    target.set('top', midGroup.top - target.height - 1);
-                } else {
-                    target.set('top', midGroup.top + midGroup.height + midGroup.strokeWidth + 1);
-                }
-            }
         } else {
-            obj.set('opacity', 1);
             obj.isIntersected = false;
         }
-        target.setCoords();
     }
+    //Check if object intersects with middle group. Move obj if it does.
+    let pointer = canvas.getPointer(event.e);
+    if (intersects(midGroup, target) && target.line !== true) {
+        if (pointer.y < midGroup.top + (midGroup.height / 2)) {
+            target.set('top', midGroup.top - target.height - 1);
+        } else {
+            target.set('top', midGroup.top + midGroup.height + midGroup.strokeWidth + 1);
+        }
+    }
+
+    target.setCoords();
 }
 
 /**

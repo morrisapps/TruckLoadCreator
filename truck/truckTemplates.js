@@ -111,7 +111,9 @@ function createCounters() {
             fixedHeight: 300,
             fixedFontSize: 12,
             backgroundColor: 'white',
-            isCounter: true
+            isCounter: true,
+            counter: 0,
+            disabled: false
         });
 
         canvas.add(topCounters[i]);
@@ -137,26 +139,44 @@ function createCounters() {
             fixedHeight: 300,
             fixedFontSize: 12,
             backgroundColor: 'white',
-            isCounter: true
+            isCounter: true,
+            counter: 0,
+            disabled: false
         });
 
         canvas.add(botCounters[i]);
-
-        topLines[i] = new fabric.Line([(i * 96) + (75 - 2), 75, (i * 96) + (75 - 2), 395], {
-            id: 'top' + ((i * 96) + (75 - 2)).toString(),
-            opacity: 0,
-            selectable: false,
-            isCounter: true
-        });
-        botLines[i] = new fabric.Line([(i * 96) + (75 - 2), 405, (i * 96) + (75 - 2), 725], {
-            id: 'bot' + ((i * 96) + (75 - 2)).toString(),
-            opacity: 0,
-            selectable: false,
-            isCounter: true
-        });
-        canvas.add(topLines[i]);
-        canvas.add(botLines[i]);
         i++;
+    }
+
+    let n = 0
+    let c = 0
+    let cFlag = false
+    while (n <= 23) {
+        topLines[n] = new fabric.Line([(n * 48) + (49), 75, (n * 48) + (49), 395], {
+            opacity: 1,
+            strokeWidth: 0,
+            selectable: false,
+            isCounter: true,
+            units: new Array(),
+            counter: topCounters[c]
+        });
+        botLines[n] = new fabric.Line([(n * 48) + (49), 405, (n * 48) + (49), 725], {
+            opacity: 1,
+            strokeWidth: 0,
+            selectable: false,
+            isCounter: true,
+            units: new Array(),
+            counter: botCounters[c]
+        });
+        canvas.add(topLines[n]);
+        canvas.add(botLines[n]);
+        n++;
+        if (!cFlag){
+            cFlag = true
+        } else {
+            cFlag = false
+            c++
+        }
     }
 }
 
@@ -434,16 +454,26 @@ function truckCurtain(truckid) {
         doorText1.set("left", 350).setCoords();
 
         //Disable lines outside of truck template
-        topLines[0] = new fabric.Line();
-        topLines[1] = new fabric.Line();
-        topLines[2] = new fabric.Line();
-        topLines[10] = new fabric.Line();
-        topLines[11] = new fabric.Line();
-        botLines[0] = new fabric.Line();
-        botLines[1] = new fabric.Line();
-        botLines[2] = new fabric.Line();
-        botLines[10] = new fabric.Line();
-        botLines[11] = new fabric.Line();
+        topLines[0].disabled = true;
+        topLines[1].disabled = true;
+        topLines[2].disabled = true;
+        topLines[3].disabled = true;
+        topLines[4].disabled = true;
+        topLines[5].disabled = true;
+        topLines[20].disabled = true;
+        topLines[21].disabled = true;
+        topLines[22].disabled = true;
+        topLines[23].disabled = true;
+        botLines[0].disabled = true;
+        botLines[1].disabled = true;
+        botLines[2].disabled = true;
+        botLines[3].disabled = true;
+        botLines[4].disabled = true;
+        botLines[5].disabled = true;
+        botLines[20].disabled = true;
+        botLines[21].disabled = true;
+        botLines[22].disabled = true;
+        botLines[23].disabled = true;
 
         //Set side region's size and location
         topBackWeightRegion.set({left: 494-1, top: 239, width: 104 * 3, height: 162 * 2,}).setCoords();
@@ -485,14 +515,22 @@ function truckCurtain(truckid) {
         doorText1.set("left", 275).setCoords();
 
         //Disable lines outside of truck template
-        topLines[0] = new fabric.Line();
-        topLines[1] = new fabric.Line();
-        topLines[10] = new fabric.Line();
-        topLines[11] = new fabric.Line();
-        botLines[0] = new fabric.Line();
-        botLines[1] = new fabric.Line();
-        botLines[10] = new fabric.Line();
-        botLines[11] = new fabric.Line();
+        topLines[0].disabled = true;
+        topLines[1].disabled = true;
+        topLines[2].disabled = true;
+        topLines[3].disabled = true;
+        topLines[20].disabled = true;
+        topLines[21].disabled = true;
+        topLines[22].disabled = true;
+        topLines[23].disabled = true;
+        botLines[0].disabled = true;
+        botLines[1].disabled = true;
+        botLines[2].disabled = true;
+        botLines[3].disabled = true;
+        botLines[20].disabled = true;
+        botLines[21].disabled = true;
+        botLines[22].disabled = true;
+        botLines[23].disabled = true;
 
         //Set side region's size and location
         topBackWeightRegion.set({left: 433, top: 238, width: 128 * 3, height: 162 * 2,}).setCoords();
@@ -533,12 +571,18 @@ function truckCurtain(truckid) {
         doorText1.set("left", 160).setCoords();
 
         //Disable lines outside of truck template
-        topLines[0] = new fabric.Line();
-        topLines[10] = new fabric.Line();
-        topLines[11] = new fabric.Line();
-        botLines[0] = new fabric.Line();
-        botLines[10] = new fabric.Line();
-        botLines[11] = new fabric.Line();
+        topLines[0].disabled = true;
+        topLines[1].disabled = true;
+        topLines[2].disabled = true;
+        topLines[21].disabled = true;
+        topLines[22].disabled = true;
+        topLines[23].disabled = true;
+        botLines[0].disabled = true;
+        botLines[1].disabled = true;
+        botLines[2].disabled = true;
+        botLines[21].disabled = true;
+        botLines[22].disabled = true;
+        botLines[23].disabled = true;
 
         //Set side region's size and location
         topBackWeightRegion.set({left: 361, top: 239, width: 144 * 3, height: 162 * 2,}).setCoords();
@@ -579,10 +623,14 @@ function truckCurtain(truckid) {
         doorText1.set("left", 160).setCoords();
 
         //Disable lines outside of truck template
-        topLines[0] = new fabric.Line();
-        topLines[11] = new fabric.Line();
-        botLines[0] = new fabric.Line();
-        botLines[11] = new fabric.Line();
+        topLines[0].disabled = true;
+        topLines[1].disabled = true;
+        topLines[22].disabled = true;
+        topLines[23].disabled = true;
+        botLines[0].disabled = true;
+        botLines[1].disabled = true;
+        botLines[22].disabled = true;
+        botLines[23].disabled = true;
 
         //Set side region's size and location
         topBackWeightRegion.set({left: 361, top: 239, width: 168 * 2 + 142, height: 162 * 2,}).setCoords();
@@ -623,8 +671,11 @@ function truckCurtain(truckid) {
         doorText1.set("left", 120).setCoords();
 
         //Disable lines outside of truck template
-        topLines[11] = new fabric.Line();
-        botLines[11] = new fabric.Line();
+        topLines[22].disabled = true;
+        topLines[23].disabled = true;
+        botLines[22].disabled = true;
+        botLines[23].disabled = true;
+
 
         //Set side region's size and location
         topBackWeightRegion.set({left: 301, top: 238, width: 168 * 3, height: 162 * 2,}).setCoords();

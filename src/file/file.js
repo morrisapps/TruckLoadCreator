@@ -1,6 +1,6 @@
 /*!
  * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
- * Copyright 2022 (c) Corey Morris
+ * Copyright 2023 (c) Corey Morris
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
@@ -212,7 +212,15 @@ function updateUnits(updateUnits) {
     _mWeight.innerText = '';
     _hWeight.innerText = '';
 
-    topUnits.forEach(function (tUnit) {
+    topLines.forEach(function (line) {
+        line.units = new Array()
+    })
+
+    botLines.forEach(function (line) {
+        line.units = new Array()
+    })
+
+/*    topUnits.forEach(function (tUnit) {
         tUnit = new Array();
     });
     botUnits.forEach(function (bUnit) {
@@ -224,7 +232,7 @@ function updateUnits(updateUnits) {
     }
     for (let bUnit of botUnits) {
         bUnit = new Array();
-    }
+    }*/
     for (let tCounter of topCounters) {
         tCounter.text = '';
     }
@@ -387,6 +395,7 @@ function load(content) {
     canvas.setActiveObject(modeTextEdit);
     canvas.setActiveObject(loadTextEdit);
     canvas.discardActiveObject();
+    checkIntersect(currentGroup)
     canvas.requestRenderAll();
 
     //Places objects that should be visible on the top layers.

@@ -1,6 +1,6 @@
 /*!
  * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
- * Copyright 2022 (c) Corey Morris
+ * Copyright 2023 (c) Corey Morris
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
@@ -88,6 +88,7 @@ function createDash(top, left, width) {
             strokeWidth: 5,
         });
         updateCount(dashGroup);
+        checkIntersect(dashGroup)
     });
     return dashGroup;
 }
@@ -305,6 +306,7 @@ function handleDrop(e) {
                 draggedUnit.inCanvas = true;
                 canvas.add(draggedUnit);
                 updateCount(draggedUnit);
+                checkIntersect(draggedUnit);
                 listUnits();
                 listCustomer();
                 _weight.value = '';
@@ -363,6 +365,7 @@ function handleDrop(e) {
             canvas.add(dashGroup);
             canvas.setActiveObject(dashGroup);
             keepInBounds(dashGroup);
+            checkIntersect(dashGroup);
         }
         //Add Rack
         else if (img.id == "RackS" || img.id == "RackM" || img.id == "RackL") {
@@ -372,6 +375,7 @@ function handleDrop(e) {
             keepInBounds(rackCanvas);
             //Places objects that should be visible on the top layers.
             keepObjectsOnTop();
+            checkIntersect(rackCanvas);
         }
         //Update the line count when dropped
         updateCount(canvas.getActiveObject());

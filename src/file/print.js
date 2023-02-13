@@ -1,6 +1,6 @@
 /*!
  * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
- * Copyright 2022 (c) Corey Morris
+ * Copyright 2023 (c) Corey Morris
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
@@ -60,7 +60,7 @@ function printPageArea() {
     if (unitsNotInResponse && weightZeroResponse && heightCheckResponse && strapCheckResponse && weightCheckResponse && intersectedResponse){
         //Remove Height Lines from print
         var i = 0;
-        while (i <= 11) {
+        while (i <= 23) {
             topLines[i].opacity = 0;
             botLines[i].opacity = 0;
             i++;
@@ -83,9 +83,16 @@ function printPageArea() {
         sideRegions.forEach(function(region){region.set({restoreOpacity: region.opacity, opacity: 0})});
         fullWeightRegion.set({restoreOpacity: fullWeightRegion.opacity, opacity: 0});
 
-        //Set all opacity of intersected units to 1
+        //Set all fill of intersected units to default
         canvas.forEachObject(function (obj) {
-            if (obj.isIntersected){obj.set('opacity', 1);}
+            if (obj.isIntersected){
+                if (typeof obj.item(0) !== 'undefined') {
+                    obj.item(0).set('fill', 'white');
+                }
+                if (typeof obj.item(1) !== 'undefined') {
+                    obj.item(1).set('textBackgroundColor', 'rgba(255,255,255,0.8)');
+                }
+            }
         });
 
         //Hide Door Text
@@ -144,9 +151,16 @@ function printPageArea() {
             topCounters.forEach(function (line){line.text = line.restoreText;});
             botCounters.forEach(function (line){line.text = line.restoreText;});
 
-            //Restore opacity of intersected units
+            //Restore fill of intersected units
             canvas.forEachObject(function (obj) {
-                if (obj.isIntersected){obj.set('opacity', .5);}
+                if (obj.isIntersected){
+                    if (typeof obj.item(0) !== 'undefined') {
+                        obj.item(0).set('fill', 'rgba(255,0,0,0.2)');
+                    }
+                    if (typeof obj.item(1) !== 'undefined') {
+                        obj.item(1).set('textBackgroundColor', 'rgba(192, 70, 70, 0)');
+                    }
+                }
             });
 
             //Restore weight counter colors
