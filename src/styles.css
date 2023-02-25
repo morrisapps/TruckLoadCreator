@@ -14,6 +14,19 @@
     }
 }
 
+:root {
+    /*--title-color:#F3F3F3;*/
+    --title-color:#FFFFFF;
+    /*--title-select-color:#D2D2D2;*/
+    --title-select-color:#D0E1EA;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
 #unitSearch {
     background-image: url('resources/ThirdParty/img/searchicon.png'); /* Add a search icon to input */
     background-position: 10px 4px; /* Position the search icon */
