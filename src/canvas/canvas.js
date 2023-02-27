@@ -604,9 +604,9 @@ function createCanvas() {
         let currentLeft = target.left
         let currentTop = target.top
 
-
         //Make sure unit stays on canvas
         keepInBounds(target);
+
         if (target.isComment != true && target !== midGroup) {
             if ( _snapToggle.checked == true){
                 //Do intersections with vLines first. This makes the units behave better within each section.
@@ -652,7 +652,6 @@ function createCanvas() {
                         //target.set('opacity', 1);
                     }
                 });
-
 
                 //If target still intersects after processing new coords, then revert back
                 target.setCoords();
@@ -901,49 +900,36 @@ function deselectObject(obj) {
 }
 
 /**
- * Moves the target object to snap to the intersected object in canvas
+ * Checks if target object should be moved then moves the target object to snap to the intersected object in canvas.
  * @param obj - The object that is being intersected
  * @param target - The object that will be moved top or bottom based on the intersected object
  */
 function objectIntersects(obj, target) {
     if (obj != null && obj != midGroup) {
+
+        //Initial check
+        let isHandled = false
         if (intersects(obj, target)) {
-            //moveOffset is to reduce units moving between vLines
-            let moveOffsetPlus = 1
-            let moveOffsetNeg = 1
-            //edge is the amount to allow snapping. The greater the number, the more snap it'll try to do.
-            let edgeSnap = 30
-            //If intersecting with vLine, change moveOffset to reduce unit movement
-            if (obj.vLine){
-                moveOffsetPlus = 1
-                moveOffsetNeg = 0
-            } else {
-                //Set edgeSnap to minSize is unit's width or height is less than edgeSnap.
-                //Helps small units to not overly snap.
-                let minSize = Math.min(obj.getScaledWidth(), obj.height, target.getScaledWidth(), target.height) / 2
-                if (edgeSnap > minSize / 2 && !obj.isDash && !target.isDash){
-                    edgeSnap = minSize
+            moveObject(obj, target)
+            isHandled = true
+        }
+
+        //All sides are checked below with plus 2. This removes jittering with units bouncing back too much after intersection.
+        let checkSides = [['left', 2], ['left', -2], ['top', 2], ['top', -2]]
+        checkSides.forEach(side => {
+            if (!isHandled) {
+                target[side[0]] += side[1]
+                target.setCoords()
+                if (intersects(obj, target)) {
+                    target[side[0]] -= side[1]
+                    target.setCoords()
+                    moveObject(obj, target)
+                    isHandled = true
                 }
             }
-
-            //Calculations for which side should be used to snap to.
-            if (Math.abs(target.oCoords.tr.x - obj.oCoords.tl.x) < edgeSnap) {
-                target.left = obj.left - target.getScaledWidth() - moveOffsetNeg
-            }
-            else if (Math.abs(target.oCoords.tl.x - obj.oCoords.tr.x) < edgeSnap) {
-                target.left = obj.left + obj.getScaledWidth() + moveOffsetPlus
-            }
-            else if (Math.abs(target.oCoords.br.y - obj.oCoords.tr.y) < edgeSnap) {
-                target.top = obj.top - target.height - 1
-            }
-            else if (Math.abs(obj.oCoords.br.y - target.oCoords.tr.y) < edgeSnap) {
-                target.top = obj.top + obj.height + 1
-            }
-
-        } else {
-            obj.isIntersected = false;
-        }
+        })
     }
+
     //Check if object intersects with middle group. Move obj if it does.
     let pointer = canvas.getPointer(event.e);
     if (intersects(midGroup, target) && target.line !== true) {
@@ -955,6 +941,53 @@ function objectIntersects(obj, target) {
     }
 
     target.setCoords();
+}
+
+/**
+ * Moves the target object to snap to the intersected object in canvas
+ * @param obj - The object that is being intersected
+ * @param target - The object that will be moved top or bottom based on the intersected object
+ */
+function moveObject(obj, target){
+    //moveOffset is to reduce units moving between vLines
+    let moveOffsetPlus = 1
+    let moveOffsetNeg = 1
+    //edge is the amount to allow snapping. The greater the number, the more snap it'll try to do.
+    let edgeSnap = 30
+    //If intersecting with vLine, change moveOffset to reduce unit movement
+    if (obj.vLine){
+        moveOffsetPlus = 1
+        moveOffsetNeg = 0
+    } else {
+        //Set edgeSnap to minSize is unit's width or height is less than edgeSnap.
+        //Helps small units to not overly snap.
+        let minSize = Math.min(obj.getScaledWidth(), obj.height, target.getScaledWidth(), target.height) / 2
+        if (edgeSnap > minSize / 2 && !obj.isDash && !target.isDash){
+            edgeSnap = minSize
+        }
+    }
+
+    let returned = false
+
+    //Calculations for which side should be used to snap to.
+    if (Math.abs(target.oCoords.tr.x - obj.oCoords.tl.x) < edgeSnap) {
+        target.left = obj.left - target.getScaledWidth() - moveOffsetNeg
+        returned = true
+    }
+    else if (Math.abs(target.oCoords.tl.x - obj.oCoords.tr.x) < edgeSnap) {
+        target.left = obj.left + obj.getScaledWidth() + moveOffsetPlus
+        returned = true
+    }
+    else if (Math.abs(target.oCoords.br.y - obj.oCoords.tr.y) < edgeSnap) {
+        target.top = obj.top - target.height - 1
+        returned = true
+    }
+    else if (Math.abs(obj.oCoords.br.y - target.oCoords.tr.y) < edgeSnap) {
+        target.top = obj.top + obj.height + 1
+        returned = true
+    }
+
+    return returned
 }
 
 /**
