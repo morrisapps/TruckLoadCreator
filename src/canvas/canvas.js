@@ -759,7 +759,11 @@ function checkIntersect(target) {
                         target.set('opacity', 1)
                     }
                     if (typeof obj.item(0) !== 'undefined') {
-                        obj.item(0).set('fill', 'white');
+                        if (obj.striped) {
+                            obj.item(0).set('fill', stripePattern);
+                        } else {
+                            obj.item(0).set('fill', 'white');
+                        }
                     }
                     if (typeof obj.item(0) !== 'undefined') {
                         obj.item(1).set('textBackgroundColor', 'rgba(255,255,255,0.8)');
@@ -779,7 +783,11 @@ function checkIntersect(target) {
                             target.set('opacity', 1)
                         }
                         if (typeof obj.item(0) !== 'undefined') {
-                            obj.item(0).set('fill', 'white');
+                            if (obj.striped) {
+                                obj.item(0).set('fill', stripePattern);
+                            } else {
+                                obj.item(0).set('fill', 'white');
+                            }
                         }
                         if (typeof obj.item(0) !== 'undefined') {
                             obj.item(1).set('textBackgroundColor', 'rgba(255,255,255,0.8)');

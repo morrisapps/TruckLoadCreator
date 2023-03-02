@@ -413,8 +413,8 @@ function unitText(cName, width, height, unitDrop, AE, text, rect, loc) {
  * @param customerText - The displayed name of the customer in the unit
  * @param fullAE - The full tag number
  * @param weight - The weight of the unit
- * @param {number} opacity - The opacity of the unit. A number from 0 to 1.
  * @param {boolean} striped - Flag to signal if unit background is striped
+ * @param {number} opacity - The opacity of the unit. A number from 0 to 1.
  */
 function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, location, inCanvas, customerText, fullAE, weight, striped,opacity) {
 
