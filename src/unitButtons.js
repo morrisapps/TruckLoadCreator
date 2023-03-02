@@ -1,6 +1,6 @@
 /*!
  * TruckLoadCreator (https://github.com/morrisapps/TruckLoadCreator)
- * Copyright 2022 (c) Corey Morris
+ * Copyright 2023 (c) Corey Morris
  * Licensed under MIT (https://github.com/morrisapps/TruckLoadCreator/blob/master/LICENSE.md)
  */
 
@@ -18,12 +18,12 @@ editImg.src = editIcon;
 let unitButtons = new fabric.Control({
     x: .5,
     y: -.5,
-    offsetY:-2,
-    offsetX: 12,
+    offsetY:-4,
+    offsetX: 8,
     cursorStyle: 'pointer',
     mouseUpHandler: deleteObject,
     render: renderDeleteIcon,
-    cornerSize: 24
+    cornerSize: 30
 });
 fabric.Object.prototype.controls.deleteControl = unitButtons;
 
@@ -34,12 +34,12 @@ let mtrButton = fabric.Object.prototype.controls.mtr;
 let editButton = new fabric.Control({
     x: .5,
     y: -.5,
-    offsetY: 20,
-    offsetX: 12,
+    offsetY: 18,
+    offsetX: 8,
     cursorStyle: 'pointer',
     mouseUpHandler: editObject,
     render: renderEditIcon,
-    cornerSize: 24
+    cornerSize: 30
 });
 fabric.Object.prototype.controls.mtr = editButton;
 
@@ -51,7 +51,7 @@ function renderDeleteIcon(ctx, left, top, styleOverride, fabricObject) {
     ctx.save();
     ctx.translate(left, top);
     ctx.rotate(fabric.util.degreesToRadians(fabricObject.angle));
-    ctx.drawImage(deleteImg, -size / 2, -size / 2, size, size);
+    ctx.drawImage(deleteImg, -size / 2 + 8, -size / 2 + 4, size - 6, size - 6);
     ctx.restore();
 }
 
@@ -63,7 +63,7 @@ function renderEditIcon(ctx, left, top, styleOverride, fabricObject) {
     ctx.save();
     ctx.translate(left, top);
     ctx.rotate(fabric.util.degreesToRadians(fabricObject.angle));
-    ctx.drawImage(editImg, -size / 2, -size / 2, size, size);
+    ctx.drawImage(editImg, -size / 2 + 8, -size / 2 + 4, size - 6, size - 6);
     ctx.restore();
 }
 
