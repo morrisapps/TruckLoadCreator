@@ -15,10 +15,24 @@
 }
 
 :root {
-    /*--title-color:#F3F3F3;*/
-    --title-color:#FFFFFF;
-    /*--title-select-color:#D2D2D2;*/
-    --title-select-color:#D0E1EA;
+
+    /* #ffb14b */
+/*    --title-color: #d0d0d0;
+    --title-font-color: #2d2d2d;
+    --title-select-color: #d5d5d5;
+    --menu-select-color:#D0E1EA;
+    --sidebar-container-color:#FFFFFF;
+    --sidebar-color: #ececec;
+    --sidebar-text-color: #000000;*/
+
+    --title-color: #4f4f4f;
+    --title-font-color: #efefef;
+    --title-select-color: #626262;
+    --menu-select-color:#D0E1EA;
+    --sidebar-container-color:#FFFFFF;
+    --sidebar-color: #ececec;
+    --sidebar-text-color: #000000;
+
 }
 
 html,
@@ -397,6 +411,8 @@ sideElement {
     padding-top: 5px;
     padding-bottom: 5px;
     margin: auto;
+    color: var(--sidebar-text-color);
+    background-color: var(--sidebar-container-color);
 }
 
 /*Side bar canvas container*/

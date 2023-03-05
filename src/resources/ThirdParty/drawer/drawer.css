@@ -46,7 +46,7 @@
 
 .drawer-menu {
   margin: auto;
-
+  background-color: var(--sidebar-color);
   padding: 0;
   list-style: none;
 }
@@ -58,6 +58,15 @@
   padding: .50rem;
   text-decoration: none;
   color: #222;
+}
+
+.drawer-menu-item-title {
+  font-size: 1rem;
+  font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+  display: block;
+  padding: .50rem;
+  text-decoration: none;
+  color: var(--title-font-color);
 }
 
 .drawer-menu-item-header {
@@ -81,6 +90,11 @@
 .drawer-menu-item:hover,
 .drawer-menu-item:active,
 .drawer-menu-item:visited{
+  background-color: var(--menu-select-color);
+}
+.drawer-menu-item-title:hover,
+.drawer-menu-item-title:active,
+.drawer-menu-item-title:visited{
   background-color: var(--title-select-color);
 }
 
@@ -94,7 +108,7 @@
 }
 
 .drawer-menu-item-sub:hover {
-  background-color: var(--title-select-color);;
+  background-color: var(--menu-select-color);
 }
 
 
@@ -465,7 +479,7 @@
 
   }
 
-  .drawer-navbar .drawer-menu-item {
+  .drawer-navbar .drawer-menu-item,.drawer-menu-item-title {
     line-height: 2rem;
     padding-top: 0;
     padding-bottom: 0;
@@ -568,7 +582,7 @@
 
 
 .drawer-dropdown-menu-item:hover {
-  background-color: var(--title-select-color);;
+  background-color: var(--menu-select-color);;
 }
 
 
@@ -613,6 +627,10 @@ collapse.in > .drawer-dropdown-menu {
 
 
 .drawer-dropdown.open > .drawer-menu-item {
+  background-color: var(--menu-select-color);
+}
+
+.drawer-dropdown.open > .drawer-menu-item-title {
   background-color: var(--title-select-color);
 }
 
