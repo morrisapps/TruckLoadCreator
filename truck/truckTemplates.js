@@ -150,9 +150,9 @@ function createCounters() {
 
     let n = 0
     let c = 0
-    let cFlag = false
-    while (n <= 23) {
-        topLines[n] = new fabric.Line([(n * 48) + (51), 75, (n * 48) + (51), 395], {
+    let cCount = 1
+    while (n <= 47) {
+        topLines[n] = new fabric.Line([(n * 24) + (51), 75, (n * 24) + (51), 395], {
             opacity: 1,
             strokeWidth: 0,
             stroke: "black",
@@ -161,7 +161,7 @@ function createCounters() {
             units: new Array(),
             counter: topCounters[c]
         });
-        botLines[n] = new fabric.Line([(n * 48) + (51), 405, (n * 48) + (51), 725], {
+        botLines[n] = new fabric.Line([(n * 24) + (51), 405, (n * 24) + (51), 725], {
             opacity: 1,
             strokeWidth: 0,
             stroke: "black",
@@ -173,10 +173,13 @@ function createCounters() {
         canvas.add(topLines[n]);
         canvas.add(botLines[n]);
         n++;
-        if (!cFlag){
-            cFlag = true
+
+        //For every 4 lines that are counter, increment c one. c represents the counter index.
+        //There should be 4 lines for every counter.
+        if (cCount != 4){
+            cCount ++
         } else {
-            cFlag = false
+            cCount = 1
             c++
         }
     }

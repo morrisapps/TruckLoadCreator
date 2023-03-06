@@ -109,7 +109,7 @@ function updateCount(target) {
             })
             //Update all counters utilizing each topLines, botLines and the units that intersect within.
             var i = 0;
-            while (i <= 23) {
+            while (i <= 47) {
                 lineHeightCount(target, topLines[i]);
                 lineHeightCount(target, botLines[i]);
                 i++;
