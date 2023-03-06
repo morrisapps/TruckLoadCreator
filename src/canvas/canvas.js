@@ -316,23 +316,8 @@ function lineHeightCount(target, line) {
 
         var lunits;
         for (lunits of lineUnits) {
-            var countFlag = true
-            if (lunits.isIntersected){
-                lunits.heightCounted = true
-            } else {
-                lunits.heightCounted = false
-            }
-            for (lunits2 of lineUnits){
-                if (intersects(lunits, lunits2)){
-                    if (!(lunits.unitHeight >= lunits2.unitHeight)){
-                        countFlag = false
-                    }
-                }
-            }
-            if (countFlag && !lunits.heightCounted){
-                counter = counter + Math.floor(lunits.unitHeight);
-            }
 
+            counter = counter + Math.floor(lunits.unitHeight);
 
             // Gets the highest dash height within strapIndicator height. Used to determine if strap indicator is shown.
             if (lunits.isDash){
