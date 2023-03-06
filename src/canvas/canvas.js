@@ -649,7 +649,6 @@ function createCanvas() {
                 canvas.forEachObject(function (obj) {
                     if (obj.intersects == true) {
                         objectIntersects(obj, target);
-                        //target.set('opacity', 1);
                     }
                 });
 
@@ -922,8 +921,8 @@ function objectIntersects(obj, target) {
             isHandled = true
         }
 
-        //All sides are checked below with plus or negative 2. This removes jittering with units bouncing back too much after intersection.
-        let checkSides = [['left', 2], ['left', -2], ['top', 2], ['top', -2]]
+        //All sides are checked below with plus or negative 1. This removes jittering with units bouncing back too much after intersection.
+        let checkSides = [['left', 1], ['left', -1], ['top', 1], ['top', -1]]
         checkSides.forEach(side => {
             if (!isHandled) {
                 target[side[0]] += side[1]
@@ -974,7 +973,7 @@ function moveObject(obj, target){
         //Helps small units to not overly snap.
         let minSize = Math.min(obj.getScaledWidth(), obj.height, target.getScaledWidth(), target.height) / 2
         if (edgeSnap > minSize / 2 && !obj.isDash && !target.isDash){
-            edgeSnap = minSize
+            edgeSnap = minSize + 5
         }
     }
 
