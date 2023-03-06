@@ -15,24 +15,14 @@
 }
 
 :root {
-
-    /* #ffb14b */
-/*    --title-color: #d0d0d0;
-    --title-font-color: #2d2d2d;
-    --title-select-color: #d5d5d5;
-    --menu-select-color:#D0E1EA;
-    --sidebar-container-color:#FFFFFF;
-    --sidebar-color: #ececec;
-    --sidebar-text-color: #000000;*/
-
-    --title-color: #4f4f4f;
+    /* Global colors */
+    --title-color: #005653;
     --title-font-color: #efefef;
-    --title-select-color: #626262;
-    --menu-select-color:#D0E1EA;
+    --title-select-color: #00413DFF;
+    --menu-select-color: rgba(0, 122, 109, 0.62);
     --sidebar-container-color:#FFFFFF;
     --sidebar-color: #ececec;
     --sidebar-text-color: #000000;
-
 }
 
 html,
