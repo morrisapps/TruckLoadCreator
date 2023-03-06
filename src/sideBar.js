@@ -492,7 +492,7 @@ function createUnit(width, height, cName, AE, color, fill, left, top, unitDrop, 
             currentGroup.item(1).set('left', currentGroup.item(1).top - 7);
             currentGroup.set('width', currentGroup.width - 14);
             if (currentGroup.unitWidth * 2 - 2 > currentGroup.width) {
-                currentGroup.set('width', currentGroup.unitWidth * 2);
+                currentGroup.set('width', currentGroup.unitWidth * 2 - 2);
             }
         }
     }
