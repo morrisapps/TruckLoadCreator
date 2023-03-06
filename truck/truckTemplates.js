@@ -152,17 +152,19 @@ function createCounters() {
     let c = 0
     let cFlag = false
     while (n <= 23) {
-        topLines[n] = new fabric.Line([(n * 48) + (49), 75, (n * 48) + (49), 395], {
+        topLines[n] = new fabric.Line([(n * 48) + (51), 75, (n * 48) + (51), 395], {
             opacity: 1,
             strokeWidth: 0,
+            stroke: "black",
             selectable: false,
             isCounter: true,
             units: new Array(),
             counter: topCounters[c]
         });
-        botLines[n] = new fabric.Line([(n * 48) + (49), 405, (n * 48) + (49), 725], {
+        botLines[n] = new fabric.Line([(n * 48) + (51), 405, (n * 48) + (51), 725], {
             opacity: 1,
             strokeWidth: 0,
+            stroke: "black",
             selectable: false,
             isCounter: true,
             units: new Array(),
