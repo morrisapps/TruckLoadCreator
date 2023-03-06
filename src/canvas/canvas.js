@@ -922,7 +922,7 @@ function objectIntersects(obj, target) {
             isHandled = true
         }
 
-        //All sides are checked below with plus 2. This removes jittering with units bouncing back too much after intersection.
+        //All sides are checked below with plus or negative 2. This removes jittering with units bouncing back too much after intersection.
         let checkSides = [['left', 2], ['left', -2], ['top', 2], ['top', -2]]
         checkSides.forEach(side => {
             if (!isHandled) {
@@ -933,6 +933,9 @@ function objectIntersects(obj, target) {
                     target.setCoords()
                     moveObject(obj, target)
                     isHandled = true
+                } else {
+                    target[side[0]] -= side[1]
+                    target.setCoords()
                 }
             }
         })
