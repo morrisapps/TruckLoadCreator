@@ -600,7 +600,7 @@ function createCanvas() {
                     objectIntersects(vLine, target);
                 });
                 //Find the intersected unit with the greatest area (the most intersected)
-                greatestInter = {area: 0, obj: null}
+                let greatestInter = {area: 0, obj: null}
                 canvas.forEachObject(function (obj) {
 
                     if (obj.intersects == true && !obj.vLine && intersects(target, obj)) {
@@ -632,10 +632,15 @@ function createCanvas() {
                 }
                 //Checks all objects if they intersect
                 canvas.forEachObject(function (obj) {
-                    if (obj.intersects == true) {
+                    if (obj.intersects == true && greatestInter.obj != obj) {
                         objectIntersects(obj, target);
                     }
                 });
+
+                //Uses greatest intersected object again to ensure it has the final say on where the target is positioned.
+                if (greatestInter.obj !== null){
+                    objectIntersects(greatestInter.obj, target);
+                }
 
                 //If target still intersects after processing new coords, then revert back
                 target.setCoords();
@@ -676,6 +681,10 @@ function createCanvas() {
 
             updateCount(target);
         }
+
+        //Store accepted new coordinates.
+        target.lastLeft = target.left
+        target.lastTop = target.top
     });
 
 
@@ -710,6 +719,8 @@ function createCanvas() {
 
     //Fires when object has been added
     canvas.on("object:added", function (obj) {
+        obj.target.lastLeft = obj.target.left
+        obj.target.lastTop = obj.target.top
         truckWeightUpdate();
     });
     //Fires when object has been removed
@@ -942,13 +953,15 @@ function objectIntersects(obj, target) {
  * Moves the target object to snap to the intersected object in canvas
  * @param obj - The object that is being intersected
  * @param target - The object that will be moved top or bottom based on the intersected object
+ * @returns boolean - True if target was moved. False if not.
  */
 function moveObject(obj, target){
+
     //moveOffset is to reduce units moving between vLines
     let moveOffsetPlus = 1
     let moveOffsetNeg = 1
     //edge is the amount to allow snapping. The greater the number, the more snap it'll try to do.
-    let edgeSnap = 30
+    let edgeSnap = 50
     //If intersecting with vLine, change moveOffset to reduce unit movement
     if (obj.vLine){
         moveOffsetPlus = 1
@@ -964,22 +977,46 @@ function moveObject(obj, target){
 
     let returned = false
 
-    //Calculations for which side should be used to snap to.
-    if (Math.abs(target.oCoords.tr.x - obj.oCoords.tl.x) < edgeSnap) {
-        target.left = obj.left - target.getScaledWidth() - moveOffsetNeg
-        returned = true
-    }
-    else if (Math.abs(target.oCoords.tl.x - obj.oCoords.tr.x) < edgeSnap) {
-        target.left = obj.left + obj.getScaledWidth() + moveOffsetPlus
-        returned = true
-    }
-    else if (Math.abs(target.oCoords.br.y - obj.oCoords.tr.y) < edgeSnap) {
-        target.top = obj.top - target.height - 1
-        returned = true
-    }
-    else if (Math.abs(obj.oCoords.br.y - target.oCoords.tr.y) < edgeSnap) {
-        target.top = obj.top + obj.height + 1
-        returned = true
+    //Edges represent the edge to snap to.
+        //edge      - Which edge is this.
+        //CoordDif  - The difference between the two edges. E.g. Left x of target, Right x of obj.
+        //newCoord  - The coordinate that target should have if this edge snap is validated.
+        //property  - Which property to modify (left or top).
+    let edges = [
+       {
+           edge: "Right",
+           coordDif: Math.abs(target.oCoords.tl.x - obj.oCoords.tr.x),
+           newCoord: obj.left + obj.getScaledWidth() + moveOffsetPlus,
+           property: "left"
+       },
+       {
+           edge: "Left",
+           coordDif: Math.abs(target.oCoords.tr.x - obj.oCoords.tl.x),
+           newCoord: obj.left - target.getScaledWidth() - moveOffsetNeg,
+           property: "left"
+       },
+       {
+           edge: "Top",
+           coordDif: Math.abs(target.oCoords.br.y - obj.oCoords.tr.y),
+           newCoord: obj.top - target.height - 1,
+           property: "top"
+       },
+       {
+           edge: "Bottom",
+           coordDif: Math.abs(obj.oCoords.br.y - target.oCoords.tr.y),
+           newCoord: obj.top + obj.height + 1,
+           property: "top"
+       },
+    ];
+
+    edges.sort((a,b) => a.coordDif - b.coordDif);
+
+    for (const edge of edges) {
+       if (edge.coordDif < edgeSnap){
+           target[edge.property] = edge.newCoord
+           returned = true
+           break
+       }
     }
 
     return returned
