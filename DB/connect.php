@@ -39,6 +39,13 @@ switch ($_POST['location']) {
     case '5': //RWW
         $site = 'rwwl';
         break;
+    case '6': //clgy or cadw
+        if ($_SERVER['REMOTE_PORT'] == '90'){
+            $site = 'cadw';
+        } else {
+            $site = 'clgy';
+        }
+        break;
     default: //Default AlexEast
         $site = 'east';
 }

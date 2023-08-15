@@ -14,6 +14,8 @@ truckList.push(new Truck("start",105,"?",0,0,"?",53,0,0,0,0,0,0,0,0,0,0,0,0,0));
 truckList.push(new Truck("Custom Flatbed",95,"?",0,0,"?",53,90,0,0,0,0,0,0,0,0,0,0,0,1));
 truckList.push(new Truck("46 Flatbed",95,"?",0,0,"?",46,90,0,0,0,0,0,0,0,0,0,0,0,1));
 truckList.push(new Truck("48 Flatbed",95,"?",0,0,"?",48,90,0,0,0,0,0,0,0,0,0,0,0,1));
+truckList.push(new Truck("53-roll-tite",105,62000,.432,.568,45000,53,50,46,50,46,50,46,"20\'6","14\'6","16\'6","20\'6","14\'6","16\'6",0));
+truckList.push(new Truck("48-roll-tite",95,48000,.5,.5,38000,53,90,0,0,0,0,0,0,0,0,0,0,0,2));
 
 //AlexEast trailers
 truckList.push(new Truck(1303, 105, 47000,.5,.5,32000,35,0,48,48,0,48,48,16,16,16,16,16,16,0));
@@ -118,6 +120,7 @@ truckList.push(new Truck("_MWRED53",95,45000,.5,.5,"?",53,100,0,0,0,0,0,0,0,0,0,
 truckList.push(new Truck("_MWRED48",95,42000,.5,.5,"?",48,100,0,0,0,0,0,0,0,0,0,0,0,3));
 truckList.push(new Truck("_MWCONE53",95,47500,.5,.5,"?",53,100,0,0,0,0,0,0,0,0,0,0,0,4));
 truckList.push(new Truck("_MWCONE48",95,42000,.5,.5,"?",48,100,0,0,0,0,0,0,0,0,0,0,0,4));
+
 
 /**
  * Get the truck that matches given ID

@@ -1300,9 +1300,12 @@ function truckListUpdate(location){
     let truck_1 = document.getElementById("Trucks_1");
     let truck_3 = document.getElementById("Trucks_3");
     let truck_4 = document.getElementById("Trucks_4");
+    let truck_6 = document.getElementById("Trucks_6");
 
     truck_1.style.display = "none";
     truck_3.style.display = "none";
+    truck_4.style.display = "none";
+    truck_6.style.display = "none";
 
     switch(location) {
         case '1': //AlexEast
@@ -1322,6 +1325,10 @@ function truckListUpdate(location){
             break;
         case '5': //RWW
             brand.innerText = "RWW"
+            break;
+        case '6': //clgy
+            brand.innerText = "AlexCalgary"
+            truck_6.style.display = "block";
             break;
         default: //Default AlexEast
             brand.innerText = "AlexEast"
