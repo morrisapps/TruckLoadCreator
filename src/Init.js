@@ -482,6 +482,18 @@ if (location.port == '89'){
     });
 }
 
+//Set stage server port matches stage server
+if (location.port == '90'){
+    _backtrack.innerText = "STAGE SERVER";
+    backtrackToggle = "0"
+    _backtrack.style = "pointer-events: none; color: red; font-size: 20px; font-weight: bolder;"
+    document.getElementById('infoDialog').innerHTML = "<P>This server uses staged trucks and should be used for training purposes.</p>"
+    $(function () {
+        $('#infoDialog').dialog('option', 'title', 'DO NOT USE IN PRODUCTION');
+        $("#infoDialog").dialog("open");
+    });
+}
+
 /**
  * Displays change log
  */
